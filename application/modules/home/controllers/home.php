@@ -31,6 +31,16 @@ class Home extends CI_Controller {
 	{
 		$this->load->view('contact');
 	}
+	
+	public function login()
+	{
+		$this->load->view('login');
+	}
+	
+	public function signup()
+	{
+		$this->load->view('signup');
+	}
 }
 
 /* End of file welcome.php */

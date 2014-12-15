@@ -92,8 +92,8 @@
    <li class='left'><a href='<?php echo base_url(). 'products/view'?>'>Contact</a></li>
    <li class='has-sub right'><a href='#'>Account</a>
       <ul>
-        <li><a href='<?php echo base_url(). 'products/view'?>'>Log In</a></li>
-        <li><a href='<?php echo base_url(). 'products/view'?>'>Sign Up</a></li>      
+        <li><a href='<?php echo base_url(). 'home/login'?>'>Log In</a></li>
+        <li><a href='<?php echo base_url(). 'home/signup'?>'>Sign Up</a></li>      
       </ul>
    </li>
 </ul>

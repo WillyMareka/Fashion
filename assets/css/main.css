@@ -149,6 +149,35 @@ a#scrollUp i{
 #topmenu > ul > li .right{
     float: right;
 }
+
+.login_tab{
+	margin-left: auto;
+    margin-right: auto;
+    width: 6em
+	
+}
+
+#signup{
+	background-image: url('../../images/fashiongirl.png');
+}
+
+.footer{
+	position: relative;
+    right: -500px;
+    margin-bottom:100px;
+	
+}
+.panel-body{
+	color: #dddddd;
+}
+#signupbox{
+	position: relative;
+	float:left;
+}
+/*.signupimage{
+	position: relative; 
+   	width: 50px;
+}*/
 /*.pricing {
   position: absolute;
   left: 80%;
