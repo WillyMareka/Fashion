@@ -6,6 +6,7 @@
     <link href="<?php echo base_url() . 'assets/script/jquery/jquery-ui.css'?>" rel="stylesheet">
     <link href="<?php echo base_url() . 'assets/semantic/dist/semantic.css'?>" rel="stylesheet">
     <link href="<?php echo base_url() . 'assets/dist/css/bootstrap.css'?>" rel="stylesheet">
+    <link href="<?php echo base_url() . 'assets/css/animate.css'?>" rel="stylesheet">
     <link href="<?php echo base_url() . 'assets/css/styles.css'?>" rel="stylesheet">
     <link href="<?php echo base_url() . 'assets/css/styles2.css'?>" rel="stylesheet">
     <link href="<?php echo base_url() . 'assets/css/main.css'?>" rel="stylesheet">
@@ -30,72 +31,16 @@
 <ul>
    <li class='active left'><a href='#'>Home</a></li>
    <li class='left'><a href='<?php echo base_url(). 'products/view'?>'>Products</a>
+   </li>
+   <li class='left'><a href='<?php echo base_url(). 'home/about'?>'>About</a></li>
+   <li class='left'><a href='<?php echo base_url(). 'home/contact'?>'>Contact</a></li>
+   <li class='right'><a href='<?php echo base_url(). 'user/log'?>'>Log In</a>
       <!-- <ul>
-         <li class='has-sub'><a href='#'>Mens Wear</a>
-            <ul>
-               <li><a href='#'>Shirts</a></li>
-               <li><a href='#'>Jeans</a></li>
-               <li><a href='#'>Suits</a></li>
-               <li><a href='#'>Sweater & Jumpers</a></li>
-               <li><a href='#'>UnderWear</a></li>
-               <li><a href='#'>Shoes</a></li>
-            </ul>
-         </li>
-         <li class='has-sub'><a href='#'>Women Wear</a>
-            <ul>
-               <li><a href='#'>Tops</a></li>
-               <li><a href='#'>Trousers</a></li>
-               <li><a href='#'>Skirts</a></li>
-               <li><a href='#'>Swim Suits</a></li>
-               <li><a href='#'>Awesome Panties</a></li>
-               <li><a href='#'>Dresses</a></li>
-               <li><a href='#'>Shoes</a></li>
-            </ul>
-         </li>
-         <li class='has-sub'><a href='#'>Childrens Wear</a>
-          <ul>
-          <li class='has-sub'><a href='#'>Boys</a>
-            <ul>
-               <li><a href='#'>Shirts</a></li>
-               <li><a href='#'>Jeans</a></li>
-               <li><a href='#'>Trousers</a></li>
-               <li><a href='#'>UnderWear</a></li>
-               <li><a href='#'>Shoes</a></li>
-            </ul>
-          
-         </li>
-         <li class='has-sub'><a href='#'>Girls</a>
-            <ul>
-              
-               <li><a href='#'>Shirts</a></li>
-               <li><a href='#'>Jeans</a></li>
-               <li><a href='#'>Trousers</a></li>
-               <li><a href='#'>UnderWear</a></li>
-               <li><a href='#'>Shoes</a></li>
-            </ul>
-         </li>
-       </ul>
-       </li>
-         <li class='has-sub'><a href='#'>Accessories</a>
-            <ul>
-               <li><a href='#'>Watches</a></li>
-               <li><a href='#'>Hats</a></li>
-               <li><a href='#'>Chians</a></li>
-               <li><a href='#'>Glasses</a></li>
-               <li><a href='#'>Necklaces</a></li>
-               <li><a href='#'>Rings</a></li>
-            </ul>
-         </li>
+        <li><a href='<?php echo base_url(). 'user/log'?>'>Log In</a></li>
+        <li><a href='<?php echo base_url(). 'user/sign'?>'>Sign Up</a></li>      
       </ul> -->
    </li>
-   <li class='left'><a href='<?php echo base_url(). 'products/view'?>'>About</a></li>
-   <li class='left'><a href='<?php echo base_url(). 'products/view'?>'>Contact</a></li>
-   <li class='has-sub right'><a href='#'>Account</a>
-      <ul>
-        <li><a href='<?php echo base_url(). 'home/login'?>'>Log In</a></li>
-        <li><a href='<?php echo base_url(). 'home/signup'?>'>Sign Up</a></li>      
-      </ul>
-   </li>
+
 </ul>
 </div>
 <!-- /Top Home Navigation -->
@@ -113,13 +58,13 @@
   <!-- Wrapper for slides -->
   <div class="carousel-inner" role="listbox">
     <div class="item carou_img active">
-      <img src="<?php echo base_url() . 'assets/images/girl1.jpg'?>" alt="..."> 
+      <img src="<?php echo base_url() . 'assets/images/girl7.jpg'?>" alt="..."> 
     </div>
     <div class="item carou_img">
-      <img src="<?php echo base_url() . 'assets/images/girl2.jpg'?>" alt="...">
+      <img src="<?php echo base_url() . 'assets/images/girl6.jpg'?>" alt="...">
     </div>
     <div class="item carou_img">
-      <img src="<?php echo base_url() . 'assets/images/girl3.jpg'?>" alt="...">
+      <img src="<?php echo base_url() . 'assets/images/girl8.jpg'?>" alt="...">
     </div>
    
   </div>
@@ -134,36 +79,17 @@
     <span class="sr-only">Next</span>
   </a>
 </div>
+
+   <!-- /Controls -->
+
 <!-- /Top Carousel -->
 
-<!-- Side Home Navigation -->
+
+  <div class="ui horizontal divider">
+    <span class="latest">Latest Products</span>
+  </div>
 
 
-<!-- <div id='sidemenu'>
-<ul>
-   <li><a href='#'><span>Home</span></a></li>
-   <li class='active has-sub'><a href='#'><span>Products</span></a>
-      <ul>
-         <li class='has-sub'><a href='#'><span>Product 1</span></a>
-            <ul>
-               <li><a href='#'><span>Sub Product</span></a></li>
-               <li class='last'><a href='#'><span>Sub Product</span></a></li>
-            </ul>
-         </li>
-         <li class='has-sub'><a href='#'><span>Product 2</span></a>
-            <ul>
-               <li><a href='#'><span>Sub Product</span></a></li>
-               <li class='last'><a href='#'><span>Sub Product</span></a></li>
-            </ul>
-         </li>
-      </ul>
-   </li>
-   <li><a href='#'><span>About</span></a></li>
-   <li class='last'><a href='#'><span>Contact</span></a></li>
-</ul>
-</div> -->
-
-<!-- /Side Home Navigation -->
 
 <!-- Categories -->
 
@@ -182,9 +108,9 @@
                   <div class="product-wrap">
                     <div class="single-products">
                       <div class="productinfo text-center">
-                        <img src="<?php echo base_url(). 'assets/images/gallery1.jpg'?>" alt="" />
-                        <h2>$56</h2>
-                        <p>Easy Polo Black Edition</p>
+                        <img class="imagesize" src="<?php echo base_url(). 'assets/images/shirt1.jpg'?>" alt="" />
+                        <h2>Kshs 119/=</h2>
+                        <p>Red Edition</p>
                         <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
                       </div>
                       
@@ -195,9 +121,9 @@
                   <div class="product-wrap">
                     <div class="single-products">
                       <div class="productinfo text-center">
-                        <img src="<?php echo base_url(). 'assets/images/gallery2.jpg'?>" alt="" />
-                        <h2>$56</h2>
-                        <p>Easy Polo Black Edition</p>
+                        <img class="imagesize" src="<?php echo base_url(). 'assets/images/shirt2.jpg'?>" alt="" />
+                        <h2>Kshs 249/=</h2>
+                        <p>Grey Edition</p>
                         <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
                       </div>
                       
@@ -208,9 +134,9 @@
                   <div class="product-wrap">
                     <div class="single-products">
                       <div class="productinfo text-center">
-                        <img src="<?php echo base_url(). 'assets/images/gallery3.jpg'?>" alt="" />
-                        <h2>$56</h2>
-                        <p>Easy Polo Black Edition</p>
+                        <img class="imagesize" src="<?php echo base_url(). 'assets/images/shirt3.jpg'?>" alt="" />
+                        <h2>Kshs 199/=</h2>
+                        <p>White Edition</p>
                         <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
                       </div>
                       
@@ -221,9 +147,9 @@
                   <div class="product-wrap">
                     <div class="single-products">
                       <div class="productinfo text-center">
-                        <img src="<?php echo base_url(). 'assets/images/gallery4.jpg'?>" alt="" />
-                        <h2>$56</h2>
-                        <p>Easy Polo Black Edition</p>
+                        <img class="imagesize" src="<?php echo base_url(). 'assets/images/shirt4.jpg'?>" alt="" />
+                        <h2>Kshs 99/=</h2>
+                        <p>Black Edition</p>
                         <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
                       </div>
                       
@@ -237,9 +163,9 @@
                   <div class="product-wrap">
                     <div class="single-products">
                       <div class="productinfo text-center">
-                        <img src="<?php echo base_url(). 'assets/images/gallery4.jpg'?>" alt="" />
-                        <h2>$56</h2>
-                        <p>Easy Polo Black Edition</p>
+                        <img class="imagesize" src="<?php echo base_url(). 'assets/images/suit1.jpg'?>" alt="" />
+                        <h2>Kshs 4999/=</h2>
+                        <p>White Edition</p>
                         <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
                       </div>
                       
@@ -250,9 +176,9 @@
                   <div class="product-wrap">
                     <div class="single-products">
                       <div class="productinfo text-center">
-                        <img src="images/home/gallery3.jpg" alt="" />
-                        <h2>$56</h2>
-                        <p>Easy Polo Black Edition</p>
+                        <img class="imagesize" src="<?php echo base_url(). 'assets/images/suit2.jpg'?>" alt="" />
+                        <h2>Kshs 5499/=</h2>
+                        <p>Black Edition</p>
                         <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
                       </div>
                       
@@ -263,9 +189,9 @@
                   <div class="product-wrap">
                     <div class="single-products">
                       <div class="productinfo text-center">
-                        <img src="images/home/gallery2.jpg" alt="" />
-                        <h2>$56</h2>
-                        <p>Easy Polo Black Edition</p>
+                        <img class="imagesize" src="<?php echo base_url(). 'assets/images/suit3.jpg'?>" alt="" />
+                        <h2>Kshs 2999/=</h2>
+                        <p>Grey Edition</p>
                         <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
                       </div>
                       
@@ -276,9 +202,9 @@
                   <div class="product-wrap">
                     <div class="single-products">
                       <div class="productinfo text-center">
-                        <img src="images/home/gallery1.jpg" alt="" />
-                        <h2>$56</h2>
-                        <p>Easy Polo Black Edition</p>
+                        <img class="imagesize" src="<?php echo base_url(). 'assets/images/suit4.jpg'?>" alt="" />
+                        <h2>Kshs 2499/=</h2>
+                        <p>Black Edition</p>
                         <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
                       </div>
                       
@@ -292,9 +218,9 @@
                   <div class="product-wrap">
                     <div class="single-products">
                       <div class="productinfo text-center">
-                        <img src="<?php echo base_url(). 'assets/images/gallery3.jpg'?>" alt="" />
-                        <h2>$56</h2>
-                        <p>Easy Polo Black Edition</p>
+                        <img class="imagesize" src="<?php echo base_url(). 'assets/images/sun1.jpg'?>" alt="" />
+                        <h2>Kshs 99/=</h2>
+                        <p>White Edition</p>
                         <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
                       </div>
                       
@@ -305,9 +231,9 @@
                   <div class="product-wrap">
                     <div class="single-products">
                       <div class="productinfo text-center">
-                        <img src="images/home/gallery4.jpg" alt="" />
-                        <h2>$56</h2>
-                        <p>Easy Polo Black Edition</p>
+                        <img class="imagesize" src="<?php echo base_url(). 'assets/images/sun5.jpg'?>" alt="" />
+                        <h2>Kshs 189/=</h2>
+                        <p>Black Edition</p>
                         <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
                       </div>
                       
@@ -318,9 +244,9 @@
                   <div class="product-wrap">
                     <div class="single-products">
                       <div class="productinfo text-center">
-                        <img src="images/home/gallery1.jpg" alt="" />
-                        <h2>$56</h2>
-                        <p>Easy Polo Black Edition</p>
+                        <img class="imagesize" src="<?php echo base_url(). 'assets/images/sun3.jpg'?>" alt="" />
+                        <h2>Kshs 159/=</h2>
+                        <p>Black Edition</p>
                         <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
                       </div>
                       
@@ -331,9 +257,9 @@
                   <div class="product-wrap">
                     <div class="single-products">
                       <div class="productinfo text-center">
-                        <img src="images/home/gallery2.jpg" alt="" />
-                        <h2>$56</h2>
-                        <p>Easy Polo Black Edition</p>
+                        <img class="imagesize" src="<?php echo base_url(). 'assets/images/sun4.jpg'?>" alt="" />
+                        <h2>Kshs 249/=</h2>
+                        <p>Black Edition</p>
                         <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
                       </div>
                       
@@ -347,9 +273,9 @@
                   <div class="product-wrap">
                     <div class="single-products">
                       <div class="productinfo text-center">
-                        <img src="<?php echo base_url(). 'assets/images/gallery1.jpg'?>" alt="" />
-                        <h2>$56</h2>
-                        <p>Easy Polo Black Edition</p>
+                        <img class="imagesize" src="<?php echo base_url(). 'assets/images/skirts1.jpg'?>" alt="" />
+                        <h2>Kshs 359/=</h2>
+                        <p>Black Edition</p>
                         <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
                       </div>
                       
@@ -360,9 +286,9 @@
                   <div class="product-wrap">
                     <div class="single-products">
                       <div class="productinfo text-center">
-                        <img src="images/home/gallery2.jpg" alt="" />
-                        <h2>$56</h2>
-                        <p>Easy Polo Black Edition</p>
+                        <img class="imagesize" src="<?php echo base_url(). 'assets/images/skirt5.jpg'?>" alt="" />
+                        <h2>Kshs 519/=</h2>
+                        <p>Blue Edition</p>
                         <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
                       </div>
                       
@@ -373,9 +299,9 @@
                   <div class="product-wrap">
                     <div class="single-products">
                       <div class="productinfo text-center">
-                        <img src="images/home/gallery3.jpg" alt="" />
-                        <h2>$56</h2>
-                        <p>Easy Polo Black Edition</p>
+                        <img class="imagesize" src="<?php echo base_url(). 'assets/images/skirts3.jpg'?>" alt="" />
+                        <h2>Kshs 449/=</h2>
+                        <p>Black Edition</p>
                         <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
                       </div>
                       
@@ -386,64 +312,9 @@
                   <div class="product-wrap">
                     <div class="single-products">
                       <div class="productinfo text-center">
-                        <img src="images/home/gallery4.jpg" alt="" />
-                        <h2>$56</h2>
-                        <p>Easy Polo Black Edition</p>
-                        <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-                      </div>
-                      
-                    </div>
-                  </div>
-                </div>
-              </div>
-              
-              <div class="tab-pane fade" id="poloshirt" >
-                <div class="col-sm-3">
-                  <div class="product-wrap">
-                    <div class="single-products">
-                      <div class="productinfo text-center">
-                        <img src="images/home/gallery2.jpg" alt="" />
-                        <h2>$56</h2>
-                        <p>Easy Polo Black Edition</p>
-                        <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-                      </div>
-                      
-                    </div>
-                  </div>
-                </div>
-                <div class="col-sm-3">
-                  <div class="product-wrap">
-                    <div class="single-products">
-                      <div class="productinfo text-center">
-                        <img src="images/home/gallery4.jpg" alt="" />
-                        <h2>$56</h2>
-                        <p>Easy Polo Black Edition</p>
-                        <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-                      </div>
-                      
-                    </div>
-                  </div>
-                </div>
-                <div class="col-sm-3">
-                  <div class="product-wrap">
-                    <div class="single-products">
-                      <div class="productinfo text-center">
-                        <img src="images/home/gallery3.jpg" alt="" />
-                        <h2>$56</h2>
-                        <p>Easy Polo Black Edition</p>
-                        <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-                      </div>
-                      
-                    </div>
-                  </div>
-                </div>
-                <div class="col-sm-3">
-                  <div class="product-wrap">
-                    <div class="single-products">
-                      <div class="productinfo text-center">
-                        <img src="images/home/gallery1.jpg" alt="" />
-                        <h2>$56</h2>
-                        <p>Easy Polo Black Edition</p>
+                        <img class="imagesize" src="<?php echo base_url(). 'assets/images/skirts4.jpg'?>" alt="" />
+                        <h2>Kshs 389/=</h2>
+                        <p>Pink Edition</p>
                         <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
                       </div>
                       
@@ -458,14 +329,40 @@
 
 <!-- /Categories -->
 
+<!-- Footer -->
+
+
+  <div class=" col-sm-12 home-footer">
+  <div class="bottom-topic">
+    <span class="marewill">MAREWILL</span> FASHION WEBSITE
+  </div>
+  <div class="col-sm-12 footer-content">
+    <div class="col-sm-4">
+      Copyright &copy 2013 MareWill Inc. All rights reserved.
+    </div>
+
+    <div class="col-sm-4">
+      <a href="http://www.facebook.com"><i class="facebook square icon"></i></a>
+      <a href="http://www.instagram.com"><i class="instagram icon"></i></a>
+      <a href="http://www.twitter.com"><i class="twitter square icon"></i></a>
+    </div>
+
+    <div class="col-sm-4">
+      www.marewillfashion.com
+    </div>
+  </div>
+</div>
+
+
+
+<!-- /Footer -->
 
 <script src="<?php echo base_url() .'assets/script/jquery-1.11.1.min.js'?>"></script>
 <script src="<?php echo base_url() .'assets/script/jquery/jquery-ui.js'?>"></script>
 <script src="<?php echo base_url() .'assets/semantic/dist/semantic.js'?>"></script>
 <script src="<?php echo base_url() .'assets/dist/js/bootstrap.js'?>"></script>
-<script src="<?php echo base_url() .'assets/js/script.js'?>"></script>
-
-<script src="<?php echo base_url() .'assets/js/main.js'?>"></script>
 <script src="<?php echo base_url() .'assets/js/jquery.scrollUp.min.js'?>"></script>
+<script src="<?php echo base_url() .'assets/js/script.js'?>"></script>
+<script src="<?php echo base_url() .'assets/js/main.js'?>"></script>
 </body>
 </html>

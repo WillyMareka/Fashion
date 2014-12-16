@@ -3,6 +3,6 @@
 	<title>Contacts</title>
 </head>
 <body>
-	Still Under Development
+	Contact Page Still Under Development
 </body>
 </html>

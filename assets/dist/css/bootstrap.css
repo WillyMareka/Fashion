@@ -5820,6 +5820,10 @@ button.close {
   position: relative;
   width: 100%;
   overflow: hidden;
+<<<<<<< HEAD
+=======
+  height: 500px;
+>>>>>>> 25c78ec67f7343aa9978f34f2383c4a3b3f153b1
 }
 .carousel-inner > .item {
   position: relative;

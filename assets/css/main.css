@@ -3,19 +3,36 @@
 @import url(http://fonts.googleapis.com/css?family=Abel);
 
 
-a#scrollUp {
-  bottom: 0px;
-  right: 10px;
-  padding: 5px 10px;
-  background: #FE980F;
-  color: #FFF;
-  -webkit-animation: bounce 2s ease infinite;
-  animation: bounce 2s ease infinite;
-}
+<<<<<<< HEAD
+=======
 
 a#scrollUp i{
   font-size: 30px;
 }
+
+>>>>>>> 25c78ec67f7343aa9978f34f2383c4a3b3f153b1
+a#scrollUp {
+  bottom: 0px;
+  right: 10px;
+  padding: 5px 10px;
+<<<<<<< HEAD
+  background: #FE980F;
+  color: #FFF;
+=======
+  background: #9900CC;
+  color: #FFF;
+  font-size: 30px;
+>>>>>>> 25c78ec67f7343aa9978f34f2383c4a3b3f153b1
+  -webkit-animation: bounce 2s ease infinite;
+  animation: bounce 2s ease infinite;
+}
+
+<<<<<<< HEAD
+a#scrollUp i{
+  font-size: 30px;
+}
+=======
+>>>>>>> 25c78ec67f7343aa9978f34f2383c4a3b3f153b1
 
 .category-tab {
   overflow: hidden;
@@ -150,6 +167,7 @@ a#scrollUp i{
     float: right;
 }
 
+<<<<<<< HEAD
 .login_tab{
 	margin-left: auto;
     margin-right: auto;
@@ -183,3 +201,63 @@ a#scrollUp i{
   left: 80%;
   top: 52%;
 }*/
+=======
+.imagesize{
+    height:260px;
+    width:260px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+
+/*.pricing {
+  position: absolute;
+  left: 80%;
+  top: 52%;
+}*/
+
+.latest{
+  font-family:'Open Sans'; 
+  /*font-size: 10px;*/
+  font-weight: bolder;
+  color:#9900CC; 
+}
+
+.ui.divider{
+  margin-right:159px;
+  margin-left:189px;
+}
+
+.bottom-topic{
+  margin-top: 10px;
+   margin-left: 30px;
+}
+
+.marewill{
+  color:#9900CC;
+  font-weight: bold;
+  font-size: 24px;
+  font-family: 'Ubuntu';
+}
+
+.home-footer{
+  position: absolute;
+  margin-top: 400px;
+ margin-bottom: 0;
+  height: auto;
+  width: 100%;
+  background-color: #B2B2B2;
+}
+
+i.icon{
+  color: #000000;
+}
+
+
+.footer-content{
+  margin-top: 5px;
+  margin-bottom: 25px;
+}
+>>>>>>> 25c78ec67f7343aa9978f34f2383c4a3b3f153b1
