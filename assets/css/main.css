@@ -3,11 +3,6 @@
 @import url(http://fonts.googleapis.com/css?family=Abel);
 
 
-
-a#scrollUp i{
-  font-size: 30px;
-}
-
 a#scrollUp {
   bottom: 0px;
   right: 10px;
@@ -210,4 +205,22 @@ i.icon{
 .footer-content{
   margin-top: 5px;
   margin-bottom: 25px;
+}
+
+.headerback{
+  background-color:#9900CC;
+}
+
+.form-horizontal .control-label{
+  text-align: left;
+}
+
+.signup{
+  margin-top: 15px;
+  float: right;
+  background-color: ;
+}
+
+a#scrollUp i{
+  font-size: 30px;
 }

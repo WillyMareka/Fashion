@@ -7,6 +7,7 @@
     <link href="<?php echo base_url() . 'assets/semantic/dist/semantic.css'?>" rel="stylesheet">
     <link href="<?php echo base_url() . 'assets/dist/css/bootstrap.css'?>" rel="stylesheet">
     <link href="<?php echo base_url() . 'assets/css/animate.css'?>" rel="stylesheet">
+    <link href="<?php echo base_url() . 'assets/css/font-awesome.min.css'?>" rel="stylesheet">
     <link href="<?php echo base_url() . 'assets/css/styles.css'?>" rel="stylesheet">
     <link href="<?php echo base_url() . 'assets/css/styles2.css'?>" rel="stylesheet">
     <link href="<?php echo base_url() . 'assets/css/main.css'?>" rel="stylesheet">
