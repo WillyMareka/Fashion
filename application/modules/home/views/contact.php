@@ -1,13 +1,23 @@
+<div id="home" class="headering scroll">
+			<div class="container">
+				
+				<!-- <div class="logo">
+					<a href="index.html"><img src="web/images/logo.png" title="Mabur" /></a>
+				</div> -->
+				
+				<!----start-top-nav---->
+				
+				<div class="clearfix"> </div>
+				<div class="slide-text text-center">
+					<h1>MAREWILL FASHION</h1>
+					<span>WANT TO KNOW MORE</span>
+					<a class="slide-btn btn-color" href="#contact">Contacts</a>
+				</div>
+				<!----//End-top-nav---->
+			</div>
+		</div>
 
-<div class="jumbotron top-contact">
-	<div class="first-text">
-       <h1>Want to know more</h1>
-       <p>Go ahead and contact us</p>
-       <p><a class="btn btn-color btn-lg" href="#messaging" role="button">Learn more</a></p>
-	
-     
-    </div>
-</div>
+
 
 
       <div class="grid_12">
@@ -17,6 +27,8 @@
           </figure>
         </div>
       </div>
+
+     
 
       <div class="contact" id="contact">
 	<div class="wrap">
@@ -81,4 +93,8 @@
 			  </div>
 			  </div>
      	</div>
+
+
+
+
 

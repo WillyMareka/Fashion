@@ -267,14 +267,20 @@ i.social{
 }
 
 .top-contact{
-    background-image: url('../images/contactimage.jpg');
+  height:500px;
+  width:100%;
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
     background-size: cover;
-    
+    background-image: url('../images/contactimage.jpg');
 }
 
+.first-text{
+  margin-left: 90px;
+  margin-top: 150px;
+}
 
+/*#9900CC*/
 
 
