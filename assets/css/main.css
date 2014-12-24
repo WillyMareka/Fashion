@@ -206,7 +206,7 @@ a#scrollUp {
 
 .home-footer{
   position: absolute;
-  margin-top: 400px;
+  /*margin-top: 400px;*/
  margin-bottom: 0;
   height: auto;
   width: 100%;
