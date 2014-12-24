@@ -2,6 +2,11 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,800,300,600,700);
 @import url(http://fonts.googleapis.com/css?family=Abel);
 
+*
+{
+  margin: 0px;
+  padding: 0px;
+}
 
 a#scrollUp {
   bottom: 0px;
@@ -12,6 +17,17 @@ a#scrollUp {
   font-size: 30px;
   -webkit-animation: bounce 2s ease infinite;
   animation: bounce 2s ease infinite;
+}
+
+
+.jumbotron{
+    margin: 0;
+    height: 500px;
+    width: 100% !important;
+    bottom: 0;
+    z-index: -2;
+    font-family: 'Ubuntu', sans-serif;
+    overflow: auto;
 }
 
 
@@ -223,4 +239,29 @@ i.icon{
 
 a#scrollUp i{
   font-size: 30px;
+
 }
+
+.well-info{
+  background-color:#CE85FF;
+}
+
+
+i.social{
+  color: #FFFFFF;
+}
+
+.btn-color{
+  background-color: #9900CC;
+  color: #FFFFFF;
+}
+
+.top-contact{
+    background-image: url('../images/contactimage.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    
+}
+
