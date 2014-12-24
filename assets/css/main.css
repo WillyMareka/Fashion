@@ -60,18 +60,19 @@ a#scrollUp {
 }
 
 .category-tab ul li a{
-	font-size: 12px;
+	font-size: 24px;
 }
 
-.category-tab .nav-tabs li{
-	float: none;
+.category-tab .navi-tabings li{
+	float: left;
+  display: inline;
 }
 
 .catblock{
 	display: inline-table;
 }
 
-.nav-tabs  li.active  a, .nav-tabs  li.active  a:hover, .nav-tabs  li.active  a:focus {
+.navi-tabings  li.active  a, .navi-tabings  li.active  a:hover, .navi-tabings  li.active  a:focus {
   -moz-border-bottom-colors: none;
   -moz-border-left-colors: none;
   -moz-border-right-colors: none;
@@ -85,7 +86,7 @@ a#scrollUp {
   margin-left:0;
 }
 
-.nav-tabs  li  a {
+.navi-tabings  li  a {
   border: 1px solid rgba(0, 0, 0, 0);
   border-bottom: 1px solid #000000;
   border-radius: 4px 4px 0 0;
@@ -95,7 +96,7 @@ a#scrollUp {
 }
 
 
-.nav-tabs li a:hover{
+.navi-tabings li a:hover{
 	background-color: #9900CC;
 	border-bottom: 1px solid #000000;
 	color:#FFFFFF;
@@ -103,6 +104,15 @@ a#scrollUp {
 
 .dis{
 	border-bottom: 2px solid #000000;
+  font-weight: bolder;
+
+}
+
+.dis > li{
+  display: inline-block;
+  height: 20px;
+ /* margin: 10px;*/
+  padding: 5px;
 }
 
 .carou{
@@ -142,6 +152,7 @@ a#scrollUp {
 }
 
 .display{
+  margin-top: 60px;
    margin-left: 190px;
 	width:1000px;
 }
@@ -217,6 +228,15 @@ a#scrollUp {
 .home-footer{
   position: absolute;
   /*margin-top: 400px;*/
+ margin-bottom: 0;
+  height: auto;
+  width: 100%;
+  background-color: #B2B2B2;
+}
+
+.home-foot{
+  position: absolute;
+  margin-top: 400px;
  margin-bottom: 0;
   height: auto;
   width: 100%;
