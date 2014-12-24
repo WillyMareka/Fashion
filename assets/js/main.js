@@ -1,3 +1,6 @@
+	
+/*scroll to top*/
+
 $(document).ready(function(){
 	$(function () {
 		$.scrollUp({
@@ -10,11 +13,16 @@ $(document).ready(function(){
 	        animationSpeed: 200, // Animation in speed (ms)
 	        scrollTrigger: false, // Set a custom triggering element. Can be an HTML string or jQuery object
 					//scrollTarget: false, // Set a custom target element for scrolling to the top
-	        scrollText: '<i class="fa fa-angle-up"></i>', // Text for element, can contain HTML
+	        scrollText: '<i class="angle double up icon social"></i>', // Text for element, can contain HTML
 	        scrollTitle: false, // Set a custom <a> title if required.
 	        scrollImg: false, // Set true to use image
 	        activeOverlay: false, // Set CSS color to display scrollUp active point, e.g '#00FFFF'
 	        zIndex: 2147483647 // Z-Index for the overlay
 		});
 	});
+
+
+
+
+	
 });

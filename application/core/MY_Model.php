@@ -9,11 +9,5 @@ class MY_Model extends CI_Model {
         date_default_timezone_set('Africa/Nairobi');
     }
 
-    public function getCourses()
-    {
-    	$query = $this->db->query("SELECT * FROM courses ORDER BY course_no");
-    	$result = $query->result_array();
-
-    	return $result;
-    }
+    
 }

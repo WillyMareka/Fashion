@@ -1,32 +1,8 @@
-<html>
-<head>
-	<title>
-        MareWill Fashion
-	</title>
-    <link href="<?php echo base_url() . 'assets/script/jquery/jquery-ui.css'?>" rel="stylesheet">
-    <link href="<?php echo base_url() . 'assets/semantic/dist/semantic.css'?>" rel="stylesheet">
-    <link href="<?php echo base_url() . 'assets/dist/css/bootstrap.css'?>" rel="stylesheet">
-    <link href="<?php echo base_url() . 'assets/css/styles.css'?>" rel="stylesheet">
-    <link href="<?php echo base_url() . 'assets/css/styles2.css'?>" rel="stylesheet">
-    <link href="<?php echo base_url() . 'assets/css/main.css'?>" rel="stylesheet">
-	
-</head>
-<body>
 
-<div class="header">
 
-  <div class="left-header">
-    MAREWILL FASHION WEBSITE 
-  </div>
-  <div class="middle-header">
-    <i class="call icon"></i> (+254) 0714 135 480
-    &nbsp &nbsp
-    <i class="mail icon"></i> marewillfashion@gmail.com
-  </div>
-</div>  
-  
+
   <div class="container">
-      <img src="<?php echo base_url() . 'assets/images/fashiongirl.png'?>" alt="...">
+     
      <span>
       <div id="signupbox" style="margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
         			
@@ -36,98 +12,121 @@
                             
                         </div>  
                         <div class="panel-body" >
-                            <form id="signupform" class="form-horizontal" role="form">
+                            <form id="signupform" method="POST" action="<?php echo base_url() . 'user/create_member'?>" class="form-horizontal" role="form">
                   
+                            <div class="well well-sm well-info">Please fill all fields</div>
+                              <?php 
+                                  echo form_open('user/create_member');
+                              ?>
                                 <div class="form-group">
                                     <label for="firstname" class="col-md-3 control-label">First Name</label>
                                     <div class="col-md-9">
-                                        <input type="text" class="form-control" name="firstname" placeholder="First Name">
+                                        <input type="text" required class="form-control" value="<?php echo set_value('firstname'); ?>" name="firstname" placeholder="First Name">
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="firstname" class="col-md-3 control-label">Middle Name</label>
+                                    <label for="middlename" class="col-md-3 control-label">Middle Name</label>
                                     <div class="col-md-9">
-                                        <input type="text" class="form-control" name="middlename" placeholder="Middle Name">
+                                        <input type="text" class="form-control" name="middlename" value="<?php echo set_value('middlename'); ?>" placeholder="Middle Name">
                                     </div>
                                 </div>
                                  <div class="form-group">
                                     <label for="lastname" class="col-md-3 control-label">Last Name</label>
                                     <div class="col-md-9">
-                                        <input type="text" class="form-control" name="lastname" placeholder="Last Name">
+                                        <input type="text" required class="form-control" name="lastname" value="<?php echo set_value('lastname'); ?>" placeholder="Last Name">
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="firstname" class="col-md-3 control-label">Age</label>
+                                    <label for="age" class="col-md-3 control-label">Age</label>
                                     <div class="col-md-9">
-                                        <input type="text" class="form-control" name="Age" placeholder="Age">
+                                        <input type="text" class="form-control" name="age" value="<?php echo set_value('age'); ?>" placeholder="Age">
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="firstname" class="col-md-3 control-label">Nationality</label>
+                                    <label for="nationality" class="col-md-3 control-label">Nationality</label>
                                     <div class="col-md-9">
-                                        <input type="text" class="form-control" name="nationality" placeholder="Nationality">
+                                        <input type="text" required class="form-control" name="nationality" value="<?php echo set_value('nationality'); ?>" placeholder="Nationality">
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="firstname" class="col-md-3 control-label">Phone Number</label>
+                                    <label for="phonenumber" class="col-md-3 control-label">Phone Number</label>
                                     <div class="col-md-9">
-                                        <input type="text" class="form-control" name="phonenumber" placeholder="Phone Number">
+                                        <input type="text" class="form-control" name="phonenumber" value="<?php echo set_value('phonenumber'); ?>" placeholder="Phone Number">
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label for="email" class="col-md-3 control-label">Email</label>
                                     <div class="col-md-9">
-                                        <input type="text" class="form-control" name="email" placeholder="Email Address">
+                                        <input type="text" required class="form-control" name="email" value="<?php echo set_value('email'); ?>" placeholder="Email Address">
                                     </div>
                                 </div>
                                  <div class="form-group">
-                                    <label for="lastname" class="col-md-3 control-label">Residence</label>
+                                    <label for="residence" class="col-md-3 control-label">Residence</label>
                                     <div class="col-md-9">
-                                        <input type="text" class="form-control" name="residence" placeholder="Residence">
+                                        <input type="text" class="form-control" name="residence" value="<?php echo set_value('residence'); ?>" placeholder="Residence">
                                     </div>
                                 </div>   
                                 <div class="form-group">
-                                    <label for="lastname" class="col-md-3 control-label">Religion</label>
+                                    <label for="religion" class="col-md-3 control-label">Religion</label>
                                     <div class="col-md-9">
-                                        <input type="text" class="form-control" name="religion" placeholder="Religion">
-                                    </div>
-                                </div>
-                                 <div class="radio">
-                                    <label for="lastname" class="col-md-3 control-label">Male</label>
-                                    <div class="col-md-9">
-                                        <input type="radio" class="radio" name="male" placeholder="Male">
-                                    </div>
-                                </div>
-                                <div class="radio">
-                                    <label for="lastname" class="col-md-3 control-label">Female</label>
-                                    <div class="col-md-9">
-                                        <input type="radio" class="radio" name="female" placeholder="Female">
-                                    </div>
-                                </div>
-                                 <div class="form-group">
-                                    <label for="lastname" class="col-md-3 control-label">Date Registered</label>
-                                    <div class="col-md-9">
-                                        <input type="text" class="form-control" name="lastname" placeholder="Last Name">
+                                        <input type="text" class="form-control" name="religion" value="<?php echo set_value('religion'); ?>" placeholder="Religion">
                                     </div>
                                 </div>
                                 <div class="form-group">
+                                    <label for="genders" class="col-md-3 control-label">Gender</label>
+                                    <div class="genders" name="genders">
+                                       <div class="col-md-3">
+                                        <label for="gender" class="control-label">Male</label>
+                                        <input type="radio" class="gender" name="gender" value="Male">
+                                       </div>
+                                       <div class="col-md-3">
+                                        <label for="gender" class="control-label">Female</label>
+                                        <input type="radio" class="gender" name="gender" value="Female">
+                                       </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="username" class="col-md-3 control-label">User Name</label>
+                                    <div class="col-md-9">
+                                        <input type="text" required class="form-control" value="<?php echo set_value('username'); ?>" name="username" placeholder="UserName">
+                                    </div>
+                                </div>
+                          
+                                <div class="form-group">
+                                    <label for="pass1" class="col-md-3 control-label">Enter Password</label>
+                                    <div class="col-md-9">
+                                        <input type="password" required class="form-control" name="pass1" placeholder="Password Here">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="pass2" class="col-md-3 control-label">Re-Enter Password</label>
+                                    <div class="col-md-9">
+                                        <input type="password" required class="form-control" name="pass2" placeholder="Re-Enter Here">
+                                    </div>
+                                </div>
+                               
+
+                                <div class="form-group">
                                     <!-- Button -->                                        
                                     <div class="col-md-offset-3 col-md-9">
-                                        <button id="btn-signup" type="button" class="btn btn-info"><i class="icon-hand-right"></i> Sign Up</button>
+                                        <button id="btn-signup" type="submit" class="btn btn-success signup"><i class="icon-hand-right"></i> Sign Up</button>
                                          
                                     </div>
                                 </div>
-                              
+
+                              <?php 
+                                  echo validation_errors('<p class="error">'); 
+                              ?>
+                              <?php 
+                                  echo form_close();
+                              ?>
                                 </form>
                          </div>
                     </div>
          </div> 
          </span>
     </div>
-    
-    <div class="footer">
-	MareWill Fashion &copy; <?php echo date('Y');?>. All Rights Reserved
-</div>
-</body>  
-  
-</html>
+
+
