@@ -3,36 +3,38 @@
 @import url(http://fonts.googleapis.com/css?family=Abel);
 
 
-<<<<<<< HEAD
-=======
+*
+{
+  margin: 0px;
+  padding: 0px;
 
-a#scrollUp i{
-  font-size: 30px;
 }
 
->>>>>>> 25c78ec67f7343aa9978f34f2383c4a3b3f153b1
+
 a#scrollUp {
   bottom: 0px;
   right: 10px;
   padding: 5px 10px;
-<<<<<<< HEAD
-  background: #FE980F;
-  color: #FFF;
-=======
   background: #9900CC;
   color: #FFF;
   font-size: 30px;
->>>>>>> 25c78ec67f7343aa9978f34f2383c4a3b3f153b1
+
   -webkit-animation: bounce 2s ease infinite;
   animation: bounce 2s ease infinite;
 }
 
-<<<<<<< HEAD
-a#scrollUp i{
-  font-size: 30px;
+
+
+.jumbotron{
+    margin: 0;
+    height: 500px;
+    width: 100% !important;
+    bottom: 0;
+    z-index: -2;
+    font-family: 'Ubuntu', sans-serif;
+    overflow: auto;
 }
-=======
->>>>>>> 25c78ec67f7343aa9978f34f2383c4a3b3f153b1
+
 
 .category-tab {
   overflow: hidden;
@@ -63,18 +65,19 @@ a#scrollUp i{
 }
 
 .category-tab ul li a{
-	font-size: 12px;
+	font-size: 24px;
 }
 
-.category-tab .nav-tabs li{
-	float: none;
+.category-tab .navi-tabings li{
+	float: left;
+  display: inline;
 }
 
 .catblock{
 	display: inline-table;
 }
 
-.nav-tabs  li.active  a, .nav-tabs  li.active  a:hover, .nav-tabs  li.active  a:focus {
+.navi-tabings  li.active  a, .navi-tabings  li.active  a:hover, .navi-tabings  li.active  a:focus {
   -moz-border-bottom-colors: none;
   -moz-border-left-colors: none;
   -moz-border-right-colors: none;
@@ -88,7 +91,7 @@ a#scrollUp i{
   margin-left:0;
 }
 
-.nav-tabs  li  a {
+.navi-tabings  li  a {
   border: 1px solid rgba(0, 0, 0, 0);
   border-bottom: 1px solid #000000;
   border-radius: 4px 4px 0 0;
@@ -98,7 +101,7 @@ a#scrollUp i{
 }
 
 
-.nav-tabs li a:hover{
+.navi-tabings li a:hover{
 	background-color: #9900CC;
 	border-bottom: 1px solid #000000;
 	color:#FFFFFF;
@@ -106,6 +109,15 @@ a#scrollUp i{
 
 .dis{
 	border-bottom: 2px solid #000000;
+  font-weight: bolder;
+
+}
+
+.dis > li{
+  display: inline-block;
+  height: 20px;
+ /* margin: 10px;*/
+  padding: 5px;
 }
 
 .carou{
@@ -132,7 +144,7 @@ a#scrollUp i{
 .left-header{
 	text-align: center;
 	margin-left: 10px;
-	margin-top: 5px;
+	/*margin-top: 2px;*/
 	float:left;
 }
 
@@ -140,11 +152,12 @@ a#scrollUp i{
 	text-align: center;
 	/*margin-left: 10px;*/
 	/*margin-top: 5px;*/
-	padding-top: 5px;
+	/*padding-top: 5px;*/
 	
 }
 
 .display{
+  margin-top: 60px;
    margin-left: 190px;
 	width:1000px;
 }
@@ -235,6 +248,16 @@ a#scrollUp i{
    margin-left: 30px;
 }
 
+.shadow{
+    position: absolute;
+    width: 100%;
+    height: 142px;
+    bottom: 0;
+    left: 0;
+    margin-bottom: -1px;
+    background: url('../images/shadow.png') repeat-x;
+}
+
 .marewill{
   color:#9900CC;
   font-weight: bold;
@@ -243,6 +266,15 @@ a#scrollUp i{
 }
 
 .home-footer{
+  position: absolute;
+  /*margin-top: 400px;*/
+ margin-bottom: 0;
+  height: auto;
+  width: 100%;
+  background-color: #B2B2B2;
+}
+
+.home-foot{
   position: absolute;
   margin-top: 400px;
  margin-bottom: 0;
@@ -260,4 +292,55 @@ i.icon{
   margin-top: 5px;
   margin-bottom: 25px;
 }
->>>>>>> 25c78ec67f7343aa9978f34f2383c4a3b3f153b1
+
+
+.headerback{
+  background-color:#9900CC;
+}
+
+.form-horizontal .control-label{
+  text-align: left;
+}
+
+.signup{
+  margin-top: 15px;
+  float: right;
+  background-color: ;
+}
+
+a#scrollUp i{
+  font-size: 30px;
+
+}
+
+.well-info{
+  background-color:#CE85FF;
+}
+
+
+i.social{
+  color: #FFFFFF;
+}
+
+.btn-color{
+  background-color: #9900CC;
+  color: #FFFFFF;
+}
+
+.top-contact{
+  height:500px;
+  width:100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    background-image: url('../images/contactimage.jpg');
+}
+
+.first-text{
+  margin-left: 90px;
+  margin-top: 150px;
+}
+
+/*#9900CC*/
+

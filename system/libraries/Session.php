@@ -26,11 +26,11 @@
  */
 class CI_Session {
 
-	var $sess_encrypt_cookie		= FALSE;
-	var $sess_use_database			= FALSE;
-	var $sess_table_name			= '';
+	var $sess_encrypt_cookie		= TRUE;
+	var $sess_use_database			= TRUE;
+	var $sess_table_name			= 'ci_sessions';
 	var $sess_expiration			= 7200;
-	var $sess_expire_on_close		= FALSE;
+	var $sess_expire_on_close		= TRUE;
 	var $sess_match_ip				= FALSE;
 	var $sess_match_useragent		= TRUE;
 	var $sess_cookie_name			= 'ci_session';
@@ -214,8 +214,8 @@ class CI_Session {
 		// Is there a corresponding session in the DB?
 		if ($this->sess_use_database === TRUE)
 		{
-			$this->CI->db->where('session_id', $session['session_id']);
-
+			$ma = $this->CI->db->where('session_id', $session['session_id']);
+			
 			if ($this->sess_match_ip == TRUE)
 			{
 				$this->CI->db->where('ip_address', $session['ip_address']);
