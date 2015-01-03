@@ -37,6 +37,7 @@ class Home extends CI_Controller {
 		$this->load->view('contact');
 		$this->load->view('footer');
 	}
+	
 }
 
 /* End of file welcome.php */

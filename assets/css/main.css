@@ -342,5 +342,12 @@ i.social{
   margin-top: 150px;
 }
 
+.aboutpage {
+    background-image: url("'../images/ThisisEss14.jpg'");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+} 
+
 /*#9900CC*/
 
