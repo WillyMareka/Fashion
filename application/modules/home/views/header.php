@@ -25,7 +25,7 @@
 <body>
 
 <div class="header">
-
+ <div class="header-content">
   <div class="left-header">
     MAREWILL FASHION WEBSITE 
   </div>
@@ -34,7 +34,7 @@
     &nbsp &nbsp
     <i class="mail icon"></i> marewillfashion@gmail.com
   </div>
-  
+ </div>
 </div>
 <!-- Top Home Navigation -->
 <div id='topmenu' class="over">
@@ -46,10 +46,6 @@
    <li class='left'><a href='<?php echo base_url(). 'home/about'?>'>About</a></li>
    <li class='left'><a href='<?php echo base_url(). 'home/contact'?>'>Contact</a></li>
    <li class='right'><a href='<?php echo base_url(). 'user/log'?>'>Log In</a>
-      <!-- <ul>
-        <li><a href='<?php echo base_url(). 'user/log'?>'>Log In</a></li>
-        <li><a href='<?php echo base_url(). 'user/sign'?>'>Sign Up</a></li>      
-      </ul> -->
    </li>
 </ul>
 </div>

@@ -35,10 +35,7 @@
    <li class='left'><a href='<?php echo base_url(). 'home/about'?>'>About</a></li>
    <li class='left'><a href='<?php echo base_url(). 'home/contact'?>'>Contact</a></li>
    <li class='active right'><a href='<?php echo base_url(). 'user/sign'?>'>Sign Up</a>
-      <!-- <ul>
-        <li><a href='<?php echo base_url(). 'user/log'?>'>Log In</a></li>
-        <li><a href='<?php echo base_url(). 'user/sign'?>'>Sign Up</a></li>      
-      </ul> -->
+      
    </li>
 </ul>
 </div>

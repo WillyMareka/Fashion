@@ -17,8 +17,8 @@
 
 
 
-  	    <div class="container">    
-        <div id="loginbox" style="margin-top:130px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">                    
+  	    <div class="container logspace">    
+        <div id="loginbox" style="margin-top:30px;margin-bottom:101px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">                    
             <div class="panel panel-info" >
                     <div class="panel-heading headerback">
                         <div class="panel-title  ">Log In</div>

@@ -49,7 +49,7 @@
 
 <div class="display">
       <ul class="navi navi-tabings dis">
-         <li role="presentation" class="active"><a href="#tshirt" data-toggle="tab">T-Shirts</a></li>
+         <li role="presentation"><a href="#tshirt" data-toggle="tab">T-Shirts</a></li>
          <li role="presentation"><a href="#suits" data-toggle="tab">Suits</a></li>
          <li role="presentation"><a href="#skirts" data-toggle="tab">Skirts</a></li>
          <li role="presentation"><a href="#sunglasses" data-toggle="tab">SunGlasses</a></li>
