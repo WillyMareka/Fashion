@@ -6,7 +6,7 @@
     
     <link rel="stylesheet" type="text/css" href="<?php echo base_url() . 'assets/css/bootstrap-responsive.css'?>" />
     
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url() . 'assets/css/pluton.css'?>" />
+    <link type="text/css" href="<?php echo base_url() . 'assets/css/style.css'?>" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url() . 'assets/css/jquery.cslider.css'?>" />
     <link rel="stylesheet" type="text/css" href="<?php echo base_url() . 'assets/css/jquery.bxslider.css'?>" />
     <link type="text/css" href="<?php echo base_url() . 'assets/script/jquery/jquery-ui.css'?>" rel="stylesheet">
@@ -15,9 +15,11 @@
     <link type="text/css" href="<?php echo base_url() . 'assets/css/font-awesome.min.css'?>" rel="stylesheet">
     <link type="text/css" href="<?php echo base_url() . 'assets/css/animate.css'?>" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url() . 'assets/css/style.css'?>" />
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url() . 'assets/css/theme-style.css'?>" />
     <link type="text/css" href="<?php echo base_url() . 'assets/css/styles.css'?>" rel="stylesheet">
     <link type="text/css" href="<?php echo base_url() . 'assets/css/styles2.css'?>" rel="stylesheet">
     <link type="text/css" href="<?php echo base_url() . 'assets/css/main.css'?>" rel="stylesheet">
+    
 	
 </head>
 <body>

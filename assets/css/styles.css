@@ -32,7 +32,10 @@
   font-family: 'Open Sans', sans-serif;
   line-height: 1;
   background: #ffffff;
+<<<<<<< HEAD
+=======
   border-bottom: 1px solid #9900CC;
+>>>>>>> 25c78ec67f7343aa9978f34f2383c4a3b3f153b1
 }
 #menu-line {
   position: absolute;
@@ -154,6 +157,10 @@
   -o-transition: color .2s ease;
   transition: color .2s ease;
 }
+<<<<<<< HEAD
+
+=======
+>>>>>>> 25c78ec67f7343aa9978f34f2383c4a3b3f153b1
 #topmenu ul ul li:hover > a,
 #topmenu ul ul li a:hover {
   color: #ffffff;

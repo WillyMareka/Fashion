@@ -2,11 +2,14 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,800,300,600,700);
 @import url(http://fonts.googleapis.com/css?family=Abel);
 
+
 *
 {
   margin: 0px;
   padding: 0px;
+
 }
+
 
 a#scrollUp {
   bottom: 0px;
@@ -15,9 +18,11 @@ a#scrollUp {
   background: #9900CC;
   color: #FFF;
   font-size: 30px;
+
   -webkit-animation: bounce 2s ease infinite;
   animation: bounce 2s ease infinite;
 }
+
 
 
 .jumbotron{
@@ -60,18 +65,19 @@ a#scrollUp {
 }
 
 .category-tab ul li a{
-	font-size: 12px;
+	font-size: 24px;
 }
 
-.category-tab .nav-tabs li{
-	float: none;
+.category-tab .navi-tabings li{
+	float: left;
+  display: inline;
 }
 
 .catblock{
 	display: inline-table;
 }
 
-.nav-tabs  li.active  a, .nav-tabs  li.active  a:hover, .nav-tabs  li.active  a:focus {
+.navi-tabings  li.active  a, .navi-tabings  li.active  a:hover, .navi-tabings  li.active  a:focus {
   -moz-border-bottom-colors: none;
   -moz-border-left-colors: none;
   -moz-border-right-colors: none;
@@ -85,7 +91,7 @@ a#scrollUp {
   margin-left:0;
 }
 
-.nav-tabs  li  a {
+.navi-tabings  li  a {
   border: 1px solid rgba(0, 0, 0, 0);
   border-bottom: 1px solid #000000;
   border-radius: 4px 4px 0 0;
@@ -95,7 +101,7 @@ a#scrollUp {
 }
 
 
-.nav-tabs li a:hover{
+.navi-tabings li a:hover{
 	background-color: #9900CC;
 	border-bottom: 1px solid #000000;
 	color:#FFFFFF;
@@ -103,6 +109,15 @@ a#scrollUp {
 
 .dis{
 	border-bottom: 2px solid #000000;
+  font-weight: bolder;
+
+}
+
+.dis > li{
+  display: inline-block;
+  height: 20px;
+ /* margin: 10px;*/
+  padding: 5px;
 }
 
 .carou{
@@ -129,7 +144,7 @@ a#scrollUp {
 .left-header{
 	text-align: center;
 	margin-left: 10px;
-	margin-top: 5px;
+	/*margin-top: 2px;*/
 	float:left;
 }
 
@@ -137,11 +152,12 @@ a#scrollUp {
 	text-align: center;
 	/*margin-left: 10px;*/
 	/*margin-top: 5px;*/
-	padding-top: 5px;
+	/*padding-top: 5px;*/
 	
 }
 
 .display{
+  margin-top: 60px;
    margin-left: 190px;
 	width:1000px;
 }
@@ -164,6 +180,41 @@ a#scrollUp {
     float: right;
 }
 
+<<<<<<< HEAD
+.login_tab{
+	margin-left: auto;
+    margin-right: auto;
+    width: 6em
+	
+}
+
+#signup{
+	background-image: url('../../images/fashiongirl.png');
+}
+
+.footer{
+	position: relative;
+    right: -500px;
+    margin-bottom:100px;
+	
+}
+.panel-body{
+	color: #dddddd;
+}
+#signupbox{
+	position: relative;
+	float:left;
+}
+/*.signupimage{
+	position: relative; 
+   	width: 50px;
+}*/
+/*.pricing {
+  position: absolute;
+  left: 80%;
+  top: 52%;
+}*/
+=======
 .imagesize{
     height:260px;
     width:260px;
@@ -197,6 +248,16 @@ a#scrollUp {
    margin-left: 30px;
 }
 
+.shadow{
+    position: absolute;
+    width: 100%;
+    height: 142px;
+    bottom: 0;
+    left: 0;
+    margin-bottom: -1px;
+    background: url('../images/shadow.png') repeat-x;
+}
+
 .marewill{
   color:#9900CC;
   font-weight: bold;
@@ -205,6 +266,15 @@ a#scrollUp {
 }
 
 .home-footer{
+  position: absolute;
+  /*margin-top: 400px;*/
+ margin-bottom: 0;
+  height: auto;
+  width: 100%;
+  background-color: #B2B2B2;
+}
+
+.home-foot{
   position: absolute;
   margin-top: 400px;
  margin-bottom: 0;
@@ -222,6 +292,7 @@ i.icon{
   margin-top: 5px;
   margin-bottom: 25px;
 }
+
 
 .headerback{
   background-color:#9900CC;
@@ -257,11 +328,26 @@ i.social{
 }
 
 .top-contact{
-    background-image: url('../images/contactimage.jpg');
+  height:500px;
+  width:100%;
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
     background-size: cover;
-    
+    background-image: url('../images/contactimage.jpg');
 }
+
+.first-text{
+  margin-left: 90px;
+  margin-top: 150px;
+}
+
+.aboutpage {
+    background-image: url("'../images/ThisisEss14.jpg'");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+} 
+
+/*#9900CC*/
 
