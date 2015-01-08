@@ -40,12 +40,11 @@
 <div id='topmenu' class="over">
 <ul>
    <li class='left'><a href='<?php echo base_url(). 'home/index'?>'>Home</a></li>
-   <li class='left'><a href='<?php echo base_url(). 'products/view'?>'>Products</a>
+   <li class='left active'><a href='<?php echo base_url(). 'products/view'?>'>Products</a>
      
    </li>
    <li class='left'><a href='<?php echo base_url(). 'home/about'?>'>About</a></li>
    <li class='left'><a href='<?php echo base_url(). 'home/contact'?>'>Contact</a></li>
-   <li class='right'><a href='<?php echo base_url(). 'user/sign'?>'>Sign Up</a>
    <li class='right'><a href='<?php echo base_url(). 'user/log'?>'>Log In</a>
    </li>
 </ul>

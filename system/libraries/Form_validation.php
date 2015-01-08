@@ -948,13 +948,22 @@ class CI_Form_validation {
 	 * @param	field
 	 * @return	bool
 	 */
-	public function is_unique($str, $field)
-	{
-		list($table, $field)=explode('.', $field);
-		$query = $this->CI->db->limit(1)->get_where($table, array($field => $str));
+
+	// public function is_unique($str, $field)
+	// {
+	// 	list($table, $field)=explode('.', $field);
+	// 	$query = $this->CI->db->limit(1)->get_where($table, array($field => $str));
 		
-		return $query->num_rows() === 0;
-    }
+	// 	return $query->num_rows() === 0;
+ //    }
+
+	 public function is_unique($str, $field)
+	{
+		sscanf($field, '%[^.].%[^.]', $table, $field);
+		return isset($this->CI->db)
+			? ($this->CI->db->limit(1)->get_where($table, array($field => $str))->num_rows() === 0)
+			: FALSE;
+	}
 
 	// --------------------------------------------------------------------
 

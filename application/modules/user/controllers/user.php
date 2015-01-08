@@ -23,6 +23,7 @@ class User extends CI_Controller {
     {
         // Call the Model constructor
         parent::__construct();
+        
         $this->load->model('user_model');
         
         //this is some random change
@@ -48,38 +49,38 @@ class User extends CI_Controller {
 		$this->load->view('v_fail');
 	}
 
-	function validation()
-	{
-		$this->load->model('user_model');
-		$query = $this->user_model->validate();
+	// function validation()
+	// {
+	// 	$this->load->model('user_model');
+	// 	$query = $this->user_model->validate();
 
-		if($query){
-			$data = array(
-              'username' => $this->input->post('username'),
-              'is_logged_in' => true
-			);
-			$this->session->set_userdata($data);
-			redirect('products/v_products');
-		}else{
-			$data['new_user'] = 'Incorrect Username or Password<br/><br/>Please try again...';
-		}
-	}
+	// 	if($query){
+	// 		$data = array(
+ //              'username' => $this->input->post('username'),
+ //              'is_logged_in' => true
+	// 		);
+	// 		$this->session->set_userdata($data);
+	// 		redirect('products/v_products');
+	// 	}else{
+	// 		$data['new_user'] = 'Incorrect Username or Password<br/><br/>Please try again...';
+	// 	}
+	// }
 
 	function create_member()
 	{
 		$this->load->library('form_validation');
         
-        $this->form_validation->set_rules('firstname', 'First Name', 'trim|min_length[3]|required');
-        $this->form_validation->set_rules('middlename', 'Middle Name', 'trim|min_length[3]');
-        $this->form_validation->set_rules('lastname', 'Last Name', 'trim|min_length[3]|required');
+        $this->form_validation->set_rules('firstname', 'First Name', 'trim|min_length[3]|required|xss_clean');
+        $this->form_validation->set_rules('middlename', 'Middle Name', 'trim|min_length[3]|xss_clean');
+        $this->form_validation->set_rules('lastname', 'Last Name', 'trim|min_length[3]|required|xss_clean');
         $this->form_validation->set_rules('phonenumber', 'Phone Number', 'trim|min_length[3]');
-        $this->form_validation->set_rules('age', 'Age', 'trim|min_length[3]');
-        $this->form_validation->set_rules('residence', 'Residence', 'trim|min_length[3]');
-        $this->form_validation->set_rules('nationality', 'Nationality', 'trim|min_length[3]|required');
-		$this->form_validation->set_rules('email', 'Email Address', 'trim|required|valid_email|is_unique[accounts.email]');
-        $this->form_validation->set_rules('pass1', 'Password', 'trim|min_length[3]|max_length[15]|required');
-        $this->form_validation->set_rules('username', 'UserName', 'trim|min_length[3]|required|callback_user_antiexists');
-        $this->form_validation->set_rules('pass2', 'Re-Enter Here', 'trim|required|matches[pass1]');
+        $this->form_validation->set_rules('age', 'Age', 'trim|min_length[2]');
+        $this->form_validation->set_rules('residence', 'Residence', 'trim|min_length[3]|xss_clean');
+        $this->form_validation->set_rules('nationality', 'Nationality', 'trim|min_length[3]|required|xss_clean');
+		$this->form_validation->set_rules('email', 'Email Address', 'trim|required|valid_email|xss_clean');
+        $this->form_validation->set_rules('pass1', 'Password', 'trim|min_length[3]|max_length[15]|required|xss_clean');
+        $this->form_validation->set_rules('username', 'User Name', 'trim|min_length[3]|required|xss_clean');
+        $this->form_validation->set_rules('pass2', 'Re-Entered Password', 'trim|required|matches[pass1]|xss_clean');
 
 		if($this->form_validation->run() == FALSE){
 			$this->load->view('sign_header');
@@ -88,36 +89,31 @@ class User extends CI_Controller {
 		    //echo 'Not working';
 		}else{
 			$this->load->model('user_model');
+			$result = $this->user_model->enter_member($data);
+               print_r($result);
 
-			if($query = $this->user_model->create_member()){
-				$data['new_user'] = 'Your account is created and ready.<br/><br/>You may now log in...';
-
-				$this->load->view('sign_header');
-		        $this->load->view('v_log', $data);
-		        $this->load->view('home/footer');
-			}else{
-                //echo 'not working';
-				$this->load->view('sign_header');
-		        $this->load->view('v_sign');
-		        $this->load->view('home/footer');
-		    }
+			if($result){
+              $this->load->view('products/view');			
+            }else{
+               echo 'There was a problem with the website.<br/>Please contact the administrator';
+			}
 		}
 	}
 
 	
 
-	function user_antiexists($user_entered)
-	{
-        $this->load->model('user_model');
+	// function user_antiexists($user_entered)
+	// {
+ //        $this->load->model('user_model');
 
-        $user_available = $this->user_model->user_antiexists($user_entered);
+ //        $user_available = $this->user_model->user_antiexists($user_entered);
 
-        if($user_available){
-           return TRUE;
-        }else{
-           return FALSE;
-        }
-	}
+ //        if($user_available){
+ //           return TRUE;
+ //        }else{
+ //           return FALSE;
+ //        }
+	// }
 
 	// function email_antiexists($email_entered)
 	// {

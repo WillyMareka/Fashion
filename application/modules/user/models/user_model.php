@@ -6,21 +6,21 @@ class User_model extends MY_Model {
     {
         // Call the Model constructor
         parent::__construct();
-        
+        date_default_timezone_set('Africa/Nairobi');
     }
 
-    public function validate(){
-        $this->db->where('username', $this->input->post('username'));
-        $this->db->where('password', md5($this->input->post('password')));
-        $query = $this->db->get('logs');
+    // public function validate(){
+    //     $this->db->where('username', $this->input->post('username'));
+    //     $this->db->where('password', md5($this->input->post('password')));
+    //     $query = $this->db->get('logs');
 
-        if($query->num_rows == 1){
-          return TRUE;
-        }
-    }
+    //     if($query->num_rows == 1){
+    //       return TRUE;
+    //     }
+    // }
 
 
-    function create_member(){
+    public function enter_member($data){
       $username = $this->input->post('username');
       $email = $this->input->post('email');
 
@@ -46,20 +46,20 @@ class User_model extends MY_Model {
       $insert1 = $this->db->insert('accounts', $new_member_details);
       $insert2 = $this->db->insert('logs', $new_member_credentials);
 
-      return $insert1;
+      echo $insert1;
     }
 
 
-    function user_antiexists($user_entered){
-         $this->db->where('username', $username);
-         $result->db->get('logs');
+    // function user_antiexists($user_entered){
+    //      $this->db->where('username', $username);
+    //      $result->db->get('logs');
 
-         if($result->num_rows() > 0){
-          return FALSE;
-         }else{
-          return TRUE;
-         }
-    }
+    //      if($result->num_rows() > 0){
+    //       return FALSE;
+    //      }else{
+    //       return TRUE;
+    //      }
+    // }
 
 
     // function email_antiexists($email_entered){

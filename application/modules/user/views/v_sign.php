@@ -12,9 +12,21 @@
                             
                         </div>  
                         <div class="panel-body" >
+
+                                                         
+                            <?php 
+                            
+                                  echo validation_errors('<p class="error">'); 
+                             
+
+                              ?>
+                             
                             <form id="signupform" method="POST" action="<?php echo base_url() . 'user/create_member'?>" class="form-horizontal black" role="form">
                   
                             <div class="well well-sm well-info">Please fill all fields</div>
+
+
+
                               <?php 
                                   echo form_open('user/create_member');
                               ?>
@@ -116,13 +128,10 @@
                                     </div>
                                 </div>
 
-                              <?php 
-                                  echo validation_errors('<p class="error">'); 
-                              ?>
-                              <?php 
-                                  echo form_close();
-                              ?>
+                              
                                 </form>
+
+
                          </div>
                     </div>
          </div> 
