@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class User extends CI_Controller {
+class User extends MX_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -77,7 +77,7 @@ class User extends CI_Controller {
         $this->form_validation->set_rules('age', 'Age', 'trim|min_length[2]');
         $this->form_validation->set_rules('residence', 'Residence', 'trim|min_length[3]|xss_clean');
         $this->form_validation->set_rules('nationality', 'Nationality', 'trim|min_length[3]|required|xss_clean');
-		$this->form_validation->set_rules('email', 'Email Address', 'trim|required|valid_email|xss_clean');
+		$this->form_validation->set_rules('email', 'Email Address', 'trim|required|valid_email|xss_clean|is_unique[accounts.email]');
         $this->form_validation->set_rules('pass1', 'Password', 'trim|min_length[3]|max_length[15]|required|xss_clean');
         $this->form_validation->set_rules('username', 'User Name', 'trim|min_length[3]|required|xss_clean');
         $this->form_validation->set_rules('pass2', 'Re-Entered Password', 'trim|required|matches[pass1]|xss_clean');
@@ -89,17 +89,18 @@ class User extends CI_Controller {
 		    //echo 'Not working';
 		}else{
 			$this->load->model('user_model');
-			$result = $this->user_model->enter_member($data);
-               print_r($result);
+			$result = $this->user_model->enter_member();
+               //print_r($result);
 
 			if($result){
-              $this->load->view('products/view');			
+              $this->load->view('products/p_header');
+		      $this->load->view('products/v_products');
+		      $this->load->view('products/p_footer');		
             }else{
                echo 'There was a problem with the website.<br/>Please contact the administrator';
 			}
 		}
 	}
-
 	
 
 	// function user_antiexists($user_entered)
