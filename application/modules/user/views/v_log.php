@@ -5,12 +5,17 @@
        if(isset($new_user)){ ?>
          <div class="well well-lg well-info"><h3><?php echo $new_user; ?></h3></div>
    <?php
-       } else { ?>
+       }elseif(validation_errors()){
+                              
+   ?>
+         <div class="well well-lg well-warning"><h4><?php echo validation_errors('<p class="error">'); ?></h4></div>
+   <?php
+       }else{ 
+        ?>
          <div class="well well-lg well-info"><h4>Please log into the system</h4></div>
    <?php
        }
    ?>
-
 
 </div>
 
@@ -27,30 +32,36 @@
 
                         <!-- <div style="display:none" id="login-alert" class="alert alert-danger col-sm-12"></div> -->
                             
-                        <form id="loginform" class="form-horizontal" role="form">
+                        <form id="loginform" method="POST" action="<?php echo base_url() . 'user/validate_member'?>" class="form-horizontal" role="form">
+                          
                                <?php 
-                               echo form_open('user/validation');
+                                  echo form_open('user/validate_member');
                                ?>
 
                             <div style="margin-bottom: 25px" class="input-group">
                                         <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                                        <input id="login-username" type="text" class="form-control" name="username" value="" placeholder="Username">                                        
+                                        <input id="login-username" type="text" required class="form-control" name="l_username" value="" placeholder="Username">                                        
                                     </div>
                             <div style="margin-bottom: 25px" class="input-group">
                                         <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                                        <input id="login-password" type="password" class="form-control password" name="password" placeholder="Password">
+                                        <input id="login-password" type="password" required class="form-control password" name="l_password" placeholder="Password">
                                     </div>
                                 <div style="margin-top:10px" class="form-group">
-                                    <div class="col-sm-9 controls">
-                                      <a id="btn-login" href="#" class="btn btn-success">Login</a>
+                                    <div class="col-sm-9 ">
+                                      <button id="btn-login" name="login_button" type="submit" class="btn btn-success">Login</button>
                                     </div>
-                                    <div class="col-sm-3 controls">
-                                      <a id="btn-login" href="<?php echo base_url(). 'user/sign'?>" class="btn btn-warning">Sign Up</a>
+                                    <div class="col-sm-3 ">
+                                      <a id="btn-sign" name="signup_button" href="<?php echo base_url(). 'user/sign'?>" class="btn btn-warning">Sign Up</a>
                                     </div>
                                 </div>
-                              <?php 
-                               echo form_close();
-                            ?>
+                                <!-- <div class="form-group">                                    
+                                    <div class="col-md-offset-3 col-md-9">
+                                        <button id="btn-login" name="signup_button" type="submit" class="btn btn-success signup"><i class="icon-hand-right"></i> Sign Up</button>  
+                                    </div>
+                                </div> -->
+                               <?php 
+                                    echo form_close();
+                                 ?>
                           </form>
                           
               	       </div> 

@@ -49,22 +49,49 @@ class User extends MX_Controller {
 		$this->load->view('v_fail');
 	}
 
-	// function validation()
-	// {
-	// 	$this->load->model('user_model');
-	// 	$query = $this->user_model->validate();
 
-	// 	if($query){
-	// 		$data = array(
- //              'username' => $this->input->post('username'),
- //              'is_logged_in' => true
-	// 		);
-	// 		$this->session->set_userdata($data);
-	// 		redirect('products/v_products');
-	// 	}else{
-	// 		$data['new_user'] = 'Incorrect Username or Password<br/><br/>Please try again...';
-	// 	}
-	// }
+    function validate_member()
+	{
+        $this->load->library('form_validation');
+        
+        $this->form_validation->set_rules('l_password', 'Password', 'trim|min_length[3]|required|max_length[15]|required|xss_clean');
+        $this->form_validation->set_rules('l_username', 'UserName', 'trim|min_length[3]|required|xss_clean');
+        
+        if($this->form_validation->run() == FALSE){
+			$this->load->view('log_header');
+		    $this->load->view('v_log');
+		    $this->load->view('home/footer');
+		    // $data['new_user'] = 'Incorrect Username or Password<br/><br/>Please try again...';
+		}else{
+			
+			$result = $this->user_model->log_member();		
+
+			switch($result){
+
+				case 'logged_in':
+                    redirect('/','location');
+				break;
+
+				case 'incorrect_password':
+                    $this->load->view('log_header');
+		            $this->load->view('v_log');
+		            $this->load->view('home/footer');
+		            //$data['new_user'] = 'Incorrect Username or Password<br/><br/>Please try again...';
+				break;
+
+				case 'not_activated':
+                    $this->load->view('log_header');
+		            $this->load->view('v_log');
+		            $this->load->view('home/footer');
+		            //$data['new_user'] = 'Your account is not activated';
+				break;
+
+				default:
+                     echo '';
+				break;
+			}	
+		}
+	}  
 
 	function create_member()
 	{
@@ -79,7 +106,7 @@ class User extends MX_Controller {
         $this->form_validation->set_rules('nationality', 'Nationality', 'trim|min_length[3]|required|xss_clean');
 		$this->form_validation->set_rules('email', 'Email Address', 'trim|required|valid_email|xss_clean|is_unique[accounts.email]');
         $this->form_validation->set_rules('pass1', 'Password', 'trim|min_length[3]|max_length[15]|required|xss_clean');
-        $this->form_validation->set_rules('username', 'User Name', 'trim|min_length[3]|required|xss_clean');
+        $this->form_validation->set_rules('username', 'User Name', 'trim|min_length[3]|required|xss_clean|is_unique[logs.username]');
         $this->form_validation->set_rules('pass2', 'Re-Entered Password', 'trim|required|matches[pass1]|xss_clean');
 
 		if($this->form_validation->run() == FALSE){
@@ -88,50 +115,19 @@ class User extends MX_Controller {
 		    $this->load->view('home/footer');
 		    //echo 'Not working';
 		}else{
-			$this->load->model('user_model');
+			
 			$result = $this->user_model->enter_member();
                //print_r($result);
 
 			if($result){
-              $this->load->view('products/p_header');
-		      $this->load->view('products/v_products');
-		      $this->load->view('products/p_footer');		
+              $this->log();
+		      		
             }else{
                echo 'There was a problem with the website.<br/>Please contact the administrator';
 			}
 		}
 	}
 	
-
-	// function user_antiexists($user_entered)
-	// {
- //        $this->load->model('user_model');
-
- //        $user_available = $this->user_model->user_antiexists($user_entered);
-
- //        if($user_available){
- //           return TRUE;
- //        }else{
- //           return FALSE;
- //        }
-	// }
-
-	// function email_antiexists($email_entered)
-	// {
- //        $this->load->model('user_model');
-
- //        $email_available = $this->user_model->email_antiexists($email_entered);
-
- //        if($email_available){
- //           return TRUE;
- //        }else{
- //           return FALSE;
- //        }
-	// }
-
-
-
-
 
 
 

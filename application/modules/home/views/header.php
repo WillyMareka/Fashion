@@ -3,9 +3,8 @@
 	<title>
         MareWill Fashion
 	</title>
-    
+
     <link rel="stylesheet" type="text/css" href="<?php echo base_url() . 'assets/css/bootstrap-responsive.css'?>" />
-    
     <link type="text/css" href="<?php echo base_url() . 'assets/css/style.css'?>" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url() . 'assets/css/jquery.cslider.css'?>" />
     <link rel="stylesheet" type="text/css" href="<?php echo base_url() . 'assets/css/jquery.bxslider.css'?>" />

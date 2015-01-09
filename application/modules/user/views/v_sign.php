@@ -119,16 +119,15 @@
                                     </div>
                                 </div>
                                
-
-                                <div class="form-group">
-                                    <!-- Button -->                                        
+                                <div class="form-group">                                    
                                     <div class="col-md-offset-3 col-md-9">
-                                        <button id="btn-signup" type="submit" class="btn btn-success signup"><i class="icon-hand-right"></i> Sign Up</button>
-                                         
+                                        <button id="btn-signup" name="signup_button" type="submit" class="btn btn-success signup"><i class="icon-hand-right"></i> Sign Up</button>  
                                     </div>
                                 </div>
 
-                              
+                                 <?php 
+                                    echo form_close();
+                                 ?>
                                 </form>
 
 

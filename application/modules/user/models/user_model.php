@@ -94,6 +94,47 @@ class User_model extends MY_Model {
      }
     }
 
+    public function log_member()
+    {
+        $username = $this->input->post('l_username');
+        $passw1 = md5($this->input->post('l_password'));
+
+        $sql = "SELECT * FROM logs lg, accounts ac WHERE ac.ac_id = lg.log_id 
+        AND lg.username = '". $username ."' AND lg.password = '". $passw1 ."' LIMIT 1"; 
+
+        $result = $this->db->query($sql);
+        $row = $result->row();
+
+        if($result->num_rows() == 1){
+           if($row->activated){
+             if ($row->password === $passw1) {
+               $session_data = array(
+                   'user_id'     => $row ->ac_id , 
+                   'username'    => $row ->username , 
+                   'f_name'      => $row ->f_name ,
+                   'm_name'      => $row ->m_name ,
+                   'l_name'      => $row ->l_name ,
+                   'email'       => $row ->email ,
+                   'age'         => $row ->age , 
+                   'nationality' => $row ->nationality , 
+                   'residence'   => $row ->residence , 
+                   'phone_no'    => $row ->phone_no ,  
+                   'religion'    => $row ->religion , 
+                   'gender'      => $row ->gender    
+                 );
+
+               $this -> set_session($session_data);
+               return 'logged_in';
+             } else {
+               return "incorrect_password";
+             }
+           }else{
+             return "not_activated";
+           }
+         }
+
+    }
+
     public function insert_into_db($table_name = null,$data = null){
         
         $this->db->insert_batch('$table_name',$data);
@@ -111,17 +152,19 @@ class User_model extends MY_Model {
          }
     }
 
+    private function set_session($session_data){
 
-    function email_antiexists($email_entered){
-         $this->db->where('email', $email);
-         $result->db->get('accounts');
+      // echo "<pre>";print_r($session_data);die();
+      // echo $session_data['user_id'];die();
+      $setting_session = array(
+                   'user_id'     => $session_data['user_id'] , 
+                   'username'    => $session_data['username'] , 
+                   'logged_in'   => 1
+      ); 
 
-         if($result->num_rows() > 0){
-          return FALSE;
-         }else{
-          return TRUE;
-         }
+      $this->session->set_userdata($setting_session);
+
+
     }
-
    
 }
