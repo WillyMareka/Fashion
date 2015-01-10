@@ -8,7 +8,7 @@ class User_model extends MY_Model {
         parent::__construct();
         date_default_timezone_set('Africa/Nairobi');
 
-        $this->pic_path = realpath(APPPATH . '../users');
+        
     }
 
     public function uploader(){
@@ -34,16 +34,16 @@ class User_model extends MY_Model {
 
 
     public function enter_member($path){
-      $firstname = $this->input->post('firstname');
-      $middlename = $this->input->post('middlename');
-      $lastname = $this->input->post('lastname');
+      $firstname = strtoupper($this->input->post('firstname'));
+      $middlename = strtoupper($this->input->post('middlename'));
+      $lastname = strtoupper($this->input->post('lastname'));
       $filename = $this->input->post('picture');
       $pnumber = $this->input->post('phonenumber');
-      $gender = $this->input->post('gender');
-      $nationality = $this->input->post('nationality');
+      $gender = strtoupper($this->input->post('gender'));
+      $nationality = strtoupper($this->input->post('nationality'));
       $age = $this->input->post('age');
-      $religion = $this->input->post('religion');
-      $residence = $this->input->post('residence');
+      $religion = strtoupper($this->input->post('religion'));
+      $residence = strtoupper($this->input->post('residence'));
       $username = $this->input->post('username');
       $passw1 = md5($this->input->post('pass1'));
       

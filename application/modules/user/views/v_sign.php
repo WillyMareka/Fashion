@@ -28,7 +28,7 @@
 
 
                               <?php 
-                                  echo form_open('user/create_member');
+                                  echo form_open_multipart(base_url().'user/create_member');
                               ?>
                                 <div class="form-group">
                                     <label for="firstname" class="col-md-3 control-label">First Name</label>

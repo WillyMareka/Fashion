@@ -9,7 +9,9 @@ class User extends MX_Controller {
         parent::__construct();
 
         $this->load->model('user_model');
+        $this->load->library('upload');
         
+        $this->pic_path = realpath(APPPATH . '../uploads/');
         //this is some random change
     }
 
@@ -107,28 +109,42 @@ class User extends MX_Controller {
 		    $this->load->view('home/footer');
 		    //echo 'Not working';
 		}else{
+			 //var_dump(realpath('application/modules/user'));
 			$path = '';
-		    $config['upload_path'] = './upload/timetables/';
-		    $config['allowed_types'] = 'docx|xlsx|pdf|xls|ppt|pptx';
-		    $this->load->library('upload', $config);
+		       $config['upload_path'] = 'uploads/users/';
+		       $config['allowed_types'] = 'jpeg|jpg|png|gif';
+		       $config['encrypt_name'] = TRUE;
+		       $this->load->library('upload', $config);
+		       $this->upload->initialize($config);
 
-            $data = array('upload_data' => $this->upload->data());
-			foreach ($data as $key => $value) {
-				$path = base_url().'uploads/users/'.$value['file_name'];
-				// $file_type = $value['file_type'];
-				$arr = explode(".", $value['file_name'], 2);
-				// $file_type = $arr[1];
-            }
+			if ( ! $this->upload->do_upload('picture'))
+		    {
+			   $error = array('error' => $this->upload->display_errors());
+
+			   print_r($error);die;
+		    }
+		     else
+		     {
+			   
+		       
+
+                $data = array('upload_data' => $this->upload->data());
+			     foreach ($data as $key => $value) {
+				  //print_r($data);die;
+				  $path = base_url().'uploads/users/'.$value['file_name'];
+				
+                  }
 			    $result = $this->user_model->enter_member($path);
                //print_r($result);
 
-			if($result){
-              $this->log();
-		      		
-            }else{
-               echo 'There was a problem with the website.<br/>Please contact the administrator';
-			}
-		}
+			  if($result){
+                 $this->log();
+
+		      }else{
+                 echo 'There was a problem with the website.<br/>Please contact the administrator';
+			  }
+		    }
+	     }
 	}
 
 	
