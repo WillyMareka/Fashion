@@ -2,33 +2,24 @@
 
 class User extends MX_Controller {
 
-	/**
-	 * Index Page for this controller.
-	 *
-	 * Maps to the following URL
-	 * 		http://example.com/index.php/welcome
-	 *	- or -  
-	 * 		http://example.com/index.php/welcome/index
-	 *	- or -
-	 * Since this controller is set as the default controller in 
-	 * config/routes.php, it's displayed at http://example.com/
-	 *
-	 * So any other public methods not prefixed with an underscore will
-	 * map to /index.php/welcome/<method_name>
-	 * @see http://codeigniter.com/user_guide/general/urls.html
-	 */
-
 
 	function __construct()
     {
         // Call the Model constructor
         parent::__construct();
-        
+
         $this->load->model('user_model');
         
         //this is some random change
     }
 
+
+    public function sign()
+	{
+		$this->load->view('sign_header');
+		$this->load->view('v_sign');
+		$this->load->view('home/footer');
+	}
 
 	public function log()
 	{
@@ -37,12 +28,13 @@ class User extends MX_Controller {
 		$this->load->view('home/footer');
 	}
 
-	public function sign()
+	function logout()
 	{
-		$this->load->view('sign_header');
-		$this->load->view('v_sign');
-		$this->load->view('home/footer');
+		$this->session->sess_destroy();
+		redirect(base_url().'home');
 	}
+
+	
 
 	public function failure()
 	{
@@ -65,7 +57,7 @@ class User extends MX_Controller {
 		}else{
 			
 			$result = $this->user_model->log_member();		
-
+            //print_r($result);
 			switch($result){
 
 				case 'logged_in':
@@ -87,7 +79,7 @@ class User extends MX_Controller {
 				break;
 
 				default:
-                     echo '';
+                    // echo '';
 				break;
 			}	
 		}
@@ -115,8 +107,19 @@ class User extends MX_Controller {
 		    $this->load->view('home/footer');
 		    //echo 'Not working';
 		}else{
-			
-			$result = $this->user_model->enter_member();
+			$path = '';
+		    $config['upload_path'] = './upload/timetables/';
+		    $config['allowed_types'] = 'docx|xlsx|pdf|xls|ppt|pptx';
+		    $this->load->library('upload', $config);
+
+            $data = array('upload_data' => $this->upload->data());
+			foreach ($data as $key => $value) {
+				$path = base_url().'uploads/users/'.$value['file_name'];
+				// $file_type = $value['file_type'];
+				$arr = explode(".", $value['file_name'], 2);
+				// $file_type = $arr[1];
+            }
+			    $result = $this->user_model->enter_member($path);
                //print_r($result);
 
 			if($result){
@@ -127,10 +130,9 @@ class User extends MX_Controller {
 			}
 		}
 	}
+
 	
-
-
-
+	
 
 
 

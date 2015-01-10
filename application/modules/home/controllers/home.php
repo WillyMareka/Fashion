@@ -11,17 +11,20 @@ class Home extends CI_Controller {
         if ($this->session->userdata('logged_in')) {
          	$this->logged_in = TRUE;
          } else {
-         	$this->logged_in = FASLE;
+         	//$this->logged_in = FASLE;
+         	
+         	
          }
           
     }
 
 	public function index()
 	{
-		// $details = $this->session->all_userdata();
-  //     echo "<pre>";print_r($details);die();
-		$this->load->view('header');
-		$this->load->view('v_home', array('logged_in' => $this->logged_in));
+		 // $details = $this->session->all_userdata();
+   //       echo "<pre>";print_r($details);die();
+
+		$this->load->view('header', array('logged_in' => $this->logged_in));
+		$this->load->view('v_home');
 		$this->load->view('home_footer');
 	}
 

@@ -1,10 +1,12 @@
 <?php
    if($logged_in){
+
       $username = $this->session->userdata('username');
 
       echo $username;
    }else{
-      echo 'Ananonymous User';
+      $username = 'Ananonymous User';
+      echo $username;
    }
 
 ?>
@@ -15,7 +17,7 @@
     <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
     <li data-target="#carousel-example-generic" data-slide-to="1"></li>
     <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-    <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+    <!-- <li data-target="#carousel-example-generic" data-slide-to="3"></li> -->
   </ol>
 
   <!-- Wrapper for slides -->
@@ -29,9 +31,9 @@
     <div class="item carou_img">
       <img src="<?php echo base_url() . 'assets/images/girl8.jpg'?>" alt="...">
     </div>
-    <div class="item carou_img">
+    <!-- <div class="item carou_img">
       <img src="<?php echo base_url() . 'assets/images/girl3.jpg'?>" alt="...">
-    </div>
+    </div> -->
    
   </div>
 

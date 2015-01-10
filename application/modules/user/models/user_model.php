@@ -7,9 +7,20 @@ class User_model extends MY_Model {
         // Call the Model constructor
         parent::__construct();
         date_default_timezone_set('Africa/Nairobi');
+
+        $this->pic_path = realpath(APPPATH . '../users');
     }
 
-    
+    public function uploader(){
+       $config = array(
+           'allowed_types' => 'jpg|jpeg|png',
+           'upload_path'   => $this->pic_path
+        );
+
+       $this->load->library('upload', $config);
+       $this->upload->uploader();
+
+    }
 
     public function validate(){
         $this->db->where('username', $this->input->post('username'));
@@ -22,10 +33,11 @@ class User_model extends MY_Model {
     }
 
 
-    public function enter_member(){
+    public function enter_member($path){
       $firstname = $this->input->post('firstname');
       $middlename = $this->input->post('middlename');
       $lastname = $this->input->post('lastname');
+      $filename = $this->input->post('picture');
       $pnumber = $this->input->post('phonenumber');
       $gender = $this->input->post('gender');
       $nationality = $this->input->post('nationality');
@@ -42,6 +54,7 @@ class User_model extends MY_Model {
           'f_name' => $firstname,
           'm_name' => $middlename,
           'l_name' => $lastname,
+          'picture' => $path,
           'age' => $age,
           'nationality' => $nationality,
           'phone_no' => $pnumber,
@@ -105,11 +118,16 @@ class User_model extends MY_Model {
         $result = $this->db->query($sql);
         $row = $result->row();
 
+        $sql2 = "SELECT * FROM logs WHERE username = '". $username ."' AND activated = 0 ";
+
+        $result2 = $this->db->query($sql2);
+        $row2 = $result->row();
+
         if($result->num_rows() == 1){
-           if($row->activated){
+           if($row2->activated){
              if ($row->password === $passw1) {
                $session_data = array(
-                   'user_id'     => $row ->ac_id , 
+                   'ac_id'       => $row ->ac_id , 
                    'username'    => $row ->username , 
                    'f_name'      => $row ->f_name ,
                    'm_name'      => $row ->m_name ,
@@ -121,10 +139,10 @@ class User_model extends MY_Model {
                    'phone_no'    => $row ->phone_no ,  
                    'religion'    => $row ->religion , 
                    'gender'      => $row ->gender    
-                 );
+                );
 
-               $this -> set_session($session_data);
-               return 'logged_in';
+                $this -> set_session($session_data);
+                return 'logged_in';
              } else {
                return "incorrect_password";
              }
@@ -132,13 +150,33 @@ class User_model extends MY_Model {
              return "not_activated";
            }
          }
-
+       
+       //print_r($this->session->all_userdata());
     }
 
-    public function insert_into_db($table_name = null,$data = null){
+    private function set_session($session_data){
+      $sql = "SELECT ac_id , username FROM accounts, logs WHERE username = '". $session_data['username'] ."' LIMIT 1";
+      $result = $this->db->query($sql);
+      $row = $result->row();
+       //echo "<pre>";print_r($session_data);die();
+       //echo $session_data['ac_id'];die();
+      $setting_session = array(
+                   'ac_id'     => $session_data['ac_id'] , 
+                   'username'    => $session_data['username'] , 
+                   'logged_in'   => 1
+      ); 
+
+      $this->session->set_userdata($setting_session);
+      
+      $details = $this->session->all_userdata();
+       $sql = "INSERT INTO ci_sessions (`session_id`,`ip_address`,`user_agent`,`last_activity`,`user_data`,`ac_id`,`username`,`logged_in`)
+               VALUES ('".$details['session_id']."', '".$details['ip_address']."','".$details['user_agent']."', '".$details['last_activity']."', 
+                       '1','".$details['ac_id']."', '".$details['username']."', '".$details['logged_in']."') ";
+
+    $results = $this->db->query($sql);
+      //$this->db->insert_batch('ci_sessions',$session_details);
+       // $details = $this->session->all_userdata();
         
-        $this->db->insert_batch('$table_name',$data);
-        return "SUCCESS";
     }
 
     function user_antiexists($user_entered){
@@ -152,19 +190,6 @@ class User_model extends MY_Model {
          }
     }
 
-    private function set_session($session_data){
-
-      // echo "<pre>";print_r($session_data);die();
-      // echo $session_data['user_id'];die();
-      $setting_session = array(
-                   'user_id'     => $session_data['user_id'] , 
-                   'username'    => $session_data['username'] , 
-                   'logged_in'   => 1
-      ); 
-
-      $this->session->set_userdata($setting_session);
-
-
-    }
+    
    
 }

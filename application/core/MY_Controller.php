@@ -24,12 +24,7 @@ class MY_Controller extends MX_Controller
     echo base_url();
    }
 
-    public function logout()
-    {
-        $this->session->sess_destroy();
-
-        redirect(base_url().'home');
-    }
+    
 
 
     public function uploader($file)

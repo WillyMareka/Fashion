@@ -21,7 +21,7 @@
 
                               ?>
                              
-                            <form id="signupform" method="POST" action="<?php echo base_url() . 'user/create_member'?>" class="form-horizontal black" role="form">
+                            <form id="signupform" enctype="multipart/form-data" method="POST" action="<?php echo base_url() . 'user/create_member'?>" class="form-horizontal black" role="form">
                   
                             <div class="well well-sm well-info">Please fill all fields</div>
 
@@ -42,10 +42,16 @@
                                         <input type="text" class="form-control" name="middlename" value="<?php echo set_value('middlename'); ?>" >
                                     </div>
                                 </div>
-                                 <div class="form-group">
+                                <div class="form-group">
                                     <label for="lastname" class="col-md-3 control-label">Last Name</label>
                                     <div class="col-md-9">
                                         <input type="text" required class="form-control" name="lastname" value="<?php echo set_value('lastname'); ?>" >
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="lastname" class="col-md-3 control-label">Picture</label>
+                                    <div class="col-md-9">
+                                        <input type="file" required class="form-control" id="picture" name="picture" value="<?php echo set_value('picture'); ?>" >
                                     </div>
                                 </div>
                                 <div class="form-group">
