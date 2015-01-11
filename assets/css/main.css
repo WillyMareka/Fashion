@@ -18,7 +18,8 @@ a#scrollUp {
   background: #9900CC;
   color: #FFF;
   font-size: 30px;
-
+   height:50px;
+   width:60px;
   -webkit-animation: bounce 2s ease infinite;
   animation: bounce 2s ease infinite;
 }
@@ -132,14 +133,20 @@ a#scrollUp {
 
 .carou_img{
 	float: left;
+  height:600px;
 }
 
 .header{
 	background-color:#B2B2B2;
 	color: #000000;
-	height: 35px;
+	height: 40px;
 	width: 100%;
 }
+
+.header-content{
+   margin-bottom: 5px;
+}
+
 
 .left-header{
 	text-align: center;
@@ -180,7 +187,6 @@ a#scrollUp {
     float: right;
 }
 
-<<<<<<< HEAD
 .login_tab{
 	margin-left: auto;
     margin-right: auto;
@@ -214,7 +220,7 @@ a#scrollUp {
   left: 80%;
   top: 52%;
 }*/
-=======
+
 .imagesize{
     height:260px;
     width:260px;
@@ -285,6 +291,7 @@ a#scrollUp {
 
 i.icon{
   color: #000000;
+  font-size: 20px;
 }
 
 
@@ -302,6 +309,10 @@ i.icon{
   text-align: left;
 }
 
+.black{
+  color: #000000;
+}
+
 .signup{
   margin-top: 15px;
   float: right;
@@ -310,7 +321,7 @@ i.icon{
 
 a#scrollUp i{
   font-size: 30px;
-
+  
 }
 
 .well-info{
@@ -348,6 +359,18 @@ i.social{
     background-position: center;
     background-attachment: fixed;
 } 
+
+.logspace{
+  border-top: 30px;
+}
+
+.margin{
+  margin: 0;
+}
+
+.contacts{
+  margin-top: 0;
+}
 
 /*#9900CC*/
 

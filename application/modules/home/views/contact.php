@@ -11,7 +11,7 @@
 				<div class="slide-text text-center">
 					<h1>MAREWILL FASHION</h1>
 					<span>WANT TO KNOW MORE</span>
-					<a class="slide-btn btn-color" href="#contact">Contacts</a>
+					<a class="slide-btn btn-color" href="#contacts">contacts</a>
 				</div>
 				<!----//End-top-nav---->
 			</div>
@@ -20,7 +20,7 @@
 
 
 
-      <div class="grid_12">
+      <div class="grid_12 margin">
         <div id="map-canvas">
           <figure class="map">
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7977.548817433302!2d36.80921226739884!3d-1.310697306903683!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0000000000000000%3A0x2ed8412115331950!2sStrathmore+University!5e0!3m2!1sen!2ske!4v1419445278462" width="100%" height="450" frameborder="0" style="border:0"></iframe>
@@ -30,21 +30,21 @@
 
      
 
-      <div class="contact" id="contact">
+      <div class="contacts" id="contacts">
 	<div class="wrap">
 		<h2>Contact Us</h2>
 		<h4>If in need of more information about us or to register your company</h4>
 		<div class="section group">
 			  <div class="col span_2_of_3">
-				  <div class="contact-form">
+				  <div class="contacts-form">
 				  	  <form method="post" action="#">
 					    	
-					    		<input type="text" class="textbox" value="Enter Your Name Here" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter Your Name Here';}">
-						    	<input type="text" class="textbox" value="Enter Your Email Here" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter Your Email Here';}">
+					    		<input type="text" class="textbox" placeholder="Enter Your Name Here">
+						    	<input type="text" class="textbox" placeholder="Enter Your Email Here">
 						    	<div class="clear"> </div>
 						   
 						    <div>
-						    	<textarea value="Enter Your Message Here:" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter Your Message Here';}">Enter Your Message Here...</textarea>
+						    	<textarea placeholder="Enter Your Message Here:" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter Your Message Here';}">Enter Your Message Here...</textarea>
 						    </div>
 						  <span><input type="submit" class="btn-color" value="Submit"></span>
 						  <div class="clear"></div>
@@ -53,7 +53,7 @@
   				</div>
 				<div class="col span_1_of_3">
 					<div class="company_address">
-				     	<h5>OUR CONTACTS</h5>
+				     	<h5>OUR contactsS</h5>
 						<ul class="list3">
 							<li>
 								<img src="<?php echo base_url() . 'assets/images/location.png'?>" alt=""/>

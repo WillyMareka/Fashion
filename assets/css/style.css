@@ -336,7 +336,7 @@ body {
 }
 /**********end-about-style**********/
 
-/***********  Contact Form  *************/
+/***********  contacts Form  *************/
 .col{
 	display: block;
 	float:left;
@@ -351,32 +351,32 @@ body {
 .span_1_of_3 {
 	width: 32.2%;
 }
-.contact {
+.contacts {
 	background: #EBEBEB;
 }
-.contact-form{
+.contacts-form{
 	padding-bottom:30px;
 }
-.contact-form div{
+.contacts-form div{
 	padding:5px 0 15px;
 }
-.contact h2{
+.contacts h2{
 	color:#444444;
 	font-size:2em;
 	padding: 2em 0em 0.7em 0em;
 	text-align: center;
 }
-.contact h4{
+.contacts h4{
 	color:#444;
 	font-size:1em;
 	text-align: center;
 }
-.contact h5{
+.contacts h5{
 	color:#444;
 	font-size:1em;
 	padding-bottom: 2em;
 }
-.contact-form input[type="text"],.contact-form textarea{
+.contacts-form input[type="text"],.contacts-form textarea{
 	padding: 15px;
 	display: block;
 	width: 43%;
@@ -391,11 +391,12 @@ body {
 	font-style: italic;
 	border: 2px solid #CACACA;
 }
-.contact-form input[type="text"]:nth-child(2)
+.contacts-form input[type="text"]:nth-child(2)
 {
 	margin-right: 0em;
+	width: 340px;
 }
-.contact-form textarea{
+.contacts-form textarea{
 	padding: 15px;
 	display: block;
 	width: 94%;
@@ -409,11 +410,11 @@ body {
 	border:2px solid #CACACA;
 	margin-bottom: 2em;
 }
-.contact-form textarea{
+.contacts-form textarea{
 	resize:none;
 	height:180px;		
 }
-.contact-form form input[type="submit"] 
+.contacts-form form input[type="submit"] 
 {
 	font-family: 'Lato', sans-serif;
 	color:#fff;
@@ -431,7 +432,7 @@ body {
 	outline: none;
 	text-transform: uppercase;
 	float: right;
-	margin-right: 2%;	
+	margin-right: 6%;	
 }
 .company_address p{
 	color:#525252;
@@ -533,7 +534,7 @@ body {
 	width: 20%;
 	margin: 0% 2%;
 }
-.contact-form input[type="text"]{
+.contacts-form input[type="text"]{
 	width: 42.7%;
 }
 .dc_zoom_css span.roll_css6 .social {
@@ -553,7 +554,7 @@ body {
 	width: 20%;
 	margin: 0% 2%;
 }
-.contact-form input[type="text"]{
+.contacts-form input[type="text"]{
 	width: 42.8%;
 }
 .dc_zoom_css span.roll_css6 .social {
@@ -579,7 +580,7 @@ body {
 	width: 23%;
 	margin: 0% 1%;
 }
-.contact-form input[type="text"]{
+.contacts-form input[type="text"]{
 	width: 42.7%;
 }
 .dc_zoom_css span.roll_css6 .social {
@@ -599,7 +600,7 @@ body {
 	width:22%;
 	margin: 0% 1%;
 }
-.contact-form input[type="text"]{
+.contacts-form input[type="text"]{
 	width: 40.3%;
 }
 /****/
@@ -629,7 +630,7 @@ padding: 0.5em 0.7em;
 	left: 17%;
 	top: 20%;
 }
-.contact-form textarea {
+.contacts-form textarea {
 	width: 92%;
 }
 .col {
@@ -653,7 +654,7 @@ padding: 0.5em 0.7em;
 	width: 31%;
 	margin: 0% 1%;
 }
-.contact-form input[type="text"]{
+.contacts-form input[type="text"]{
 	width: 42.8%;
 }
 /****/
@@ -707,7 +708,7 @@ padding: 0.5em 0.7em;
 .grid:nth-child(3) {
 	display: none;
 }
-.contact-form textarea {
+.contacts-form textarea {
 	width: 95%;
 }
 .span_2_of_3 {
@@ -715,10 +716,10 @@ padding: 0.5em 0.7em;
 	float: none;
 	margin: 0%;
 }
-.contact h4 {
+.contacts h4 {
 	padding-bottom: 2em;
 }
-.contact-form {
+.contacts-form {
 	padding-bottom: 0px;
 }
 .span_1_of_3 {
@@ -729,7 +730,7 @@ padding: 0.5em 0.7em;
 .company_address {
 	padding: 5% 0%;
 }
-.contact-form form input[type="submit"] {
+.contacts-form form input[type="submit"] {
 	float: left;
 }
 .company_address p {
@@ -739,7 +740,7 @@ padding: 0.5em 0.7em;
 .company_address {
 	padding-bottom: 2%;
 }
-.contact h2 {
+.contacts h2 {
 	padding: 1.4em 0em 0.7em 0em;
 }
 }
@@ -756,7 +757,7 @@ padding: 0.5em 0.7em;
 	width: 40%;
 	margin: 0% 5%;
 }
-.contact-form input[type="text"]{
+.contacts-form input[type="text"]{
 	width:40.5%;
 }
 /****/
@@ -810,7 +811,7 @@ padding: 3em 0em;
 .grid:nth-child(3) {
 	display: none;
 }
-.contact-form textarea {
+.contacts-form textarea {
 	width: 92%;
 	height: 110px;
 }
@@ -831,10 +832,10 @@ padding: 3em 0em;
 .company_address {
 	padding-bottom: 2%;
 }
-.contact h2 {
+.contacts h2 {
 	padding: 1.4em 0em 0.7em 0em;
 }
-.contact h4 {
+.contacts h4 {
 	padding-bottom: 2em;
 }
 /****/
@@ -851,11 +852,11 @@ padding: 3em 0em;
 .list3 li .extra-wrap {
 	width: 82%;
 }
-.contact-form form input[type="submit"] {
+.contacts-form form input[type="submit"] {
 	margin-right: 2%;
 	float: left;
 }
-.contact-form {
+.contacts-form {
 	padding-bottom: 0px;
 }
 }
@@ -882,10 +883,10 @@ padding: 3em 0em;
 	width: 48%;
 	margin: 0% 1%;
 }
-.contact-form input[type="text"]{
+.contacts-form input[type="text"]{
 	width:92%;
 }
-.contact-form input[type="text"]:nth-child(1) {
+.contacts-form input[type="text"]:nth-child(1) {
 margin-bottom: 1.5em;
 }
 .dc_zoom_css span.roll_css6 .social {
@@ -949,7 +950,7 @@ padding: 3em 1em;
 .grid:nth-child(3),.grid:nth-child(2)  {
 	display: none;
 }
-.contact-form textarea {
+.contacts-form textarea {
 	width: 92%;
 	height: 110px;
 }
@@ -970,10 +971,10 @@ padding: 3em 1em;
 .company_address {
 	padding-bottom: 2%;
 }
-.contact h2 {
+.contacts h2 {
 	padding: 1.4em 0em 0.7em 0em;
 }
-.contact h4 {
+.contacts h4 {
 	padding-bottom: 2em;
 }
 /****/
@@ -990,11 +991,11 @@ padding: 3em 1em;
 .list3 li .extra-wrap {
 	width: 82%;
 }
-.contact-form form input[type="submit"] {
+.contacts-form form input[type="submit"] {
 	margin-right: 2%;
 	float: left;
 }
-.contact-form {
+.contacts-form {
 	padding-bottom: 0px;
 }
 /****/
@@ -1027,7 +1028,7 @@ font-size: 1.8em;
 	width: 100%;
 	float:none;
 }
-.contact-form input[type="text"]{
+.contacts-form input[type="text"]{
 	width:87%;
 }
 /****/
@@ -1094,7 +1095,7 @@ padding: 1.2em 0em;
 .grid:nth-child(3),.grid:nth-child(2)  {
 	display: none;
 }
-.contact-form textarea {
+.contacts-form textarea {
 	width:87%;
 	height: 110px;
 }
@@ -1115,10 +1116,10 @@ padding: 1.2em 0em;
 .company_address {
 	padding-bottom: 2%;
 }
-.contact h2 {
+.contacts h2 {
 	padding: 1.4em 0em 0.7em 0em;
 }
-.contact h4 {
+.contacts h4 {
 	padding-bottom: 2em;
 }
 /****/
@@ -1135,11 +1136,11 @@ padding: 1.2em 0em;
 .list3 li .extra-wrap {
 	width: 82%;
 }
-.contact-form form input[type="submit"] {
+.contacts-form form input[type="submit"] {
 	margin-right: 2%;
 	float: left;
 }
-.contact-form {
+.contacts-form {
 	padding-bottom: 0px;
 }
 /****/

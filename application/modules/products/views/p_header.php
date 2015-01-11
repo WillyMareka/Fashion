@@ -3,9 +3,9 @@
 	<title>
         MareWill Fashion
 	</title>
-    <meta name="robots" content="noindex">
-    <meta charset="UTF-8">
+    
     <link rel="stylesheet" type="text/css" href="<?php echo base_url() . 'assets/css/bootstrap-responsive.css'?>" />
+    
     <link type="text/css" href="<?php echo base_url() . 'assets/css/style.css'?>" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url() . 'assets/css/jquery.cslider.css'?>" />
     <link rel="stylesheet" type="text/css" href="<?php echo base_url() . 'assets/css/jquery.bxslider.css'?>" />
@@ -40,29 +40,12 @@
 <div id='topmenu' class="over">
 <ul>
    <li class='left'><a href='<?php echo base_url(). 'home/index'?>'>Home</a></li>
-   <li class='left'><a href='<?php echo base_url(). 'products/view'?>'>Products</a>
+   <li class='left active'><a href='<?php echo base_url(). 'products/view'?>'>Products</a>
      
    </li>
    <li class='left'><a href='<?php echo base_url(). 'home/about'?>'>About</a></li>
    <li class='left'><a href='<?php echo base_url(). 'home/contact'?>'>Contact</a></li>
-
-  <?php
-       if($logged_in){
-   ?>
-      <li class='right'><a href='<?php echo base_url(). 'user/logout'?>'>Log Out</a>
-      
-    <?php
-       }else{
-    ?>
-      <li class='right'><a href='<?php echo base_url(). 'user/sign'?>'>Sign Up</a>
-     <li class='right'><a href='<?php echo base_url(). 'user/log'?>'>Log In</a>
-   <?php
-      }
-   ?>
-   <!-- <li class='right'><a href='<?php echo base_url(). 'user/sign'?>'>Sign Up</a>
-   <li class='right'><a href='<?php echo base_url(). 'user/log'?>'>Log In</a> -->
-
-
+   <li class='right'><a href='<?php echo base_url(). 'user/log'?>'>Log In</a>
    </li>
 </ul>
 </div>
