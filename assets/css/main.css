@@ -137,8 +137,8 @@ a#scrollUp {
 }
 
 .header{
-	background-color:#B2B2B2;
-	color: #000000;
+	background-color:#8e44ad;
+	color: #FFFFFF;
 	height: 40px;
 	width: 100%;
 }
@@ -404,7 +404,7 @@ i.social{
 
 
 .account-menu ul li a {
-  background: #FFFFFF;
+  
   color: #696763;
   font-family: 'Roboto', sans-serif;
   font-size: 14px;
@@ -422,7 +422,7 @@ i.social{
 
 .account-menu ul li a:hover {
   color:#9900CC;
-  background:#fff;
+  background:#bdc3c7;
 }
 
 .account-menu ul li a.active{

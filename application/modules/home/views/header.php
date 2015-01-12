@@ -25,6 +25,7 @@
 </head>
 <body>
 
+<!-- Top Info -->
 <div class="header">
  <div class="header-content">
   <div class="left-header">
@@ -37,6 +38,7 @@
   </div>
  </div>
 </div>
+<!-- /Top Info -->
 
 <!-- User Account Section -->
 
@@ -49,7 +51,7 @@
             <div class="account-menu pull-right">
               <ul class="nav navbar-nav"> 
                 
-                <!-- <li><a href="checkout.html"><i class="fa fa-crosshairs"></i> Checkout</a></li> --> 
+            <!-- <li><a href="checkout.html"><i class="fa fa-crosshairs"></i> Checkout</a></li> --> 
                 
 
   <?php
