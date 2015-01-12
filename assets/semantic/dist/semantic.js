@@ -2734,9 +2734,12 @@ $.fn.dimmer.settings = {
 
 ;(function ( $, window, document, undefined ) {
 
+
+
 "use strict";
 
 $.fn.dropdown = function(parameters) {
+
   var
     $allModules    = $(this),
     $document      = $(document),
