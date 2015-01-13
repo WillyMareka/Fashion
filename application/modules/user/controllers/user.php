@@ -8,6 +8,12 @@ class User extends MX_Controller {
         // Call the Model constructor
         parent::__construct();
 
+        if ($this->session->userdata('logged_in')) {
+         	$this->logged_in = TRUE;
+         } else {
+         	//$this->logged_in = FASLE;
+         }
+
         $this->load->model('user_model');
         $this->load->library('upload');
         

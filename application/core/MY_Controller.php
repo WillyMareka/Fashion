@@ -6,7 +6,7 @@ ini_set('max_execution_time', '-1');
 
 class MY_Controller extends MX_Controller
 {
-    public $tables;
+    public $tables, $logged_in;
 	function __construct()
     {
         // Call the Model constructor
