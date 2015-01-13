@@ -26,7 +26,7 @@
 
 <!-- /Footer -->
 
-<script type="text/javascript"src="<?php echo base_url() .'assets/js/price-range.js'?>"></script>
+
 <script type="text/javascript"src="<?php echo base_url() .'assets/js/jquery.js'?>"></script>
 <script type="text/javascript" src="<?php echo base_url() .'assets/js/jquery.mixitup.js'?>"></script>
 <script type="text/javascript" src="<?php echo base_url() .'assets/js/modernizr.custom.js'?>"></script>

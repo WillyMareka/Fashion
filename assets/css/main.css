@@ -221,14 +221,7 @@ a#scrollUp {
   top: 52%;
 }*/
 
-.imagesize{
-    height:260px;
-    width:260px;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-attachment: fixed;
-    background-size: cover;
-}
+
 
 
 /*.pricing {
@@ -377,7 +370,7 @@ i.social{
 }
 
 .user-account .container .row {
-  border-bottom: 1px solid #f5f5f5;
+  /*border-bottom: 1px solid #f5f5f5;*/
   margin-left: 0;
   margin-right: 0;
   padding-bottom: 20px;
@@ -615,7 +608,7 @@ h2.title:before{
 }
 
 .tab-pane .col-sm-3, .features_items .col-sm-4{
-  width: 33.33%;
+  /*width: 260px;*/
 }
 
 .features_items{
@@ -768,6 +761,15 @@ h2.title:before{
 /*.navbar-nav > li.account-name{
   float:right;
 }*/
+
+.imagesize{
+    height:260px;
+    width:260px !important;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+}
 
 /*#8e44ad*/
 /*#9900CC*/

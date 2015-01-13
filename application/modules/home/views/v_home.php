@@ -61,10 +61,10 @@
 
       <div class="tab-content">
               <div class="tab-pane fade active in" id="tshirt" >
-                <div class="col-sm-3">
+                <div class="col-sm-3 imghome">
                   <div class="product-wrap">
                     <div class="single-products">
-                      <div class="productinfo text-center">
+                      <div class=" text-center">
                         <img class="imagesize" src="<?php echo base_url(). 'assets/images/shirt1.jpg'?>" alt="" />
                         <h2>Kshs 119/=</h2>
                         <p>Red Edition</p>
@@ -74,10 +74,10 @@
                     </div>
                   </div>
                 </div>
-                <div class="col-sm-3">
+                <div class="col-sm-3 imghome">
                   <div class="product-wrap">
                     <div class="single-products">
-                      <div class="productinfo text-center">
+                      <div class=" text-center">
                         <img class="imagesize" src="<?php echo base_url(). 'assets/images/shirt2.jpg'?>" alt="" />
                         <h2>Kshs 249/=</h2>
                         <p>Grey Edition</p>
@@ -87,10 +87,10 @@
                     </div>
                   </div>
                 </div>
-                <div class="col-sm-3">
+                <div class="col-sm-3 imghome">
                   <div class="product-wrap">
                     <div class="single-products">
-                      <div class="productinfo text-center">
+                      <div class=" text-center">
                         <img class="imagesize" src="<?php echo base_url(). 'assets/images/shirt3.jpg'?>" alt="" />
                         <h2>Kshs 199/=</h2>
                         <p>White Edition</p>
@@ -100,10 +100,10 @@
                     </div>
                   </div>
                 </div>
-                <div class="col-sm-3">
+                <div class="col-sm-3 imghome">
                   <div class="product-wrap">
                     <div class="single-products">
-                      <div class="productinfo text-center">
+                      <div class=" text-center">
                         <img class="imagesize" src="<?php echo base_url(). 'assets/images/shirt4.jpg'?>" alt="" />
                         <h2>Kshs 99/=</h2>
                         <p>Black Edition</p>
@@ -116,7 +116,7 @@
               </div>
               
               <div class="tab-pane fade" id="suits" >
-                <div class="col-sm-3">
+                <div class="col-sm-3 imghome">
                   <div class="product-wrap">
                     <div class="single-products">
                       <div class="productinfo text-center">
@@ -129,7 +129,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="col-sm-3">
+                <div class="col-sm-3 imghome">
                   <div class="product-wrap">
                     <div class="single-products">
                       <div class="productinfo text-center">
@@ -142,7 +142,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="col-sm-3">
+                <div class="col-sm-3 imghome">
                   <div class="product-wrap">
                     <div class="single-products">
                       <div class="productinfo text-center">
@@ -155,7 +155,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="col-sm-3">
+                <div class="col-sm-3 imghome">
                   <div class="product-wrap">
                     <div class="single-products">
                       <div class="productinfo text-center">
@@ -171,7 +171,7 @@
               </div>
               
               <div class="tab-pane fade" id="sunglasses" >
-                <div class="col-sm-3">
+                <div class="col-sm-3 imghome">
                   <div class="product-wrap">
                     <div class="single-products">
                       <div class="productinfo text-center">
@@ -184,7 +184,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="col-sm-3">
+                <div class="col-sm-3 imghome">
                   <div class="product-wrap">
                     <div class="single-products">
                       <div class="productinfo text-center">
@@ -197,7 +197,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="col-sm-3">
+                <div class="col-sm-3 imghome">
                   <div class="product-wrap">
                     <div class="single-products">
                       <div class="productinfo text-center">
@@ -210,7 +210,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="col-sm-3">
+                <div class="col-sm-3 imghome">
                   <div class="product-wrap">
                     <div class="single-products">
                       <div class="productinfo text-center">
@@ -226,7 +226,7 @@
               </div>
               
               <div class="tab-pane fade" id="skirts" >
-                <div class="col-sm-3">
+                <div class="col-sm-3 imghome">
                   <div class="product-wrap">
                     <div class="single-products">
                       <div class="productinfo text-center">
@@ -239,7 +239,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="col-sm-3">
+                <div class="col-sm-3 imghome">
                   <div class="product-wrap">
                     <div class="single-products">
                       <div class="productinfo text-center">
@@ -252,7 +252,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="col-sm-3">
+                <div class="col-sm-3 imghome">
                   <div class="product-wrap">
                     <div class="single-products">
                       <div class="productinfo text-center">
@@ -265,7 +265,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="col-sm-3">
+                <div class="col-sm-3 imghome">
                   <div class="product-wrap">
                     <div class="single-products">
                       <div class="productinfo text-center">
