@@ -12,8 +12,6 @@ class Home extends CI_Controller {
          	$this->logged_in = TRUE;
          } else {
          	//$this->logged_in = FASLE;
-         	
-         	
          }
           
     }
