@@ -43,7 +43,7 @@ a#scrollUp {
 
 .category-tab ul {
   background: #40403E;
-  border-bottom: 1px solid #FE980F;
+  border-bottom: 1px solid #9900CC;
   list-style: none outside none;
   margin: 0 0 30px;
   padding: 0;
@@ -61,7 +61,7 @@ a#scrollUp {
 }
 
 .category-tab ul  li  a:hover{
-	background:#FE980F;
+	background:#9900CC;
 	color:#fff;
 }
 
@@ -207,6 +207,22 @@ a#scrollUp {
 .panel-body{
 	color: #dddddd;
 }
+
+.panel-group .panel-heading + .panel-collapse .panel-body {
+  border-top: 0 none;
+}
+
+.panel-body ul{
+  padding-left: 20px;
+}
+
+.panel-body ul li a {
+  color: #696763;
+  font-family: 'Roboto', sans-serif;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
 #signupbox{
 	position: relative;
 	float:left;
@@ -423,8 +439,12 @@ i.social{
   color:#9900CC;
 }
 
+.left-sidebar{
+  margin-top: 28px;
+}
+
 .left-sidebar h2, .brands_products h2 {
-  color: #FE980F;
+  color: #9900CC;
   font-family: 'Roboto', sans-serif;
   font-size: 18px;
   font-weight: 700;
@@ -549,7 +569,7 @@ i.social{
 
 .single-widget ul li a:hover{
   background:none;
-  color:#FE980F;
+  color:#9900CC;
 }
 
 .single-widget {
@@ -575,7 +595,7 @@ i.social{
 }
 
 h2.title {
-  color: #FE980F;
+  color: #9900CC;
   font-family: 'Roboto', sans-serif;
   font-size: 18px;
   font-weight: 700;
@@ -631,7 +651,7 @@ h2.title:before{
 }
 
 .productinfo h2{
-  color: #FE980F;
+  color: #9900CC;
   font-family: 'Roboto', sans-serif;
   font-size: 24px;
   font-weight: 700;
@@ -670,7 +690,7 @@ h2.title:before{
   background:#fff;
   border: 0 none;
   border-radius: 0;
-  color: #FE980F;
+  color: #9900CC;
   font-family: 'Roboto', sans-serif;
   font-size: 15px;
   margin-bottom: 25px;
@@ -678,7 +698,7 @@ h2.title:before{
 
 .product-overlay .add-to-cart:hover {
   background:#fff;
-  color: #FE980F;
+  color: #9900CC;
 }
 
 .add-to-cart {
@@ -692,7 +712,7 @@ h2.title:before{
 }
 
 .add-to-cart:hover {
-  background: #FE980F;
+  background: #9900CC;
   border: 0 none;
   border-radius: 0;
   color: #FFFFFF;
@@ -707,12 +727,12 @@ h2.title:before{
 }
 
 .add-to-cart:hover {
-  background: #FE980F;
+  background: #9900CC;
   color: #FFFFFF;
 }
 
 .product-overlay {
-  background:#FE980F;
+  background:#9900CC;
   top: 0;
   display: none;
   height: 0;
@@ -749,7 +769,7 @@ h2.title:before{
 
 .choose ul li a:hover{
   background:none;
-  color:#FE980F;
+  color:#9900CC;
 }
 
 .new, .sale {
@@ -769,6 +789,14 @@ h2.title:before{
     background-position: center;
     background-attachment: fixed;
     background-size: cover;
+}
+
+.section-top{
+  padding-top: 45px;
+}
+
+.panel-default > .panel-heading .badge{
+  background-color: #FFFFFF;
 }
 
 /*#8e44ad*/
