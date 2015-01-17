@@ -117,25 +117,25 @@
                 <div class="span3" id="sidebar">
                     <ul class="nav nav-list bs-docs-sidenav nav-collapse collapse">
                         <li class="active">
-                            <a href="index.html"><i class="icon-chevron-right"></i> Dashboard</a>
+                            <a href="<?php echo base_url(). 'admin/home'?>"><i class="icon-chevron-right"></i> Dashboard</a>
                         </li>
                         <li>
-                            <a href="tables.html"><i class="icon-chevron-right"></i> Tables</a>
+                            <a href="<?php echo base_url(). 'admin/tables'?>"><i class="icon-chevron-right"></i> Tables</a>
                         </li>
                         <li>
-                            <a href="form.html"><i class="icon-chevron-right"></i> Forms</a>
+                            <a href="<?php echo base_url(). 'admin/forms'?>"><i class="icon-chevron-right"></i> Forms</a>
                         </li>
                         <li>
-                            <a href="stats.html"><i class="icon-chevron-right"></i> Statistics (Charts)</a>
+                            <a href="<?php echo base_url(). 'admin/statistics'?>"><i class="icon-chevron-right"></i> Statistics (Charts)</a>
                         </li>
                         <li>
-                            <a href="#"><span class="badge badge-warning pull-right">0</span> Messages</a>
+                            <a href="<?php echo base_url(). 'admin/messages'?>"><span class="badge badge-warning pull-right">0</span> Messages</a>
                         </li>
                         <li>
-                            <a href="#"><span class="badge badge-info pull-right">17</span> Company</a>
+                            <a href="<?php echo base_url(). 'admin/company'?>"><span class="badge badge-info pull-right">17</span> Company</a>
                         </li>
                         <li>
-                            <a href="#"><span class="badge badge-success pull-right">3</span> Users</a>
+                            <a href="<?php echo base_url(). 'admin/users'?>"><span class="badge badge-success pull-right">3</span> Users</a>
                         </li>
                         <!-- <li>
                             <a href="calendar.html"><i class="icon-chevron-right"></i> Calendar</a>
@@ -494,10 +494,6 @@
                     </div>
                 </div>
             </div>
-            <hr>
-            <footer>
-                <p>&copy; MareWill Fashion 2013</p>
-            </footer>
-        </div>
+            
         <!--/.fluid-container-->
         
