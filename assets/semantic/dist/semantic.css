@@ -6024,9 +6024,10 @@ select.ui.dropdown {
 /* Menu Item Hover */
 
 .ui.dropdown .menu > .item:hover {
-  background: rgba(0, 0, 0, 0.05);
-  color: rgba(0, 0, 0, 0.8);
+  background: #9b59b6;
+  color: #FFFFFF;
   z-index: 12;
+  text-decoration: none;
 }
 
 /*--------------------

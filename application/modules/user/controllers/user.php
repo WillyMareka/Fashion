@@ -8,6 +8,12 @@ class User extends MX_Controller {
         // Call the Model constructor
         parent::__construct();
 
+        if ($this->session->userdata('logged_in')) {
+         	$this->logged_in = TRUE;
+         } else {
+         	//$this->logged_in = FASLE;
+         }
+
         $this->load->model('user_model');
         $this->load->library('upload');
         
@@ -110,7 +116,7 @@ class User extends MX_Controller {
 		    //echo 'Not working';
 		}else{
 			 //var_dump(realpath('application/modules/user'));
-			$path = '';
+			$path = base_url().'uploads/users/';
 		       $config['upload_path'] = 'uploads/users/';
 		       $config['allowed_types'] = 'jpeg|jpg|png|gif';
 		       $config['encrypt_name'] = TRUE;
@@ -125,9 +131,7 @@ class User extends MX_Controller {
 		    }
 		     else
 		     {
-			   
 		       
-
                 $data = array('upload_data' => $this->upload->data());
 			     foreach ($data as $key => $value) {
 				  //print_r($data);die;
