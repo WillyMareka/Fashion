@@ -116,14 +116,13 @@
 						<!--brands_products-->
 					
 						<div class="brands_products">
-							<h2>Brands</h2>
+							<h2>Company</h2>
 							<div class="brands-name">
 								<ul class="nav nav-pills nav-stacked">
-									<li><a href=""> <span class="pull-right">(50)</span>Acne</a></li>
-									<li><a href=""> <span class="pull-right">(27)</span>Albiro</a></li>
-									<li><a href=""> <span class="pull-right">(32)</span>Ronhill</a></li>
-									<li><a href=""> <span class="pull-right">(5)</span>Oddmolly</a></li>
-									<li><a href=""> <span class="pull-right">(9)</span>Boudestijn</a></li>
+									<li><a href=""> <span class="pull-right">(50)</span>Adidas</a></li>
+									<li><a href=""> <span class="pull-right">(27)</span>Nike</a></li>
+									<li><a href=""> <span class="pull-right">(32)</span>Puma</a></li>
+									<li><a href=""> <span class="pull-right">(5)</span>Gucci</a></li>
 								</ul>
 							</div>
 						</div><!--/brands_products-->
