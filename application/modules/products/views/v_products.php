@@ -180,8 +180,10 @@
 									<div class="product-overlay">
 										<div class="overlay-content">
 											<!-- <img class="imagesize" src="<?php echo base_url(). 'assets/images/shirt1.jpg'?>" alt="" /> -->
-											<h2>Kshs 2300</h2>
-											<p>Lace Dress</p>
+											<h1>Lace Dress</h1>
+											<h2>Category</h2><p>Women</p>
+											<h2>Price</h2><p>Kshs 2300</p>
+											<h2>Company</h2><p>Valentino</p>
 											<a href="#" class="btn btn-default add-to-cart"><i class="shop icon"></i>Add to cart</a>
 										</div>
 									</div>
