@@ -303,19 +303,19 @@
                                                 <td>1</td>
                                                 <td>Coat</td>
                                                 <td>02/02/2013</td>
-                                                <td>$25.12</td>
+                                                <td>Kshs 25.12</td>
                                             </tr>
                                             <tr>
                                                 <td>2</td>
                                                 <td>Jacket</td>
                                                 <td>01/02/2013</td>
-                                                <td>$335.00</td>
+                                                <td>Kshs 335.00</td>
                                             </tr>
                                             <tr>
                                                 <td>3</td>
                                                 <td>Shoes</td>
                                                 <td>01/02/2013</td>
-                                                <td>$29.99</td>
+                                                <td>Kshs 29.99</td>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -391,17 +391,17 @@
                                             <tr>
                                                 <td>1</td>
                                                 <td>02/02/2013</td>
-                                                <td>$25.12</td>
+                                                <td>Kshs 25.12</td>
                                             </tr>
                                             <tr>
                                                 <td>2</td>
                                                 <td>01/02/2013</td>
-                                                <td>$335.00</td>
+                                                <td>Kshs 335.00</td>
                                             </tr>
                                             <tr>
                                                 <td>3</td>
                                                 <td>01/02/2013</td>
-                                                <td>$29.99</td>
+                                                <td>Kshs 29.99</td>
                                             </tr>
                                         </tbody>
                                     </table>
