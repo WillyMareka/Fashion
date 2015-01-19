@@ -1,10 +1,11 @@
 
   
-<div id="top_info">
+ <!-- <div id="top_info">
    <?php
        if(isset($new_user)){ ?>
          <div class="well well-lg well-info"><h3><?php echo $new_user; ?></h3></div>
    <?php
+
        }elseif(validation_errors()){
                               
    ?>
@@ -13,9 +14,14 @@
        }else{ 
         ?>
          <div class="well well-lg well-info"><h4>Please log into the system</h4></div>
+
    <?php
        }
    ?>
+
+
+
+</div>  -->
 
 </div>
 
@@ -23,7 +29,8 @@
 
 
   	    <div class="container logspace">    
-        <div id="loginbox" style="margin-top:30px;margin-bottom:101px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">                    
+        <div id="loginbox" style="margin-top:120px;margin-bottom:100px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">                    
+
             <div class="panel panel-info" >
                     <div class="panel-heading headerback">
                         <div class="panel-title  ">Log In</div>

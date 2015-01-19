@@ -147,15 +147,16 @@
 							<div class="product-image-wrapper">
 								<div class="single-products">
 									<div class="productinfo text-center">
-										<img src="" alt="" />
+										<img class="imagesize" src="<?php echo base_url(). 'assets/images/gallery2.jpg'?>" alt="" />
 										<h2>Kshs 1994</h2>
-										<p>Easy Polo Black Edition</p>
+										<p>Easy Polo Blue Edition</p>
 										<a href="#" class="btn btn-default add-to-cart"><i class="shop icon"></i>Add to cart</a>
 									</div>
 									<div class="product-overlay">
 										<div class="overlay-content">
+											<!-- <img class="imagesize" src="<?php echo base_url(). 'assets/images/shirt1.jpg'?>" alt="" /> -->
 											<h2>Kshs 1994</h2>
-											<p>Easy Polo Black Edition</p>
+											<p>Easy Polo Blue Edition</p>
 											<a href="#" class="btn btn-default add-to-cart"><i class="shop icon"></i>Add to cart</a>
 										</div>
 									</div>
@@ -172,15 +173,16 @@
 							<div class="product-image-wrapper">
 								<div class="single-products">
 									<div class="productinfo text-center">
-										<img src="" alt="" />
-										<h2>Kshs 1994</h2>
-										<p>Easy Polo Black Edition</p>
+										<img class="imagesize" src="<?php echo base_url(). 'assets/images/lace-dress.jpg'?>" alt="" />
+										<h2>Kshs 2300</h2>
+										<p>Lace Dress</p>
 										<a href="#" class="btn btn-default add-to-cart"><i class="shop icon"></i>Add to cart</a>
 									</div>
 									<div class="product-overlay">
 										<div class="overlay-content">
-											<h2>Kshs 1994</h2>
-											<p>Easy Polo Black Edition</p>
+											<!-- <img class="imagesize" src="<?php echo base_url(). 'assets/images/shirt1.jpg'?>" alt="" /> -->
+											<h2>Kshs 2300</h2>
+											<p>Lace Dress</p>
 											<a href="#" class="btn btn-default add-to-cart"><i class="shop icon"></i>Add to cart</a>
 										</div>
 									</div>
@@ -197,15 +199,16 @@
 							<div class="product-image-wrapper">
 								<div class="single-products">
 									<div class="productinfo text-center">
-										<img src="" alt="" />
-										<h2>Kshs 1994</h2>
-										<p>Easy Polo Black Edition</p>
+										<img class="imagesize" src="<?php echo base_url(). 'assets/images/skirts4.jpg'?>" alt="" />
+										<h2>Kshs 2000</h2>
+										<p>Pink Pencil Skirt</p>
 										<a href="#" class="btn btn-default add-to-cart"><i class="shop icon"></i>Add to cart</a>
 									</div>
 									<div class="product-overlay">
 										<div class="overlay-content">
-											<h2>Kshs 1994</h2>
-											<p>Easy Polo Black Edition</p>
+											<!-- <img class="imagesize" src="<?php echo base_url(). 'assets/images/shirt1.jpg'?>" alt="" /> -->
+											<h2>Kshs 2000</h2>
+											<p>Pink Pencil Skirt</p>
 											<a href="#" class="btn btn-default add-to-cart"><i class="shop icon"></i>Add to cart</a>
 										</div>
 									</div>
@@ -222,15 +225,16 @@
 							<div class="product-image-wrapper">
 								<div class="single-products">
 									<div class="productinfo text-center">
-										<img src="" alt="" />
-										<h2>Kshs 1994</h2>
-										<p>Easy Polo Black Edition</p>
+										<img class="imagesize" src="<?php echo base_url(). 'assets/images/gallery1.jpg'?>" alt="" />
+										<h2>Kshs 900</h2>
+										<p>Casual Vest</p>
 										<a href="#" class="btn btn-default add-to-cart"><i class="shop icon"></i>Add to cart</a>
 									</div>
 									<div class="product-overlay">
 										<div class="overlay-content">
-											<h2>Kshs 1994</h2>
-											<p>Easy Polo Black Edition</p>
+											<!-- <img class="imagesize" src="<?php echo base_url(). 'assets/images/shirt1.jpg'?>" alt="" /> -->
+											<h2>Kshs 500</h2>
+											<p>Printed Scarf</p>
 											<a href="#" class="btn btn-default add-to-cart"><i class="shop icon"></i>Add to cart</a>
 										</div>
 									</div>
@@ -248,15 +252,16 @@
 							<div class="product-image-wrapper">
 								<div class="single-products">
 									<div class="productinfo text-center">
-										<img src="" alt="" />
-										<h2>Kshs 1994</h2>
-										<p>Easy Polo Black Edition</p>
+										<img class="imagesize" src="<?php echo base_url(). 'assets/images/long-dress.jpg'?>" alt="" />
+										<h2>Kshs 2679</h2>
+										<p>Little Black Dress</p>
 										<a href="#" class="btn btn-default add-to-cart"><i class="shop icon"></i>Add to cart</a>
 									</div>
 									<div class="product-overlay">
 										<div class="overlay-content">
-											<h2>Kshs 1994</h2>
-											<p>Easy Polo Black Edition</p>
+											<!-- <img class="imagesize" src="<?php echo base_url(). 'assets/images/shirt1.jpg'?>" alt="" /> -->
+											<h2>Kshs 2679</h2>
+											<p>Little Black Dress</p>
 											<a href="#" class="btn btn-default add-to-cart"><i class="shop icon"></i>Add to cart</a>
 										</div>
 									</div>
@@ -274,15 +279,16 @@
 							<div class="product-image-wrapper">
 								<div class="single-products">
 									<div class="productinfo text-center">
-										<img src="" alt="" />
-										<h2>Kshs 1994</h2>
-										<p>Easy Polo Black Edition</p>
+										<img class="imagesize" src="<?php echo base_url(). 'assets/images/girl8.jpg'?>" alt="" />
+										<h2>Kshs 599</h2>
+										<p>Chunky Bracelets</p>
 										<a href="#" class="btn btn-default add-to-cart"><i class="shop icon"></i>Add to cart</a>
 									</div>
 									<div class="product-overlay">
 										<div class="overlay-content">
-											<h2>Kshs 1994</h2>
-											<p>Easy Polo Black Edition</p>
+											<!-- <img class="imagesize" src="<?php echo base_url(). 'assets/images/shirt1.jpg'?>" alt="" /> -->
+											<h2>Kshs 599</h2>
+											<p>Chunky Bracelets</p>
 											<a href="#" class="btn btn-default add-to-cart"><i class="shop icon"></i>Add to cart</a>
 										</div>
 									</div>
@@ -300,15 +306,16 @@
 							<div class="product-image-wrapper">
 								<div class="single-products">
 									<div class="productinfo text-center">
-										<img src="" alt="" />
-										<h2>Kshs 1994</h2>
-										<p>Easy Polo Black Edition</p>
+										<img class="imagesize" src="<?php echo base_url(). 'assets/images/suit1.jpg'?>" alt="" />
+										<h2>Kshs 7549</h2>
+										<p>White Tailored Suit</p>
 										<a href="#" class="btn btn-default add-to-cart"><i class="shop icon"></i>Add to cart</a>
 									</div>
 									<div class="product-overlay">
 										<div class="overlay-content">
-											<h2>Kshs 1994</h2>
-											<p>Easy Polo Black Edition</p>
+											<!-- <img class="imagesize" src="<?php echo base_url(). 'assets/images/shirt1.jpg'?>" alt="" /> -->
+											<h2>Kshs 7549</h2>
+											<p>White Tailored Suit</p>
 											<a href="#" class="btn btn-default add-to-cart"><i class="shop icon"></i>Add to cart</a>
 										</div>
 									</div>
@@ -326,15 +333,16 @@
 							<div class="product-image-wrapper">
 								<div class="single-products">
 									<div class="productinfo text-center">
-										<img src="" alt="" />
-										<h2>Kshs 1994</h2>
-										<p>Easy Polo Black Edition</p>
+										<img class="imagesize" src="<?php echo base_url(). 'assets/images/sun1.jpg'?>" alt="" />
+										<h2>Kshs 1550</h2>
+										<p>Geeky sunglasses</p>
 										<a href="#" class="btn btn-default add-to-cart"><i class="shop icon"></i>Add to cart</a>
 									</div>
 									<div class="product-overlay">
 										<div class="overlay-content">
-											<h2>Kshs 1994</h2>
-											<p>Easy Polo Black Edition</p>
+											<!-- <img class="imagesize" src="<?php echo base_url(). 'assets/images/shirt1.jpg'?>" alt="" /> -->
+											<h2>Kshs 1550</h2>
+											<p>Geeky sunglasses</p>
 											<a href="#" class="btn btn-default add-to-cart"><i class="shop icon"></i>Add to cart</a>
 										</div>
 									</div>
@@ -352,15 +360,16 @@
 							<div class="product-image-wrapper">
 								<div class="single-products">
 									<div class="productinfo text-center">
-										<img src="" alt="" />
-										<h2>Kshs 1994</h2>
-										<p>Easy Polo Black Edition</p>
+										<img class="imagesize" src="<?php echo base_url(). 'assets/images/womanjean2.jpg'?>" alt="" />
+										<h2>Kshs 850</h2>
+										<p>Fitting Jeans</p>
 										<a href="#" class="btn btn-default add-to-cart"><i class="shop icon"></i>Add to cart</a>
 									</div>
 									<div class="product-overlay">
 										<div class="overlay-content">
-											<h2>Kshs 1994</h2>
-											<p>Easy Polo Black Edition</p>
+											<!-- <img class="imagesize" src="<?php echo base_url(). 'assets/images/shirt1.jpg'?>" alt="" /> -->
+											<h2>Kshs 850</h2>
+											<p>Fitting Jeans</p>
 											<a href="#" class="btn btn-default add-to-cart"><i class="shop icon"></i>Add to cart</a>
 										</div>
 									</div>
@@ -378,15 +387,16 @@
 							<div class="product-image-wrapper">
 								<div class="single-products">
 									<div class="productinfo text-center">
-										<img src="" alt="" />
-										<h2>Kshs 1994</h2>
-										<p>Easy Polo Black Edition</p>
+										<img class="imagesize" src="<?php echo base_url(). 'assets/images/shirt1.jpg'?>" alt="" />
+										<h2>Kshs 1000</h2>
+										<p>Easy Stripped Shirt</p>
 										<a href="#" class="btn btn-default add-to-cart"><i class="shop icon"></i>Add to cart</a>
 									</div>
 									<div class="product-overlay">
 										<div class="overlay-content">
-											<h2>Kshs 1994</h2>
-											<p>Easy Polo Black Edition</p>
+											<!-- <img class="imagesize" src="<?php echo base_url(). 'assets/images/shirt1.jpg'?>" alt="" /> -->
+											<h2>Kshs 1000</h2>
+											<p>Easy Stripped Shirt</p>
 											<a href="#" class="btn btn-default add-to-cart"><i class="shop icon"></i>Add to cart</a>
 										</div>
 									</div>
@@ -405,15 +415,16 @@
 							<div class="product-image-wrapper">
 								<div class="single-products">
 									<div class="productinfo text-center">
-										<img src="" alt="" />
-										<h2>Kshs 1994</h2>
-										<p>Easy Polo Black Edition</p>
+										<img class="imagesize" src="<?php echo base_url(). 'assets/images/short-dress.jpg'?>" alt="" />
+										<h2>Kshs 2500</h2>
+										<p>Purple Number</p>
 										<a href="#" class="btn btn-default add-to-cart"><i class="shop icon"></i>Add to cart</a>
 									</div>
 									<div class="product-overlay">
 										<div class="overlay-content">
-											<h2>Kshs 1994</h2>
-											<p>Easy Polo Black Edition</p>
+											<!-- <img class="imagesize" src="<?php echo base_url(). 'assets/images/shirt1.jpg'?>" alt="" /> -->
+											<h2>Kshs 2500</h2>
+											<p>Purple Number</p>
 											<a href="#" class="btn btn-default add-to-cart"><i class="shop icon"></i>Add to cart</a>
 										</div>
 									</div>
@@ -431,15 +442,16 @@
 							<div class="product-image-wrapper">
 								<div class="single-products">
 									<div class="productinfo text-center">
-										<img src="" alt="" />
-										<h2>Kshs 1994</h2>
-										<p>Easy Polo Black Edition</p>
+										<img class="imagesize" src="<?php echo base_url(). 'assets/images/womanjean3.jpg'?>" alt="" />
+										<h2>Kshs 1500</h2>
+										<p>Jean Shorts</p>
 										<a href="#" class="btn btn-default add-to-cart"><i class="shop icon"></i>Add to cart</a>
 									</div>
 									<div class="product-overlay">
 										<div class="overlay-content">
-											<h2>Kshs 1994</h2>
-											<p>Easy Polo Black Edition</p>
+											<!-- <img class="imagesize" src="<?php echo base_url(). 'assets/images/shirt1.jpg'?>" alt="" /> -->
+											<h2>Kshs 1500</h2>
+											<p>Jean Shorts</p>
 											<a href="#" class="btn btn-default add-to-cart"><i class="shop icon"></i>Add to cart</a>
 										</div>
 									</div>
