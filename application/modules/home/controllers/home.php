@@ -39,6 +39,17 @@ class Home extends CI_Controller {
 		$this->load->view('contact');
 		$this->load->view('footer');
 	}
+
+	 public function add_to_cart_check(){
+      if($this->session->userdata('logged_in')){
+
+      }else{
+        redirect('user/log');
+		
+		
+
+      }
+    }
 	
 }
 

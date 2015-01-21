@@ -68,7 +68,8 @@
                         <img class="imagesize" src="<?php echo base_url(). 'assets/images/shirt1.jpg'?>" alt="" />
                         <h2>Kshs 119/=</h2>
                         <p>Red Edition</p>
-                        <a href="#" class="btn btn-warning add-to-cart"><i class="shop icon"></i></i>Add to cart</a>
+
+                        <a href="<?php echo base_url(). 'home/add_to_cart_check'?>" class="btn btn-warning add-to-cart"><i class="shop icon"></i></i>Add to cart</a>
                       </div>
                       
                     </div>
@@ -81,7 +82,7 @@
                         <img class="imagesize" src="<?php echo base_url(). 'assets/images/shirt2.jpg'?>" alt="" />
                         <h2>Kshs 249/=</h2>
                         <p>Grey Edition</p>
-                        <a href="#" class="btn btn-warning add-to-cart"><i class="shop icon"></i></i>Add to cart</a>
+                        <a href="<?php echo base_url(). 'home/add_to_cart_check'?>" class="btn btn-warning add-to-cart"><i class="shop icon"></i></i>Add to cart</a>
                       </div>
                       
                     </div>
@@ -94,7 +95,7 @@
                         <img class="imagesize" src="<?php echo base_url(). 'assets/images/shirt3.jpg'?>" alt="" />
                         <h2>Kshs 199/=</h2>
                         <p>White Edition</p>
-                        <a href="#" class="btn btn-warning add-to-cart"><i class="shop icon"></i></i>Add to cart</a>
+                        <a href="<?php echo base_url(). 'home/add_to_cart_check'?>" class="btn btn-warning add-to-cart"><i class="shop icon"></i></i>Add to cart</a>
                       </div>
                       
                     </div>
@@ -107,7 +108,7 @@
                         <img class="imagesize" src="<?php echo base_url(). 'assets/images/shirt4.jpg'?>" alt="" />
                         <h2>Kshs 99/=</h2>
                         <p>Black Edition</p>
-                        <a href="#" class="btn btn-warning add-to-cart"><i class="shop icon"></i></i>Add to cart</a>
+                        <a href="<?php echo base_url(). 'home/add_to_cart_check'?>" class="btn btn-warning add-to-cart"><i class="shop icon"></i></i>Add to cart</a>
                       </div>
                       
                     </div>
@@ -123,7 +124,7 @@
                         <img class="imagesize" src="<?php echo base_url(). 'assets/images/suit1.jpg'?>" alt="" />
                         <h2>Kshs 4999/=</h2>
                         <p>White Edition</p>
-                        <a href="#" class="btn btn-warning add-to-cart"><i class="shop icon"></i></i>Add to cart</a>
+                        <a href="<?php echo base_url(). 'home/add_to_cart_check'?>" class="btn btn-warning add-to-cart"><i class="shop icon"></i></i>Add to cart</a>
                       </div>
                       
                     </div>
@@ -136,7 +137,7 @@
                         <img class="imagesize" src="<?php echo base_url(). 'assets/images/suit2.jpg'?>" alt="" />
                         <h2>Kshs 5499/=</h2>
                         <p>Black Edition</p>
-                        <a href="#" class="btn btn-warning add-to-cart"><i class="shop icon"></i></i>Add to cart</a>
+                        <a href="<?php echo base_url(). 'home/add_to_cart_check'?>" class="btn btn-warning add-to-cart"><i class="shop icon"></i></i>Add to cart</a>
                       </div>
                       
                     </div>
@@ -149,7 +150,7 @@
                         <img class="imagesize" src="<?php echo base_url(). 'assets/images/suit3.jpg'?>" alt="" />
                         <h2>Kshs 2999/=</h2>
                         <p>Grey Edition</p>
-                        <a href="#" class="btn btn-warning add-to-cart"><i class="shop icon"></i></i>Add to cart</a>
+                        <a href="<?php echo base_url(). 'home/add_to_cart_check'?>" class="btn btn-warning add-to-cart"><i class="shop icon"></i></i>Add to cart</a>
                       </div>
                       
                     </div>
@@ -162,7 +163,7 @@
                         <img class="imagesize" src="<?php echo base_url(). 'assets/images/suit4.jpg'?>" alt="" />
                         <h2>Kshs 2499/=</h2>
                         <p>Black Edition</p>
-                        <a href="#" class="btn btn-warning add-to-cart"><i class="shop icon"></i></i>Add to cart</a>
+                        <a href="<?php echo base_url(). 'home/add_to_cart_check'?>" class="btn btn-warning add-to-cart"><i class="shop icon"></i></i>Add to cart</a>
                       </div>
                       
                     </div>
@@ -178,7 +179,7 @@
                         <img class="imagesize" src="<?php echo base_url(). 'assets/images/sun1.jpg'?>" alt="" />
                         <h2>Kshs 99/=</h2>
                         <p>White Edition</p>
-                        <a href="#" class="btn btn-warning add-to-cart"><i class="shop icon"></i></i>Add to cart</a>
+                        <a href="<?php echo base_url(). 'home/add_to_cart_check'?>" class="btn btn-warning add-to-cart"><i class="shop icon"></i></i>Add to cart</a>
                       </div>
                       
                     </div>
@@ -191,7 +192,7 @@
                         <img class="imagesize" src="<?php echo base_url(). 'assets/images/sun5.jpg'?>" alt="" />
                         <h2>Kshs 189/=</h2>
                         <p>Black Edition</p>
-                        <a href="#" class="btn btn-warning add-to-cart"><i class="shop icon"></i></i>Add to cart</a>
+                        <a href="<?php echo base_url(). 'home/add_to_cart_check'?>" class="btn btn-warning add-to-cart"><i class="shop icon"></i></i>Add to cart</a>
                       </div>
                       
                     </div>
@@ -204,7 +205,7 @@
                         <img class="imagesize" src="<?php echo base_url(). 'assets/images/sun3.jpg'?>" alt="" />
                         <h2>Kshs 159/=</h2>
                         <p>Black Edition</p>
-                        <a href="#" class="btn btn-warning add-to-cart"><i class="shop icon"></i></i>Add to cart</a>
+                        <a href="<?php echo base_url(). 'home/add_to_cart_check'?>" class="btn btn-warning add-to-cart"><i class="shop icon"></i></i>Add to cart</a>
                       </div>
                       
                     </div>
@@ -217,7 +218,7 @@
                         <img class="imagesize" src="<?php echo base_url(). 'assets/images/sun4.jpg'?>" alt="" />
                         <h2>Kshs 249/=</h2>
                         <p>Black Edition</p>
-                        <a href="#" class="btn btn-warning add-to-cart"><i class="shop icon"></i></i>Add to cart</a>
+                        <a href="<?php echo base_url(). 'home/add_to_cart_check'?>" class="btn btn-warning add-to-cart"><i class="shop icon"></i></i>Add to cart</a>
                       </div>
                       
                     </div>
@@ -233,7 +234,7 @@
                         <img class="imagesize" src="<?php echo base_url(). 'assets/images/skirts1.jpg'?>" alt="" />
                         <h2>Kshs 359/=</h2>
                         <p>Black Edition</p>
-                        <a href="#" class="btn btn-warning add-to-cart"><i class="shop icon"></i></i>Add to cart</a>
+                        <a href="<?php echo base_url(). 'home/add_to_cart_check'?>" class="btn btn-warning add-to-cart"><i class="shop icon"></i></i>Add to cart</a>
                       </div>
                       
                     </div>
@@ -246,7 +247,7 @@
                         <img class="imagesize" src="<?php echo base_url(). 'assets/images/skirt5.jpg'?>" alt="" />
                         <h2>Kshs 519/=</h2>
                         <p>Blue Edition</p>
-                        <a href="#" class="btn btn-warning add-to-cart"><i class="shop icon"></i></i>Add to cart</a>
+                        <a href="<?php echo base_url(). 'home/add_to_cart_check'?>" class="btn btn-warning add-to-cart"><i class="shop icon"></i></i>Add to cart</a>
                       </div>
                       
                     </div>
@@ -259,7 +260,7 @@
                         <img class="imagesize" src="<?php echo base_url(). 'assets/images/skirts3.jpg'?>" alt="" />
                         <h2>Kshs 449/=</h2>
                         <p>Black Edition</p>
-                        <a href="#" class="btn btn-warning add-to-cart"><i class="shop icon"></i></i>Add to cart</a>
+                        <a href="<?php echo base_url(). 'home/add_to_cart_check'?>" class="btn btn-warning add-to-cart"><i class="shop icon"></i></i>Add to cart</a>
                       </div>
                       
                     </div>
@@ -272,7 +273,7 @@
                         <img class="imagesize" src="<?php echo base_url(). 'assets/images/skirts4.jpg'?>" alt="" />
                         <h2>Kshs 389/=</h2>
                         <p>Pink Edition</p>
-                        <a href="#" class="btn btn-warning add-to-cart"><i class="shop icon"></i></i>Add to cart</a>
+                        <a href="<?php echo base_url(). 'home/add_to_cart_check'?>" class="btn btn-warning add-to-cart"><i class="shop icon"></i></i>Add to cart</a>
                       </div>
                       
                     </div>

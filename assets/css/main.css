@@ -122,9 +122,10 @@ a#scrollUp {
 }
 
 .carou{
-	margin-left: 190px;
+	margin-left: 130px;
 	width:1000px;
 	margin-bottom: 50px;
+  margin-right: 190px;
 }
 
 .carousel-caption{
@@ -164,9 +165,10 @@ a#scrollUp {
 }
 
 .display{
-  margin-top: 60px;
-   margin-left: 190px;
-	width:1000px;
+   margin-top: 60px;
+   margin-left: 128px;
+	 width:1000px;
+   margin-right: ;
 }
 
 .product-wrap{
