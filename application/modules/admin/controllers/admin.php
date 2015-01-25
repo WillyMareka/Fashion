@@ -35,7 +35,9 @@ class Admin extends CI_Controller {
 
 	public function forms()
 	{
-		$this->load->view('admin_form', array('logged_in' => $this->logged_in));
+		$data['error'] = '';
+		$data['content_page'] = 'admin/admin_form';
+		$this->template->get_admin_template($data);
 	}
 
 	public function users()

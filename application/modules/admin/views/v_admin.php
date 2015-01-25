@@ -18,11 +18,11 @@
                                 </a>
                                 <ul class="dropdown-menu">
                                     <li>
-                                        <a tabindex="-1" href="#">Profile</a>
+                                        <a tabindex="-1" href="<?php echo base_url(). 'admin/profileview'?>">Profile</a>
                                     </li>
                                     <li class="divider"></li>
                                     <li>
-                                        <a tabindex="-1" href="login.html">Logout</a>
+                                        <a tabindex="-1" href="<?php echo base_url(). 'user/logout'?>">Logout</a>
                                     </li>
                                 </ul>
                             </li>
@@ -169,6 +169,10 @@
                 
                 <!--/span-->
                 <div class="span9" id="content">
+
+
+
+                    
                     <div class="row-fluid">
                         <div class="alert alert-success">
 							<button type="button" class="close" data-dismiss="alert">&times;</button>
@@ -492,6 +496,11 @@
                         </div>
                         <!-- /block -->
                     </div>
+
+
+
+
+
                 </div>
             </div>
             

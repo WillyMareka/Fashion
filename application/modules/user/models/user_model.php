@@ -145,7 +145,8 @@ class User_model extends MY_Model {
                    'residence'   => $row ->residence , 
                    'phone_no'    => $row ->phone_no ,  
                    'religion'    => $row ->religion , 
-                   'gender'      => $row ->gender    
+                   'gender'      => $row ->gender ,
+                   'lt_id'       => $row2->lt_id
                 );
 
                 $this -> set_session($session_data);
@@ -180,7 +181,7 @@ class User_model extends MY_Model {
 
       $this->session->set_userdata($setting_session);
 
-      echo "<pre>";print_r($setting_session);die();
+      //echo "<pre>";print_r($setting_session);die();
       
       $details = $this->session->all_userdata();
        $sql = "INSERT INTO ci_sessions (`session_id`,`ip_address`,`user_agent`,`last_activity`,`user_data`,`ac_id`,`username`,`lt_id`,`logged_in`)

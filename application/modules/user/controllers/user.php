@@ -70,7 +70,21 @@ class User extends MX_Controller {
 			switch($result){
 
 				case 'logged_in':
-                    redirect('/','location');
+                    
+                    switch($this->session->userdata('lt_id')){
+                        case '1':
+                          redirect(base_url().'products/view');
+                        break;
+
+                        case '2':
+                          redirect(base_url().'manager/home');
+                        break;
+
+                        case '3':
+                          redirect(base_url().'admin/home');
+                        break;
+                    }
+
 				break;
 
 				case 'incorrect_password':
