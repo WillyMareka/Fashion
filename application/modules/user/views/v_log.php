@@ -1,19 +1,19 @@
 
   
- <!-- <div id="top_info">
+ <div id="top_info">
    <?php
        if(isset($new_user)){ ?>
-         <div class="well well-lg well-info"><h3><?php echo $new_user; ?></h3></div>
+         <div class="well well-sm well-warn"><h4><?php echo $new_user; ?></h4></div>
    <?php
 
        }elseif(validation_errors()){
                               
    ?>
-         <div class="well well-lg well-warning"><h4><?php echo validation_errors('<p class="error">'); ?></h4></div>
+         <div class="well well-sm well-warn"><h4><?php echo validation_errors('<p class="error">'); ?></h4></div>
    <?php
        }else{ 
         ?>
-         <div class="well well-lg well-info"><h4>Please log into the system</h4></div>
+         <div class="well well-sm well-info"><h4>Please log into the system</h4></div>
 
    <?php
        }
@@ -21,7 +21,7 @@
 
 
 
-</div>  -->
+</div> 
 
 </div>
 

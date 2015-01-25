@@ -26,10 +26,13 @@ class User_model extends MY_Model {
         $this->db->where('username', $this->input->post('username'));
         $this->db->where('password', md5($this->input->post('password')));
         $query = $this->db->get('logs');
+        
 
         if($query->num_rows == 1){
           return TRUE;
         }
+
+
     }
 
 
@@ -113,11 +116,15 @@ class User_model extends MY_Model {
         $passw1 = md5($this->input->post('l_password'));
 
         $sql = "SELECT * FROM logs lg, accounts ac WHERE ac.ac_id = lg.log_id 
-        AND lg.username = '". $username ."' AND lg.password = '". $passw1 ."' LIMIT 1"; 
+        AND lg.username = '". $username ."' AND lg.password = '". $passw1 ."' LIMIT 1";
+
+
+
 
         $result = $this->db->query($sql);
-        $row = $result->row();
 
+        $row = $result->row();
+        // echo '<pre>';print_r($row);echo'</pre>';die;
         $sql2 = "SELECT * FROM logs WHERE username = '". $username ."' AND activated = 0 ";
 
         $result2 = $this->db->query($sql2);
@@ -149,29 +156,36 @@ class User_model extends MY_Model {
            }else{
              return "not_activated";
            }
+         }else{
+          return "incorrect_password";
          }
+
+
        
        //print_r($this->session->all_userdata());
     }
 
     private function set_session($session_data){
-      $sql = "SELECT ac_id , username FROM accounts, logs WHERE username = '". $session_data['username'] ."' LIMIT 1";
+      $sql = "SELECT ac_id , username, lt_id FROM accounts, logs WHERE username = '". $session_data['username'] ."' LIMIT 1";
       $result = $this->db->query($sql);
       $row = $result->row();
-       //echo "<pre>";print_r($session_data);die();
+       //echo "<pre>";print_r($result);die();
        //echo $session_data['ac_id'];die();
       $setting_session = array(
-                   'ac_id'     => $session_data['ac_id'] , 
-                   'username'    => $session_data['username'] , 
+                   'ac_id'       => $session_data['ac_id'] , 
+                   'username'    => $session_data['username'] ,
+                   'lt_id'       => $session_data['lt_id'] ,
                    'logged_in'   => 1
       ); 
 
       $this->session->set_userdata($setting_session);
+
+      echo "<pre>";print_r($setting_session);die();
       
       $details = $this->session->all_userdata();
-       $sql = "INSERT INTO ci_sessions (`session_id`,`ip_address`,`user_agent`,`last_activity`,`user_data`,`ac_id`,`username`,`logged_in`)
+       $sql = "INSERT INTO ci_sessions (`session_id`,`ip_address`,`user_agent`,`last_activity`,`user_data`,`ac_id`,`username`,`lt_id`,`logged_in`)
                VALUES ('".$details['session_id']."', '".$details['ip_address']."','".$details['user_agent']."', '".$details['last_activity']."', 
-                       '1','".$details['ac_id']."', '".$details['username']."', '".$details['logged_in']."') ";
+                       '1','".$details['ac_id']."', '".$details['username']."', '".$details['lt_id']."', '".$details['logged_in']."') ";
 
     $results = $this->db->query($sql);
       //$this->db->insert_batch('ci_sessions',$session_details);

@@ -65,7 +65,8 @@ class User extends MX_Controller {
 		}else{
 			
 			$result = $this->user_model->log_member();		
-            //print_r($result);
+            
+             //echo '<pre>';print_r($result);echo'</pre>';die;
 			switch($result){
 
 				case 'logged_in':
@@ -73,17 +74,19 @@ class User extends MX_Controller {
 				break;
 
 				case 'incorrect_password':
+		            $data['new_user'] = 'Incorrect Username or Password. Please try again...';
+
                     $this->load->view('log_header');
-		            $this->load->view('v_log');
+		            $this->load->view('v_log', $data);
 		            $this->load->view('home/footer');
-		            //$data['new_user'] = 'Incorrect Username or Password<br/><br/>Please try again...';
 				break;
 
 				case 'not_activated':
+		            $data['new_user'] = 'Your account is not activated';
+
                     $this->load->view('log_header');
-		            $this->load->view('v_log');
+		            $this->load->view('v_log', $data);
 		            $this->load->view('home/footer');
-		            //$data['new_user'] = 'Your account is not activated';
 				break;
 
 				default:
