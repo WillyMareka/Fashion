@@ -2,7 +2,7 @@
 
 class Admin extends CI_Controller {
 
-	private $logged_in;
+	public $logged_in;
 
 	function __construct()
     {
@@ -35,9 +35,7 @@ class Admin extends CI_Controller {
 
 	public function forms()
 	{
-		$data['error'] = '';
-		$data['content_page'] = 'admin/admin_form';
-		$this->template->get_admin_template($data);
+		$this->load->view('admin_form', array('logged_in' => $this->logged_in));
 	}
 
 	public function users()

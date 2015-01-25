@@ -136,13 +136,13 @@
                             <a href="<?php echo base_url(). 'admin/home'?>"><i class="icon-chevron-right"></i> Dashboard</a>
                         </li>
                         <li>
-                            <a href="<?php echo base_url(). 'admin/tables'?>"><i class="icon-chevron-right"></i> Tables</a>
+                            <a href="<?php echo base_url(). 'admin/tables1'?>"><i class="icon-chevron-right"></i> Tables</a>
                         </li>
                         <li>
-                            <a href="<?php echo base_url(). 'admin/forms'?>"><i class="icon-chevron-right"></i> Forms</a>
+                            <a href="<?php echo base_url(). 'admin/forms1'?>"><i class="icon-chevron-right"></i> Forms</a>
                         </li>
                         <li>
-                            <a href="<?php echo base_url(). 'admin/statistics'?>"><i class="icon-chevron-right"></i> Statistics (Charts)</a>
+                            <a href="<?php echo base_url(). 'admin/statistics1'?>"><i class="icon-chevron-right"></i> Statistics (Charts)</a>
                         </li>
                         <li>
                             <a href="<?php echo base_url(). 'admin/messages'?>"><span class="badge badge-warning pull-right">0</span> Messages</a>
