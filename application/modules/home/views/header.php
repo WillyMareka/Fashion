@@ -55,9 +55,29 @@
                 
 
   <?php
-      if($logged_in){
+      $log_type = $this->session->userdata('lt_id');
+      if(($logged_in) && ($log_type==3)){
 
         $username = $this->session->userdata('username');
+  ?>
+
+  
+
+  <li><div class="ui vertical divider"></div></li>
+
+  <li>
+    <div class="ui simple dropdown item">
+      <i class="user icon "></i> <?php echo $username;?><i class="dropdown icon"></i>
+       <div class="menu">
+        <div class="ui divider"></div>
+        <a href='<?php echo base_url(). 'user/validate_member'?>' class="item"><i class="sign out icon"></i> Admin Page</a>
+        <a href='<?php echo base_url(). 'user/logout'?>' class="item"><i class="sign out icon"></i> Log Out</a>
+       </div>
+    </div>
+  </li>
+
+  <?php
+      }elseif($logged_in){
   ?>
 
   <li><a href="#"><i class="star icon"></i> Wishlist</a></li>
@@ -122,10 +142,14 @@
    <li class='left'><a href='<?php echo base_url(). 'home/contact'?>'>Contact</a></li>
 
   <?php
-       if($logged_in){
+       if(($logged_in) && ($log_type==3)){
    ?>
+     <li class='right'><a href='<?php echo base_url(). 'user/ad_page'?>'>Admin Page</a>
       <li class='right'><a href='<?php echo base_url(). 'user/logout'?>'>Log Out</a>
-      
+  <?php 
+      }elseif($logged_in){
+  ?>
+        <li class='right'><a href='<?php echo base_url(). 'user/logout'?>'>Log Out</a>
     <?php
        }else{
     ?>

@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class User extends MX_Controller {
+class User extends MY_Controller {
 
 
 	function __construct()
@@ -166,6 +166,11 @@ class User extends MX_Controller {
 			  }
 		    }
 	     }
+	}
+
+	function ad_page()
+	{
+       redirect(base_url().'admin');
 	}
 
 	
