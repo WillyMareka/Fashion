@@ -135,7 +135,7 @@
                             <a href="<?php echo base_url(). 'admin/company'?>"><span class="badge badge-info pull-right">17</span> Company</a>
                         </li>
                         <li>
-                            <a href="<?php echo base_url(). 'admin/users'?>"><span class="badge badge-success pull-right">3</span> Users</a>
+                            <a href="<?php echo base_url(). 'admin/users'?>"><span class="badge badge-success pull-right"><?php echo $usernumber?></span> Users</a>
                         </li>
                         <!-- <li>
                             <a href="calendar.html"><i class="icon-chevron-right"></i> Calendar</a>

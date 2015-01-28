@@ -18,6 +18,7 @@
     </head>
     
     <body>
+
         <div class="navbar navbar-fixed-top">
             <div class="navbar-inner">
                 <div class="container-fluid">
@@ -29,11 +30,11 @@
                     <div class="nav-collapse collapse">
                         <ul class="nav pull-right">
                             <li class="dropdown">
-                                <a href="#" role="button" class="dropdown-toggle" data-toggle="dropdown"> <i class="icon-user"></i> Vincent Gabriel <i class="caret"></i>
+                                <a href="#" role="button" class="dropdown-toggle" data-toggle="dropdown"> <i class="icon-user"></i> Mareka Willy <i class="caret"></i>
 
                                 </a>
                                 <ul class="dropdown-menu">
-                                   <li>
+                                    <li>
                                         <a tabindex="-1" href="<?php echo base_url(). 'admin/profileview'?>">Profile</a>
                                     </li>
                                     <li class="divider"></li>
@@ -151,7 +152,7 @@
                             <a href="<?php echo base_url(). 'admin/company'?>"><span class="badge badge-info pull-right">17</span> Company</a>
                         </li>
                         <li>
-                            <a href="<?php echo base_url(). 'admin/users'?>"><span class="badge badge-success pull-right">3</span> Users</a>
+                            <a href="<?php echo base_url(). 'admin/users'?>"><span class="badge badge-success pull-right"><?php echo $usernumber?></span> Users</a>
                         </li>
                         <!-- <li>
                             <a href="calendar.html"><i class="icon-chevron-right"></i> Calendar</a>
@@ -182,7 +183,10 @@
                         </li> -->
                     </ul>
                 </div>
+                
                 <!--/span-->
+       
+        
                 <div class="span9" id="content">
                       <!-- morris stacked chart -->
                     <div class="row-fluid">
@@ -343,7 +347,7 @@
             </div>
             <hr>
             <footer>
-                <p>&copy; MareWill Fashion 2015</p>
+                <p> MareWill Fashion 2015 &copy;</p>
             </footer>
         </div>
         <!--/.fluid-container-->

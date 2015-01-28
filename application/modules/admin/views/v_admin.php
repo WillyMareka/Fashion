@@ -1,7 +1,27 @@
 <!DOCTYPE html>
 <html class="no-js">
     
+    <head>
+    <title>Admin</title>
+        <meta name="robots" content="noindex">
+        <meta charset="UTF-8">
+        
+        <link rel="icon" type="image/x-icon" href="<?php echo base_url() . 'assets/fonts/fashion.ico'?>" />
+        <link type="text/css" href="<?php echo base_url() .'assets/ionicons/css/ionicons.css' ?>" rel="stylesheet" media="screen">
+        <link type="text/css" href="<?php echo base_url() .'assets/dist/css/bootstrap.min-1.css' ?>" rel="stylesheet" media="screen">
+        <link type="text/css" href="<?php echo base_url() .'assets/dist/css/bootstrap-responsive.min.css'?>" rel="stylesheet" media="screen">
+        <link type="text/css" href="<?php echo base_url() .'assets/vendors/easypiechart/jquery.easy-pie-chart.css'?>" rel="stylesheet" media="screen">
+        <link type="text/css" href="<?php echo base_url() .'assets/css/ad_styles.css' ?>" rel="stylesheet" media="screen">
+        
+        <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+        <!--[if lt IE 9]>
+            <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+        <script src="<?php echo base_url(). 'assets/vendors/modernizr-2.6.2-respond-1.1.0.min.js'?>"></script>
+    </head>
     
+    <body>
+
         <div class="navbar navbar-fixed-top">
             <div class="navbar-inner">
                 <div class="container-fluid">
@@ -18,7 +38,7 @@
                                 </a>
                                 <ul class="dropdown-menu">
                                     <li>
-                                        <a tabindex="-1" href="<?php echo base_url(). 'admin/profileview'?>">Profile</a>
+                                        <a tabindex="-1" data-toggle="modal" data-target="#myModal">Profile</a>
                                     </li>
                                     <li class="divider"></li>
                                     <li>
@@ -112,6 +132,32 @@
                 </div>
             </div>
         </div>
+
+        <!-- Button trigger modal -->
+<!-- <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+  Launch demo modal
+</button> -->
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
         <div class="container-fluid">
             <div class="row-fluid">
                 <div class="span3" id="sidebar">
@@ -135,7 +181,7 @@
                             <a href="<?php echo base_url(). 'admin/company'?>"><span class="badge badge-info pull-right">17</span> Company</a>
                         </li>
                         <li>
-                            <a href="<?php echo base_url(). 'admin/users'?>"><span class="badge badge-success pull-right">3</span> Users</a>
+                            <a href="<?php echo base_url(). 'admin/users'?>"><span class="badge badge-success pull-right"><?php echo $usernumber?></span> Users</a>
                         </li>
                         <!-- <li>
                             <a href="calendar.html"><i class="icon-chevron-right"></i> Calendar</a>
@@ -168,16 +214,18 @@
                 </div>
                 
                 <!--/span-->
+    
+        
                 <div class="span9" id="content">
 
 
 
                     
-                    <div class="row-fluid">
-                        <div class="alert alert-success">
+                    <div class="row-fluid addlength">
+                        <!-- <div class="alert alert-success">
 							<button type="button" class="close" data-dismiss="alert">&times;</button>
                             <h4>Success</h4>
-                        	Logged in succesfully</div>
+                        	Logged in succesfully</div> -->
                         	<div class="navbar">
                             	<div class="navbar-inner">
 	                                <ul class="breadcrumb">
@@ -238,13 +286,13 @@
                     <!-- /stats -->
 
 
-                    <div class="row-fluid">
-                        <div class="span6">
+                    <div class="row-fluid addlength">
+                        <div class="span12">
                             <!-- block -->
                             <div class="block">
                                 <div class="navbar navbar-inner block-header">
                                     <div class="muted pull-left">Users</div>
-                                    <div class="pull-right"><span class="badge badge-info">1,234</span>
+                                    <div class="pull-right"><span class="badge badge-info"><?php echo $usernumber?></span>
 
                                     </div>
                                 </div>
@@ -255,36 +303,27 @@
                                                 <th>#</th>
                                                 <th>First Name</th>
                                                 <th>Last Name</th>
-                                                <th>Username</th>
+                                                <th>Age</th>
+                                                <th>Nationality</th>
+                                                <th>Phone Number</th>
+                                                <th>Email</th>
+                                                <th>Residence</th>
+                                                <th>Religion</th>
+                                                <th>Gender</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
-                                                <td>1</td>
-                                                <td>Mark</td>
-                                                <td>Otto</td>
-                                                <td>@mdo</td>
-                                            </tr>
-                                            <tr>
-                                                <td>2</td>
-                                                <td>Jacob</td>
-                                                <td>Thornton</td>
-                                                <td>@fat</td>
-                                            </tr>
-                                            <tr>
-                                                <td>3</td>
-                                                <td>Vincent</td>
-                                                <td>Gabriel</td>
-                                                <td>@gabrielva</td>
-                                            </tr>
+                                            <?php echo $users_table; ?>
                                         </tbody>
                                     </table>
                                 </div>
                             </div>
                             <!-- /block -->
                         </div>
-                        <div class="span6">
-                            <!-- block -->
+
+
+                        <!-- <div class="span6">
+                            
                             <div class="block">
                                 <div class="navbar navbar-inner block-header">
                                     <div class="muted pull-left">Orders</div>
@@ -325,8 +364,10 @@
                                     </table>
                                 </div>
                             </div>
-                            <!-- /block -->
-                        </div>
+                           
+                        </div> -->
+
+
                     </div>
                     <div class="row-fluid">
                         <div class="span6">
@@ -505,4 +546,32 @@
             </div>
             
         <!--/.fluid-container-->
+
+
+                        <hr>
+            <footer>
+                <p>&copy; MareWill Fashion 2015</p>
+            </footer>
+        </div>
+
+
+        <script src="<?php echo base_url(). 'assets/vendors/jquery-1.9.1.min.js'?>"></script>
+        <script src="<?php echo base_url(). 'assets/dist/js/bootstrap.min.js'?>"></script>
+        <script src="<?php echo base_url(). 'assets/vendors/easypiechart/jquery.easy-pie-chart.js'?>"></script>
+        <script src="<?php echo base_url(). 'assets/js/ad_scripts.js'?>"></script>
+        <script src="<?php echo base_url(). 'assets/dist/js/table_bootstrap.js'?>"></script>
+        <script>
+        $(function() {
+            
+        });
+        </script>
+        <script>
+        $(function() {
+            // Easy pie charts
+            $('.chart').easyPieChart({animate: 1000});
+        });
+        </script>
+    </body>
+
+</html>
         

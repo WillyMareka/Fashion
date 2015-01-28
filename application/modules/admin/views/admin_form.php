@@ -18,7 +18,8 @@
     </head>
     
     <body>
-        <div class="navbar navbar-fixed-top">
+
+      <div class="navbar navbar-fixed-top">
             <div class="navbar-inner">
                 <div class="container-fluid">
                     <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span>
@@ -29,7 +30,7 @@
                     <div class="nav-collapse collapse">
                         <ul class="nav pull-right">
                             <li class="dropdown">
-                                <a href="#" role="button" class="dropdown-toggle" data-toggle="dropdown"> <i class="icon-user"></i> Vincent Gabriel <i class="caret"></i>
+                                <a href="#" role="button" class="dropdown-toggle" data-toggle="dropdown"> <i class="icon-user"></i> Mareka Willy <i class="caret"></i>
 
                                 </a>
                                 <ul class="dropdown-menu">
@@ -136,13 +137,13 @@
                             <a href="<?php echo base_url(). 'admin/home'?>"><i class="icon-chevron-right"></i> Dashboard</a>
                         </li>
                         <li>
-                            <a href="<?php echo base_url(). 'admin/tables1'?>"><i class="icon-chevron-right"></i> Tables</a>
+                            <a href="<?php echo base_url(). 'admin/tables'?>"><i class="icon-chevron-right"></i> Tables</a>
                         </li>
                         <li>
-                            <a href="<?php echo base_url(). 'admin/forms1'?>"><i class="icon-chevron-right"></i> Forms</a>
+                            <a href="<?php echo base_url(). 'admin/forms'?>"><i class="icon-chevron-right"></i> Forms</a>
                         </li>
                         <li>
-                            <a href="<?php echo base_url(). 'admin/statistics1'?>"><i class="icon-chevron-right"></i> Statistics (Charts)</a>
+                            <a href="<?php echo base_url(). 'admin/statistics'?>"><i class="icon-chevron-right"></i> Statistics (Charts)</a>
                         </li>
                         <li>
                             <a href="<?php echo base_url(). 'admin/messages'?>"><span class="badge badge-warning pull-right">0</span> Messages</a>
@@ -151,7 +152,7 @@
                             <a href="<?php echo base_url(). 'admin/company'?>"><span class="badge badge-info pull-right">17</span> Company</a>
                         </li>
                         <li>
-                            <a href="<?php echo base_url(). 'admin/users'?>"><span class="badge badge-success pull-right">3</span> Users</a>
+                            <a href="<?php echo base_url(). 'admin/users'?>"><span class="badge badge-success pull-right"><?php echo $usernumber?></span> Users</a>
                         </li>
                         <!-- <li>
                             <a href="calendar.html"><i class="icon-chevron-right"></i> Calendar</a>
@@ -182,7 +183,9 @@
                         </li> -->
                     </ul>
                 </div>
+                
                 <!--/span-->
+        
                 <div class="span9" id="content">
                       <!-- morris stacked chart -->
                     <div class="row-fluid">
@@ -560,7 +563,7 @@
             </div>
             <hr>
             <footer>
-                <p>&copy; MareWill Fashion 2015</p>
+                <p> MareWill Fashion 2015 &copy;</p>
             </footer>
         </div>
         <!--/.fluid-container-->
