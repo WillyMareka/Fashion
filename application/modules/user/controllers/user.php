@@ -170,7 +170,7 @@ class User extends MY_Controller {
 
 	function ad_page()
 	{
-       redirect(base_url().'admin');
+       redirect(base_url().'admin/home');
 	}
 
 	

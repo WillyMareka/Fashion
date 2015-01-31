@@ -51,8 +51,8 @@ class Admin extends MY_Controller {
                     $user_style .= '<td>'.$user_details['residence'].'</td>';
                     $user_style .= '<td>'.$user_details['religion'].'</td>';
                     $user_style .= '<td>'.$user_details['gender'].'</td>';
-                    $user_style .= '<td><a href = "'.base_url().'admin/userprofile/'.$user_details['ac_id'].'"><i class="ion-eye icon black"></i></a></td>';
-                    $user_style .= '<td><a href = "'.base_url().'admin/updateuser/delete/'.$user_details['ac_id'].'"><i class="ion-trash-a icon black"></i></td>';
+                    $user_style .= '<td><a data-toggle="tooltip" data-placement="bottom" title="View Profile" href = "'.base_url().'admin/userprofile/'.$user_details['ac_id'].'"><i class="ion-eye icon black"></i></a></td>';
+                    $user_style .= '<td><a data-toggle="tooltip" data-placement="bottom" title="Delete Profile" href = "'.base_url().'admin/updateuser/delete/'.$user_details['ac_id'].'"><i class="ion-trash-a icon black"></i></td>';
                     $user_style .= '</tr>';
                     $counter++;
                 }
@@ -90,11 +90,21 @@ class Admin extends MY_Controller {
 	{
 		$data['error'] = '';
 		$data['usernumber']  = $this->getusernumber();
+		$data['users_table'] = $this->createusersview('table');
+		
+
+		$this->load->view('admin_tables', $data);
+	}
+
+	public function references()
+	{
+		$data['error'] = '';
+		
 		// $data['content_page'] = 'admin/admin_tables';
 		// $this->template->get_admin_template($data);
 		//$this->load->view('admin_tables', array('logged_in' => $this->logged_in));
 
-		$this->load->view('admin_tables', $data);
+		$this->load->view('reference');
 	}
 
 	public function statistics()
