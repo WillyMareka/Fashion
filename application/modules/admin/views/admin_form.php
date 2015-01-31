@@ -18,7 +18,9 @@
     </head>
     
     <body>
-
+       <?php
+              $username = $this->session->userdata('username');
+        ?>
       <div class="navbar navbar-fixed-top">
             <div class="navbar-inner">
                 <div class="container-fluid">
@@ -28,14 +30,15 @@
                     </a>
                     <a class="brand" href="#">Admin Panel</a>
                     <div class="nav-collapse collapse">
-                        <ul class="nav pull-right">
+                      <ul class="nav pull-right">
+                        <li><a href="<?php echo base_url(). 'home/index'?>">Home Page</a></li>
                             <li class="dropdown">
-                                <a href="#" role="button" class="dropdown-toggle" data-toggle="dropdown"> <i class="icon-user"></i> Mareka Willy <i class="caret"></i>
+                                <a href="#" role="button" class="dropdown-toggle" data-toggle="dropdown"> <i class="icon-user"></i> <?php echo $username?> <i class="caret"></i>
 
                                 </a>
                                 <ul class="dropdown-menu">
                                     <li>
-                                        <a tabindex="-1" href="<?php echo base_url(). 'admin/profileview'?>">Profile</a>
+                                        <a tabindex="-1" data-toggle="modal" data-target="#myModal">Profile</a>
                                     </li>
                                     <li class="divider"></li>
                                     <li>
@@ -49,39 +52,18 @@
                                 <a href="#">Dashboard</a>
                             </li>
                             <li class="dropdown">
-                                <a href="#" data-toggle="dropdown" class="dropdown-toggle">Settings <b class="caret"></b>
+                                <a href="#" data-toggle="dropdown" class="dropdown-toggle">Reports <b class="caret"></b>
 
                                 </a>
                                 <ul class="dropdown-menu" id="menu1">
+                                    
                                     <li>
-                                        <a href="#">Tools <i class="icon-arrow-right"></i>
-
-                                        </a>
-                                        <ul class="dropdown-menu sub-menu">
-                                            <li>
-                                                <a href="#">Reports</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">Logs</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">Errors</a>
-                                            </li>
-                                        </ul>
+                                        <a href="#">Excel</a>
                                     </li>
                                     <li>
-                                        <a href="#">SEO Settings</a>
+                                        <a href="#">PDF</a>
                                     </li>
-                                    <li>
-                                        <a href="#">Other Link</a>
-                                    </li>
-                                    <li class="divider"></li>
-                                    <li>
-                                        <a href="#">Other Link</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Other Link</a>
-                                    </li>
+                                    <!-- <li class="divider"></li> -->
                                 </ul>
                             </li>
                             <li class="dropdown">
@@ -90,36 +72,30 @@
                                 </a>
                                 <ul class="dropdown-menu">
                                     <li>
-                                        <a tabindex="-1" href="#">Blog</a>
+                                        <a tabindex="-1" href="<?php echo base_url(). 'admin/tables'?>">Tables</a>
                                     </li>
                                     <li>
-                                        <a tabindex="-1" href="#">News</a>
+                                        <a tabindex="-1" href="<?php echo base_url(). 'admin/news'?>">News</a>
                                     </li>
                                     <li>
-                                        <a tabindex="-1" href="#">Custom Pages</a>
+                                        <a tabindex="-1" href="<?php echo base_url(). 'admin/messages'?>">Messages</a>
                                     </li>
-                                    <li>
-                                        <a tabindex="-1" href="#">Calendar</a>
-                                    </li>
-                                    <li class="divider"></li>
-                                    <li>
-                                        <a tabindex="-1" href="#">FAQ</a>
-                                    </li>
+                                    
                                 </ul>
                             </li>
                             <li class="dropdown">
-                                <a href="#" role="button" class="dropdown-toggle" data-toggle="dropdown">Users <i class="caret"></i>
+                                <a href="#" role="button" class="dropdown-toggle" data-toggle="dropdown">Deactivations<i class="caret"></i>
 
                                 </a>
                                 <ul class="dropdown-menu">
                                     <li>
-                                        <a tabindex="-1" href="#">User List</a>
+                                        <a tabindex="-1" href="<?php echo base_url(). 'admin/dusers'?>">User List</a>
                                     </li>
                                     <li>
-                                        <a tabindex="-1" href="#">Search</a>
+                                        <a tabindex="-1" href="<?php echo base_url(). 'admin/dcompa'?>">Companies List</a>
                                     </li>
                                     <li>
-                                        <a tabindex="-1" href="#">Permissions</a>
+                                        <a tabindex="-1" href="<?php echo base_url(). 'admin/dmang'?>">Manager List</a>
                                     </li>
                                 </ul>
                             </li>
@@ -136,427 +112,125 @@
                         <li class="active">
                             <a href="<?php echo base_url(). 'admin/home'?>"><i class="icon-chevron-right"></i> Dashboard</a>
                         </li>
+                        
                         <li>
-                            <a href="<?php echo base_url(). 'admin/tables'?>"><i class="icon-chevron-right"></i> Tables</a>
-                        </li>
-                        <li>
-                            <a href="<?php echo base_url(). 'admin/forms'?>"><i class="icon-chevron-right"></i> Forms</a>
+                            <a href="<?php echo base_url(). 'admin/forms'?>"><i class="icon-chevron-right"></i> Product Form</a>
                         </li>
                         <li>
                             <a href="<?php echo base_url(). 'admin/statistics'?>"><i class="icon-chevron-right"></i> Statistics (Charts)</a>
                         </li>
                         <li>
-                            <a href="<?php echo base_url(). 'admin/messages'?>"><span class="badge badge-warning pull-right">0</span> Messages</a>
+                            <a href="<?php echo base_url(). 'admin/messages'?>"><span class="badge badge-warning pull-right"><?php echo $messagenumber?></span> Messages</a>
                         </li>
                         <li>
-                            <a href="<?php echo base_url(). 'admin/company'?>"><span class="badge badge-info pull-right">17</span> Company</a>
+                            <a href="<?php echo base_url(). 'admin/company'?>"><span class="badge badge-info pull-right"><?php echo $companynumber?></span> Company</a>
                         </li>
                         <li>
                             <a href="<?php echo base_url(). 'admin/users'?>"><span class="badge badge-success pull-right"><?php echo $usernumber?></span> Users</a>
                         </li>
-                        <!-- <li>
-                            <a href="calendar.html"><i class="icon-chevron-right"></i> Calendar</a>
-                        </li>
-                        <li>
-                            <a href="buttons.html"><i class="icon-chevron-right"></i> Buttons & Icons</a>
-                        </li>
-                        <li>
-                            <a href="editors.html"><i class="icon-chevron-right"></i> WYSIWYG Editors</a>
-                        </li>
-                        <li>
-                            <a href="interface.html"><i class="icon-chevron-right"></i> UI & Interface</a>
-                        </li>
-                        <li>
-                            <a href="#"><span class="badge badge-success pull-right">731</span> Orders</a>
-                        </li>
-                        <li>
-                            <a href="#"><span class="badge badge-success pull-right">812</span> Invoices</a>
-                        </li>
-                        <li>
-                            <a href="#"><span class="badge badge-info pull-right">11</span> Reports</a>
-                        </li>
-                        <li>
-                            <a href="#"><span class="badge badge-important pull-right">83</span> Errors</a>
-                        </li>
-                        <li>
-                            <a href="#"><span class="badge badge-warning pull-right">4,231</span> Logs</a>
-                        </li> -->
+                        
                     </ul>
                 </div>
                 
                 <!--/span-->
         
                 <div class="span9" id="content">
-                      <!-- morris stacked chart -->
-                    <div class="row-fluid">
-                        <!-- block -->
-                        <div class="block">
-                            <div class="navbar navbar-inner block-header">
-                                <div class="muted pull-left">Form Example</div>
-                            </div>
-                            <div class="block-content collapse in">
-                                <div class="span12">
-                                     <form class="form-horizontal">
-                                      <fieldset>
-                                        <legend>Form Horizontal</legend>
-                                        <div class="control-group">
-                                          <label class="control-label" for="focusedInput">Focused input</label>
-                                          <div class="controls">
-                                            <input class="input-xlarge focused" id="focusedInput" type="text" value="This is focused...">
-                                          </div>
-                                        </div>
-                                        <div class="control-group">
-                                          <label class="control-label">Uneditable input</label>
-                                          <div class="controls">
-                                            <span class="input-xlarge uneditable-input">Some value here</span>
-                                          </div>
-                                        </div>
-                                        <div class="control-group">
-                                          <label class="control-label" for="disabledInput">Disabled input</label>
-                                          <div class="controls">
-                                            <input class="input-xlarge disabled" id="disabledInput" type="text" placeholder="Disabled input here..." disabled="">
-                                          </div>
-                                        </div>
-                                        <div class="control-group">
-                                          <label class="control-label" for="optionsCheckbox2">Disabled checkbox</label>
-                                          <div class="controls">
-                                            <label>
-                                              <input type="checkbox" id="optionsCheckbox2" value="option1" disabled="">
-                                              This is a disabled checkbox
-                                            </label>
-                                          </div>
-                                        </div>
-                                        <div class="control-group warning">
-                                          <label class="control-label" for="inputError">Input with warning</label>
-                                          <div class="controls">
-                                            <input type="text" id="inputError">
-                                            <span class="help-inline">Something may have gone wrong</span>
-                                          </div>
-                                        </div>
-                                        <div class="control-group error">
-                                          <label class="control-label" for="inputError">Input with error</label>
-                                          <div class="controls">
-                                            <input type="text" id="inputError">
-                                            <span class="help-inline">Please correct the error</span>
-                                          </div>
-                                        </div>
-                                        <div class="control-group success">
-                                          <label class="control-label" for="inputError">Input with success</label>
-                                          <div class="controls">
-                                            <input type="text" id="inputError">
-                                            <span class="help-inline">Woohoo!</span>
-                                          </div>
-                                        </div>
-                                        <div class="control-group success">
-                                          <label class="control-label" for="selectError">Select with success</label>
-                                          <div class="controls">
-                                            <select id="selectError">
-                                              <option>1</option>
-                                              <option>2</option>
-                                              <option>3</option>
-                                              <option>4</option>
-                                              <option>5</option>
-                                            </select>
-                                            <span class="help-inline">Woohoo!</span>
-                                          </div>
-                                        </div>
-                                        <div class="form-actions">
-                                          <button type="submit" class="btn btn-primary">Save changes</button>
-                                          <button type="reset" class="btn">Cancel</button>
-                                        </div>
-                                      </fieldset>
-                                    </form>
+                      
 
-                                </div>
-                            </div>
-                        </div>
-                        <!-- /block -->
-                    </div>
-
-                     <div class="row-fluid">
-                        <!-- block -->
-                        <div class="block">
-                            <div class="navbar navbar-inner block-header">
-                                <div class="muted pull-left">Form Example</div>
-                            </div>
-                            <div class="block-content collapse in">
-                                <div class="span12">
-                                    <form class="form-horizontal">
-                                      <fieldset>
-                                        <legend>Form Components</legend>
-                                        <div class="control-group">
-                                          <label class="control-label" for="typeahead">Text input </label>
-                                          <div class="controls">
-                                            <input type="text" class="span6" id="typeahead"  data-provide="typeahead" data-items="4" data-source='["Alabama","Alaska","Arizona","Arkansas","California","Colorado","Connecticut","Delaware","Florida","Georgia","Hawaii","Idaho","Illinois","Indiana","Iowa","Kansas","Kentucky","Louisiana","Maine","Maryland","Massachusetts","Michigan","Minnesota","Mississippi","Missouri","Montana","Nebraska","Nevada","New Hampshire","New Jersey","New Mexico","New York","North Dakota","North Carolina","Ohio","Oklahoma","Oregon","Pennsylvania","Rhode Island","South Carolina","South Dakota","Tennessee","Texas","Utah","Vermont","Virginia","Washington","West Virginia","Wisconsin","Wyoming"]'>
-                                            <p class="help-block">Start typing to activate auto complete!</p>
-                                          </div>
-                                        </div>
-                                        <div class="control-group">
-                                          <label class="control-label" for="date01">Date input</label>
-                                          <div class="controls">
-                                            <input type="text" class="input-xlarge datepicker" id="date01" value="02/16/12">
-                                            <p class="help-block">In addition to freeform text, any HTML5 text-based input appears like so.</p>
-                                          </div>
-                                        </div>
-                                        <div class="control-group">
-                                          <label class="control-label" for="optionsCheckbox">Checkbox</label>
-                                          <div class="controls">
-                                            <label class="uniform">
-                                              <input class="uniform_on" type="checkbox" id="optionsCheckbox" value="option1">
-                                              Option one is this and that&mdash;be sure to include why it's great
-                                            </label>
-                                          </div>
-                                        </div>
-                                        <div class="control-group">
-                                          <label class="control-label" for="select01">Select list</label>
-                                          <div class="controls">
-                                            <select id="select01" class="chzn-select">
-                                              <option>something</option>
-                                              <option>2</option>
-                                              <option>3</option>
-                                              <option>4</option>
-                                              <option>5</option>
-                                            </select>
-                                          </div>
-                                        </div>
-                                        <div class="control-group">
-                                          <label class="control-label" for="multiSelect">Multicon-select</label>
-                                          <div class="controls">
-                                            <select multiple="multiple" id="multiSelect" class="chzn-select span4">
-                                              <option>Alabama</option><option>Alaska</option><option>Arizona</option><option>Arkansas</option><option>California</option><option>Colorado</option><option>Connecticut</option><option>Delaware</option><option>District Of Columbia</option><option>Florida</option><option>Georgia</option><option>Hawaii</option><option>Idaho</option><option>Illinois</option><option>Indiana</option><option>Iowa</option><option>Kansas</option><option>Kentucky</option><option>Louisiana</option><option>Maine</option><option>Maryland</option><option>Massachusetts</option><option>Michigan</option><option>Minnesota</option><option>Mississippi</option><option>Missouri</option><option>Montana</option><option>Nebraska</option><option>Nevada</option><option>New Hampshire</option><option>New Jersey</option><option>New Mexico</option><option>New York</option><option>North Carolina</option><option>North Dakota</option><option>Ohio</option><option>Oklahoma</option><option>Oregon</option><option>Pennsylvania</option><option>Rhode Island</option><option>South Carolina</option><option>South Dakota</option><option>Tennessee</option><option>Texas</option><option>Utah</option><option>Vermont</option><option>Virginia</option><option>Washington</option><option>West Virginia</option><option>Wisconsin</option><option>Wyoming</option>
-                                            </select>
-                                            <p class="help-block">Start typing to activate auto complete!</p>
-                                          </div>
-
-                                        </div>
-                                        <div class="control-group">
-                                          <label class="control-label" for="fileInput">File input</label>
-                                          <div class="controls">
-                                            <input class="input-file uniform_on" id="fileInput" type="file">
-                                          </div>
-                                        </div>
-                                        <div class="control-group">
-                                          <label class="control-label" for="textarea2">Textarea WYSIWYG</label>
-                                          <div class="controls">
-                                            <textarea class="input-xlarge textarea" placeholder="Enter text ..." style="width: 810px; height: 200px"></textarea>
-                                          </div>
-                                        </div>
-                                        <div class="form-actions">
-                                          <button type="submit" class="btn btn-primary">Save changes</button>
-                                          <button type="reset" class="btn">Cancel</button>
-                                        </div>
-                                      </fieldset>
-                                    </form>
-
-                                </div>
-                            </div>
-                        </div>
-                        <!-- /block -->
-                    </div>
-
-                     <!-- wizard -->
-                    <div class="row-fluid section">
-                         <!-- block -->
-                        <div class="block">
-                            <div class="navbar navbar-inner block-header">
-                                <div class="muted pull-left">Form Wizard</div>
-                            </div>
-                            <div class="block-content collapse in">
-                                <div class="span12">
-                                    <div id="rootwizard">
-                                        <div class="navbar">
-                                          <div class="navbar-inner">
-                                            <div class="container">
-                                        <ul>
-                                            <li><a href="#tab1" data-toggle="tab">Step 1</a></li>
-                                            <li><a href="#tab2" data-toggle="tab">Step 2</a></li>
-                                            <li><a href="#tab3" data-toggle="tab">Step 3</a></li>
-                                        </ul>
-                                         </div>
-                                          </div>
-                                        </div>
-                                        <div id="bar" class="progress progress-striped active">
-                                          <div class="bar"></div>
-                                        </div>
-                                        <div class="tab-content">
-                                            <div class="tab-pane" id="tab1">
-                                               <form class="form-horizontal">
-                                                  <fieldset>
-                                                    <div class="control-group">
-                                                      <label class="control-label" for="focusedInput">Name</label>
-                                                      <div class="controls">
-                                                        <input class="input-xlarge focused" id="focusedInput" type="text" value="">
-                                                      </div>
-                                                    </div>
-                                                    <div class="control-group">
-                                                      <label class="control-label" for="focusedInput">Email</label>
-                                                      <div class="controls">
-                                                        <input class="input-xlarge focused" id="focusedInput" type="text" value="">
-                                                      </div>
-                                                    </div>
-                                                    <div class="control-group">
-                                                      <label class="control-label" for="focusedInput">Phone</label>
-                                                      <div class="controls">
-                                                        <input class="input-xlarge focused" id="focusedInput" type="text" value="">
-                                                      </div>
-                                                    </div>
-                                                  </fieldset>
-                                                </form>
-                                            </div>
-                                            <div class="tab-pane" id="tab2">
-                                                <form class="form-horizontal">
-                                                  <fieldset>
-                                                    <div class="control-group">
-                                                      <label class="control-label" for="focusedInput">Address</label>
-                                                      <div class="controls">
-                                                        <input class="input-xlarge focused" id="focusedInput" type="text" value="">
-                                                      </div>
-                                                    </div>
-                                                    <div class="control-group">
-                                                      <label class="control-label" for="focusedInput">City</label>
-                                                      <div class="controls">
-                                                        <input class="input-xlarge focused" id="focusedInput" type="text" value="">
-                                                      </div>
-                                                    </div>
-                                                    <div class="control-group">
-                                                      <label class="control-label" for="focusedInput">State</label>
-                                                      <div class="controls">
-                                                        <input class="input-xlarge focused" id="focusedInput" type="text" value="">
-                                                      </div>
-                                                    </div>
-                                                  </fieldset>
-                                                </form>
-                                            </div>
-                                            <div class="tab-pane" id="tab3">
-                                                <form class="form-horizontal">
-                                                  <fieldset>
-                                                    <div class="control-group">
-                                                      <label class="control-label" for="focusedInput">Company Name</label>
-                                                      <div class="controls">
-                                                        <input class="input-xlarge focused" id="focusedInput" type="text" value="">
-                                                      </div>
-                                                    </div>
-                                                    <div class="control-group">
-                                                      <label class="control-label" for="focusedInput">Contact Name</label>
-                                                      <div class="controls">
-                                                        <input class="input-xlarge focused" id="focusedInput" type="text" value="">
-                                                      </div>
-                                                    </div>
-                                                    <div class="control-group">
-                                                      <label class="control-label" for="focusedInput">Contact Phone</label>
-                                                      <div class="controls">
-                                                        <input class="input-xlarge focused" id="focusedInput" type="text" value="">
-                                                      </div>
-                                                    </div>
-                                                  </fieldset>
-                                                </form>
-                                            </div>
-                                            <ul class="pager wizard">
-                                                <li class="previous first" style="display:none;"><a href="javascript:void(0);">First</a></li>
-                                                <li class="previous"><a href="javascript:void(0);">Previous</a></li>
-                                                <li class="next last" style="display:none;"><a href="javascript:void(0);">Last</a></li>
-                                                <li class="next"><a href="javascript:void(0);">Next</a></li>
-                                                <li class="next finish" style="display:none;"><a href="javascript:;">Finish</a></li>
-                                            </ul>
-                                        </div>  
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- /block -->
-                    </div>
-	            <!-- /wizard -->
-
-                     <!-- validation -->
+                  
                     <div class="row-fluid">
                          <!-- block -->
                         <div class="block">
                             <div class="navbar navbar-inner block-header">
-                                <div class="muted pull-left">Form Validation</div>
+                                <div class="muted pull-left">New Product</div>
                             </div>
                             <div class="block-content collapse in">
                                 <div class="span12">
 					<!-- BEGIN FORM-->
-					<form action="#" id="form_sample_1" class="form-horizontal">
-						<fieldset>
+					<form enctype="multipart/form-data" method="POST" action="<?php echo base_url() . 'admin/create_product'?>" class="form-horizontal black" role="form">
+						<?php 
+                                  echo form_open_multipart(base_url().'admin/create_product');
+                              ?>
+                        <fieldset>
 							<div class="alert alert-error hide">
 								<button class="close" data-dismiss="alert"></button>
-								You have some form errors. Please check below.
+								Please complete filling the form
 							</div>
 							<div class="alert alert-success hide">
 								<button class="close" data-dismiss="alert"></button>
-								Your form validation is successful!
+								Product has been added successfully
 							</div>
+
   							<div class="control-group">
-  								<label class="control-label">Name<span class="required">*</span></label>
+  								<label class="control-label">Product Name<span class="required">*</span></label>
   								<div class="controls">
-  									<input type="text" name="name" data-required="1" class="span6 m-wrap"/>
+  									<input type="text" name="prodname" data-required="1" required value="<?php echo set_value('prodname'); ?>" class="span6 m-wrap form-control"/>
   								</div>
   							</div>
+
   							<div class="control-group">
-  								<label class="control-label">Email<span class="required">*</span></label>
+  								<label class="control-label">Product Category<span class="required">*</span></label>
   								<div class="controls">
-  									<input name="email" type="text" class="span6 m-wrap"/>
+                                    <select name="prodcategory" type="text" required value="<?php echo set_value('prodcategory'); ?>" class="span6 m-wrap form-control">
+                                        <?php echo $product_categories?>
+                                    </select>
+  									
   								</div>
   							</div>
+
   							<div class="control-group">
-  								<label class="control-label">URL<span class="required">*</span></label>
+  								<label class="control-label">Product Type<span class="required">*</span></label>
   								<div class="controls">
-  									<input name="url" type="text" class="span6 m-wrap"/>
-  									<span class="help-block">e.g: http://www.demo.com or http://demo.com</span>
+                                    <select  name="prodtype" type="text" required value="<?php echo set_value('prodtype'); ?>" class="span6 m-wrap form-control">
+                                        <?php echo $product_types?>
+                                    </select>
+  									
+  									<!-- <span class="help-block">e.g: http://www.demo.com or http://demo.com</span> -->
   								</div>
   							</div>
+
   							<div class="control-group">
-  								<label class="control-label">Number<span class="required">*</span></label>
+  								<label class="control-label">Quantity<span class="required">*</span></label>
   								<div class="controls">
-  									<input name="number" type="text" class="span6 m-wrap"/>
+  									<input name="prodquantity" type="text" required value="<?php echo set_value('prodquantity'); ?>" class="span6 m-wrapform-control "/>
   								</div>
   							</div>
+
   							<div class="control-group">
-  								<label class="control-label">Digits<span class="required">*</span></label>
+  								<label class="control-label">Picture<span class="required">*</span></label>
   								<div class="controls">
-  									<input name="digits" type="text" class="span6 m-wrap"/>
+  									<input name="prodpicture" type="file" required value="<?php echo set_value('prodpicture'); ?>" class="span6 m-wrap form-control "/>
   								</div>
   							</div>
+
   							<div class="control-group">
-  								<label class="control-label">Credit Card<span class="required">*</span></label>
+  								<label class="control-label">Company Name<span class="required">*</span></label>
   								<div class="controls">
-  									<input name="creditcard" type="text" class="span6 m-wrap"/>
-  									<span class="help-block">e.g: 5500 0000 0000 0004</span>
+                                    <select name="prodcompany" type="text" required value="<?php echo set_value('prodcompany'); ?>" class="span6 m-wrap form-control ">
+                                        <?php echo $product_companies?>
+                                    </select>
+  									
+  									<!-- <span class="help-block">e.g: 5500 0000 0000 0004</span> -->
   								</div>
   							</div>
-  							<div class="control-group">
-  								<label class="control-label">Occupation&nbsp;&nbsp;</label>
-  								<div class="controls">
-  									<input name="occupation" type="text" class="span6 m-wrap"/>
-  									<span class="help-block">optional field</span>
-  								</div>
-  							</div>
-  							<div class="control-group">
-  								<label class="control-label">Category<span class="required">*</span></label>
-  								<div class="controls">
-  									<select class="span6 m-wrap" name="category">
-  										<option value="">Select...</option>
-  										<option value="Category 1">Category 1</option>
-  										<option value="Category 2">Category 2</option>
-  										<option value="Category 3">Category 5</option>
-  										<option value="Category 4">Category 4</option>
-  									</select>
-  								</div>
-  							</div>
+  							
+  						
   							<div class="form-actions">
-  								<button type="submit" class="btn btn-primary">Validate</button>
-  								<button type="button" class="btn">Cancel</button>
+  								<button type="submit" class="btn btn-primary">Enter Product (s)</button>
+  								<button type="reset" class="btn">Cancel</button>
   							</div>
 						</fieldset>
+                        <?php 
+                                    echo form_close();
+                                 ?>
 					</form>
 					<!-- END FORM-->
 				</div>
 			    </div>
 			</div>
-                     	<!-- /block -->
+                     
 		    </div>
-                     <!-- /validation -->
+                
 
 
                 </div>

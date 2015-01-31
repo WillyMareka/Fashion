@@ -64,7 +64,7 @@ class User_model extends MY_Model {
           'email' => $email,
           'residence' => $residence,
           'religion' => $religion,
-          'gender' => $gender,
+          'gender' => $gender
       );
 
         
@@ -92,10 +92,27 @@ class User_model extends MY_Model {
 
       }else{
 
+      $subject = 'Member Entry';
+      $message = 'Problem in registering User Name '.$username.' . Please rectify immediatelly';
+
+      $message_details_data = array();
+      $message_details = array(
+          'subject' => $subject,
+          'message' => $message
+      );
+
+        
+
+        array_push($message_details_data, $message_details);
+
+        //echo '<pre>'; print_r($member_details_data); echo '<pre>'; die;
+
+        $this->db->insert_batch('mail',$message_details_data);
+
         //echo 'Applicant is not able to be registered';
         $this->load->library('email');
-        $this->email->from('marewillfashion@gmail.com','MareWill Fashion');
-        $this->email->to('marekawill@gmail.com');
+        $this->email->from('info@marewill.com','MareWill Fashion');
+        $this->email->to('marekawilly@marewill.com','marekawilly@gmail.com');
         $this->email->subject('Failed registeration of a user');
 
         if(isset($email)){

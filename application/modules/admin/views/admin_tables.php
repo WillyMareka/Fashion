@@ -20,7 +20,9 @@
     </head>
     
     <body>
-        
+        <?php
+              $username = $this->session->userdata('username');
+        ?>
         <div class="navbar navbar-fixed-top">
             <div class="navbar-inner">
                 <div class="container-fluid">
@@ -31,13 +33,14 @@
                     <a class="brand" href="#">Admin Panel</a>
                     <div class="nav-collapse collapse">
                         <ul class="nav pull-right">
+                            <li><a href="<?php echo base_url(). 'home/index'?>">Home Page</a></li>
                             <li class="dropdown">
-                                <a href="#" role="button" class="dropdown-toggle" data-toggle="dropdown"> <i class="icon-user"></i> Mareka Willy <i class="caret"></i>
+                                <a href="#" role="button" class="dropdown-toggle" data-toggle="dropdown"> <i class="icon-user"></i> <?php echo $username?> <i class="caret"></i>
 
                                 </a>
                                 <ul class="dropdown-menu">
                                     <li>
-                                        <a tabindex="-1" href="<?php echo base_url(). 'admin/profileview'?>">Profile</a>
+                                        <a tabindex="-1" data-toggle="modal" data-target="#myModal">Profile</a>
                                     </li>
                                     <li class="divider"></li>
                                     <li>
@@ -51,39 +54,18 @@
                                 <a href="#">Dashboard</a>
                             </li>
                             <li class="dropdown">
-                                <a href="#" data-toggle="dropdown" class="dropdown-toggle">Settings <b class="caret"></b>
+                                <a href="#" data-toggle="dropdown" class="dropdown-toggle">Reports <b class="caret"></b>
 
                                 </a>
                                 <ul class="dropdown-menu" id="menu1">
+                                    
                                     <li>
-                                        <a href="#">Tools <i class="icon-arrow-right"></i>
-
-                                        </a>
-                                        <ul class="dropdown-menu sub-menu">
-                                            <li>
-                                                <a href="#">Reports</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">Logs</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">Errors</a>
-                                            </li>
-                                        </ul>
+                                        <a href="#">Excel</a>
                                     </li>
                                     <li>
-                                        <a href="#">SEO Settings</a>
+                                        <a href="#">PDF</a>
                                     </li>
-                                    <li>
-                                        <a href="#">Other Link</a>
-                                    </li>
-                                    <li class="divider"></li>
-                                    <li>
-                                        <a href="#">Other Link</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Other Link</a>
-                                    </li>
+                                    <!-- <li class="divider"></li> -->
                                 </ul>
                             </li>
                             <li class="dropdown">
@@ -92,36 +74,30 @@
                                 </a>
                                 <ul class="dropdown-menu">
                                     <li>
-                                        <a tabindex="-1" href="#">Blog</a>
+                                        <a tabindex="-1" href="<?php echo base_url(). 'admin/tables'?>">Tables</a>
                                     </li>
                                     <li>
-                                        <a tabindex="-1" href="#">News</a>
+                                        <a tabindex="-1" href="<?php echo base_url(). 'admin/news'?>">News</a>
                                     </li>
                                     <li>
-                                        <a tabindex="-1" href="#">Custom Pages</a>
+                                        <a tabindex="-1" href="<?php echo base_url(). 'admin/messages'?>">Messages</a>
                                     </li>
-                                    <li>
-                                        <a tabindex="-1" href="#">Calendar</a>
-                                    </li>
-                                    <li class="divider"></li>
-                                    <li>
-                                        <a tabindex="-1" href="#">FAQ</a>
-                                    </li>
+                                    
                                 </ul>
                             </li>
                             <li class="dropdown">
-                                <a href="#" role="button" class="dropdown-toggle" data-toggle="dropdown">Users <i class="caret"></i>
+                                <a href="#" role="button" class="dropdown-toggle" data-toggle="dropdown">Deactivations<i class="caret"></i>
 
                                 </a>
                                 <ul class="dropdown-menu">
                                     <li>
-                                        <a tabindex="-1" href="#">User List</a>
+                                        <a tabindex="-1" href="<?php echo base_url(). 'admin/dusers'?>">User List</a>
                                     </li>
                                     <li>
-                                        <a tabindex="-1" href="#">Search</a>
+                                        <a tabindex="-1" href="<?php echo base_url(). 'admin/dcompa'?>">Companies List</a>
                                     </li>
                                     <li>
-                                        <a tabindex="-1" href="#">Permissions</a>
+                                        <a tabindex="-1" href="<?php echo base_url(). 'admin/dmang'?>">Manager List</a>
                                     </li>
                                 </ul>
                             </li>
@@ -138,20 +114,18 @@
                         <li class="active">
                             <a href="<?php echo base_url(). 'admin/home'?>"><i class="icon-chevron-right"></i> Dashboard</a>
                         </li>
+                       
                         <li>
-                            <a href="<?php echo base_url(). 'admin/tables'?>"><i class="icon-chevron-right"></i> Tables</a>
-                        </li>
-                        <li>
-                            <a href="<?php echo base_url(). 'admin/forms'?>"><i class="icon-chevron-right"></i> Forms</a>
+                            <a href="<?php echo base_url(). 'admin/forms'?>"><i class="icon-chevron-right"></i> Product Form</a>
                         </li>
                         <li>
                             <a href="<?php echo base_url(). 'admin/statistics'?>"><i class="icon-chevron-right"></i> Statistics (Charts)</a>
                         </li>
                         <li>
-                            <a href="<?php echo base_url(). 'admin/messages'?>"><span class="badge badge-warning pull-right">0</span> Messages</a>
+                            <a href="<?php echo base_url(). 'admin/messages'?>"><span class="badge badge-warning pull-right"><?php echo $messagenumber?></span> Messages</a>
                         </li>
                         <li>
-                            <a href="<?php echo base_url(). 'admin/company'?>"><span class="badge badge-info pull-right">17</span> Company</a>
+                            <a href="<?php echo base_url(). 'admin/company'?>"><span class="badge badge-info pull-right"><?php echo $companynumber?></span> Company</a>
                         </li>
                         <li>
                             <a href="<?php echo base_url(). 'admin/users'?>"><span class="badge badge-success pull-right"><?php echo $usernumber?></span> Users</a>
@@ -188,17 +162,19 @@
                 
                 <!--/span-->
                 <div class="span9" id="content">
-
+                  
                     <div class="row-fluid addlength">
+                        <div class="span12">
                         <!-- block -->
                         <div class="block">
                             <div class="navbar navbar-inner block-header">
                                 <div class="muted pull-left">Users Table</div>
+                                <div class="pull-right"><span class="badge badge-info"><?php echo $usernumber?></span></div>
                             </div>
                             <div class="block-content collapse in">
-                                <div class="span12">
+                                
                                     
-                                    <table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="example">
+                                    <table cellpadding="0" cellspacing="0" border="0" class="table table-hover" id="example">
                                         <thead>
                                             <tr>
                                                 <th>#</th>
@@ -224,7 +200,42 @@
                     </div>
                       
 
-                    
+                    <div class="row-fluid addlength">
+                        <div class="span12">
+                            <!-- block -->
+                            <div class="block">
+                                <div class="navbar navbar-inner block-header">
+                                    <div class="muted pull-left">Companies</div>
+                                    <div class="pull-right"><span class="badge badge-info"><?php echo $companynumber?></span>
+
+                                    </div>
+                                </div>
+                                <div class="block-content collapse in">
+                                    <table class="table table-hover">
+                                        <thead>
+
+
+                                            <tr>
+                                                <th>#</th>
+                                                <th>Company Name</th>
+                                                <th>Location</th>
+                                                <th>Address</th>
+                                                <th>Phone Number</th>
+                                                <th>Email</th>
+                                                <th>Date / Time Registered</th>
+                                                
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <?php echo $companies_table; ?>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <!-- /block -->
+                        </div>
+
+                    </div>
 
                     
 
