@@ -111,14 +111,15 @@ class Admin extends MY_Controller {
                     // $user_style .= '<td>'.$counter.'</td>';
                     $product_style .= '<td>'.$product_details['prod_id'].'</td>';
                     $product_style .= '<td>'.$product_details['prod_name'].'</td>';
-                    $product_style .= '<td>'.$product_details['type_id'].'</td>';
-                    $product_style .= '<td>'.$product_details['cat_id'].'</td>';
+                    $product_style .= '<td>'.$product_details['prod_type'].'</td>';
+                    $product_style .= '<td>'.$product_details['prod_cat'].'</td>';
                     $product_style .= '<td>'.$product_details['quantity'].'</td>';
-                    $product_style .= '<td>'.$product_details['comp_id'].'</td>';
+                    $product_style .= '<td>'.$product_details['price'].'</td>';
+                    $product_style .= '<td>'.$product_details['prod_company'].'</td>';
                     $product_style .= '<td>'.$product_details['date_added'].'</td>';
                     
-                    $product_style .= '<td><a data-toggle="tooltip" data-placement="bottom" title="View Profile" href = "'.base_url().'admin/productprofile/'.$company_details['prod_id'].'"><i class="ion-eye icon black"></i></a></td>';
-                    $product_style .= '<td><a data-toggle="tooltip" data-placement="bottom" title="Delete Profile" href = "'.base_url().'admin/updateproduct/delete/'.$company_details['prod_id'].'"><i class="ion-trash-a icon black"></i></td>';
+                    $product_style .= '<td><a data-toggle="tooltip" data-placement="bottom" title="View Profile" href = "'.base_url().'admin/productprofile/'.$product_details['prod_id'].'"><i class="ion-eye icon black"></i></a></td>';
+                    $product_style .= '<td><a data-toggle="tooltip" data-placement="bottom" title="Delete Profile" href = "'.base_url().'admin/updateproduct/delete/'.$product_details['prod_id'].'"><i class="ion-trash-a icon black"></i></td>';
                     $product_style .= '</tr>';
                     $counter++;
                 }
@@ -138,15 +139,16 @@ class Admin extends MY_Controller {
 	{
 		$this->load->library('form_validation');
         
-        $this->form_validation->set_rules('prodname', 'Product Name', 'trim|min_length[3]|required|xss_clean');
-        $this->form_validation->set_rules('prodcategory', 'Product Category', 'trim|required|min_length[3]|xss_clean');
-        $this->form_validation->set_rules('prodtype', 'Product Type', 'trim|min_length[3]|required|xss_clean');
-        $this->form_validation->set_rules('prodquantity', 'Product Quantity', 'trim|required|min_length[1]');
-        $this->form_validation->set_rules('prodcompany', 'Product Company', 'trim|min_length[3]|required|xss_clean');
+        $this->form_validation->set_rules('prodname', 'Product Name', 'trim|required|xss_clean');
+        $this->form_validation->set_rules('prodcategory', 'Product Category', 'trim|required|xss_clean');
+        $this->form_validation->set_rules('prodtype', 'Product Type', 'trim|required|xss_clean');
+        $this->form_validation->set_rules('prodquantity', 'Product Quantity', 'trim|required');
+        $this->form_validation->set_rules('prodprice', 'Product Price', 'trim|required');
+        $this->form_validation->set_rules('prodcompany', 'Product Company', 'trim|required|xss_clean');
         
 
 		if($this->form_validation->run() == FALSE){
-			//echo 'Not working';die();
+			// echo 'Not working';die();
 			redirect(base_url() .'admin/forms');
 		    
 		}else{
@@ -177,7 +179,7 @@ class Admin extends MY_Controller {
                //print_r($result);
 
 			  if($result){
-                 $this->forms();
+                redirect(base_url() .'admin/forms');
 
 		      }else{
                  echo 'There was a problem with the website.<br/>Please contact the administrator';
@@ -215,6 +217,10 @@ class Admin extends MY_Controller {
 					redirect(base_url() .'admin/home');
 					break;
 				
+				case 'delete':
+					redirect(base_url() .'admin/home');
+					break;
+
 				default:
 					# code...
 					break;
@@ -246,7 +252,7 @@ class Admin extends MY_Controller {
         //echo '<pre>';print_r($results);echo '</pre>';die;
             $prodcat ='<option selected="selected" value="">Select the Category</option>';
         foreach ($results as $value) {
-            $prodcat .= '<option value="' . $value['cat_id'] . '">' . $value['cat_name'] . '</option>';  
+            $prodcat .= '<option value="' . $value['cat_name'] . '">' . $value['cat_name'] . '</option>';  
         }
         return $prodcat;
 	}
@@ -258,7 +264,7 @@ class Admin extends MY_Controller {
         //echo '<pre>';print_r($results);echo '</pre>';die;
             $prodtype ='<option selected="selected" value="">Select the Type</option>';
         foreach ($results as $value) {
-            $prodtype .= '<option value="' . $value['type_id'] . '">' . $value['type_name'] . '</option>';  
+            $prodtype .= '<option value="' . $value['type_name'] . '">' . $value['type_name'] . '</option>';  
         }
         return $prodtype;
 	}
@@ -270,7 +276,7 @@ class Admin extends MY_Controller {
         //echo '<pre>';print_r($results);echo '</pre>';die;
             $prodcomp ='<option selected="selected" value="">Select the Company</option>';
         foreach ($results as $value) {
-            $prodcomp .= '<option value="' . $value['comp_id'] . '">' . $value['company_name'] . '</option>';  
+            $prodcomp .= '<option value="' . $value['company_name'] . '">' . $value['company_name'] . '</option>';  
         }
         return $prodcomp;
 	}
@@ -303,6 +309,7 @@ class Admin extends MY_Controller {
 		$data['messagenumber']  = $this->getmessagenumber();
 		$data['companynumber']  = $this->getcompanynumber();
 		$data['users_table'] = $this->createusersview('table');
+		$data['product_table'] = $this->createproductsview('table');
 		$data['companies_table'] = $this->createcompaniesview('table');
 		
 

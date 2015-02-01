@@ -261,6 +261,8 @@
                                                 <th>Residence</th>
                                                 <th>Religion</th>
                                                 <th>Gender</th>
+                                                <th colspan="2">Actions</th>
+
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -297,7 +299,7 @@
                                                 <th>Phone Number</th>
                                                 <th>Email</th>
                                                 <th>Date / Time Registered</th>
-                                                
+                                                <th colspan="2">Actions</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -334,9 +336,10 @@
                                                 <th>Product Type</th>
                                                 <th>Product Category</th>
                                                 <th>Quantity</th>
+                                                <th>Price (Kshs)</th>
                                                 <th>Product Company</th>
                                                 <th>Date / Time Added</th>
-                                                
+                                                <th colspan="2">Actions</th>
                                             </tr>
                                         </thead>
                                         <tbody>

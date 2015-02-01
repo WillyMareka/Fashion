@@ -6,6 +6,7 @@
         <meta name="robots" content="noindex">
         <meta charset="UTF-8">
         <link rel="icon" type="image/x-icon" href="<?php echo base_url() . 'assets/fonts/fashion.ico'?>" />
+        <link type="text/css" href="<?php echo base_url() .'assets/ionicons/css/ionicons.css' ?>" rel="stylesheet" media="screen">
         <link href="<?php echo base_url() .'assets/dist/css/bootstrap.min-1.css'?>" rel="stylesheet" media="screen">
         <link href="<?php echo base_url() .'assets/dist/css/bootstrap-responsive.min-1.css'?>" rel="stylesheet" media="screen">
         <link href="<?php echo base_url() .'assets/css/ad_styles.css'?>" rel="stylesheet" media="screen">
@@ -192,9 +193,16 @@
   							<div class="control-group">
   								<label class="control-label">Quantity<span class="required">*</span></label>
   								<div class="controls">
-  									<input name="prodquantity" type="text" required value="<?php echo set_value('prodquantity'); ?>" class="span6 m-wrapform-control "/>
+  									<input name="prodquantity" type="text" required value="<?php echo set_value('prodquantity'); ?>" class="span6 m-wrap form-control "/>
   								</div>
   							</div>
+
+                <div class="control-group">
+                  <label class="control-label">Price<span class="required">*</span></label>
+                  <div class="controls">
+                    <input name="prodprice" type="text" required value="<?php echo set_value('prodprice'); ?>" class="span6 m-wrap form-control "/>
+                  </div>
+                </div>
 
   							<div class="control-group">
   								<label class="control-label">Picture<span class="required">*</span></label>
@@ -239,9 +247,9 @@
                             <div class="block">
                                 <div class="navbar navbar-inner block-header">
                                     <div class="muted pull-left">Products</div>
-                                    <div class="pull-right"><span class="badge badge-info"><?php echo $productnumber?></span>
+                                    <div class="pull-right"><span class="badge badge-info"><?php echo $productnumber?></span></div>
 
-                                    </div>
+                                    
                                 </div>
                                 <div class="block-content collapse in">
                                     <table class="table table-striped">
@@ -254,8 +262,10 @@
                                                 <th>Product Type</th>
                                                 <th>Product Category</th>
                                                 <th>Quantity</th>
+                                                <th>Price (Kshs)</th>
                                                 <th>Product Company</th>
                                                 <th>Date / Time Added</th>
+                                                <th colspan="2">Actions</th>
                                                 
                                             </tr>
                                         </thead>

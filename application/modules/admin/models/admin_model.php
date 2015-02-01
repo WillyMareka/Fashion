@@ -195,6 +195,7 @@ class Admin_model extends MY_Model {
       $producttype = strtoupper($this->input->post('prodtype'));
       $filename = $this->input->post('prodpicture');
       $productquantity = $this->input->post('prodquantity');
+      $productprice = $this->input->post('prodprice');
       $productcompany = strtoupper($this->input->post('prodcompany'));
       
 
@@ -205,6 +206,7 @@ class Admin_model extends MY_Model {
           'prod_cat' => $producttype,
           'picture' => $path,
           'quantity' => $productquantity,
+          'price' => $productprice,
           'prod_company' => $productcompany
       );
 

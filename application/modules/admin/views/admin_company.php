@@ -6,11 +6,12 @@
         <meta name="robots" content="noindex">
         <meta charset="UTF-8">
         <link rel="icon" type="image/x-icon" href="<?php echo base_url() . 'assets/fonts/fashion.ico'?>" />
-        <link type="text/css" href="<?php echo base_url() .'assets/ionicons/css/ionicons.css' ?>" rel="stylesheet" media="screen">
+       
         <link href="<?php echo base_url(). 'assets/dist/css/bootstrap.min-1.css'?>" rel="stylesheet" media="screen">
         <link href="<?php echo base_url(). 'assets/dist/css/bootstrap-responsive.min-1.css'?>" rel="stylesheet" media="screen">
         <link href="<?php echo base_url(). 'assets/css/ad_styles.css'?>" rel="stylesheet" media="screen">
         <link href="<?php echo base_url(). 'assets/dist/css/table_bootstrap.css'?>" rel="stylesheet" media="screen">
+         <link type="text/css" href="<?php echo base_url() .'assets/ionicons/css/ionicons.css' ?>" rel="stylesheet" media="screen">
         
            <!--[if lte IE 8]><script language="javascript" type="text/javascript" src="vendors/flot/excanvas.min.js"></script><![endif]-->
         <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
@@ -164,22 +165,22 @@
                 <div class="span9" id="content">
                   
                     
-                      
+                   
+
+
+
 
                     <div class="row-fluid addlength">
-                        <div class="span12">
-                            <!-- block -->
-                            <div class="block">
-                                <div class="navbar navbar-inner block-header">
-                                    <div class="muted pull-left">Companies</div>
-                                    <div class="pull-right"><span class="badge badge-info"><?php echo $companynumber?></span>
-
-                                    </div>
-                                </div>
-                                <div class="block-content collapse in">
-                                    <table class="table table-hover">
+                        <!-- block -->
+                        <div class="block">
+                            <div class="navbar navbar-inner block-header">
+                                <div class="muted pull-left">Companies</div>
+                            </div>
+                            <div class="block-content collapse in">
+                                <div class="span12">
+                                    
+                                    <table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="example">
                                         <thead>
-
 
                                             <tr>
                                                 <th>#</th>
@@ -189,7 +190,7 @@
                                                 <th>Phone Number</th>
                                                 <th>Email</th>
                                                 <th>Date / Time Registered</th>
-                                                
+                                                <th colspan="2">Actions</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -198,9 +199,8 @@
                                     </table>
                                 </div>
                             </div>
-                            <!-- /block -->
                         </div>
-
+                        <!-- /block -->
                     </div>
 
                    

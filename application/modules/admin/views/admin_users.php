@@ -191,6 +191,7 @@
                                                 <th>Residence</th>
                                                 <th>Religion</th>
                                                 <th>Gender</th>
+                                                <th colspan="2">Actions</th>
                                             </tr>
                                         </thead>
                                         <tbody>
