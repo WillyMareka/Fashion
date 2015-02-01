@@ -144,7 +144,7 @@
                             <a href="<?php echo base_url(). 'admin/home'?>"><i class="icon-chevron-right"></i> Dashboard</a>
                         </li>
                         <li>
-                            <a href="<?php echo base_url(). 'admin/forms'?>"><i class="icon-chevron-right"></i> Product Form</a>
+                            <a href="<?php echo base_url(). 'admin/forms'?>"><i class="icon-chevron-right"></i><span class="badge badge-alert pull-right"><?php echo $productnumber?></span> Product Form</a>
                         </li>
                         <li>
                             <a href="<?php echo base_url(). 'admin/statistics'?>"><i class="icon-chevron-right"></i> Statistics (Charts)</a>
@@ -163,3 +163,75 @@
                 </div>
                 
                 <!--/span-->
+
+
+
+
+                <div class="row-fluid addlength">
+                        <div class="span12">
+                        <!-- block -->
+                        <div class="block">
+                            <div class="navbar navbar-inner block-header">
+                                <div class="muted pull-left">Users Table</div>
+                                <div class="pull-right"><span class="badge badge-info"><?php echo $usernumber?></span></div>
+                            </div>
+                            <div class="block-content collapse in">
+                                
+                                    
+                                    <table cellpadding="0" cellspacing="0" border="0" class="table table-hover" id="example">
+                                        <thead>
+                                            <tr>
+                                                <th>#</th>
+                                                <th>First Name</th>
+                                                <th>Last Name</th>
+                                                <th>Age</th>
+                                                <th>Nationality</th>
+                                                <th>Phone Number</th>
+                                                <th>Email</th>
+                                                <th>Residence</th>
+                                                <th>Religion</th>
+                                                <th>Gender</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <?php echo $users_table; ?>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /block -->
+                    </div>
+
+
+
+
+
+
+
+
+
+                </div>
+            </div>
+            <hr>
+            <footer>
+                <p> Marewill Fashion 2015 &copy;</p>
+            </footer>
+        </div>
+        <!--/.fluid-container-->
+
+        <script src="<?php echo base_url(). 'assets/vendors/jquery-1.9.1.js'?>"></script>
+        <script src="<?php echo base_url(). 'assets/dist/js/bootstrap.min.js'?>"></script>
+        <script src="<?php echo base_url(). 'assets/vendors/datatables/js/jquery.dataTables.min.js'?>"></script>
+
+
+        <script src="<?php echo base_url(). 'assets/js/ad_scripts.js'?>"></script>
+        <script src="<?php echo base_url(). 'assets/dist/js/table_bootstrap.js'?>"></script>
+        <script>
+        $(function() {
+            
+        });
+        </script>
+    </body>
+
+</html>

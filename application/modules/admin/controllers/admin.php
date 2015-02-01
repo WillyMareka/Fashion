@@ -98,6 +98,41 @@ class Admin extends MY_Controller {
         return $company_style;
     }
 
+    function createproductsview($type)
+    {
+        $products = $this->admin_model->get_all_products();
+        $product_style = '';
+        if ($products) {
+            switch ($type) {
+            case 'table':
+                $counter = 1;
+                foreach ($products as $key => $product_details) {
+                    $product_style .= '<tr>';
+                    // $user_style .= '<td>'.$counter.'</td>';
+                    $product_style .= '<td>'.$product_details['prod_id'].'</td>';
+                    $product_style .= '<td>'.$product_details['prod_name'].'</td>';
+                    $product_style .= '<td>'.$product_details['type_id'].'</td>';
+                    $product_style .= '<td>'.$product_details['cat_id'].'</td>';
+                    $product_style .= '<td>'.$product_details['quantity'].'</td>';
+                    $product_style .= '<td>'.$product_details['comp_id'].'</td>';
+                    $product_style .= '<td>'.$product_details['date_added'].'</td>';
+                    
+                    $product_style .= '<td><a data-toggle="tooltip" data-placement="bottom" title="View Profile" href = "'.base_url().'admin/productprofile/'.$company_details['prod_id'].'"><i class="ion-eye icon black"></i></a></td>';
+                    $product_style .= '<td><a data-toggle="tooltip" data-placement="bottom" title="Delete Profile" href = "'.base_url().'admin/updateproduct/delete/'.$company_details['prod_id'].'"><i class="ion-trash-a icon black"></i></td>';
+                    $product_style .= '</tr>';
+                    $counter++;
+                }
+                break;
+            
+            default:
+                # code...
+                break;
+            }
+        }
+
+        return $product_style;
+    }
+
 
     function create_product()
 	{
@@ -187,6 +222,23 @@ class Admin extends MY_Controller {
 		}
 	}
 
+	function updateproduct($type, $prod_id)
+	{
+		$update = $this->admin_model->updateproduct($type, $prod_id);
+		if($update)
+		{
+			switch ($type) {
+				case 'delete':
+					redirect(base_url() .'admin/home');
+					break;
+				
+				default:
+					# code...
+					break;
+			}
+		}
+	}
+
 	function getproductcategories()
 	{
         $results = $this->admin_model->get_product_category();
@@ -228,11 +280,15 @@ class Admin extends MY_Controller {
 
 		$data['error'] = '';
 		
-		$data['users_table'] = $this->createusersview('table');
+		
 		$data['messagenumber']  = $this->getmessagenumber();
-		$data['companies_table'] = $this->createcompaniesview('table');
+		$data['productnumber']  = $this->getproductnumber();
 		$data['usernumber']  = $this->getusernumber();
 		$data['companynumber']  = $this->getcompanynumber();
+		$data['product_table'] = $this->createproductsview('table');
+		$data['users_table'] = $this->createusersview('table');
+		$data['companies_table'] = $this->createcompaniesview('table');
+
 		
 
 		$this->load->view('v_admin', $data);
@@ -243,6 +299,7 @@ class Admin extends MY_Controller {
 	{
 		$data['error'] = '';
 		$data['usernumber']  = $this->getusernumber();
+		$data['productnumber']  = $this->getproductnumber();
 		$data['messagenumber']  = $this->getmessagenumber();
 		$data['companynumber']  = $this->getcompanynumber();
 		$data['users_table'] = $this->createusersview('table');
@@ -279,6 +336,7 @@ class Admin extends MY_Controller {
 		$data['error'] = '';
 		$data['messagenumber']  = $this->getmessagenumber();
 		$data['usernumber']  = $this->getusernumber();
+		$data['productnumber']  = $this->getproductnumber();
 		$data['companynumber']  = $this->getcompanynumber();
 		// $data['content_page'] = 'admin/admin_stats';
 		// $this->template->get_admin_template($data);
@@ -294,7 +352,9 @@ class Admin extends MY_Controller {
 		$data['messagenumber']  = $this->getmessagenumber();
 		$data['usernumber']  = $this->getusernumber();
 		$data['product_types']  = $this->getproducttypes();
+		$data['productnumber']  = $this->getproductnumber();
 		$data['companynumber']  = $this->getcompanynumber();
+		$data['product_table'] = $this->createproductsview('table');
 		$data['product_companies']  = $this->getproductcompanies();
 		// $data['content_page'] = 'admin/admin_form';
 		// $this->template->get_admin_template($data);
@@ -308,6 +368,8 @@ class Admin extends MY_Controller {
 		$data['error'] = '';
 		$data['messagenumber']  = $this->getmessagenumber();
 		$data['usernumber']  = $this->getusernumber();
+		$data['productnumber']  = $this->getproductnumber();
+		$data['users_table'] = $this->createusersview('table');
 		$data['companynumber']  = $this->getcompanynumber();
 		// $data['content_page'] = 'admin/admin_user';
 		// $this->template->get_admin_template($data);
@@ -321,6 +383,8 @@ class Admin extends MY_Controller {
 		$data['error'] = '';
 		$data['messagenumber']  = $this->getmessagenumber();
 		$data['usernumber']  = $this->getusernumber();
+		$data['productnumber']  = $this->getproductnumber();
+		$data['companies_table'] = $this->createcompaniesview('table');
 		$data['companynumber']  = $this->getcompanynumber();
 		// $data['content_page'] = 'admin/admin_user';
 		// $this->template->get_admin_template($data);
@@ -335,6 +399,9 @@ class Admin extends MY_Controller {
 		$data['usernumber']  = $this->getusernumber();
 		$data['messagenumber']  = $this->getmessagenumber();
 		$data['companynumber']  = $this->getcompanynumber();
+		$data['productnumber']  = $this->getproductnumber();
+		$data['messages_table'] = $this->createmessagesview('table');
+
 		// $data['content_page'] = 'admin/admin_user';
 		// $this->template->get_admin_template($data);
 		//$this->load->view('admin_user', array('logged_in' => $this->logged_in));
@@ -363,6 +430,15 @@ class Admin extends MY_Controller {
 	public function getcompanynumber()
 	{
           $results = $this->admin_model->companynumber();
+
+          return $results;
+
+          //echo '<pre>'; print_r($results); echo '</pre>';die;
+	}
+
+	public function getproductnumber()
+	{
+          $results = $this->admin_model->productnumber();
 
           return $results;
 

@@ -116,7 +116,7 @@
                         </li>
                        
                         <li>
-                            <a href="<?php echo base_url(). 'admin/forms'?>"><i class="icon-chevron-right"></i> Product Form</a>
+                            <a href="<?php echo base_url(). 'admin/forms'?>"><i class="icon-chevron-right"></i><span class="badge badge-warning pull-right"><?php echo $productnumber?></span> Product Form</a>
                         </li>
                         <li>
                             <a href="<?php echo base_url(). 'admin/statistics'?>"><i class="icon-chevron-right"></i> Statistics (Charts)</a>
@@ -228,6 +228,43 @@
                                         </thead>
                                         <tbody>
                                             <?php echo $companies_table; ?>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <!-- /block -->
+                        </div>
+
+                    </div>
+
+                    <div class="row-fluid addlength">
+                        <div class="span12">
+                            <!-- block -->
+                            <div class="block">
+                                <div class="navbar navbar-inner block-header">
+                                    <div class="muted pull-left">Products</div>
+                                    <div class="pull-right"><span class="badge badge-info"><?php echo $productnumber?></span>
+
+                                    </div>
+                                </div>
+                                <div class="block-content collapse in">
+                                    <table class="table table-striped">
+                                        <thead>
+
+
+                                            <tr>
+                                                <th>#</th>
+                                                <th>Product Name</th>
+                                                <th>Product Type</th>
+                                                <th>Product Category</th>
+                                                <th>Quantity</th>
+                                                <th>Product Company</th>
+                                                <th>Date / Time Added</th>
+                                                
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <?php echo $product_table; ?>
                                         </tbody>
                                     </table>
                                 </div>

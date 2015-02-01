@@ -1,31 +1,28 @@
 <!DOCTYPE html>
-<html class="no-js">
+<html>
     
     <head>
-    <title>Admin</title>
+      <title>Tables</title>
         <meta name="robots" content="noindex">
         <meta charset="UTF-8">
-        
         <link rel="icon" type="image/x-icon" href="<?php echo base_url() . 'assets/fonts/fashion.ico'?>" />
         <link type="text/css" href="<?php echo base_url() .'assets/ionicons/css/ionicons.css' ?>" rel="stylesheet" media="screen">
-        <link type="text/css" href="<?php echo base_url() .'assets/dist/css/bootstrap.min-1.css' ?>" rel="stylesheet" media="screen">
-        <link type="text/css" href="<?php echo base_url() .'assets/dist/css/bootstrap-responsive.min.css'?>" rel="stylesheet" media="screen">
-        <link type="text/css" href="<?php echo base_url() .'assets/vendors/easypiechart/jquery.easy-pie-chart.css'?>" rel="stylesheet" media="screen">
-        <link type="text/css" href="<?php echo base_url() .'assets/css/ad_styles.css' ?>" rel="stylesheet" media="screen">
+        <link href="<?php echo base_url(). 'assets/dist/css/bootstrap.min-1.css'?>" rel="stylesheet" media="screen">
+        <link href="<?php echo base_url(). 'assets/dist/css/bootstrap-responsive.min-1.css'?>" rel="stylesheet" media="screen">
+        <link href="<?php echo base_url(). 'assets/css/ad_styles.css'?>" rel="stylesheet" media="screen">
+        <link href="<?php echo base_url(). 'assets/dist/css/table_bootstrap.css'?>" rel="stylesheet" media="screen">
         
+           <!--[if lte IE 8]><script language="javascript" type="text/javascript" src="vendors/flot/excanvas.min.js"></script><![endif]-->
         <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
         <!--[if lt IE 9]>
             <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
         <![endif]-->
-        <script src="<?php echo base_url(). 'assets/vendors/modernizr-2.6.2-respond-1.1.0.min.js'?>"></script>
     </head>
     
     <body>
-
         <?php
               $username = $this->session->userdata('username');
         ?>
-
         <div class="navbar navbar-fixed-top">
             <div class="navbar-inner">
                 <div class="container-fluid">
@@ -110,32 +107,6 @@
                 </div>
             </div>
         </div>
-
-        <!-- Button trigger modal -->
-<!-- <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-  Launch demo modal
-</button> -->
-
-<!-- Modal -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-
         <div class="container-fluid">
             <div class="row-fluid">
                 <div class="span3" id="sidebar">
@@ -143,8 +114,9 @@
                         <li class="active">
                             <a href="<?php echo base_url(). 'admin/home'?>"><i class="icon-chevron-right"></i> Dashboard</a>
                         </li>
+                       
                         <li>
-                            <a href="<?php echo base_url(). 'admin/forms'?>"><i class="icon-chevron-right"></i> Product Form</a>
+                            <a href="<?php echo base_url(). 'admin/forms'?>"><i class="icon-chevron-right"></i><span class="badge badge-warning pull-right"><?php echo $productnumber?></span> Product Form</a>
                         </li>
                         <li>
                             <a href="<?php echo base_url(). 'admin/statistics'?>"><i class="icon-chevron-right"></i> Statistics (Charts)</a>
@@ -158,8 +130,113 @@
                         <li>
                             <a href="<?php echo base_url(). 'admin/users'?>"><span class="badge badge-success pull-right"><?php echo $usernumber?></span> Users</a>
                         </li>
-                        
+                        <!-- <li>
+                            <a href="calendar.html"><i class="icon-chevron-right"></i> Calendar</a>
+                        </li>
+                        <li>
+                            <a href="buttons.html"><i class="icon-chevron-right"></i> Buttons & Icons</a>
+                        </li>
+                        <li>
+                            <a href="editors.html"><i class="icon-chevron-right"></i> WYSIWYG Editors</a>
+                        </li>
+                        <li>
+                            <a href="interface.html"><i class="icon-chevron-right"></i> UI & Interface</a>
+                        </li>
+                        <li>
+                            <a href="#"><span class="badge badge-success pull-right">731</span> Orders</a>
+                        </li>
+                        <li>
+                            <a href="#"><span class="badge badge-success pull-right">812</span> Invoices</a>
+                        </li>
+                        <li>
+                            <a href="#"><span class="badge badge-info pull-right">11</span> Reports</a>
+                        </li>
+                        <li>
+                            <a href="#"><span class="badge badge-important pull-right">83</span> Errors</a>
+                        </li>
+                        <li>
+                            <a href="#"><span class="badge badge-warning pull-right">4,231</span> Logs</a>
+                        </li> -->
                     </ul>
                 </div>
                 
                 <!--/span-->
+                <div class="span9" id="content">
+                  
+                    
+                      
+
+                    <div class="row-fluid addlength">
+                        <div class="span12">
+                            <!-- block -->
+                            <div class="block">
+                                <div class="navbar navbar-inner block-header">
+                                    <div class="muted pull-left">Companies</div>
+                                    <div class="pull-right"><span class="badge badge-info"><?php echo $companynumber?></span>
+
+                                    </div>
+                                </div>
+                                <div class="block-content collapse in">
+                                    <table class="table table-hover">
+                                        <thead>
+
+
+                                            <tr>
+                                                <th>#</th>
+                                                <th>Company Name</th>
+                                                <th>Location</th>
+                                                <th>Address</th>
+                                                <th>Phone Number</th>
+                                                <th>Email</th>
+                                                <th>Date / Time Registered</th>
+                                                
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <?php echo $companies_table; ?>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <!-- /block -->
+                        </div>
+
+                    </div>
+
+                   
+
+                    
+
+                    
+
+                    
+
+                    
+
+                     
+
+                     
+                </div>
+            </div>
+            <hr>
+            <footer>
+                <p> Marewill Fashion 2015 &copy;</p>
+            </footer>
+        </div>
+        <!--/.fluid-container-->
+
+        <script src="<?php echo base_url(). 'assets/vendors/jquery-1.9.1.js'?>"></script>
+        <script src="<?php echo base_url(). 'assets/dist/js/bootstrap.min.js'?>"></script>
+        <script src="<?php echo base_url(). 'assets/vendors/datatables/js/jquery.dataTables.min.js'?>"></script>
+
+
+        <script src="<?php echo base_url(). 'assets/js/ad_scripts.js'?>"></script>
+        <script src="<?php echo base_url(). 'assets/dist/js/table_bootstrap.js'?>"></script>
+        <script>
+        $(function() {
+            
+        });
+        </script>
+    </body>
+
+</html>

@@ -38,6 +38,16 @@ class Admin_model extends MY_Model {
         return $data->companies;
    }
 
+   public function productnumber(){
+    $sql = "SELECT COUNT(`prod_id`) as products FROM products";
+
+        $result = $this->db->query($sql);
+        $data = $result->row();
+        //print_r($data);die();
+
+        return $data->products;
+   }
+
    public function get_all_users()
   {
     $users = array();
@@ -54,6 +64,24 @@ class Admin_model extends MY_Model {
     }
     
     return $users;
+  }
+
+  public function get_all_products()
+  {
+    $products = array();
+    $query = $this->db->get_where('products', array('is_deleted' => 0));
+    $result = $query->result_array();
+
+    if ($result) {
+      foreach ($result as $key => $value) {
+        $products[$value['prod_id']] = $value;
+      }
+      //echo '<pre>';print_r($users);echo '</pre>';die();
+      
+      return $products;
+    }
+    
+    return $products;
   }
 
   public function get_all_companies()
@@ -92,6 +120,35 @@ class Admin_model extends MY_Model {
     }
     $this->db->where('ac_id', $ac_id);
     $update = $this->db->update('accounts', $data);
+
+    if ($update) {
+      return true;
+    }
+    else
+    {
+      return false;
+    }
+  }
+
+
+  public function updateproduct($type, $prod_id)
+  {
+    $data = array();
+    switch ($type) {
+      case 'delete':
+        $data['is_deleted'] = 1; 
+        
+        break;
+      
+      case 'update':
+        $data = $this->input->post();
+        break;
+      default:
+        # code...
+        break;
+    }
+    $this->db->where('prod_id', $prod_id);
+    $update = $this->db->update('productss', $data);
 
     if ($update) {
       return true;
