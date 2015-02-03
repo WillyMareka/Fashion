@@ -1,8 +1,8 @@
 <html>
 <head>
-	<title>
-        MareWill Fashion
-	</title>
+  <title>
+        Manager Home
+  </title>
     <meta name="robots" content="noindex">
     <meta charset="UTF-8">
     <link rel="icon" type="image/x-icon" href="<?php echo base_url() . 'assets/fonts/fashion.ico'?>" />
@@ -21,7 +21,7 @@
     <link type="text/css" href="<?php echo base_url() . 'assets/css/styles2.css'?>" rel="stylesheet">
     <link type="text/css" href="<?php echo base_url() . 'assets/css/main.css'?>" rel="stylesheet">
     
-	
+  
 </head>
 <body>
 
@@ -56,9 +56,10 @@
 
   <?php
       $log_type = $this->session->userdata('lt_id');
+      $username = $this->session->userdata('username');
       if(($logged_in) && ($log_type==3)){
 
-        $username = $this->session->userdata('username');
+        echo $username;
   ?>
 
   
@@ -71,6 +72,23 @@
        <div class="menu">
         <div class="ui divider"></div>
         <a href='<?php echo base_url(). 'user/validate_member'?>' class="item"><i class="sign out icon"></i> Admin Page</a>
+        <a href='<?php echo base_url(). 'user/logout'?>' class="item"><i class="sign out icon"></i> Log Out</a>
+       </div>
+    </div>
+  </li>
+
+  <?php
+      }elseif(($logged_in) && ($log_type==2)){
+  ?>
+
+      <li><div class="ui vertical divider"></div></li>
+
+  <li>
+    <div class="ui simple dropdown item">
+      <i class="user icon "></i> <?php echo $username;?><i class="dropdown icon"></i>
+       <div class="menu">
+        <div class="ui divider"></div>
+       
         <a href='<?php echo base_url(). 'user/logout'?>' class="item"><i class="sign out icon"></i> Log Out</a>
        </div>
     </div>
@@ -158,8 +176,7 @@
    <?php
       }
    ?>
-   <!-- <li class='right'><a href='<?php echo base_url(). 'user/sign'?>'>Sign Up</a>
-   <li class='right'><a href='<?php echo base_url(). 'user/log'?>'>Log In</a> -->
+
 
 
    </li>

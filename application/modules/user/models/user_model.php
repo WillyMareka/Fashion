@@ -127,6 +127,8 @@ class User_model extends MY_Model {
      }
     }
 
+    
+
     public function log_member()
     {
         $username = $this->input->post('l_username');
@@ -183,6 +185,9 @@ class User_model extends MY_Model {
        //print_r($this->session->all_userdata());
     }
 
+
+
+
     private function set_session($session_data){
       $sql = "SELECT ac_id , username, lt_id FROM accounts, logs WHERE username = '". $session_data['username'] ."' LIMIT 1";
       $result = $this->db->query($sql);
@@ -210,6 +215,9 @@ class User_model extends MY_Model {
        // $details = $this->session->all_userdata();
         
     }
+
+
+
 
     function user_antiexists($user_entered){
          $this->db->where('username', $username);
