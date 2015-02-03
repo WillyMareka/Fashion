@@ -26,10 +26,45 @@ class Manager extends MY_Controller {
 
    function home()
    {
-   		$this->load->view('header', array('logged_in' => $this->logged_in));
+   		
    	$this->load->view('manager');
-   		$this->load->view('footer');
+   		
    } 
+
+   function productsview()
+   {
+      
+    $this->load->view('products_view');
+      
+   }
+
+   function statistics()
+   {
+      
+    $this->load->view('statistics');
+      
+   }
+
+   function category()
+   {
+      
+    $this->load->view('category_view');
+      
+   }
+
+   function type()
+   {
+      
+    $this->load->view('type_form');
+      
+   }
+
+   function company()
+   {
+      
+    $this->load->view('company');
+      
+   }
 
 
 

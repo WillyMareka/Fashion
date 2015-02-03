@@ -2,7 +2,7 @@
 <html class="no-js">
     
     <head>
-    <title>Admin</title>
+    <title>manager</title>
         <meta name="robots" content="noindex">
         <meta charset="UTF-8">
         
@@ -33,7 +33,7 @@
                      <span class="icon-bar"></span>
                      <span class="icon-bar"></span>
                     </a>
-                    <a class="brand" href="#">Admin Panel</a>
+                    <a class="brand" href="#">manager Panel</a>
                     <div class="nav-collapse collapse">
                         <ul class="nav pull-right">
                             <li><a href="<?php echo base_url(). 'home/index'?>">Home Page</a></li>
@@ -77,13 +77,13 @@
                                 </a>
                                 <ul class="dropdown-menu">
                                     <li>
-                                        <a tabindex="-1" href="<?php echo base_url(). 'admin/tables'?>">Tables</a>
+                                        <a tabindex="-1" href="<?php echo base_url(). 'manager/tables'?>">Tables</a>
                                     </li>
                                     <li>
-                                        <a tabindex="-1" href="<?php echo base_url(). 'admin/news'?>">News</a>
+                                        <a tabindex="-1" href="<?php echo base_url(). 'manager/news'?>">News</a>
                                     </li>
                                     <li>
-                                        <a tabindex="-1" href="<?php echo base_url(). 'admin/messages'?>">Messages</a>
+                                        <a tabindex="-1" href="<?php echo base_url(). 'manager/messages'?>">Messages</a>
                                     </li>
                                     
                                 </ul>
@@ -94,13 +94,13 @@
                                 </a>
                                 <ul class="dropdown-menu">
                                     <li>
-                                        <a tabindex="-1" href="<?php echo base_url(). 'admin/dusers'?>">User List</a>
+                                        <a tabindex="-1" href="<?php echo base_url(). 'manager/dusers'?>">User List</a>
                                     </li>
                                     <li>
-                                        <a tabindex="-1" href="<?php echo base_url(). 'admin/dcompa'?>">Companies List</a>
+                                        <a tabindex="-1" href="<?php echo base_url(). 'manager/dcompa'?>">Companies List</a>
                                     </li>
                                     <li>
-                                        <a tabindex="-1" href="<?php echo base_url(). 'admin/dmang'?>">Manager List</a>
+                                        <a tabindex="-1" href="<?php echo base_url(). 'manager/dmang'?>">Manager List</a>
                                     </li>
                                 </ul>
                             </li>
@@ -141,23 +141,24 @@
                 <div class="span3" id="sidebar">
                     <ul class="nav nav-list bs-docs-sidenav nav-collapse collapse">
                         <li class="active">
-                            <a href="<?php echo base_url(). 'admin/home'?>"><i class="icon-chevron-right"></i> Dashboard</a>
+                            <a href="<?php echo base_url(). 'manager/home'?>"><i class="icon-chevron-right"></i> Dashboard</a>
                         </li>
                         <li>
-                            <a href="<?php echo base_url(). 'admin/forms'?>"><span class="badge badge-alert pull-right"><?php echo $productnumber?></span> Product Form</a>
+                            <a href="<?php echo base_url(). 'manager/productview'?>"><span class="badge badge-alert pull-right"><?php echo $productnumber?></span> Product View</a>
                         </li>
                         <li>
-                            <a href="<?php echo base_url(). 'admin/statistics'?>"><i class="icon-chevron-right"></i> Statistics (Charts)</a>
+                            <a href="<?php echo base_url(). 'manager/statistics'?>"><i class="icon-chevron-right"></i> Statistics (Charts)</a>
                         </li>
                         <li>
-                            <a href="<?php echo base_url(). 'admin/messages'?>"><span class="badge badge-warning pull-right"><?php echo $messagenumber?></span> Messages</a>
+                            <a href="<?php echo base_url(). 'manager/category'?>"><span class="badge badge-warning pull-right"><?php echo $categorynumber?></span> Categories</a>
                         </li>
                         <li>
-                            <a href="<?php echo base_url(). 'admin/company'?>"><span class="badge badge-info pull-right"><?php echo $companynumber?></span> Company</a>
+                            <a href="<?php echo base_url(). 'manager/type'?>"><span class="badge badge-warning pull-right"><?php echo $typenumber?></span> Types</a>
                         </li>
                         <li>
-                            <a href="<?php echo base_url(). 'admin/users'?>"><span class="badge badge-success pull-right"><?php echo $usernumber?></span> Users</a>
+                            <a href="<?php echo base_url(). 'manager/company'?>"><span class="badge badge-info pull-right"><?php echo $companynumber?></span> Company</a>
                         </li>
+                        
                         
                     </ul>
                 </div>
