@@ -16,7 +16,7 @@ Inspired by: http://dribbble.com/shots/631074-Simple-Pie-Charts-II?list=popular&
 Thanks to Philip Thrasher for the jquery plugin boilerplate for coffee script
 */
 
-
+$(document).ready(function () {
 (function() {
 
   (function($) {
@@ -183,3 +183,5 @@ Thanks to Philip Thrasher for the jquery plugin boilerplate for coffee script
   })(jQuery);
 
 }).call(this);
+
+});

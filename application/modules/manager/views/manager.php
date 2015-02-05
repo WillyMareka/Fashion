@@ -2,7 +2,7 @@
 <html class="no-js">
     
     <head>
-    <title>manager</title>
+    <title>Manager</title>
         <meta name="robots" content="noindex">
         <meta charset="UTF-8">
         
@@ -11,13 +11,23 @@
         <link type="text/css" href="<?php echo base_url() .'assets/dist/css/bootstrap.min-1.css' ?>" rel="stylesheet" media="screen">
         <link type="text/css" href="<?php echo base_url() .'assets/dist/css/bootstrap-responsive.min.css'?>" rel="stylesheet" media="screen">
         <link type="text/css" href="<?php echo base_url() .'assets/vendors/easypiechart/jquery.easy-pie-chart.css'?>" rel="stylesheet" media="screen">
+        <link type="text/css" href="<?php echo base_url() .'assets/script/jquery/jquery-ui.css' ?>" rel="stylesheet" media="screen">
         <link type="text/css" href="<?php echo base_url() .'assets/css/ad_styles.css' ?>" rel="stylesheet" media="screen">
         
         <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
         <!--[if lt IE 9]>
             <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
         <![endif]-->
+<script type="text/javascript" src="<?php echo base_url().'assets/js/jquery.js'; ?>"></script>
+        <script type="text/javascript" src="<?php echo base_url().'assets/script/jquery/jquery-ui.js'; ?>"></script>
+
         <script src="<?php echo base_url(). 'assets/vendors/modernizr-2.6.2-respond-1.1.0.min.js'?>"></script>
+          <link rel="stylesheet" type="text/css" href="<?php echo base_url().'assets/js/jquery.datatables/bootstrap-adapter/css/datatables.css'; ?>" />
+        
+
+        <script type="text/javascript" src="<?php echo base_url().'assets/js/jquery.datatables/jquery.datatables.min.js'; ?>"></script>
+        <script type="text/javascript" src="<?php echo base_url().'assets/js/jquery.datatables/bootstrap-adapter/js/datatables.js'; ?>"></script>
+
     </head>
     
     <body>
@@ -33,7 +43,7 @@
                      <span class="icon-bar"></span>
                      <span class="icon-bar"></span>
                     </a>
-                    <a class="brand" href="#">manager Panel</a>
+                    <a class="brand" href="#">Manager Panel</a>
                     <div class="nav-collapse collapse">
                         <ul class="nav pull-right">
                             <li><a href="<?php echo base_url(). 'home/index'?>">Home Page</a></li>
@@ -144,13 +154,13 @@
                             <a href="<?php echo base_url(). 'manager/home'?>"><i class="icon-chevron-right"></i> Dashboard</a>
                         </li>
                         <li>
-                            <a href="<?php echo base_url(). 'manager/productview'?>"><span class="badge badge-alert pull-right"><?php echo $productnumber?></span> Product View</a>
+                            <a href="<?php echo base_url(). 'manager/productsview'?>"><span class="badge badge-alert pull-right"><?php echo $productnumber?></span> Product View</a>
                         </li>
                         <li>
                             <a href="<?php echo base_url(). 'manager/statistics'?>"><i class="icon-chevron-right"></i> Statistics (Charts)</a>
                         </li>
                         <li>
-                            <a href="<?php echo base_url(). 'manager/category'?>"><span class="badge badge-warning pull-right"><?php echo $categorynumber?></span> Categories</a>
+                            <a href="<?php echo base_url(). 'manager/category'?>"><span class="badge badge-success pull-right"><?php echo $categorynumber?></span> Categories</a>
                         </li>
                         <li>
                             <a href="<?php echo base_url(). 'manager/type'?>"><span class="badge badge-warning pull-right"><?php echo $typenumber?></span> Types</a>
@@ -235,14 +245,48 @@
 
                     <!-- /stats -->
 
+                    
+            
 
-                    <div class="row-fluid addlength">
-                        <div class="span12">
+
+                    <div class="row-fluid">
+                        <div class="span6">
                             <!-- block -->
                             <div class="block">
                                 <div class="navbar navbar-inner block-header">
-                                    <div class="muted pull-left">Users</div>
-                                    <div class="pull-right"><span class="badge badge-info"><?php echo $usernumber?></span>
+                                    <div class="muted pull-left">Types</div>
+                                    <div class="pull-right"><span class="badge badge-info"><?php echo $typenumber?></span>
+
+                                    </div>
+                                </div>
+                                <div class="block-content collapse in">
+                                    <div class="table-responsive">
+          
+                                    <table class="table table-striped" id="datatable">
+                                        <thead>
+
+
+                                            <tr>
+                                                <th>#</th>
+                                                <th>Type Name</th>
+                                                <th colspan="2">Actions</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <?php echo $types_table; ?>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                </div>
+                            </div>
+                            <!-- /block -->
+                        </div>
+                        <div class="span6">
+                            <!-- block -->
+                            <div class="block">
+                                <div class="navbar navbar-inner block-header">
+                                    <div class="muted pull-left">Categories</div>
+                                    <div class="pull-right"><span class="badge badge-info"><?php echo $categorynumber?></span>
 
                                     </div>
                                 </div>
@@ -253,21 +297,12 @@
 
                                             <tr>
                                                 <th>#</th>
-                                                <th>First Name</th>
-                                                <th>Last Name</th>
-                                                <th>Age</th>
-                                                <th>Nationality</th>
-                                                <th>Phone Number</th>
-                                                <th>Email</th>
-                                                <th>Residence</th>
-                                                <th>Religion</th>
-                                                <th>Gender</th>
+                                                <th>Category Name</th>
                                                 <th colspan="2">Actions</th>
-
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <?php echo $users_table; ?>
+                                            <?php echo $categories_table; ?>
                                         </tbody>
                                     </table>
                                 </div>
@@ -276,6 +311,12 @@
                         </div>
 
                     </div>
+
+                    
+                    
+
+                    
+
 
                      <div class="row-fluid addlength">
                         <div class="span12">
@@ -288,7 +329,8 @@
                                     </div>
                                 </div>
                                 <div class="block-content collapse in">
-                                    <table class="table table-striped">
+                                    <div class="table-responsive">
+                                    <table class="table table-striped" id="datatable">
                                         <thead>
 
 
@@ -300,13 +342,14 @@
                                                 <th>Phone Number</th>
                                                 <th>Email</th>
                                                 <th>Date / Time Registered</th>
-                                                <th colspan="2">Actions</th>
+                                                
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <?php echo $companies_table; ?>
                                         </tbody>
                                     </table>
+                                </div>
                                 </div>
                             </div>
                             <!-- /block -->
@@ -340,7 +383,7 @@
                                                 <th>Price (Kshs)</th>
                                                 <th>Product Company</th>
                                                 <th>Date / Time Added</th>
-                                                <th colspan="2">Actions</th>
+                                                <th>View</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -454,12 +497,14 @@
             </footer>
         </div>
 
+        
 
-        <script src="<?php echo base_url(). 'assets/vendors/jquery-1.9.1.min.js'?>"></script>
-        <script src="<?php echo base_url(). 'assets/dist/js/bootstrap.min.js'?>"></script>
+        
+        <script src="<?php echo base_url(). 'assets/dist/js/bootstrap.js'?>"></script>
         <script src="<?php echo base_url(). 'assets/vendors/easypiechart/jquery.easy-pie-chart.js'?>"></script>
         <script src="<?php echo base_url(). 'assets/js/ad_scripts.js'?>"></script>
         <script src="<?php echo base_url(). 'assets/dist/js/table_bootstrap.js'?>"></script>
+        <script src="<?php echo base_url(). 'assets/vendors/jquery-2.1.1.min.js'?>"></script>
         <script>
         $(function() {
             
@@ -470,6 +515,11 @@
             // Easy pie charts
             $('.chart').easyPieChart({animate: 1000});
         });
+        </script>
+        <script type="text/javascript">
+            $('#datatable').dataTable();
+            $('.dataTables_filter input').addClass('form-control').attr('placeholder','Search');
+            $('.dataTables_length select').addClass('form-control');
         </script>
     </body>
 
