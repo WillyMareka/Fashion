@@ -1,7 +1,7 @@
 <html>
 <head>
   <title>
-        Manager Home
+        MareWill Fashion
   </title>
     <meta name="robots" content="noindex">
     <meta charset="UTF-8">
