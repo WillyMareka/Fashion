@@ -204,7 +204,7 @@
 								<div class="single-products">
 									<div class="productinfo text-center">
 										<img class="imagesize" src="<?php echo $data['picture']; ?>" />
-										<h2><?php echo $data['price']; ?></h2>
+										<h2>Kshs <?php echo $data['price']; ?></h2>
 										<p><?php echo $data['prod_name']; ?></p>
 									</div>
 									<div class="product-overlay">
@@ -212,7 +212,7 @@
 											
 											<h2><?php echo $data['prod_name']; ?></h2>
 											<h2>Category</h2><p><?php echo $data['prod_cat']; ?></p>
-											<h2>Price</h2><p><?php echo $data['price']; ?></p>
+											<h2>Price</h2><p>Kshs <?php echo $data['price']; ?></p>
 											<h2>Company</h2><p><?php echo $data['prod_company']; ?></p>
 
 											<a href="<?php echo base_url(). 'home/add_to_cart_check'?>" class="btn btn-default add-to-cart"><i class="shop icon"></i>Add to cart</a>
@@ -234,13 +234,23 @@
                       	
                       } 
 						?>
-						
+						<!-- <div id="pagination" class="span12 pagination">
+
 						<ul class="span12 pagination">
 							<li class="active"><a href="">1</a></li>
 							<li><a href="">2</a></li>
 							<li><a href="">3</a></li>
 							<li><a href="">&raquo;</a></li>
 						</ul>
+					</div> -->
+
+					<?php echo $this->table->generate($records);
+
+							echo '<div id="pagination" class="span12 pagination">' .$this->pagination->create_links(). '</div>';
+							 ?>
+
+
+
 					</div><!--features_items-->
 				</div>
 			</div>

@@ -8,6 +8,7 @@ class Products extends MY_Controller {
     {
         parent::__construct();
 
+
         $this->load->model('product_model');
 
         if ($this->session->userdata('logged_in')) {
@@ -27,6 +28,16 @@ class Products extends MY_Controller {
 
     public function view()
 	{
+        $this->load->library('pagination');
+        $this->load->library('table');
+
+        $data['total_rows'] = $this->db->get('products')->num_rows();
+        $data['per_page'] = 9;
+        $data['num_links'] = 3;
+        $data['records'] = $this->choosecriteria($data['per_page'], $this->uri->segment(3) );
+
+        $this->pagination->initialize($data); 
+
 
 		$data['product_categories']  = $this->getproductcategories();
         $data['product_types']  = $this->getproducttypes();
