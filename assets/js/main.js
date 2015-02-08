@@ -23,6 +23,18 @@ $(document).ready(function(){
 	});
 
 
+  $(function(){
+
+  	available = $('input[name="prodcompany"]').val();
+  	if($('input[name="prodcompany"]').val()){
+  		$('#prodcompany').addClass('criteriabutsel');
+  	}else{
+  		$('#prodcompany').removeClass('criteriabutsel');
+  	}
+
+  });
+
+
 
 
 

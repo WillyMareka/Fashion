@@ -34,9 +34,7 @@
 <script type="text/javascript" src="<?php echo base_url() .'assets/js/jquery.cslider.js'?>"></script>
 <script type="text/javascript" src="<?php echo base_url() .'assets/js/jquery.placeholder.js'?>"></script>
 <script type="text/javascript" src="<?php echo base_url() .'assets/js/jquery.inview.js'?>"></script>
- <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7977.548817433302!2d36.80921226739884!3d-1.310697306903683!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0000000000000000%3A0x2ed8412115331950!2sStrathmore+University!5e0!3m2!1sen!2ske!4v1419432518722" width="600" height="450" frameborder="0" style="border:0"></iframe> -->
- <!-- <script type="text/javascript" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7977.548817433302!2d36.80921226739884!3d-1.310697306903683!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0000000000000000%3A0x2ed8412115331950!2sStrathmore+University!5e0!3m2!1sen!2ske!4v1419432518722"></script> -->
-<!--<script type="text/javascript" src="<?php echo base_url() .'assets/js/app.js'?>"></script>-->
+ 
 <script type="text/javascript"src="<?php echo base_url() .'assets/script/jquery-1.11.1.min.js'?>"></script>
 <script type="text/javascript"src="<?php echo base_url() .'assets/script/jquery/jquery-ui.js'?>"></script>
 <script type="text/javascript"src="<?php echo base_url() .'assets/semantic/dist/semantic.js'?>"></script>

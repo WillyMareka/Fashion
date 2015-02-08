@@ -202,8 +202,8 @@ class Admin_model extends MY_Model {
       $product_details_data = array();
       $product_details = array(
           'prod_name' => $productname,
-          'prod_type' => $productcategory,
-          'prod_cat' => $producttype,
+          'prod_cat' => $productcategory,
+          'prod_type' => $producttype,
           'picture' => $path,
           'quantity' => $productquantity,
           'price' => $productprice,

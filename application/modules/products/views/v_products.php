@@ -1,3 +1,59 @@
+
+
+
+<div class="criteria-bar">
+    <form enctype="multipart/form-data" method="POST" action="<?php echo base_url() . 'products/choosecriteria'?>" class="form-horizontal black" role="form">
+						<?php 
+                                  echo form_open_multipart(base_url().'products/choosecriteria');
+                              ?>
+                        <fieldset>
+							<div class="control-group">
+  								
+  								
+                                    <select name="prodcompany" type="text" value="<?php echo set_value('prodcompany'); ?>" class="criteriabut" id="prodcompany">
+                                        <?php echo $product_companies?>
+                                    </select>
+  									
+  									<!-- <span class="help-block">e.g: 5500 0000 0000 0004</span> -->
+  								
+  								
+  								
+                                    <select name="prodcategory" type="text" value="<?php echo set_value('prodcategory'); ?>" class=" criteriabut " id="prodcategory">
+                                        <?php echo $product_categories?>
+                                    </select>
+  									
+  								
+  								
+  								
+                                    <select  name="prodtype" type="text" value="<?php echo set_value('prodtype'); ?>" class="criteriabut " id="prodtype">
+                                        <?php echo $product_types?>
+                                    </select>
+  									
+  									<!-- <span class="help-block">e.g: http://www.demo.com or http://demo.com</span> -->
+  								<button type="submit" class="btn btn-primary">Filter</button>
+
+  							</div>
+
+
+  							
+  							
+  						
+  							<!-- <div class="form-actions">
+  								
+  								<a href="<?php echo base_url(). 'products/view'?>"><button type="reset" class="btn">Reset</button></a>
+  							</div> -->
+						</fieldset>
+                        <?php 
+                                    echo form_close();
+                                 ?>
+					</form>
+
+
+
+</div>
+
+
+
 <section class="section-top">
 		<div class="container">
 			<div class="row">
@@ -134,181 +190,31 @@
 				<div class="col-sm-9 padding-right">
 					<div class="features_items"><!--features_items-->
 						<h2 class="title text-center">Features Items</h2>
-						<div class="col-sm-4">
-							<div class="product-image-wrapper">
-								<div class="single-products">
-									<div class="productinfo text-center">
-										<img class="imagesize" src="<?php echo base_url(). 'assets/images/gallery2.jpg'?>" alt="" />
-										<h2>Kshs 1994</h2>
-										<p>Easy Polo Blue Edition</p>
-										<a href="<?php echo base_url(). 'home/add_to_cart_check'?>" class="btn btn-default add-to-cart"><i class="shop icon"></i>Add to cart</a>
-									</div>
-									<div class="product-overlay">
-										<div class="overlay-content">
-											<!-- <img class="imagesize" src="<?php echo base_url(). 'assets/images/shirt1.jpg'?>" alt="" /> -->
-											<h2>Kshs 1994</h2>
-											<p>Easy Polo Blue Edition</p>
-											<a href="<?php echo base_url(). 'home/add_to_cart_check'?>" class="btn btn-default add-to-cart"><i class="shop icon"></i>Add to cart</a>
-										</div>
-									</div>
-								</div>
-								<div class="choose">
-									<ul class="nav nav-pills nav-justified">
-										<li><a href=""><i class="star icon"></i>Add to wishlist</a></li>
-										<!-- <li><a href=""><i class="star icon"></i>Add to compare</a></li> -->
-									</ul>
-								</div>
-							</div>
-						</div>
-						<div class="col-sm-4">
-							<div class="product-image-wrapper">
-								<div class="single-products">
-									<div class="productinfo text-center">
-										<img class="imagesize" src="<?php echo base_url(). 'assets/images/lace-dress.jpg'?>" alt="" />
-										<h2>Kshs 2300</h2>
-										<p>Lace Dress</p>
-										<a href="<?php echo base_url(). 'home/add_to_cart_check'?>" class="btn btn-default add-to-cart"><i class="shop icon"></i>Add to cart</a>
-									</div>
-									<div class="product-overlay">
-										<div class="overlay-content">
-											<!-- <img class="imagesize" src="<?php echo base_url(). 'assets/images/shirt1.jpg'?>" alt="" /> -->
-											<h1>Lace Dress</h1>
-											<h2>Category</h2><p>Women</p>
-											<h2>Price</h2><p>Kshs 2300</p>
-											<h2>Company</h2><p>Valentino</p>
-											<a href="<?php echo base_url(). 'home/add_to_cart_check'?>" class="btn btn-default add-to-cart"><i class="shop icon"></i>Add to cart</a>
-										</div>
-									</div>
-								</div>
-								<div class="choose">
-									<ul class="nav nav-pills nav-justified">
-										<li><a href=""><i class="star icon"></i>Add to wishlist</a></li>
-										<!-- <li><a href=""><i class="star icon"></i>Add to compare</a></li> -->
-									</ul>
-								</div>
-							</div>
-						</div>
-						<div class="col-sm-4">
-							<div class="product-image-wrapper">
-								<div class="single-products">
-									<div class="productinfo text-center">
-										<img class="imagesize" src="<?php echo base_url(). 'assets/images/skirts4.jpg'?>" alt="" />
-										<h2>Kshs 2000</h2>
-										<p>Pink Pencil Skirt</p>
-										<a href="<?php echo base_url(). 'home/add_to_cart_check'?>" class="btn btn-default add-to-cart"><i class="shop icon"></i>Add to cart</a>
-									</div>
-									<div class="product-overlay">
-										<div class="overlay-content">
-											<!-- <img class="imagesize" src="<?php echo base_url(). 'assets/images/shirt1.jpg'?>" alt="" /> -->
-											<h2>Kshs 2000</h2>
-											<p>Pink Pencil Skirt</p>
-											<a href="<?php echo base_url(). 'home/add_to_cart_check'?>" class="btn btn-default add-to-cart"><i class="shop icon"></i>Add to cart</a>
-										</div>
-									</div>
-								</div>
-								<div class="choose">
-									<ul class="nav nav-pills nav-justified">
-										<li><a href=""><i class="star icon"></i>Add to wishlist</a></li>
-										<!-- <li><a href=""><i class="star icon"></i>Add to compare</a></li> -->
-									</ul>
-								</div>
-							</div>
-						</div>
-						<div class="col-sm-4">
-							<div class="product-image-wrapper">
-								<div class="single-products">
-									<div class="productinfo text-center">
-										<img class="imagesize" src="<?php echo base_url(). 'assets/images/gallery1.jpg'?>" alt="" />
-										<h2>Kshs 900</h2>
-										<p>Casual Vest</p>
-										<a href="<?php echo base_url(). 'home/add_to_cart_check'?>" class="btn btn-default add-to-cart"><i class="shop icon"></i>Add to cart</a>
-									</div>
-									<div class="product-overlay">
-										<div class="overlay-content">
-											<!-- <img class="imagesize" src="<?php echo base_url(). 'assets/images/shirt1.jpg'?>" alt="" /> -->
-											<h2>Kshs 500</h2>
-											<p>Printed Scarf</p>
-											<a href="<?php echo base_url(). 'home/add_to_cart_check'?>" class="btn btn-default add-to-cart"><i class="shop icon"></i>Add to cart</a>
-										</div>
-									</div>
-									<img src="" class="new" alt="" />
-								</div>
-								<div class="choose">
-									<ul class="nav nav-pills nav-justified">
-										<li><a href=""><i class="star icon"></i>Add to wishlist</a></li>
-										<!-- <li><a href=""><i class="star icon"></i>Add to compare</a></li> -->
-									</ul>
-								</div>
-							</div>
-						</div>
-						<div class="col-sm-4">
-							<div class="product-image-wrapper">
-								<div class="single-products">
-									<div class="productinfo text-center">
-										<img class="imagesize" src="<?php echo base_url(). 'assets/images/long-dress.jpg'?>" alt="" />
-										<h2>Kshs 2679</h2>
-										<p>Little Black Dress</p>
-										<a href="<?php echo base_url(). 'home/add_to_cart_check'?>" class="btn btn-default add-to-cart"><i class="shop icon"></i>Add to cart</a>
-									</div>
-									<div class="product-overlay">
-										<div class="overlay-content">
-											<!-- <img class="imagesize" src="<?php echo base_url(). 'assets/images/shirt1.jpg'?>" alt="" /> -->
-											<h2>Kshs 2679</h2>
-											<p>Little Black Dress</p>
-											<a href="<?php echo base_url(). 'home/add_to_cart_check'?>" class="btn btn-default add-to-cart"><i class="shop icon"></i>Add to cart</a>
-										</div>
-									</div>
-									<!-- <img src="images/home/sale.png" class="new" alt="" /> -->
-								</div>
-								<div class="choose">
-									<ul class="nav nav-pills nav-justified">
-										<li><a href=""><i class="star icon"></i>Add to wishlist</a></li>
-										<!-- <li><a href=""><i class="star icon"></i>Add to compare</a></li> -->
-									</ul>
-								</div>
-							</div>
-						</div>
-						<div class="col-sm-4">
-							<div class="product-image-wrapper">
-								<div class="single-products">
-									<div class="productinfo text-center">
-										<img class="imagesize" src="<?php echo base_url(). 'assets/images/girl8.jpg'?>" alt="" />
-										<h2>Kshs 599</h2>
-										<p>Chunky Bracelets</p>
-										<a href="<?php echo base_url(). 'home/add_to_cart_check'?>" class="btn btn-default add-to-cart"><i class="shop icon"></i>Add to cart</a>
-									</div>
-									<div class="product-overlay">
-										<div class="overlay-content">
-											<!-- <img class="imagesize" src="<?php echo base_url(). 'assets/images/shirt1.jpg'?>" alt="" /> -->
-											<h2>Kshs 599</h2>
-											<p>Chunky Bracelets</p>
-											<a href="<?php echo base_url(). 'home/add_to_cart_check'?>" class="btn btn-default add-to-cart"><i class="shop icon"></i>Add to cart</a>
-										</div>
-									</div>
-								</div>
-								<div class="choose">
-									<ul class="nav nav-pills nav-justified">
-										<li><a href=""><i class="star icon"></i>Add to wishlist</a></li>
-										<!-- <li><a href=""><i class="star icon"></i>Add to compare</a></li> -->
-									</ul>
-								</div>
-							</div>
-						</div>
 						
+                      <?php foreach ($criteria as $key => $value) {
+                      	 foreach ($value as $q => $data) {
+                      		
+                      		//echo '<pre>';print_r($value);echo'</pre>';die();
+                      		for ($i=0; $i <= $key ; $i++) { 
+                      			
+                      		?>
+                      		
 						<div class="col-sm-4">
 							<div class="product-image-wrapper">
 								<div class="single-products">
 									<div class="productinfo text-center">
-										<img class="imagesize" src="<?php echo base_url(). 'assets/images/suit1.jpg'?>" alt="" />
-										<h2>Kshs 7549</h2>
-										<p>White Tailored Suit</p>
-										<a href="<?php echo base_url(). 'home/add_to_cart_check'?>" class="btn btn-default add-to-cart"><i class="shop icon"></i>Add to cart</a>
+										<img class="imagesize" src="<?php echo $data['picture']; ?>" />
+										<h2><?php echo $data['price']; ?></h2>
+										<p><?php echo $data['prod_name']; ?></p>
 									</div>
 									<div class="product-overlay">
 										<div class="overlay-content">
-											<!-- <img class="imagesize" src="<?php echo base_url(). 'assets/images/shirt1.jpg'?>" alt="" /> -->
-											<h2>Kshs 7549</h2>
-											<p>White Tailored Suit</p>
+											
+											<h2><?php echo $data['prod_name']; ?></h2>
+											<h2>Category</h2><p><?php echo $data['prod_cat']; ?></p>
+											<h2>Price</h2><p><?php echo $data['price']; ?></p>
+											<h2>Company</h2><p><?php echo $data['prod_company']; ?></p>
+
 											<a href="<?php echo base_url(). 'home/add_to_cart_check'?>" class="btn btn-default add-to-cart"><i class="shop icon"></i>Add to cart</a>
 										</div>
 									</div>
@@ -321,144 +227,15 @@
 								</div>
 							</div>
 						</div>
+
+						<?php 
+                             }
+                      	 }
+                      	
+                      } 
+						?>
 						
-						<div class="col-sm-4">
-							<div class="product-image-wrapper">
-								<div class="single-products">
-									<div class="productinfo text-center">
-										<img class="imagesize" src="<?php echo base_url(). 'assets/images/sun1.jpg'?>" alt="" />
-										<h2>Kshs 1550</h2>
-										<p>Geeky sunglasses</p>
-										<a href="<?php echo base_url(). 'home/add_to_cart_check'?>" class="btn btn-default add-to-cart"><i class="shop icon"></i>Add to cart</a>
-									</div>
-									<div class="product-overlay">
-										<div class="overlay-content">
-											<!-- <img class="imagesize" src="<?php echo base_url(). 'assets/images/shirt1.jpg'?>" alt="" /> -->
-											<h2>Kshs 1550</h2>
-											<p>Geeky sunglasses</p>
-											<a href="<?php echo base_url(). 'home/add_to_cart_check'?>" class="btn btn-default add-to-cart"><i class="shop icon"></i>Add to cart</a>
-										</div>
-									</div>
-								</div>
-								<div class="choose">
-									<ul class="nav nav-pills nav-justified">
-										<li><a href=""><i class="star icon"></i>Add to wishlist</a></li>
-										<!-- <li><a href=""><i class="star icon"></i>Add to compare</a></li> -->
-									</ul>
-								</div>
-							</div>
-						</div>
-						
-						<div class="col-sm-4">
-							<div class="product-image-wrapper">
-								<div class="single-products">
-									<div class="productinfo text-center">
-										<img class="imagesize" src="<?php echo base_url(). 'assets/images/womanjean2.jpg'?>" alt="" />
-										<h2>Kshs 850</h2>
-										<p>Fitting Jeans</p>
-										<a href="<?php echo base_url(). 'home/add_to_cart_check'?>" class="btn btn-default add-to-cart"><i class="shop icon"></i>Add to cart</a>
-									</div>
-									<div class="product-overlay">
-										<div class="overlay-content">
-											<!-- <img class="imagesize" src="<?php echo base_url(). 'assets/images/shirt1.jpg'?>" alt="" /> -->
-											<h2>Kshs 850</h2>
-											<p>Fitting Jeans</p>
-											<a href="<?php echo base_url(). 'home/add_to_cart_check'?>" class="btn btn-default add-to-cart"><i class="shop icon"></i>Add to cart</a>
-										</div>
-									</div>
-								</div>
-								<div class="choose">
-									<ul class="nav nav-pills nav-justified">
-										<li><a href=""><i class="star icon"></i>Add to wishlist</a></li>
-										<!-- <li><a href=""><i class="star icon"></i>Add to compare</a></li> -->
-									</ul>
-								</div>
-							</div>
-						</div>
-						
-						<div class="col-sm-4">
-							<div class="product-image-wrapper">
-								<div class="single-products">
-									<div class="productinfo text-center">
-										<img class="imagesize" src="<?php echo base_url(). 'assets/images/shirt1.jpg'?>" alt="" />
-										<h2>Kshs 1000</h2>
-										<p>Easy Stripped Shirt</p>
-										<a href="<?php echo base_url(). 'home/add_to_cart_check'?>" class="btn btn-default add-to-cart"><i class="shop icon"></i>Add to cart</a>
-									</div>
-									<div class="product-overlay">
-										<div class="overlay-content">
-											<!-- <img class="imagesize" src="<?php echo base_url(). 'assets/images/shirt1.jpg'?>" alt="" /> -->
-											<h2>Kshs 1000</h2>
-											<p>Easy Stripped Shirt</p>
-											<a href="<?php echo base_url(). 'home/add_to_cart_check'?>" class="btn btn-default add-to-cart"><i class="shop icon"></i>Add to cart</a>
-										</div>
-									</div>
-								</div>
-								<div class="choose">
-									<ul class="nav nav-pills nav-justified">
-										<li><a href=""><i class="star icon"></i>Add to wishlist</a></li>
-										<!-- <li><a href=""><i class="star icon"></i>Add to compare</a></li> -->
-									</ul>
-								</div>
-							</div>
-						</div>
-						
-						
-						<div class="col-sm-4">
-							<div class="product-image-wrapper">
-								<div class="single-products">
-									<div class="productinfo text-center">
-										<img class="imagesize" src="<?php echo base_url(). 'assets/images/short-dress.jpg'?>" alt="" />
-										<h2>Kshs 2500</h2>
-										<p>Purple Number</p>
-										<a href="<?php echo base_url(). 'home/add_to_cart_check'?>" class="btn btn-default add-to-cart"><i class="shop icon"></i>Add to cart</a>
-									</div>
-									<div class="product-overlay">
-										<div class="overlay-content">
-											<!-- <img class="imagesize" src="<?php echo base_url(). 'assets/images/shirt1.jpg'?>" alt="" /> -->
-											<h2>Kshs 2500</h2>
-											<p>Purple Number</p>
-											<a href="<?php echo base_url(). 'home/add_to_cart_check'?>" class="btn btn-default add-to-cart"><i class="shop icon"></i>Add to cart</a>
-										</div>
-									</div>
-								</div>
-								<div class="choose">
-									<ul class="nav nav-pills nav-justified">
-										<li><a href=""><i class="star icon"></i>Add to wishlist</a></li>
-										<!-- <li><a href=""><i class="star icon"></i>Add to compare</a></li> -->
-									</ul>
-								</div>
-							</div>
-						</div>
-						
-						<div class="col-sm-4">
-							<div class="product-image-wrapper">
-								<div class="single-products">
-									<div class="productinfo text-center">
-										<img class="imagesize" src="<?php echo base_url(). 'assets/images/womanjean3.jpg'?>" alt="" />
-										<h2>Kshs 1500</h2>
-										<p>Jean Shorts</p>
-										<a href="<?php echo base_url(). 'home/add_to_cart_check'?>" class="btn btn-default add-to-cart"><i class="shop icon"></i>Add to cart</a>
-									</div>
-									<div class="product-overlay">
-										<div class="overlay-content">
-											<!-- <img class="imagesize" src="<?php echo base_url(). 'assets/images/shirt1.jpg'?>" alt="" /> -->
-											<h2>Kshs 1500</h2>
-											<p>Jean Shorts</p>
-											<a href="<?php echo base_url(). 'home/add_to_cart_check'?>" class="btn btn-default add-to-cart"><i class="shop icon"></i>Add to cart</a>
-										</div>
-									</div>
-								</div>
-								<div class="choose">
-									<ul class="nav nav-pills nav-justified">
-										<li><a href=""><i class="star icon"></i>Add to wishlist</a></li>
-										<!-- <li><a href=""><i class="star icon"></i>Add to compare</a></li> -->
-									</ul>
-								</div>
-							</div>
-						</div>
-						
-						<ul class="pagination">
+						<ul class="span12 pagination">
 							<li class="active"><a href="">1</a></li>
 							<li><a href="">2</a></li>
 							<li><a href="">3</a></li>

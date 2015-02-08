@@ -55,7 +55,7 @@
                 
 
   <?php
-      $log_type = $this->session->userdata('lt_id');
+      
       $username = $this->session->userdata('username');
       if(($logged_in) && ($log_type==3)){
 
