@@ -7,6 +7,7 @@
     <link rel="stylesheet" type="text/css" href="<?php echo base_url() . 'assets/css/bootstrap-responsive.css'?>" />
     
     <link type="text/css" href="<?php echo base_url() . 'assets/css/style.css'?>" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="<?php echo base_url() . 'assets/fonts/fashion.ico'?>" />
     
     <link rel="stylesheet" type="text/css" href="<?php echo base_url() . 'assets/css/jquery.cslider.css'?>" />
     <link rel="stylesheet" type="text/css" href="<?php echo base_url() . 'assets/css/jquery.bxslider.css'?>" />
@@ -53,6 +54,7 @@
                 
 
   <?php
+  $log_type = $this->session->userdata('lt_id');
       if($logged_in){
 
         $username = $this->session->userdata('username');
@@ -118,7 +120,24 @@
    </li>
    <li class='left'><a href='<?php echo base_url(). 'home/about'?>'>About</a></li>
    <li class='left'><a href='<?php echo base_url(). 'home/contact'?>'>Contact</a></li>
-   <li class='right'><a href='<?php echo base_url(). 'user/log'?>'>Log In</a>
+
+   <?php
+       if(($logged_in) && ($log_type==3)){
+   ?>
+     <li class='right'><a href='<?php echo base_url(). 'user/ad_page'?>'>Admin Page</a>
+      <li class='right'><a href='<?php echo base_url(). 'user/logout'?>'>Log Out</a>
+  <?php 
+      }elseif($logged_in){
+  ?>
+        <li class='right'><a href='<?php echo base_url(). 'user/logout'?>'>Log Out</a>
+    <?php
+       }else{
+    ?>
+      <li class='right'><a href='<?php echo base_url(). 'user/sign'?>'>Sign Up</a>
+      <li class='right'><a href='<?php echo base_url(). 'user/log'?>'>Log In</a>
+   <?php
+      }
+   ?>
    </li>
 </ul>
 </div>

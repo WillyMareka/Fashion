@@ -83,6 +83,12 @@ body {
 .hide-sidebar, .show-sidebar {
   cursor: pointer;
 }
+
+#sidebar{
+  width:220px;
+  margin-right: 25px;
+}
+
 .padd-bottom {
   margin-bottom: 5px;
 }
@@ -128,7 +134,7 @@ body {
 /** Side Bar **/
 .bs-docs-sidenav {
   max-width: 228px;
-  margin: 30px 0 0;
+  margin-left: 30px 0 0;
   padding: 0;
   background-color: #fff;
   -webkit-border-radius: 6px;
@@ -211,4 +217,12 @@ body {
   color: #e02222;
   font-size: 12px;
   padding-left: 2px;
+}
+
+.addlength{
+  width:960px;
+}
+
+.black{
+  color:#000000;
 }

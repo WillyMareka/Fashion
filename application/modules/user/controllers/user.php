@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class User extends MX_Controller {
+class User extends MY_Controller {
 
 
 	function __construct()
@@ -72,25 +72,42 @@ class User extends MX_Controller {
 		}else{
 			
 			$result = $this->user_model->log_member();		
-            //print_r($result);
+            
+             //echo '<pre>';print_r($result);echo'</pre>';die;
 			switch($result){
 
 				case 'logged_in':
-                    redirect('/','location');
+                    
+                    switch($this->session->userdata('lt_id')){
+                        case '1':
+                          redirect(base_url().'products/view');
+                        break;
+
+                        case '2':
+                          redirect(base_url().'manager/home');
+                        break;
+
+                        case '3':
+                          redirect(base_url().'admin/home');
+                        break;
+                    }
+
 				break;
 
 				case 'incorrect_password':
+		            $data['new_user'] = 'Incorrect Username or Password. Please try again...';
+
                     $this->load->view('log_header');
-		            $this->load->view('v_log');
+		            $this->load->view('v_log', $data);
 		            $this->load->view('home/footer');
-		            //$data['new_user'] = 'Incorrect Username or Password<br/><br/>Please try again...';
 				break;
 
 				case 'not_activated':
+		            $data['new_user'] = 'Your account is not activated';
+
                     $this->load->view('log_header');
-		            $this->load->view('v_log');
+		            $this->load->view('v_log', $data);
 		            $this->load->view('home/footer');
-		            //$data['new_user'] = 'Your account is not activated';
 				break;
 
 				default:
@@ -156,6 +173,11 @@ class User extends MX_Controller {
 			  }
 		    }
 	     }
+	}
+
+	function ad_page()
+	{
+       redirect(base_url().'admin/home');
 	}
 
 	

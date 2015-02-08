@@ -26,10 +26,13 @@ class User_model extends MY_Model {
         $this->db->where('username', $this->input->post('username'));
         $this->db->where('password', md5($this->input->post('password')));
         $query = $this->db->get('logs');
+        
 
         if($query->num_rows == 1){
           return TRUE;
         }
+
+
     }
 
 
@@ -61,7 +64,7 @@ class User_model extends MY_Model {
           'email' => $email,
           'residence' => $residence,
           'religion' => $religion,
-          'gender' => $gender,
+          'gender' => $gender
       );
 
         
@@ -89,10 +92,27 @@ class User_model extends MY_Model {
 
       }else{
 
+      $subject = 'Member Entry';
+      $message = 'Problem in registering User Name '.$username.' . Please rectify immediatelly';
+
+      $message_details_data = array();
+      $message_details = array(
+          'subject' => $subject,
+          'message' => $message
+      );
+
+        
+
+        array_push($message_details_data, $message_details);
+
+        //echo '<pre>'; print_r($member_details_data); echo '<pre>'; die;
+
+        $this->db->insert_batch('mail',$message_details_data);
+
         //echo 'Applicant is not able to be registered';
         $this->load->library('email');
-        $this->email->from('marewillfashion@gmail.com','MareWill Fashion');
-        $this->email->to('marekawill@gmail.com');
+        $this->email->from('info@marewill.com','MareWill Fashion');
+        $this->email->to('marekawilly@marewill.com','marekawilly@gmail.com');
         $this->email->subject('Failed registeration of a user');
 
         if(isset($email)){
@@ -107,17 +127,23 @@ class User_model extends MY_Model {
      }
     }
 
+    
+
     public function log_member()
     {
         $username = $this->input->post('l_username');
         $passw1 = md5($this->input->post('l_password'));
 
         $sql = "SELECT * FROM logs lg, accounts ac WHERE ac.ac_id = lg.log_id 
-        AND lg.username = '". $username ."' AND lg.password = '". $passw1 ."' LIMIT 1"; 
+        AND lg.username = '". $username ."' AND lg.password = '". $passw1 ."' LIMIT 1";
+
+
+
 
         $result = $this->db->query($sql);
-        $row = $result->row();
 
+        $row = $result->row();
+        // echo '<pre>';print_r($row);echo'</pre>';die;
         $sql2 = "SELECT * FROM logs WHERE username = '". $username ."' AND activated = 0 ";
 
         $result2 = $this->db->query($sql2);
@@ -138,7 +164,8 @@ class User_model extends MY_Model {
                    'residence'   => $row ->residence , 
                    'phone_no'    => $row ->phone_no ,  
                    'religion'    => $row ->religion , 
-                   'gender'      => $row ->gender    
+                   'gender'      => $row ->gender ,
+                   'lt_id'       => $row2->lt_id
                 );
 
                 $this -> set_session($session_data);
@@ -149,35 +176,48 @@ class User_model extends MY_Model {
            }else{
              return "not_activated";
            }
+         }else{
+          return "incorrect_password";
          }
+
+
        
        //print_r($this->session->all_userdata());
     }
 
+
+
+
     private function set_session($session_data){
-      $sql = "SELECT ac_id , username FROM accounts, logs WHERE username = '". $session_data['username'] ."' LIMIT 1";
+      $sql = "SELECT ac_id , username, lt_id FROM accounts, logs WHERE username = '". $session_data['username'] ."' LIMIT 1";
       $result = $this->db->query($sql);
       $row = $result->row();
-       //echo "<pre>";print_r($session_data);die();
+       //echo "<pre>";print_r($result);die();
        //echo $session_data['ac_id'];die();
       $setting_session = array(
-                   'ac_id'     => $session_data['ac_id'] , 
-                   'username'    => $session_data['username'] , 
+                   'ac_id'       => $session_data['ac_id'] , 
+                   'username'    => $session_data['username'] ,
+                   'lt_id'       => $session_data['lt_id'] ,
                    'logged_in'   => 1
       ); 
 
       $this->session->set_userdata($setting_session);
+
+      //echo "<pre>";print_r($setting_session);die();
       
       $details = $this->session->all_userdata();
-       $sql = "INSERT INTO ci_sessions (`session_id`,`ip_address`,`user_agent`,`last_activity`,`user_data`,`ac_id`,`username`,`logged_in`)
+       $sql = "INSERT INTO ci_sessions (`session_id`,`ip_address`,`user_agent`,`last_activity`,`user_data`,`ac_id`,`username`,`lt_id`,`logged_in`)
                VALUES ('".$details['session_id']."', '".$details['ip_address']."','".$details['user_agent']."', '".$details['last_activity']."', 
-                       '1','".$details['ac_id']."', '".$details['username']."', '".$details['logged_in']."') ";
+                       '1','".$details['ac_id']."', '".$details['username']."', '".$details['lt_id']."', '".$details['logged_in']."') ";
 
     $results = $this->db->query($sql);
       //$this->db->insert_batch('ci_sessions',$session_details);
        // $details = $this->session->all_userdata();
         
     }
+
+
+
 
     function user_antiexists($user_entered){
          $this->db->where('username', $username);

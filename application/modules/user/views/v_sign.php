@@ -51,7 +51,7 @@
                                 <div class="form-group">
                                     <label for="lastname" class="col-md-3 control-label">Picture</label>
                                     <div class="col-md-9">
-                                        <input type="file" required class="form-control" id="picture" name="picture" value="<?php echo set_value('picture'); ?>" >
+                                        <input type="file" class="form-control" id="picture" name="picture" value="<?php echo set_value('picture'); ?>" >
                                     </div>
                                 </div>
                                 <div class="form-group">

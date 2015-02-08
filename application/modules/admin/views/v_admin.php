@@ -1,7 +1,40 @@
 <!DOCTYPE html>
 <html class="no-js">
     
+    <head>
+    <title>Admin</title>
+        <meta name="robots" content="noindex">
+        <meta charset="UTF-8">
+        
+        <link rel="icon" type="image/x-icon" href="<?php echo base_url() . 'assets/fonts/fashion.ico'?>" />
+        <link type="text/css" href="<?php echo base_url() .'assets/ionicons/css/ionicons.css' ?>" rel="stylesheet" media="screen">
+        <link type="text/css" href="<?php echo base_url() .'assets/dist/css/table_bootstrap.css' ?>" rel="stylesheet" media="screen">
+        <link type="text/css" href="<?php echo base_url() .'assets/vendors/easypiechart/jquery.easy-pie-chart.css'?>" rel="stylesheet" media="screen">
+        <link type="text/css" href="<?php echo base_url() .'assets/css/ad_styles.css' ?>" rel="stylesheet" media="screen">
+        <link type="text/css" href="<?php echo base_url() .'assets/script/jquery/jquery-ui.css' ?>" rel="stylesheet" media="screen">
+        
+        <link type="text/css" href="<?php echo base_url() .'assets/dist/css/table_bootstrap.css' ?>" rel="stylesheet" media="screen">
+        <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+        <!--[if lt IE 9]>
+            <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+       <script type="text/javascript" src="<?php echo base_url().'assets/js/jquery.js'; ?>"></script>
+
+        <script src="<?php echo base_url(). 'assets/vendors/modernizr-2.6.2-respond-1.1.0.min.js'?>"></script>
+        <link rel="stylesheet" type="text/css" href="<?php echo base_url().'assets/js/jquery.datatables/bootstrap-adapter/css/datatables.css'; ?>" /> 
+        
+        <link type="text/css" href="<?php echo base_url() .'assets/bootstrap/css/bootstrap.css' ?>" rel="stylesheet">
+
+        <script type="text/javascript" src="<?php echo base_url().'assets/js/jquery.datatables/jquery.datatables.min.js'; ?>"></script>
+        <script type="text/javascript" src="<?php echo base_url().'assets/js/jquery.datatables/bootstrap-adapter/js/datatables.js'; ?>"></script>
+    </head>
     
+    <body>
+
+        <?php
+              $username = $this->session->userdata('username');
+        ?>
+
         <div class="navbar navbar-fixed-top">
             <div class="navbar-inner">
                 <div class="container-fluid">
@@ -12,17 +45,18 @@
                     <a class="brand" href="#">Admin Panel</a>
                     <div class="nav-collapse collapse">
                         <ul class="nav pull-right">
+                            <li><a href="<?php echo base_url(). 'home/index'?>">Home Page</a></li>
                             <li class="dropdown">
-                                <a href="#" role="button" class="dropdown-toggle" data-toggle="dropdown"> <i class="icon-user"></i> Mareka Willy <i class="caret"></i>
+                                <a href="#" role="button" class="dropdown-toggle" data-toggle="dropdown"> <i class="icon-user"></i> <?php echo $username?> <i class="caret"></i>
 
                                 </a>
                                 <ul class="dropdown-menu">
                                     <li>
-                                        <a tabindex="-1" href="#">Profile</a>
+                                        <a tabindex="-1" data-toggle="modal" data-target="#myModal">Profile</a>
                                     </li>
                                     <li class="divider"></li>
                                     <li>
-                                        <a tabindex="-1" href="login.html">Logout</a>
+                                        <a tabindex="-1" href="<?php echo base_url(). 'user/logout'?>">Logout</a>
                                     </li>
                                 </ul>
                             </li>
@@ -32,39 +66,18 @@
                                 <a href="#">Dashboard</a>
                             </li>
                             <li class="dropdown">
-                                <a href="#" data-toggle="dropdown" class="dropdown-toggle">Settings <b class="caret"></b>
+                                <a href="#" data-toggle="dropdown" class="dropdown-toggle">Reports <b class="caret"></b>
 
                                 </a>
                                 <ul class="dropdown-menu" id="menu1">
+                                    
                                     <li>
-                                        <a href="#">Tools <i class="icon-arrow-right"></i>
-
-                                        </a>
-                                        <ul class="dropdown-menu sub-menu">
-                                            <li>
-                                                <a href="#">Reports</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">Logs</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">Errors</a>
-                                            </li>
-                                        </ul>
+                                        <a href="#">Excel</a>
                                     </li>
                                     <li>
-                                        <a href="#">SEO Settings</a>
+                                        <a href="#">PDF</a>
                                     </li>
-                                    <li>
-                                        <a href="#">Other Link</a>
-                                    </li>
-                                    <li class="divider"></li>
-                                    <li>
-                                        <a href="#">Other Link</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Other Link</a>
-                                    </li>
+                                    <!-- <li class="divider"></li> -->
                                 </ul>
                             </li>
                             <li class="dropdown">
@@ -73,36 +86,30 @@
                                 </a>
                                 <ul class="dropdown-menu">
                                     <li>
-                                        <a tabindex="-1" href="#">Blog</a>
+                                        <a tabindex="-1" href="<?php echo base_url(). 'admin/tables'?>">Tables</a>
                                     </li>
                                     <li>
-                                        <a tabindex="-1" href="#">News</a>
+                                        <a tabindex="-1" href="<?php echo base_url(). 'admin/news'?>">News</a>
                                     </li>
                                     <li>
-                                        <a tabindex="-1" href="#">Custom Pages</a>
+                                        <a tabindex="-1" href="<?php echo base_url(). 'admin/messages'?>">Messages</a>
                                     </li>
-                                    <li>
-                                        <a tabindex="-1" href="#">Calendar</a>
-                                    </li>
-                                    <li class="divider"></li>
-                                    <li>
-                                        <a tabindex="-1" href="#">FAQ</a>
-                                    </li>
+                                    
                                 </ul>
                             </li>
                             <li class="dropdown">
-                                <a href="#" role="button" class="dropdown-toggle" data-toggle="dropdown">Users <i class="caret"></i>
+                                <a href="#" role="button" class="dropdown-toggle" data-toggle="dropdown">Deactivations<i class="caret"></i>
 
                                 </a>
                                 <ul class="dropdown-menu">
                                     <li>
-                                        <a tabindex="-1" href="#">User List</a>
+                                        <a tabindex="-1" href="<?php echo base_url(). 'admin/dusers'?>">User List</a>
                                     </li>
                                     <li>
-                                        <a tabindex="-1" href="#">Search</a>
+                                        <a tabindex="-1" href="<?php echo base_url(). 'admin/dcompa'?>">Companies List</a>
                                     </li>
                                     <li>
-                                        <a tabindex="-1" href="#">Permissions</a>
+                                        <a tabindex="-1" href="<?php echo base_url(). 'admin/dmang'?>">Manager List</a>
                                     </li>
                                 </ul>
                             </li>
@@ -112,6 +119,32 @@
                 </div>
             </div>
         </div>
+
+        <!-- Button trigger modal -->
+<!-- <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+  Launch demo modal
+</button> -->
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
         <div class="container-fluid">
             <div class="row-fluid">
                 <div class="span3" id="sidebar">
@@ -120,60 +153,37 @@
                             <a href="<?php echo base_url(). 'admin/home'?>"><i class="icon-chevron-right"></i> Dashboard</a>
                         </li>
                         <li>
-                            <a href="<?php echo base_url(). 'admin/tables'?>"><i class="icon-chevron-right"></i> Tables</a>
-                        </li>
-                        <li>
-                            <a href="<?php echo base_url(). 'admin/forms'?>"><i class="icon-chevron-right"></i> Forms</a>
+                            <a href="<?php echo base_url(). 'admin/forms'?>"><span class="badge badge-alert pull-right"><?php echo $productnumber?></span> Product Form</a>
                         </li>
                         <li>
                             <a href="<?php echo base_url(). 'admin/statistics'?>"><i class="icon-chevron-right"></i> Statistics (Charts)</a>
                         </li>
                         <li>
-                            <a href="<?php echo base_url(). 'admin/messages'?>"><span class="badge badge-warning pull-right">0</span> Messages</a>
+                            <a href="<?php echo base_url(). 'admin/messages'?>"><span class="badge badge-warning pull-right"><?php echo $messagenumber?></span> Messages</a>
                         </li>
                         <li>
-                            <a href="<?php echo base_url(). 'admin/company'?>"><span class="badge badge-info pull-right">17</span> Company</a>
+                            <a href="<?php echo base_url(). 'admin/company'?>"><span class="badge badge-info pull-right"><?php echo $companynumber?></span> Company</a>
                         </li>
                         <li>
-                            <a href="<?php echo base_url(). 'admin/users'?>"><span class="badge badge-success pull-right">3</span> Users</a>
+                            <a href="<?php echo base_url(). 'admin/users'?>"><span class="badge badge-success pull-right"><?php echo $usernumber?></span> Users</a>
                         </li>
-                        <!-- <li>
-                            <a href="calendar.html"><i class="icon-chevron-right"></i> Calendar</a>
-                        </li>
-                        <li>
-                            <a href="buttons.html"><i class="icon-chevron-right"></i> Buttons & Icons</a>
-                        </li>
-                        <li>
-                            <a href="editors.html"><i class="icon-chevron-right"></i> WYSIWYG Editors</a>
-                        </li>
-                        <li>
-                            <a href="interface.html"><i class="icon-chevron-right"></i> UI & Interface</a>
-                        </li>
-                        <li>
-                            <a href="#"><span class="badge badge-success pull-right">731</span> Orders</a>
-                        </li>
-                        <li>
-                            <a href="#"><span class="badge badge-success pull-right">812</span> Invoices</a>
-                        </li>
-                        <li>
-                            <a href="#"><span class="badge badge-info pull-right">11</span> Reports</a>
-                        </li>
-                        <li>
-                            <a href="#"><span class="badge badge-important pull-right">83</span> Errors</a>
-                        </li>
-                        <li>
-                            <a href="#"><span class="badge badge-warning pull-right">4,231</span> Logs</a>
-                        </li> -->
+                        
                     </ul>
                 </div>
                 
                 <!--/span-->
+    
+        
                 <div class="span9" id="content">
-                    <div class="row-fluid">
-                        <div class="alert alert-success">
+
+
+
+                    
+                    <div class="row-fluid addlength">
+                        <!-- <div class="alert alert-success">
 							<button type="button" class="close" data-dismiss="alert">&times;</button>
                             <h4>Success</h4>
-                        	Logged in succesfully</div>
+                        	Logged in succesfully</div> -->
                         	<div class="navbar">
                             	<div class="navbar-inner">
 	                                <ul class="breadcrumb">
@@ -234,183 +244,129 @@
                     <!-- /stats -->
 
 
-                    <div class="row-fluid">
-                        <div class="span6">
+                    <div class="row-fluid addlength">
+                        <div class="span12">
                             <!-- block -->
                             <div class="block">
                                 <div class="navbar navbar-inner block-header">
                                     <div class="muted pull-left">Users</div>
-                                    <div class="pull-right"><span class="badge badge-info">1,234</span>
+                                    <div class="pull-right"><span class="badge badge-info"><?php echo $usernumber?></span>
 
                                     </div>
                                 </div>
                                 <div class="block-content collapse in">
-                                    <table class="table table-striped">
+                                    <table class="table table-striped datatable" id="ausertable">
                                         <thead>
+
+
                                             <tr>
                                                 <th>#</th>
                                                 <th>First Name</th>
                                                 <th>Last Name</th>
-                                                <th>Username</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>1</td>
-                                                <td>Mark</td>
-                                                <td>Otto</td>
-                                                <td>@mdo</td>
-                                            </tr>
-                                            <tr>
-                                                <td>2</td>
-                                                <td>Jacob</td>
-                                                <td>Thornton</td>
-                                                <td>@fat</td>
-                                            </tr>
-                                            <tr>
-                                                <td>3</td>
-                                                <td>Vincent</td>
-                                                <td>Gabriel</td>
-                                                <td>@gabrielva</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                            <!-- /block -->
-                        </div>
-                        <div class="span6">
-                            <!-- block -->
-                            <div class="block">
-                                <div class="navbar navbar-inner block-header">
-                                    <div class="muted pull-left">Orders</div>
-                                    <div class="pull-right"><span class="badge badge-info">752</span>
+                                                <th>Age</th>
+                                                <th>Nationality</th>
+                                                <th>Phone Number</th>
+                                                <th>Email</th>
+                                                <th>Residence</th>
+                                                <th>Religion</th>
+                                                <th>Gender</th>
+                                                <th>View</th>
+                                                <th>Delete</th>
 
-                                    </div>
-                                </div>
-                                <div class="block-content collapse in">
-                                    <table class="table table-striped">
-                                        <thead>
-                                            <tr>
-                                                <th>#</th>
-                                                <th>Product</th>
-                                                <th>Date</th>
-                                                <th>Amount</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
-                                                <td>1</td>
-                                                <td>Coat</td>
-                                                <td>02/02/2013</td>
-                                                <td>Kshs 25.12</td>
-                                            </tr>
-                                            <tr>
-                                                <td>2</td>
-                                                <td>Jacket</td>
-                                                <td>01/02/2013</td>
-                                                <td>Kshs 335.00</td>
-                                            </tr>
-                                            <tr>
-                                                <td>3</td>
-                                                <td>Shoes</td>
-                                                <td>01/02/2013</td>
-                                                <td>Kshs 29.99</td>
-                                            </tr>
+                                            <?php echo $users_table; ?>
                                         </tbody>
                                     </table>
                                 </div>
                             </div>
                             <!-- /block -->
                         </div>
+
                     </div>
-                    <div class="row-fluid">
-                        <div class="span6">
+
+                     <div class="row-fluid addlength">
+                        <div class="span12">
                             <!-- block -->
                             <div class="block">
                                 <div class="navbar navbar-inner block-header">
-                                    <div class="muted pull-left">Clients</div>
-                                    <div class="pull-right"><span class="badge badge-info">17</span>
+                                    <div class="muted pull-left">Companies</div>
+                                    <div class="pull-right"><span class="badge badge-info"><?php echo $companynumber?></span>
 
                                     </div>
                                 </div>
                                 <div class="block-content collapse in">
-                                    <table class="table table-striped">
+                                    <table class="table table-striped datatable" id="acompanytable">
                                         <thead>
+
+
                                             <tr>
                                                 <th>#</th>
-                                                <th>First Name</th>
-                                                <th>Last Name</th>
-                                                <th>Username</th>
+                                                <th>Company Name</th>
+                                                <th>Location</th>
+                                                <th>Address</th>
+                                                <th>Phone Number</th>
+                                                <th>Email</th>
+                                                <th>Date / Time Registered</th>
+                                                <th>View</th>
+                                                <th>Delete</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
-                                                <td>1</td>
-                                                <td>Mark</td>
-                                                <td>Otto</td>
-                                                <td>@mdo</td>
-                                            </tr>
-                                            <tr>
-                                                <td>2</td>
-                                                <td>Jacob</td>
-                                                <td>Thornton</td>
-                                                <td>@fat</td>
-                                            </tr>
-                                            <tr>
-                                                <td>3</td>
-                                                <td>Vincent</td>
-                                                <td>Gabriel</td>
-                                                <td>@gabrielva</td>
-                                            </tr>
+                                            <?php echo $companies_table; ?>
                                         </tbody>
                                     </table>
                                 </div>
                             </div>
                             <!-- /block -->
                         </div>
-                        <div class="span6">
-                            <!-- block -->
-                            <div class="block">
-                                <div class="navbar navbar-inner block-header">
-                                    <div class="muted pull-left">Invoices</div>
-                                    <div class="pull-right"><span class="badge badge-info">812</span>
 
-                                    </div>
-                                </div>
-                                <div class="block-content collapse in">
-                                    <table class="table table-striped">
-                                        <thead>
-                                            <tr>
-                                                <th>#</th>
-                                                <th>Date</th>
-                                                <th>Amount</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>1</td>
-                                                <td>02/02/2013</td>
-                                                <td>Kshs 25.12</td>
-                                            </tr>
-                                            <tr>
-                                                <td>2</td>
-                                                <td>01/02/2013</td>
-                                                <td>Kshs 335.00</td>
-                                            </tr>
-                                            <tr>
-                                                <td>3</td>
-                                                <td>01/02/2013</td>
-                                                <td>Kshs 29.99</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                            <!-- /block -->
-                        </div>
                     </div>
-                    <div class="row-fluid">
+
+                    
+
+                    <div class="row-fluid addlength">
+                        <div class="span12">
+                            <!-- block -->
+                            <div class="block">
+                                <div class="navbar navbar-inner block-header">
+                                    <div class="muted pull-left">Products</div>
+                                    <div class="pull-right"><span class="badge badge-info"><?php echo $productnumber?></span>
+
+                                    </div>
+                                </div>
+                                <div class="block-content collapse in">
+                                    <table class="table table-striped datatable" id="aproducttable">
+                                        <thead>
+
+
+                                            <tr>
+                                                <th>#</th>
+                                                <th>Product Name</th>
+                                                <th>Product Type</th>
+                                                <th>Product Category</th>
+                                                <th>Quantity</th>
+                                                <th>Price (Kshs)</th>
+                                                <th>Product Company</th>
+                                                <th>Date / Time Added</th>
+                                                <th>View</th>
+                                                <th>Delete</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <?php echo $product_table; ?>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <!-- /block -->
+                        </div>
+
+                    </div>
+
+
+                    <div class="row-fluid addlength">
                         <!-- block -->
                         <div class="block">
                             <div class="navbar navbar-inner block-header">
@@ -492,8 +448,49 @@
                         </div>
                         <!-- /block -->
                     </div>
+
+
+
+
+
                 </div>
             </div>
             
         <!--/.fluid-container-->
+
+
+                        <hr>
+            <footer>
+                <p>&copy; MareWill Fashion 2015</p>
+            </footer>
+        </div>
+
+
+        <script src="<?php echo base_url(). 'assets/vendors/jquery-1.9.1.min.js'?>"></script>
+        <script src="<?php echo base_url(). 'assets/bootstrap/js/bootstrap.min.js'?>"></script>
+        <script src="<?php echo base_url(). 'assets/vendors/easypiechart/jquery.easy-pie-chart.js'?>"></script>
+        <script src="<?php echo base_url(). 'assets/js/ad_scripts.js'?>"></script>
+        
+        <script>
+        $(function() {
+            
+        });
+        </script>
+        <script>
+        $(function() {
+            // Easy pie charts
+            $('.chart').easyPieChart({animate: 1000});
+        });
+        </script>
+        <script type="text/javascript">
+            $('#aproducttable').dataTable();
+            $('#acompanytable').dataTable();
+            $('#ausertable').dataTable();
+
+            $('.dataTables_filter input').addClass('form-control').attr('placeholder','Search');
+            $('.dataTables_length select').addClass('form-control');
+        </script>
+    </body>
+
+</html>
         

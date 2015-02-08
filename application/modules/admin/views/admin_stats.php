@@ -18,6 +18,10 @@
     </head>
     
     <body>
+        <?php
+              $username = $this->session->userdata('username');
+        ?>
+
         <div class="navbar navbar-fixed-top">
             <div class="navbar-inner">
                 <div class="container-fluid">
@@ -28,17 +32,18 @@
                     <a class="brand" href="#">Admin Panel</a>
                     <div class="nav-collapse collapse">
                         <ul class="nav pull-right">
+                            <li><a href="<?php echo base_url(). 'home/index'?>">Home Page</a></li>
                             <li class="dropdown">
-                                <a href="#" role="button" class="dropdown-toggle" data-toggle="dropdown"> <i class="icon-user"></i> Vincent Gabriel <i class="caret"></i>
+                                <a href="#" role="button" class="dropdown-toggle" data-toggle="dropdown"> <i class="icon-user"></i> <?php echo $username?> <i class="caret"></i>
 
                                 </a>
                                 <ul class="dropdown-menu">
                                     <li>
-                                        <a tabindex="-1" href="#">Profile</a>
+                                        <a tabindex="-1" data-toggle="modal" data-target="#myModal">Profile</a>
                                     </li>
                                     <li class="divider"></li>
                                     <li>
-                                        <a tabindex="-1" href="login.html">Logout</a>
+                                        <a tabindex="-1" href="<?php echo base_url(). 'user/logout'?>">Logout</a>
                                     </li>
                                 </ul>
                             </li>
@@ -48,39 +53,18 @@
                                 <a href="#">Dashboard</a>
                             </li>
                             <li class="dropdown">
-                                <a href="#" data-toggle="dropdown" class="dropdown-toggle">Settings <b class="caret"></b>
+                                <a href="#" data-toggle="dropdown" class="dropdown-toggle">Reports <b class="caret"></b>
 
                                 </a>
                                 <ul class="dropdown-menu" id="menu1">
+                                    
                                     <li>
-                                        <a href="#">Tools <i class="icon-arrow-right"></i>
-
-                                        </a>
-                                        <ul class="dropdown-menu sub-menu">
-                                            <li>
-                                                <a href="#">Reports</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">Logs</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">Errors</a>
-                                            </li>
-                                        </ul>
+                                        <a href="#">Excel</a>
                                     </li>
                                     <li>
-                                        <a href="#">SEO Settings</a>
+                                        <a href="#">PDF</a>
                                     </li>
-                                    <li>
-                                        <a href="#">Other Link</a>
-                                    </li>
-                                    <li class="divider"></li>
-                                    <li>
-                                        <a href="#">Other Link</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Other Link</a>
-                                    </li>
+                                    <!-- <li class="divider"></li> -->
                                 </ul>
                             </li>
                             <li class="dropdown">
@@ -89,36 +73,30 @@
                                 </a>
                                 <ul class="dropdown-menu">
                                     <li>
-                                        <a tabindex="-1" href="#">Blog</a>
+                                        <a tabindex="-1" href="<?php echo base_url(). 'admin/tables'?>">Tables</a>
                                     </li>
                                     <li>
-                                        <a tabindex="-1" href="#">News</a>
+                                        <a tabindex="-1" href="<?php echo base_url(). 'admin/news'?>">News</a>
                                     </li>
                                     <li>
-                                        <a tabindex="-1" href="#">Custom Pages</a>
+                                        <a tabindex="-1" href="<?php echo base_url(). 'admin/messages'?>">Messages</a>
                                     </li>
-                                    <li>
-                                        <a tabindex="-1" href="#">Calendar</a>
-                                    </li>
-                                    <li class="divider"></li>
-                                    <li>
-                                        <a tabindex="-1" href="#">FAQ</a>
-                                    </li>
+                                    
                                 </ul>
                             </li>
                             <li class="dropdown">
-                                <a href="#" role="button" class="dropdown-toggle" data-toggle="dropdown">Users <i class="caret"></i>
+                                <a href="#" role="button" class="dropdown-toggle" data-toggle="dropdown">Deactivations<i class="caret"></i>
 
                                 </a>
                                 <ul class="dropdown-menu">
                                     <li>
-                                        <a tabindex="-1" href="#">User List</a>
+                                        <a tabindex="-1" href="<?php echo base_url(). 'admin/dusers'?>">User List</a>
                                     </li>
                                     <li>
-                                        <a tabindex="-1" href="#">Search</a>
+                                        <a tabindex="-1" href="<?php echo base_url(). 'admin/dcompa'?>">Companies List</a>
                                     </li>
                                     <li>
-                                        <a tabindex="-1" href="#">Permissions</a>
+                                        <a tabindex="-1" href="<?php echo base_url(). 'admin/dmang'?>">Manager List</a>
                                     </li>
                                 </ul>
                             </li>
@@ -135,23 +113,21 @@
                         <li class="active">
                             <a href="<?php echo base_url(). 'admin/home'?>"><i class="icon-chevron-right"></i> Dashboard</a>
                         </li>
+                       
                         <li>
-                            <a href="<?php echo base_url(). 'admin/tables'?>"><i class="icon-chevron-right"></i> Tables</a>
-                        </li>
-                        <li>
-                            <a href="<?php echo base_url(). 'admin/forms'?>"><i class="icon-chevron-right"></i> Forms</a>
+                            <a href="<?php echo base_url(). 'admin/forms'?>"><span class="badge badge-alert pull-right"><?php echo $productnumber?></span> Product Form</a>
                         </li>
                         <li>
                             <a href="<?php echo base_url(). 'admin/statistics'?>"><i class="icon-chevron-right"></i> Statistics (Charts)</a>
                         </li>
                         <li>
-                            <a href="<?php echo base_url(). 'admin/messages'?>"><span class="badge badge-warning pull-right">0</span> Messages</a>
+                            <a href="<?php echo base_url(). 'admin/messages'?>"><span class="badge badge-warning pull-right"><?php echo $messagenumber?></span> Messages</a>
                         </li>
                         <li>
-                            <a href="<?php echo base_url(). 'admin/company'?>"><span class="badge badge-info pull-right">17</span> Company</a>
+                            <a href="<?php echo base_url(). 'admin/company'?>"><span class="badge badge-info pull-right"><?php echo $companynumber?></span> Company</a>
                         </li>
                         <li>
-                            <a href="<?php echo base_url(). 'admin/users'?>"><span class="badge badge-success pull-right">3</span> Users</a>
+                            <a href="<?php echo base_url(). 'admin/users'?>"><span class="badge badge-success pull-right"><?php echo $usernumber?></span> Users</a>
                         </li>
                         <!-- <li>
                             <a href="calendar.html"><i class="icon-chevron-right"></i> Calendar</a>
@@ -182,7 +158,10 @@
                         </li> -->
                     </ul>
                 </div>
+                
                 <!--/span-->
+       
+        
                 <div class="span9" id="content">
                       <!-- morris stacked chart -->
                     <div class="row-fluid">
@@ -343,7 +322,7 @@
             </div>
             <hr>
             <footer>
-                <p>&copy; MareWill Fashion 2015</p>
+                <p> MareWill Fashion 2015 &copy;</p>
             </footer>
         </div>
         <!--/.fluid-container-->

@@ -17,6 +17,8 @@ class MY_Controller extends MX_Controller
         $this->load->module('products');
         $this->load->model('user/user_model');
         $this->load->library('upload');
+        $this->load->module('template');
+        
     }
 
    public function showbase()

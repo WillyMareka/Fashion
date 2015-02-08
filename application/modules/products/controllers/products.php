@@ -1,8 +1,8 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Products extends CI_Controller {
+class Products extends MY_Controller {
 
-	private $logged_in;
+	public $logged_in;
 
 	function __construct()
     {

@@ -84,21 +84,13 @@
 									<h4 class="panel-title"><a href="#">Fashion</a></h4>
 								</div>
 							</div>
-							<div class="panel panel-default">
-								<div class="panel-heading">
-									<h4 class="panel-title"><a href="#">Households</a></h4>
-								</div>
-							</div>
+							
 							<div class="panel panel-default">
 								<div class="panel-heading">
 									<h4 class="panel-title"><a href="#">Interiors</a></h4>
 								</div>
 							</div>
-							<div class="panel panel-default">
-								<div class="panel-heading">
-									<h4 class="panel-title"><a href="#">Clothing</a></h4>
-								</div>
-							</div>
+							
 							<div class="panel panel-default">
 								<div class="panel-heading">
 									<h4 class="panel-title"><a href="#">Bags</a></h4>
@@ -118,7 +110,7 @@
 						<div class="brands_products">
 							<h2>Company</h2>
 							<div class="brands-name">
-								<ul class="nav nav-pills nav-stacked">
+								<ul class="nav nav-pills nav-stacked navcompany">
 									<li><a href=""> <span class="pull-right">(50)</span>Adidas</a></li>
 									<li><a href=""> <span class="pull-right">(27)</span>Nike</a></li>
 									<li><a href=""> <span class="pull-right">(32)</span>Puma</a></li>
@@ -266,7 +258,7 @@
 											<a href="<?php echo base_url(). 'home/add_to_cart_check'?>" class="btn btn-default add-to-cart"><i class="shop icon"></i>Add to cart</a>
 										</div>
 									</div>
-									<img src="images/home/sale.png" class="new" alt="" />
+									<!-- <img src="images/home/sale.png" class="new" alt="" /> -->
 								</div>
 								<div class="choose">
 									<ul class="nav nav-pills nav-justified">
