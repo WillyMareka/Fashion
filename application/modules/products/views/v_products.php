@@ -131,6 +131,36 @@
 					</div>
 				</div>
 				
+				<!--implementing from the db-->
+				<div id="products">
+					<ul>
+						<?php foreach ($products as $product): ?>
+							<li>
+								<?php echo form_open ('cart/add_products'); ?>
+								<div class="name"> <?php echo $product->prod_name; ?> </div>
+								<div class="image">
+									<?php echo img(array(
+										'src'=> '/../uploads/products'. $product->picture,
+										'class'=> 'thumb',
+										'alt'=> $product->prod_name
+									)
+									);?>
+								</div class="price">Kshs<?php echo $product->price; ?><div>
+								</div>
+								<?php echo form_close (); ?>
+							</li>
+						 
+						<?php endforeach; ?>
+					</ul>
+					
+				</div>
+				
+				<div id="cart">
+					
+					
+				</div>
+				
+				
 				<div class="col-sm-9 padding-right">
 					<div class="features_items"><!--features_items-->
 						<h2 class="title text-center">Features Items</h2>

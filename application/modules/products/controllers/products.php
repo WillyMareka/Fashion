@@ -20,13 +20,21 @@ class Products extends MY_Controller {
 	public function index()
 	{
 		
+		$this->load->model('m_products');
+		$data['products'] = $this->m_products->get_all_products();
+		//echo "<pre>";print_r($data['products']);
+		
+		$this->load->view('v_products', $data);
 	}
 
 
     public function view()
 	{
+		$this->load->model('m_products');
+		$data['products'] = $this->m_products->get_all_products();
+		
 		$this->load->view('p_header', array('logged_in' => $this->logged_in));
-		$this->load->view('v_products');
+		$this->load->view('v_products', $data);
 		$this->load->view('p_footer');
     }
 }
