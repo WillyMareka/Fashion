@@ -188,7 +188,7 @@
 				</div>
 				
 				<!--implementing from the db-->
-				<div id="products">
+				<!-- <div id="products">
 					<ul>
 						<?php foreach ($products as $product): ?>
 							<li>
@@ -226,7 +226,7 @@
 				<div id="cart">
 					
 					
-				</div>
+				</div> -->
 				
 				
 				<div class="col-sm-9 padding-right">
