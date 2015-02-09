@@ -35,6 +35,13 @@ class User extends MY_Controller {
 		$this->load->view('v_log');
 		$this->load->view('home/footer');
 	}
+	
+	public function manager()
+	{
+		$this->load->view('log_header');
+		$this->load->view('manager');
+		$this->load->view('home/footer');
+	}
 
 	function logout()
 	{
