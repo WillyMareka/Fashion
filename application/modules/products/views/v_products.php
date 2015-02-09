@@ -188,40 +188,7 @@
 				</div>
 				
 				<!--implementing from the db-->
-				<div id="products">
-					<ul>
-						<?php foreach ($products as $product): ?>
-							<li>
-								<?php echo form_open ('cart/add_products'); ?>
-								<div class="name"> <?php echo $product->prod_name; ?> </div>
-								<div class="image">
-									<?php echo img(array(
-										'src'=> '/uploads/products'. $product->picture,
-										'class'=> 'thumb',
-										'alt'=> $product->prod_name
-									)
-									);?>
-								</div>
-								<div class="price">Kshs<?php echo $product->price; ?></div>
-								<div class="option">
-									
-									<?php if ($product->option_values):?>
-										<?php echo form_label (''); ?>
-									<?php endif; ?>	
-								</div>
-								<?php echo form_close ($product->option_values, 'option_'.$product->prod_id); ?>
-								<?php echo form_dropdown(
-									$product->option_values, 
-									$product->option_values,
-									NULL, 
-									'id="option_'.$product->prod_id.'"'
-								); ?>
-							</li>
-						 
-						<?php endforeach; ?>
-					</ul>
-					
-				</div>
+				
 				
 				<div id="cart">
 					

@@ -42,7 +42,7 @@ class Home extends MY_Controller {
 
 	 public function add_to_cart_check(){
       if($this->session->userdata('logged_in')){
-			redirect('cart/index');
+			redirect('cart/add_products');
       }
       else{
         redirect('user/log');
