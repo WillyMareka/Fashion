@@ -19,6 +19,20 @@ class Cart extends MY_Controller {
 	} 
 	
 	public function add_products(){
+		$this->load->model('product_model');
+		$product = $this->product_model->get($this->input->post('prod_id'));
+		
+		$insert = array(
+			'id' => $this->input->post('prod_id')
+			
+		);
+		
+		$this->cart->insert($insert);
+		
+		
+		
+		
+		
 		$this->load->library('cart');
 		$data = array(
 					array(

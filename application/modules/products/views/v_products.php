@@ -188,6 +188,7 @@
 				</div>
 				
 				<!--implementing from the db-->
+
 				<!-- <div id="products">
 					<ul>
 						<?php foreach ($products as $product): ?>
@@ -222,6 +223,7 @@
 					</ul>
 					
 				</div>
+
 				
 				<div id="cart">
 					
