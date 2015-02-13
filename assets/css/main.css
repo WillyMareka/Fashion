@@ -843,6 +843,11 @@ h2.title:before{
 .home-container{
   margin-left: 140px;
 }
+
+.nav.navcompany {
+  float: left;
+  margin-top: 0.82em;
+}
 /*#8e44ad*/
 /*#9900CC*/
 

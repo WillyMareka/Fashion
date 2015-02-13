@@ -38,9 +38,7 @@ class User extends MY_Controller {
 	
 	public function manager()
 	{
-		$this->load->view('log_header');
-		$this->load->view('manager');
-		$this->load->view('home/footer');
+		redirect(base_url().'manager/home');
 	}
 
 	function logout()
