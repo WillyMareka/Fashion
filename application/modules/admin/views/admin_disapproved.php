@@ -155,105 +155,7 @@
                       
 
                   
-                    <div class="row-fluid">
-                         <!-- block -->
-                        <div class="block">
-                            <div class="navbar navbar-inner block-header">
-                                <div class="muted pull-left">New Product</div>
-                            </div>
-                            <div class="block-content collapse in">
-                                <div class="span12">
-					<!-- BEGIN FORM-->
-					<form enctype="multipart/form-data" method="POST" action="<?php echo base_url() . 'admin/create_product'?>" class="form-horizontal black" role="form">
-						<?php 
-                                  echo form_open_multipart(base_url().'admin/create_product');
-                              ?>
-                        <fieldset>
-							<div class="alert alert-error hide">
-								<button class="close" data-dismiss="alert"></button>
-								Please complete filling the form
-							</div>
-							<div class="alert alert-success hide">
-								<button class="close" data-dismiss="alert"></button>
-								Product has been added successfully
-							</div>
-
-  							<div class="control-group">
-  								<label class="control-label">Product Name<span class="required">*</span></label>
-  								<div class="controls">
-  									<input type="text" name="prodname" data-required="1" required value="<?php echo set_value('prodname'); ?>" class="span6 m-wrap form-control"/>
-  								</div>
-  							</div>
-
-  							<div class="control-group">
-  								<label class="control-label">Product Category<span class="required">*</span></label>
-  								<div class="controls">
-                                    <select name="prodcategory" type="text" required value="<?php echo set_value('prodcategory'); ?>" class="span6 m-wrap form-control">
-                                        <?php echo $product_categories?>
-                                    </select>
-  									
-  								</div>
-  							</div>
-
-  							<div class="control-group">
-  								<label class="control-label">Product Type<span class="required">*</span></label>
-  								<div class="controls">
-                                    <select  name="prodtype" type="text" required value="<?php echo set_value('prodtype'); ?>" class="span6 m-wrap form-control">
-                                        <?php echo $product_types?>
-                                    </select>
-  									
-  									<!-- <span class="help-block">e.g: http://www.demo.com or http://demo.com</span> -->
-  								</div>
-  							</div>
-
-  							<div class="control-group">
-  								<label class="control-label">Quantity<span class="required">*</span></label>
-  								<div class="controls">
-  									<input name="prodquantity" type="text" required value="<?php echo set_value('prodquantity'); ?>" class="span6 m-wrap form-control "/>
-  								</div>
-  							</div>
-
-                <div class="control-group">
-                  <label class="control-label">Price<span class="required">*</span></label>
-                  <div class="controls">
-                    <input name="prodprice" type="text" required value="<?php echo set_value('prodprice'); ?>" class="span6 m-wrap form-control "/>
-                  </div>
-                </div>
-
-  							<div class="control-group">
-  								<label class="control-label">Picture<span class="required">*</span></label>
-  								<div class="controls">
-  									<input name="prodpicture" type="file" required value="<?php echo set_value('prodpicture'); ?>" class="span6 m-wrap form-control "/>
-  								</div>
-  							</div>
-
-  							<div class="control-group">
-  								<label class="control-label">Company Name<span class="required">*</span></label>
-  								<div class="controls">
-                                    <select name="prodcompany" type="text" required value="<?php echo set_value('prodcompany'); ?>" class="span6 m-wrap form-control ">
-                                        <?php echo $product_companies?>
-                                    </select>
-  									
-  									<!-- <span class="help-block">e.g: 5500 0000 0000 0004</span> -->
-  								</div>
-  							</div>
-  							
-  						
-  							<div class="form-actions">
-  								<button type="submit" class="btn btn-primary">Enter Product (s)</button>
-  								<button type="reset" class="btn">Cancel</button>
-  							</div>
-						</fieldset>
-                        <?php 
-                                    echo form_close();
-                                 ?>
-					</form>
-					<!-- END FORM-->
-				</div>
-			    </div>
-			</div>
-                     
-		    </div>
+                   
 
 
 
@@ -282,7 +184,7 @@
                                                 <th>Product Company</th>
                                                 <th>Date / Time Added</th>
                                                 <th>View</th>
-                                                <th>Delete</th>
+                                                <th>Request</th>
                                             </tr>
                                         </thead>
                                         <tbody>

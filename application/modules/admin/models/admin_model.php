@@ -66,6 +66,27 @@ class Admin_model extends MY_Model {
     return $users;
   }
 
+
+  public function get_all_dusers()
+  {
+    $users = array();
+    $query = $this->db->get_where('accounts', array('is_deleted' => 1));
+    $result = $query->result_array();
+
+    if ($result) {
+      foreach ($result as $key => $value) {
+        $users[$value['ac_id']] = $value;
+      }
+      //echo '<pre>';print_r($users);echo '</pre>';die();
+      
+      return $users;
+    }
+    
+    return $users;
+  }
+
+
+
   public function get_all_products()
   {
     $products = array();
@@ -85,11 +106,68 @@ class Admin_model extends MY_Model {
     return $products;
   }
 
+  public function get_all_dproducts()
+  {
+    $products = array();
+    $this->db->order_by("prod_id", "desc");
+    $query = $this->db->get_where('products', array('is_deleted' => 0, 'approved' => 0 ));
+    $result = $query->result_array();
+
+    if ($result) {
+      foreach ($result as $key => $value) {
+        $products[$value['prod_id']] = $value;
+      }
+      //echo '<pre>';print_r($users);echo '</pre>';die();
+      
+      return $products;
+    }
+    
+    return $products;
+  }
+
+  public function get_all_delproducts()
+  {
+    $products = array();
+    $this->db->order_by("prod_id", "desc");
+    $query = $this->db->get_where('products', array('is_deleted' => 1, 'approved' => 0 ));
+    $result = $query->result_array();
+
+    if ($result) {
+      foreach ($result as $key => $value) {
+        $products[$value['prod_id']] = $value;
+      }
+      //echo '<pre>';print_r($users);echo '</pre>';die();
+      
+      return $products;
+    }
+    
+    return $products;
+  }
+
   public function get_all_companies()
   {
     $companies = array();
 
     $query = $this->db->get_where('company', array('status' => 1));
+    $result = $query->result_array();
+
+    if ($result) {
+      foreach ($result as $key => $value) {
+        $companies[$value['comp_id']] = $value;
+      }
+      //echo '<pre>';print_r($companies);echo '</pre>';die();
+      return $companies;
+
+    }
+    
+    return $companies;
+  }
+
+  public function get_all_dcompanies()
+  {
+    $companies = array();
+
+    $query = $this->db->get_where('company', array('status' => 0));
     $result = $query->result_array();
 
     if ($result) {
@@ -130,6 +208,11 @@ class Admin_model extends MY_Model {
         $data['is_deleted'] = 1; 
         
         break;
+
+      case 'activate':
+        $data['is_deleted'] = 0; 
+        
+        break;
       
       case 'update':
         $data = $this->input->post();
@@ -159,6 +242,18 @@ class Admin_model extends MY_Model {
         $data['is_deleted'] = 1; 
         
         break;
+
+      case 'restore':
+        $data['is_deleted'] = 0; 
+        
+        break;
+
+      case 'activate':
+        $data['approved'] = 2; 
+
+
+        
+        break;
       
       case 'update':
         $data = $this->input->post();
@@ -169,6 +264,20 @@ class Admin_model extends MY_Model {
     }
     $this->db->where('prod_id', $prod_id);
     $update = $this->db->update('products', $data);
+
+
+    $subject = "Disapproved Product Needs Approval";
+      $message = 'Disapproved product with ID '.$prod_id.' has been requested again for your approval';
+
+      $mail_to_manager = array();
+      $mail_manager = array(
+          'mm_subject' => $subject,
+          'mm_message' => $message
+        );
+
+      array_push($mail_to_manager, $mail_manager);
+
+      $this->db->insert_batch('manager_mail',$mail_to_manager);
 
     if ($update) {
       return true;

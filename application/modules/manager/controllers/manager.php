@@ -275,30 +275,29 @@ class Manager extends MY_Controller {
   function updateproduct($type, $prod_id)
   {
 
-    echo "Getting";
     //print_r($prod_id);die();
-    // $update = $this->m_manager->updateproduct($type, $prod_id);
-    // if($update)
-    // {
-    //   //print_r($update);die();
-    //   switch ($type) {
-    //     case 'approve':
-    //       $message['approve_message'] = 'approve';
-    //       redirect(base_url() .'manager/approvals/'.$message);
-    //       break;
+    $update = $this->m_manager->updateproduct($type, $prod_id);
+    if($update)
+    {
+      //print_r($update);die();
+      switch ($type) {
+        case 'approve':
+         
+          redirect(base_url() .'manager/approvals/'.$type);
+          break;
 
-    //     case 'disapprove':
-    //       $message['approve_message'] = 'disapprove';
-    //       redirect(base_url() .'manager/approvals/'.$message);
-    //       break;
+        case 'disapprove':
+         
+          redirect(base_url() .'manager/approvals/'.$type);
+          break;
         
-    //     default:
-    //       # code...
-    //       break;
-    //   }
-    // }else{
-    //   //echo "Problem";
-    // }
+        default:
+          # code...
+          break;
+      }
+    }else{
+      //echo "Problem";
+    }
   }
 
 
@@ -500,9 +499,10 @@ class Manager extends MY_Controller {
       
    }
 
-   function approvals($message=NULL)
+   function approvals($message)
    {
     $data['error'] = '';
+    //echo '<pre>';print_r($message);echo'</pre>';die();
     $data['approve_message'] = $message;
     $data['waits'] = $this->choosewaits();
 

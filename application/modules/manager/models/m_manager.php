@@ -342,8 +342,8 @@ class M_manager extends MY_Model {
 
       $mail_to_admin = array();
       $mail_admin = array(
-          'mm_subject' => $subject,
-          'mm_message' => $message
+          'subject' => $subject,
+          'message' => $message
         );
 
       array_push($mail_to_admin, $mail_admin);
@@ -359,8 +359,8 @@ class M_manager extends MY_Model {
 
       $mail_to_admin = array();
       $mail_admin = array(
-          'mm_subject' => $subject,
-          'mm_message' => $message
+          'subject' => $subject,
+          'message' => $message
         );
 
       array_push($mail_to_admin, $mail_admin);
