@@ -163,8 +163,8 @@
                             <!-- block -->
                             <div class="block">
                                 <div class="navbar navbar-inner block-header">
-                                    <div class="muted pull-left">Users</div>
-                                    <div class="pull-right"><span class="badge badge-info"><?php echo $usernumber?></span>
+                                    <div class="muted pull-left">Deactivated Users</div>
+                                    <div class="pull-right"><span class="badge badge-info"><?php echo $dusernumber?></span>
 
                                     </div>
                                 </div>

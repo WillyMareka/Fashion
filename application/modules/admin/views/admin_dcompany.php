@@ -152,19 +152,14 @@
                 <!--/span-->
                 <div class="span9" id="content">
                   
-                    
-                   
-
-
-
 
                     <div class="row-fluid addlength">
                         <div class="span12">
                             <!-- block -->
                             <div class="block">
                                 <div class="navbar navbar-inner block-header">
-                                    <div class="muted pull-left">Companies</div>
-                                    <div class="pull-right"><span class="badge badge-info"><?php echo $companynumber?></span>
+                                    <div class="muted pull-left">Deactivated Companies</div>
+                                    <div class="pull-right"><span class="badge badge-info"><?php echo $dcompanynumber?></span>
 
                                     </div>
                                 </div>

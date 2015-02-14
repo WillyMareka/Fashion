@@ -18,6 +18,16 @@ class Admin_model extends MY_Model {
         return $data->users;
    }
 
+   public function dusernumber(){
+    $sql = "SELECT COUNT(`ac_id`) as users FROM accounts WHERE is_deleted = 1";
+
+        $result = $this->db->query($sql);
+        $data = $result->row();
+        //echo $data->users;die();
+
+        return $data->users;
+   }
+
    public function messagenumber(){
     $sql = "SELECT COUNT(`mail_id`) as mails FROM mail WHERE is_deleted = 0";
 
@@ -38,8 +48,38 @@ class Admin_model extends MY_Model {
         return $data->companies;
    }
 
+   public function dcompanynumber(){
+    $sql = "SELECT COUNT(`comp_id`) as companies FROM company WHERE status = 0";
+
+        $result = $this->db->query($sql);
+        $data = $result->row();
+        //print_r($data);die();
+
+        return $data->companies;
+   }
+
    public function productnumber(){
     $sql = "SELECT COUNT(`prod_id`) as products FROM products WHERE is_deleted = 0";
+
+        $result = $this->db->query($sql);
+        $data = $result->row();
+        //print_r($data);die();
+
+        return $data->products;
+   }
+
+   public function dproductnumber(){
+    $sql = "SELECT COUNT(`prod_id`) as products FROM products WHERE approved = 0";
+
+        $result = $this->db->query($sql);
+        $data = $result->row();
+        //print_r($data);die();
+
+        return $data->products;
+   }
+
+   public function delproductnumber(){
+    $sql = "SELECT COUNT(`prod_id`) as products FROM products WHERE is_deleted = 1";
 
         $result = $this->db->query($sql);
         $data = $result->row();
@@ -51,6 +91,7 @@ class Admin_model extends MY_Model {
    public function get_all_users()
   {
     $users = array();
+    $this->db->order_by("ac_id", "desc");
     $query = $this->db->get_where('accounts', array('is_deleted' => 0));
     $result = $query->result_array();
 
@@ -70,6 +111,7 @@ class Admin_model extends MY_Model {
   public function get_all_dusers()
   {
     $users = array();
+    $this->db->order_by("ac_id", "desc");
     $query = $this->db->get_where('accounts', array('is_deleted' => 1));
     $result = $query->result_array();
 
@@ -147,7 +189,7 @@ class Admin_model extends MY_Model {
   public function get_all_companies()
   {
     $companies = array();
-
+    $this->db->order_by("comp_id", "desc");
     $query = $this->db->get_where('company', array('status' => 1));
     $result = $query->result_array();
 
@@ -166,7 +208,7 @@ class Admin_model extends MY_Model {
   public function get_all_dcompanies()
   {
     $companies = array();
-
+    $this->db->order_by("comp_id", "desc");
     $query = $this->db->get_where('company', array('status' => 0));
     $result = $query->result_array();
 
@@ -185,6 +227,7 @@ class Admin_model extends MY_Model {
   public function get_all_messages()
   {
     $messages = array();
+    $this->db->order_by("mail_id", "desc");
     $query = $this->db->get_where('mail', array('is_deleted' => 0));
     $result = $query->result_array();
 

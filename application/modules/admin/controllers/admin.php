@@ -574,6 +574,7 @@ class Admin extends MY_Controller {
 		$data['usernumber']  = $this->getusernumber();
 		$data['product_types']  = $this->getproducttypes();
 		$data['productnumber']  = $this->getproductnumber();
+        $data['delproductnumber']  = $this->getdelproductnumber();
 		$data['companynumber']  = $this->getcompanynumber();
 		$data['product_table'] = $this->createproductsview('table','deleted');
 		$data['product_companies']  = $this->getproductcompanies();
@@ -592,6 +593,7 @@ class Admin extends MY_Controller {
 		$data['usernumber']  = $this->getusernumber();
 		$data['product_types']  = $this->getproducttypes();
 		$data['productnumber']  = $this->getproductnumber();
+        $data['dproductnumber']  = $this->getdproductnumber();
 		$data['companynumber']  = $this->getcompanynumber();
 		$data['product_table'] = $this->createproductsview('table','deactive');
 		$data['product_companies']  = $this->getproductcompanies();
@@ -622,6 +624,7 @@ class Admin extends MY_Controller {
 		$data['error'] = '';
 		$data['messagenumber']  = $this->getmessagenumber();
 		$data['usernumber']  = $this->getusernumber();
+        $data['dusernumber']  = $this->getdusernumber();
 		$data['productnumber']  = $this->getproductnumber();
 		$data['users_table'] = $this->createusersview('table','deactive');
 		$data['companynumber']  = $this->getcompanynumber();
@@ -655,6 +658,7 @@ class Admin extends MY_Controller {
 		$data['productnumber']  = $this->getproductnumber();
 		$data['companies_table'] = $this->createcompaniesview('table','deactive');
 		$data['companynumber']  = $this->getcompanynumber();
+        $data['dcompanynumber']  = $this->getdcompanynumber();
 		// $data['content_page'] = 'admin/admin_user';
 		// $this->template->get_admin_template($data);
 		//$this->load->view('admin_user', array('logged_in' => $this->logged_in));
@@ -687,6 +691,15 @@ class Admin extends MY_Controller {
           //echo '<pre>'; print_r($results); echo '</pre>';die;
 	}
 
+    public function getdusernumber()
+    {
+          $results = $this->admin_model->dusernumber();
+
+          return $results;
+
+          //echo '<pre>'; print_r($results); echo '</pre>';die;
+    }
+
 	public function getmessagenumber()
 	{
           $results = $this->admin_model->messagenumber();
@@ -705,6 +718,15 @@ class Admin extends MY_Controller {
           //echo '<pre>'; print_r($results); echo '</pre>';die;
 	}
 
+    public function getdcompanynumber()
+    {
+          $results = $this->admin_model->dcompanynumber();
+
+          return $results;
+
+          //echo '<pre>'; print_r($results); echo '</pre>';die;
+    }
+
 	public function getproductnumber()
 	{
           $results = $this->admin_model->productnumber();
@@ -713,6 +735,24 @@ class Admin extends MY_Controller {
 
           //echo '<pre>'; print_r($results); echo '</pre>';die;
 	}
+
+    public function getdproductnumber()
+    {
+          $results = $this->admin_model->dproductnumber();
+
+          return $results;
+
+          //echo '<pre>'; print_r($results); echo '</pre>';die;
+    }
+
+    public function getdelproductnumber()
+    {
+          $results = $this->admin_model->delproductnumber();
+
+          return $results;
+
+          //echo '<pre>'; print_r($results); echo '</pre>';die;
+    }
 
 	
 	

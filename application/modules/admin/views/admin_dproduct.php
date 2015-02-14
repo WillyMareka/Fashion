@@ -161,8 +161,8 @@
                             <!-- block -->
                             <div class="block">
                                 <div class="navbar navbar-inner block-header">
-                                    <div class="muted pull-left">Products</div>
-                                    <div class="pull-right"><span class="badge badge-info"><?php echo $productnumber?></span>
+                                    <div class="muted pull-left">Removed Products</div>
+                                    <div class="pull-right"><span class="badge badge-info"><?php echo $delproductnumber?></span>
 
                                     </div>
                                 </div>
