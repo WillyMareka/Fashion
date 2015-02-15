@@ -98,6 +98,43 @@ class Manager extends MY_Controller {
          
     }
 
+
+    function updatemember()
+    {
+        $this->load->library('form_validation');
+        
+        $this->form_validation->set_rules('fname', 'First Name', 'trim|min_length[2]|required|xss_clean');
+        $this->form_validation->set_rules('mname', 'Middle Name', 'trim|min_length[2]|xss_clean');
+        $this->form_validation->set_rules('lname', 'Last Name', 'trim|min_length[2]|required|xss_clean');
+        $this->form_validation->set_rules('pnumber', 'Phone Number', 'trim|min_length[9]');
+        $this->form_validation->set_rules('age', 'Age', 'trim|min_length[2]');
+        $this->form_validation->set_rules('residence', 'Residence', 'trim|min_length[3]|xss_clean');
+        $this->form_validation->set_rules('religion', 'Religion', 'trim|min_length[3]|xss_clean');
+        $this->form_validation->set_rules('nationality', 'Nationality', 'trim|min_length[3]|required|xss_clean');
+        $this->form_validation->set_rules('email', 'Email Address', 'trim|required|valid_email|xss_clean');
+        
+
+        if($this->form_validation->run() == FALSE){
+           echo 'Not working';die();
+            redirect(base_url() .'manager/home');
+            
+        }else{
+
+                $result = $this->m_manager->update_member();
+
+              if($result){
+                 redirect(base_url() .'manager/home');
+
+              }else{
+                 echo 'There was a problem with the website.<br/>Please contact the administrator';
+              }
+
+
+         }
+    }
+
+
+
     function companyupdate()
     {
        $this->load->library('form_validation');
@@ -803,6 +840,13 @@ class Manager extends MY_Controller {
    {
    		
     $data['error'] = '';
+        $oid = $this->session->userdata('ac_id');
+        $results = $this->m_manager->ownprofile($oid);
+
+        foreach ($results as $key => $values) {
+            $odetails['ownprofile'][] = $values;  
+        }
+        $data['ownprofile'] = $odetails;
     
     
     $data['messagenumber']  = $this->getmessagenumber();
@@ -821,6 +865,13 @@ class Manager extends MY_Controller {
 
    function productsview()
    {
+        $oid = $this->session->userdata('ac_id');
+        $results = $this->m_manager->ownprofile($oid);
+
+        foreach ($results as $key => $values) {
+            $odetails['ownprofile'][] = $values;  
+        }
+        $data['ownprofile'] = $odetails;
     $data['messagenumber']  = $this->getmessagenumber();
     $data['approvenumber']  = $this->getwaitnumber();
     $data['productnumber']  = $this->getproductnumber();
@@ -835,6 +886,7 @@ class Manager extends MY_Controller {
    function approvals($type=NULL)
    {
     $data['error'] = '';
+        
     //echo '<pre>';print_r($message);echo'</pre>';die();
     $data['approve_message'] = $type;
     $data['waits'] = $this->choosewaits();
@@ -846,6 +898,13 @@ class Manager extends MY_Controller {
 
    function messages()
    {
+        $oid = $this->session->userdata('ac_id');
+        $results = $this->m_manager->ownprofile($oid);
+
+        foreach ($results as $key => $values) {
+            $odetails['ownprofile'][] = $values;  
+        }
+        $data['ownprofile'] = $odetails;
     $data['messagenumber']  = $this->getmessagenumber();
     $data['productnumber']  = $this->getproductnumber();
     $data['categorynumber']  = $this->getcategorynumber();
@@ -858,6 +917,13 @@ class Manager extends MY_Controller {
 
    function statistics()
    {
+        $oid = $this->session->userdata('ac_id');
+        $results = $this->m_manager->ownprofile($oid);
+
+        foreach ($results as $key => $values) {
+            $odetails['ownprofile'][] = $values;  
+        }
+        $data['ownprofile'] = $odetails;
     $data['messagenumber']  = $this->getmessagenumber();
     $data['productnumber']  = $this->getproductnumber();
     $data['categorynumber']  = $this->getcategorynumber();
@@ -869,6 +935,13 @@ class Manager extends MY_Controller {
 
    function category()
    {
+        $oid = $this->session->userdata('ac_id');
+        $results = $this->m_manager->ownprofile($oid);
+
+        foreach ($results as $key => $values) {
+            $odetails['ownprofile'][] = $values;  
+        }
+        $data['ownprofile'] = $odetails;
     $data['messagenumber']  = $this->getmessagenumber();
     $data['productnumber']  = $this->getproductnumber();
     $data['categorynumber']  = $this->getcategorynumber();
@@ -881,6 +954,13 @@ class Manager extends MY_Controller {
 
    function dcat()
    {
+        $oid = $this->session->userdata('ac_id');
+        $results = $this->m_manager->ownprofile($oid);
+
+        foreach ($results as $key => $values) {
+            $odetails['ownprofile'][] = $values;  
+        }
+        $data['ownprofile'] = $odetails;
     $data['messagenumber']  = $this->getmessagenumber();
     $data['productnumber']  = $this->getproductnumber();
     $data['categorynumber']  = $this->getcategorynumber();
@@ -894,6 +974,13 @@ class Manager extends MY_Controller {
 
    function type()
    {
+        $oid = $this->session->userdata('ac_id');
+        $results = $this->m_manager->ownprofile($oid);
+
+        foreach ($results as $key => $values) {
+            $odetails['ownprofile'][] = $values;  
+        }
+        $data['ownprofile'] = $odetails;
     $data['messagenumber']  = $this->getmessagenumber();
     $data['productnumber']  = $this->getproductnumber();
     $data['categorynumber']  = $this->getcategorynumber();
@@ -906,6 +993,13 @@ class Manager extends MY_Controller {
 
    function dtype()
    {
+        $oid = $this->session->userdata('ac_id');
+        $results = $this->m_manager->ownprofile($oid);
+
+        foreach ($results as $key => $values) {
+            $odetails['ownprofile'][] = $values;  
+        }
+        $data['ownprofile'] = $odetails;
     $data['messagenumber']  = $this->getmessagenumber();
     $data['productnumber']  = $this->getproductnumber();
     $data['categorynumber']  = $this->getcategorynumber();
@@ -921,6 +1015,13 @@ class Manager extends MY_Controller {
    {
       
     $data['error'] = '';
+        $oid = $this->session->userdata('ac_id');
+        $results = $this->m_manager->ownprofile($oid);
+
+        foreach ($results as $key => $values) {
+            $odetails['ownprofile'][] = $values;  
+        }
+        $data['ownprofile'] = $odetails;
     
     
     $data['messagenumber']  = $this->getmessagenumber();
@@ -942,6 +1043,13 @@ class Manager extends MY_Controller {
    {
       
     $data['error'] = '';
+        $oid = $this->session->userdata('ac_id');
+        $results = $this->m_manager->ownprofile($oid);
+
+        foreach ($results as $key => $values) {
+            $odetails['ownprofile'][] = $values;  
+        }
+        $data['ownprofile'] = $odetails;
     
     
     $data['messagenumber']  = $this->getmessagenumber();
@@ -960,6 +1068,13 @@ class Manager extends MY_Controller {
 
    function company()
    {
+        $oid = $this->session->userdata('ac_id');
+        $results = $this->m_manager->ownprofile($oid);
+
+        foreach ($results as $key => $values) {
+            $odetails['ownprofile'][] = $values;  
+        }
+        $data['ownprofile'] = $odetails;
     $data['messagenumber']  = $this->getmessagenumber();
     $data['productnumber']  = $this->getproductnumber();
     $data['categorynumber']  = $this->getcategorynumber();
@@ -973,6 +1088,13 @@ class Manager extends MY_Controller {
 
    function dcomp()
    {
+        $oid = $this->session->userdata('ac_id');
+        $results = $this->m_manager->ownprofile($oid);
+
+        foreach ($results as $key => $values) {
+            $odetails['ownprofile'][] = $values;  
+        }
+        $data['ownprofile'] = $odetails;
     $data['messagenumber']  = $this->getmessagenumber();
     $data['productnumber']  = $this->getproductnumber();
     $data['categorynumber']  = $this->getcategorynumber();
@@ -995,6 +1117,13 @@ class Manager extends MY_Controller {
        // echo '<pre>';print_r($data['user']);echo '</pre>';die;
 
         $data['error'] = '';
+        $oid = $this->session->userdata('ac_id');
+        $results = $this->m_manager->ownprofile($oid);
+
+        foreach ($results as $key => $values) {
+            $odetails['ownprofile'][] = $values;  
+        }
+        $data['ownprofile'] = $odetails;
         $data['messagenumber']  = $this->getmessagenumber();
     $data['productnumber']  = $this->getproductnumber();
     $data['categorynumber']  = $this->getcategorynumber();
@@ -1020,6 +1149,13 @@ class Manager extends MY_Controller {
        // echo '<pre>';print_r($data['user']);echo '</pre>';die;
 
         $data['error'] = '';
+        $oid = $this->session->userdata('ac_id');
+        $results = $this->m_manager->ownprofile($oid);
+
+        foreach ($results as $key => $values) {
+            $odetails['ownprofile'][] = $values;  
+        }
+        $data['ownprofile'] = $odetails;
         $data['messagenumber']  = $this->getmessagenumber();
     $data['productnumber']  = $this->getproductnumber();
     $data['categorynumber']  = $this->getcategorynumber();
@@ -1045,6 +1181,13 @@ class Manager extends MY_Controller {
        // echo '<pre>';print_r($data['user']);echo '</pre>';die;
 
         $data['error'] = '';
+        $oid = $this->session->userdata('ac_id');
+        $results = $this->m_manager->ownprofile($oid);
+
+        foreach ($results as $key => $values) {
+            $odetails['ownprofile'][] = $values;  
+        }
+        $data['ownprofile'] = $odetails;
         $data['messagenumber']  = $this->getmessagenumber();
     $data['productnumber']  = $this->getproductnumber();
     $data['categorynumber']  = $this->getcategorynumber();
@@ -1069,6 +1212,13 @@ class Manager extends MY_Controller {
        // echo '<pre>';print_r($data['user']);echo '</pre>';die;
 
         $data['error'] = '';
+        $oid = $this->session->userdata('ac_id');
+        $results = $this->m_manager->ownprofile($oid);
+
+        foreach ($results as $key => $values) {
+            $odetails['ownprofile'][] = $values;  
+        }
+        $data['ownprofile'] = $odetails;
         $data['messagenumber']  = $this->getmessagenumber();
     $data['productnumber']  = $this->getproductnumber();
     $data['categorynumber']  = $this->getcategorynumber();
@@ -1094,6 +1244,13 @@ class Manager extends MY_Controller {
        // echo '<pre>';print_r($data['user']);echo '</pre>';die;
 
         $data['error'] = '';
+        $oid = $this->session->userdata('ac_id');
+        $results = $this->m_manager->ownprofile($oid);
+
+        foreach ($results as $key => $values) {
+            $odetails['ownprofile'][] = $values;  
+        }
+        $data['ownprofile'] = $odetails;
         $data['messagenumber']  = $this->getmessagenumber();
     $data['productnumber']  = $this->getproductnumber();
     $data['categorynumber']  = $this->getcategorynumber();
@@ -1119,6 +1276,13 @@ class Manager extends MY_Controller {
        // echo '<pre>';print_r($data['user']);echo '</pre>';die;
 
         $data['error'] = '';
+        $oid = $this->session->userdata('ac_id');
+        $results = $this->m_manager->ownprofile($oid);
+
+        foreach ($results as $key => $values) {
+            $odetails['ownprofile'][] = $values;  
+        }
+        $data['ownprofile'] = $odetails;
         $data['messagenumber']  = $this->getmessagenumber();
     $data['productnumber']  = $this->getproductnumber();
     $data['categorynumber']  = $this->getcategorynumber();

@@ -22,26 +22,7 @@ class Admin extends MY_Controller {
         $this->pic_path = realpath(APPPATH . '../uploads/');
           
     }
-         
-
-
-
-        // if ($result) {
-        //     foreach ($result as $key => $user_details) {
-        //         $user = 
-
-
-        //     }
-        // }else{
-
-        // } 
-
-        // return $message_style;
-
-
-
-
-    
+   
 
     function updatemember()
     {
@@ -566,8 +547,13 @@ class Admin extends MY_Controller {
 	{
 
 		$data['error'] = '';
-		
-		
+        $oid = $this->session->userdata('ac_id');
+        $results = $this->admin_model->ownprofile($oid);
+
+        foreach ($results as $key => $values) {
+            $odetails['ownprofile'][] = $values;  
+        }
+        $data['ownprofile'] = $odetails;
 		$data['messagenumber']  = $this->getmessagenumber();
 		$data['productnumber']  = $this->getproductnumber();
 		$data['usernumber']  = $this->getusernumber();
@@ -585,6 +571,14 @@ class Admin extends MY_Controller {
 	public function tables()
 	{
 		$data['error'] = '';
+        
+        $oid = $this->session->userdata('ac_id');
+        $results = $this->admin_model->ownprofile($oid);
+
+        foreach ($results as $key => $values) {
+            $odetails['ownprofile'][] = $values;  
+        }
+        $data['ownprofile'] = $odetails;
 		$data['usernumber']  = $this->getusernumber();
 		$data['productnumber']  = $this->getproductnumber();
 		$data['messagenumber']  = $this->getmessagenumber();
@@ -639,6 +633,14 @@ class Admin extends MY_Controller {
 	public function forms()
 	{
 		$data['error'] = '';
+        $oid = $this->session->userdata('ac_id');
+        $results = $this->admin_model->ownprofile($oid);
+
+        foreach ($results as $key => $values) {
+            $odetails['ownprofile'][] = $values;  
+        }
+        $data['ownprofile'] = $odetails;
+
 		$data['product_categories']  = $this->getproductcategories();
 		$data['messagenumber']  = $this->getmessagenumber();
 		$data['usernumber']  = $this->getusernumber();
@@ -662,6 +664,14 @@ class Admin extends MY_Controller {
         foreach ($results as $key => $values) {
             $details['user'][] = $values;  
         }
+
+        $oid = $this->session->userdata('ac_id');
+        $results = $this->admin_model->ownprofile($oid);
+
+        foreach ($results as $key => $values) {
+            $odetails['ownprofile'][] = $values;  
+        }
+        $data['ownprofile'] = $odetails;
        // echo '<pre>';print_r($data['user']);echo '</pre>';die;
 
         $data['error'] = '';
@@ -686,6 +696,13 @@ class Admin extends MY_Controller {
         foreach ($results as $key => $values) {
             $details['company'][] = $values;  
         }
+        $oid = $this->session->userdata('ac_id');
+        $results = $this->admin_model->ownprofile($oid);
+
+        foreach ($results as $key => $values) {
+            $odetails['ownprofile'][] = $values;  
+        }
+        $data['ownprofile'] = $odetails;
        // echo '<pre>';print_r($data['user']);echo '</pre>';die;
 
         $data['error'] = '';
@@ -711,8 +728,15 @@ class Admin extends MY_Controller {
             $details['product'][] = $values;  
         }
        // echo '<pre>';print_r($data['user']);echo '</pre>';die;
-
+        
         $data['error'] = '';
+        $oid = $this->session->userdata('ac_id');
+        $results = $this->admin_model->ownprofile($oid);
+
+        foreach ($results as $key => $values) {
+            $odetails['ownprofile'][] = $values;  
+        }
+        $data['ownprofile'] = $odetails;
         $data['product_categories']  = $this->getproductcategories();
         $data['messagenumber']  = $this->getmessagenumber();
         $data['usernumber']  = $this->getusernumber();
@@ -731,6 +755,13 @@ class Admin extends MY_Controller {
 	public function delprod()
 	{
 		$data['error'] = '';
+        $oid = $this->session->userdata('ac_id');
+        $results = $this->admin_model->ownprofile($oid);
+
+        foreach ($results as $key => $values) {
+            $odetails['ownprofile'][] = $values;  
+        }
+        $data['ownprofile'] = $odetails;
 		$data['product_categories']  = $this->getproductcategories();
 		$data['messagenumber']  = $this->getmessagenumber();
 		$data['usernumber']  = $this->getusernumber();
@@ -750,6 +781,13 @@ class Admin extends MY_Controller {
 	public function dprod()
 	{
 		$data['error'] = '';
+        $oid = $this->session->userdata('ac_id');
+        $results = $this->admin_model->ownprofile($oid);
+
+        foreach ($results as $key => $values) {
+            $odetails['ownprofile'][] = $values;  
+        }
+        $data['ownprofile'] = $odetails;
 		$data['product_categories']  = $this->getproductcategories();
 		$data['messagenumber']  = $this->getmessagenumber();
 		$data['usernumber']  = $this->getusernumber();
@@ -769,6 +807,13 @@ class Admin extends MY_Controller {
 	public function users()
 	{
 		$data['error'] = '';
+        $oid = $this->session->userdata('ac_id');
+        $results = $this->admin_model->ownprofile($oid);
+
+        foreach ($results as $key => $values) {
+            $odetails['ownprofile'][] = $values;  
+        }
+        $data['ownprofile'] = $odetails;
 		$data['messagenumber']  = $this->getmessagenumber();
 		$data['usernumber']  = $this->getusernumber();
 		$data['productnumber']  = $this->getproductnumber();
@@ -784,6 +829,13 @@ class Admin extends MY_Controller {
 	public function dusers()
 	{
 		$data['error'] = '';
+        $oid = $this->session->userdata('ac_id');
+        $results = $this->admin_model->ownprofile($oid);
+
+        foreach ($results as $key => $values) {
+            $odetails['ownprofile'][] = $values;  
+        }
+        $data['ownprofile'] = $odetails;
 		$data['messagenumber']  = $this->getmessagenumber();
 		$data['usernumber']  = $this->getusernumber();
         $data['dusernumber']  = $this->getdusernumber();
@@ -800,6 +852,13 @@ class Admin extends MY_Controller {
 	public function company()
 	{
 		$data['error'] = '';
+        $oid = $this->session->userdata('ac_id');
+        $results = $this->admin_model->ownprofile($oid);
+
+        foreach ($results as $key => $values) {
+            $odetails['ownprofile'][] = $values;  
+        }
+        $data['ownprofile'] = $odetails;
 		$data['messagenumber']  = $this->getmessagenumber();
 		$data['usernumber']  = $this->getusernumber();
 		$data['productnumber']  = $this->getproductnumber();
@@ -815,6 +874,13 @@ class Admin extends MY_Controller {
 	public function dcompa()
 	{
 		$data['error'] = '';
+        $oid = $this->session->userdata('ac_id');
+        $results = $this->admin_model->ownprofile($oid);
+
+        foreach ($results as $key => $values) {
+            $odetails['ownprofile'][] = $values;  
+        }
+        $data['ownprofile'] = $odetails;
 		$data['messagenumber']  = $this->getmessagenumber();
 		$data['usernumber']  = $this->getusernumber();
 		$data['productnumber']  = $this->getproductnumber();
@@ -831,6 +897,13 @@ class Admin extends MY_Controller {
 	public function messages()
 	{
 		$data['error'] = '';
+        $oid = $this->session->userdata('ac_id');
+        $results = $this->admin_model->ownprofile($oid);
+
+        foreach ($results as $key => $values) {
+            $odetails['ownprofile'][] = $values;  
+        }
+        $data['ownprofile'] = $odetails;
 		$data['usernumber']  = $this->getusernumber();
 		$data['messagenumber']  = $this->getmessagenumber();
 		$data['companynumber']  = $this->getcompanynumber();
