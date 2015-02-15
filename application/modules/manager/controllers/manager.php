@@ -43,8 +43,11 @@ class Manager extends MY_Controller {
   }
 
 
-    function createcompaniesview($type)
+    function createcompaniesview($type,$status)
     {
+      switch($status){
+
+       case 'active':
         $companies = $this->m_manager->get_all_companies();
         $company_style = '';
         if ($companies) {
@@ -73,14 +76,47 @@ class Manager extends MY_Controller {
                 # code...
                 break;
             }
-        }
+        }break;
 
+        case 'deactive':
+         $companies = $this->m_manager->get_all_dcompanies();
+        $company_style = '';
+        if ($companies) {
+            switch ($type) {
+            case 'table':
+                $counter = 1;
+                foreach ($companies as $key => $company_details) {
+                    $company_style .= '<tr>';
+                    // $admin_style .= '<td>'.$counter.'</td>';
+                    $company_style .= '<td>'.$company_details['comp_id'].'</td>';
+                    $company_style .= '<td>'.$company_details['company_name'].'</td>';
+                    $company_style .= '<td>'.$company_details['company_location'].'</td>';
+                    $company_style .= '<td>'.$company_details['company_address'].'</td>';
+                    $company_style .= '<td>'.$company_details['company_pnumber'].'</td>';
+                    $company_style .= '<td>'.$company_details['company_email'].'</td>';
+                    $company_style .= '<td>'.$company_details['date_registered'].'</td>';
+                    $company_style .= '<td><a data-toggle="tooltip" data-placement="bottom" title="View Profile" href = "'.base_url().'manager/categoryprofile/'.$company_details['comp_id'].'"><i class="ion-eye icon black"></i></a></td>';
+                    $company_style .= '<td><a data-toggle="tooltip" data-placement="bottom" title="Activate Profile" href = "'.base_url().'manager/updatecompany/activate/'.$company_details['comp_id'].'"><i class="ion-ios-play icon black"></i></td>';
+                    
+                    $company_style .= '</tr>';
+                    $counter++;
+                }
+                break;
+            
+            
+            }
+        }break;
+      }
         return $company_style;
     }
 
 
-    function createadminsview($type)
+    function createadminsview($type,$status)
     {
+
+      switch($status){
+
+        case 'active':
          $admins = $this->m_manager->get_all_admins();
         $admin_style = '';
         if ($admins) {
@@ -107,12 +143,40 @@ class Manager extends MY_Controller {
                 }
                 break;
             
-            default:
-                # code...
-                break;
             }
-        }
+        }break;
 
+        case 'deactive':
+        $admins = $this->m_manager->get_all_dadmins();
+        $admin_style = '';
+        if ($admins) {
+            switch ($type) {
+            case 'table':
+                $counter = 1;
+                foreach ($admins as $key => $admin_details) {
+                    $admin_style .= '<tr>';
+                    // $admin_style .= '<td>'.$counter.'</td>';
+                    $admin_style .= '<td>'.$admin_details['ac_id'].'</td>';
+                    $admin_style .= '<td>'.$admin_details['f_name'].'</td>';
+                    $admin_style .= '<td>'.$admin_details['l_name'].'</td>';
+                    $admin_style .= '<td>'.$admin_details['age'].'</td>';
+                    $admin_style .= '<td>'.$admin_details['nationality'].'</td>';
+                    $admin_style .= '<td>'.$admin_details['phone_no'].'</td>';
+                    $admin_style .= '<td>'.$admin_details['email'].'</td>';
+                    $admin_style .= '<td>'.$admin_details['residence'].'</td>';
+                    $admin_style .= '<td>'.$admin_details['religion'].'</td>';
+                    $admin_style .= '<td>'.$admin_details['gender'].'</td>';
+                    $admin_style .= '<td><a data-toggle="tooltip" data-placement="bottom" title="View Profile" href = "'.base_url().'admin/adminprofile/'.$admin_details['ac_id'].'"><i class="ion-eye icon black"></i></a></td>';
+                    $admin_style .= '<td><a data-toggle="tooltip" data-placement="bottom" title="Activate Profile" href = "'.base_url().'admin/updateadmin/activate/'.$admin_details['ac_id'].'"><i class="ion-ios-play icon black"></i></td>';
+                    $admin_style .= '</tr>';
+                    $counter++;
+                }
+                break;
+            
+            
+            }
+        }break;
+       }
         return $admin_style;
       }
 
@@ -143,9 +207,7 @@ class Manager extends MY_Controller {
                 }
                 break;
             
-            default:
-                # code...
-                break;
+           
             }
         }
 
@@ -184,8 +246,11 @@ class Manager extends MY_Controller {
         return $message_style;
     }
 
-    function createcategoriesview($type)
+    function createcategoriesview($type,$status)
     {
+
+      switch($status){
+        case 'active':
         $categories = $this->m_manager->get_all_categories();
         $category_style = '';
         if ($categories) {
@@ -204,17 +269,40 @@ class Manager extends MY_Controller {
                 }
                 break;
             
-            default:
-                # code...
-                break;
+          
             }
-        }
+        }break;
 
+        case 'deactive':
+        $categories = $this->m_manager->get_all_dcategories();
+        $category_style = '';
+        if ($categories) {
+            switch ($type) {
+            case 'table':
+                $counter = 1;
+                foreach ($categories as $key => $category_details) {
+                    $category_style .= '<tr>';
+                    // $admin_style .= '<td>'.$counter.'</td>';
+                    $category_style .= '<td>'.$category_details['cat_id'].'</td>';
+                    $category_style .= '<td>'.$category_details['cat_name'].'</td>';
+                    $category_style .= '<td><a data-toggle="tooltip" data-placement="bottom" title="View Profile" href = "'.base_url().'manager/categoryprofile/'.$category_details['cat_id'].'"><i class="ion-eye icon black"></i></a></td>';
+                    $category_style .= '<td><a data-toggle="tooltip" data-placement="bottom" title="Activate Profile" href = "'.base_url().'manager/updatecategory/activate/'.$category_details['cat_id'].'"><i class="ion-ios-play icon black"></i></td>';
+                    $category_style .= '</tr>';
+                    $counter++;
+                }
+                break;
+            
+            }
+        }break;
+      }
         return $category_style;
     }
 
-    function createtypesview($type)
+    function createtypesview($type,$status)
     {
+      switch($status){
+
+        case 'active':
         $types = $this->m_manager->get_all_types();
         $typ_style = '';
         if ($types) {
@@ -233,12 +321,34 @@ class Manager extends MY_Controller {
                 }
                 break;
             
-            default:
-                # code...
-                break;
+            
             }
-        }
+        }break;
 
+
+        case 'deactive':
+        $types = $this->m_manager->get_all_dtypes();
+        $typ_style = '';
+        if ($types) {
+            switch ($type) {
+            case 'table':
+                $counter = 1;
+                foreach ($types as $key => $typ_details) {
+                    $typ_style .= '<tr>';
+                    // $admin_style .= '<td>'.$counter.'</td>';
+                    $typ_style .= '<td>'.$typ_details['type_id'].'</td>';
+                    $typ_style .= '<td>'.$typ_details['type_name'].'</td>';
+                    $typ_style .= '<td><a data-toggle="tooltip" data-placement="bottom" title="View Profile" href = "'.base_url().'manager/categoryprofile/'.$typ_details['type_id'].'"><i class="ion-eye icon black"></i></a></td>';
+                    $typ_style .= '<td><a data-toggle="tooltip" data-placement="bottom" title="Activate Profile" href = "'.base_url().'manager/updatetype/activate/'.$typ_details['type_id'].'"><i class="ion-ios-play icon black"></i></td>';
+                    $typ_style .= '</tr>';
+                    $counter++;
+                }
+                break;
+            
+            
+        }break;
+      }
+    }
         return $typ_style;
     }
 
@@ -500,6 +610,15 @@ class Manager extends MY_Controller {
           //echo '<pre>'; print_r($results); echo '</pre>';die;
   }
 
+  public function getdadminnumber()
+  {
+          $results = $this->m_manager->dadminnumber();
+
+          return $results;
+
+          //echo '<pre>'; print_r($results); echo '</pre>';die;
+  }
+
   public function getmessagenumber()
   {
           $results = $this->m_manager->messagenumber();
@@ -512,6 +631,15 @@ class Manager extends MY_Controller {
   public function getcompanynumber()
   {
           $results = $this->m_manager->companynumber();
+
+          return $results;
+
+          //echo '<pre>'; print_r($results); echo '</pre>';die;
+  }
+
+  public function getdcompanynumber()
+  {
+          $results = $this->m_manager->dcompanynumber();
 
           return $results;
 
@@ -536,9 +664,27 @@ class Manager extends MY_Controller {
           //echo '<pre>'; print_r($results); echo '</pre>';die;
   }
 
+  public function getdcategorynumber()
+  {
+          $results = $this->m_manager->dcategorynumber();
+
+          return $results;
+
+          //echo '<pre>'; print_r($results); echo '</pre>';die;
+  }
+
   public function gettypenumber()
   {
           $results = $this->m_manager->typenumber();
+
+          return $results;
+
+          //echo '<pre>'; print_r($results); echo '</pre>';die;
+  }
+
+  public function getdtypenumber()
+  {
+          $results = $this->m_manager->dtypenumber();
 
           return $results;
 
@@ -578,9 +724,9 @@ class Manager extends MY_Controller {
     $data['typenumber']  = $this->gettypenumber();
     $data['companynumber']  = $this->getcompanynumber();
     $data['product_table'] = $this->createproductsview('table');
-    $data['companies_table'] = $this->createcompaniesview('table');
-    $data['categories_table'] = $this->createcategoriesview('table');
-    $data['types_table'] = $this->createtypesview('table');
+    $data['companies_table'] = $this->createcompaniesview('table','active');
+    $data['categories_table'] = $this->createcategoriesview('table','active');
+    $data['types_table'] = $this->createtypesview('table','active');
 
    	$this->load->view('manager', $data);
    		
@@ -641,8 +787,21 @@ class Manager extends MY_Controller {
     $data['categorynumber']  = $this->getcategorynumber();
     $data['typenumber']  = $this->gettypenumber();
     $data['companynumber']  = $this->getcompanynumber(); 
-    $data['categories_table'] = $this->createcategoriesview('table');
+    $data['categories_table'] = $this->createcategoriesview('table','active');
     $this->load->view('category_form',$data);
+      
+   }
+
+   function dcat()
+   {
+    $data['messagenumber']  = $this->getmessagenumber();
+    $data['productnumber']  = $this->getproductnumber();
+    $data['categorynumber']  = $this->getcategorynumber();
+    $data['typenumber']  = $this->gettypenumber();
+    $data['companynumber']  = $this->getcompanynumber(); 
+    $data['dcategorynumber']  = $this->getdcategorynumber(); 
+    $data['categories_table'] = $this->createcategoriesview('table','deactive');
+    $this->load->view('dcategory_form',$data);
       
    }
 
@@ -653,8 +812,21 @@ class Manager extends MY_Controller {
     $data['categorynumber']  = $this->getcategorynumber();
     $data['typenumber']  = $this->gettypenumber();
     $data['companynumber']  = $this->getcompanynumber(); 
-    $data['types_table'] = $this->createtypesview('table'); 
+    $data['types_table'] = $this->createtypesview('table','active'); 
     $this->load->view('type_form',$data);
+      
+   }
+
+   function dtype()
+   {
+    $data['messagenumber']  = $this->getmessagenumber();
+    $data['productnumber']  = $this->getproductnumber();
+    $data['categorynumber']  = $this->getcategorynumber();
+    $data['typenumber']  = $this->gettypenumber();
+    $data['dtypenumber']  = $this->getdtypenumber();
+    $data['companynumber']  = $this->getcompanynumber(); 
+    $data['types_table'] = $this->createtypesview('table','deactive'); 
+    $this->load->view('dtype_form',$data);
       
    }
 
@@ -669,11 +841,33 @@ class Manager extends MY_Controller {
     $data['categorynumber']  = $this->getcategorynumber();
     $data['typenumber']  = $this->gettypenumber();
     $data['adminnumber']  = $this->getadminnumber();
+
     $data['companynumber']  = $this->getcompanynumber();
-    $data['admin_table'] = $this->createadminsview('table');
+    $data['admin_table'] = $this->createadminsview('table','active');
     
 
     $this->load->view('admin_page', $data);
+      
+   } 
+
+
+   function dadmin()
+   {
+      
+    $data['error'] = '';
+    
+    
+    $data['messagenumber']  = $this->getmessagenumber();
+    $data['productnumber']  = $this->getproductnumber();
+    $data['categorynumber']  = $this->getcategorynumber();
+    $data['typenumber']  = $this->gettypenumber();
+    $data['adminnumber']  = $this->getadminnumber();
+    $data['dadminnumber']  = $this->getdadminnumber();
+    $data['companynumber']  = $this->getcompanynumber();
+    $data['admin_table'] = $this->createadminsview('table','deactive');
+    
+
+    $this->load->view('dadmin_form', $data);
       
    } 
 
@@ -684,8 +878,22 @@ class Manager extends MY_Controller {
     $data['categorynumber']  = $this->getcategorynumber();
     $data['typenumber']  = $this->gettypenumber();
     $data['companynumber']  = $this->getcompanynumber();  
-    $data['companies_table'] = $this->createcompaniesview('table');
+    $data['companies_table'] = $this->createcompaniesview('table','active');
     $this->load->view('company_form',$data);
+      
+   }
+
+
+   function dcomp()
+   {
+    $data['messagenumber']  = $this->getmessagenumber();
+    $data['productnumber']  = $this->getproductnumber();
+    $data['categorynumber']  = $this->getcategorynumber();
+    $data['typenumber']  = $this->gettypenumber();
+    $data['companynumber']  = $this->getcompanynumber();  
+    $data['dcompanynumber']  = $this->getdcompanynumber();  
+    $data['companies_table'] = $this->createcompaniesview('table','deactive');
+    $this->load->view('dcompany_form',$data);
       
    }
 

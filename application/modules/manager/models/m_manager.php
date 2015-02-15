@@ -144,8 +144,28 @@ class M_manager extends MY_Model {
         return $data->users;
    }
 
+   public function dadminnumber(){
+    $sql = "SELECT COUNT(ac.ac_id) as users FROM accounts ac, logs l WHERE ac.is_deleted = 1 AND l.lt_id=ac.ac_id AND l.lt_id = 3 ";
+
+        $result = $this->db->query($sql);
+        $data = $result->row();
+        //echo $data->users;die();
+
+        return $data->users;
+   }
+
    public function companynumber(){
     $sql = "SELECT COUNT(`comp_id`) as companies FROM company WHERE `status` = 1";
+
+        $result = $this->db->query($sql);
+        $data = $result->row();
+        //print_r($data);die();
+
+        return $data->companies;
+   }
+
+   public function dcompanynumber(){
+    $sql = "SELECT COUNT(`comp_id`) as companies FROM company WHERE `status` = 0";
 
         $result = $this->db->query($sql);
         $data = $result->row();
@@ -204,6 +224,16 @@ class M_manager extends MY_Model {
         return $data->categories;
    }
 
+   public function dcategorynumber(){
+    $sql = "SELECT COUNT(`cat_id`) as categories FROM category WHERE `status` = 0";
+
+        $result = $this->db->query($sql);
+        $data = $result->row();
+        //print_r($data);die();
+
+        return $data->categories;
+   }
+
    public function typenumber(){
     $sql = "SELECT COUNT(`type_id`) as types FROM type  WHERE `status` = 1";
 
@@ -213,6 +243,17 @@ class M_manager extends MY_Model {
 
         return $data->types;
    }
+
+   public function dtypenumber(){
+    $sql = "SELECT COUNT(`type_id`) as types FROM type  WHERE `status` = 0";
+
+        $result = $this->db->query($sql);
+        $data = $result->row();
+        //print_r($data);die();
+
+        return $data->types;
+   }
+
 
 
    public function get_all_products()
@@ -269,12 +310,51 @@ class M_manager extends MY_Model {
     return $companies;
   }
 
+  public function get_all_dcompanies()
+  {
+    $companies = array();
+    $query = $this->db->get_where('company', array('status' => 0));
+    $result = $query->result_array();
+
+    if ($result) {
+      foreach ($result as $key => $value) {
+        $companies[$value['comp_id']] = $value;
+      }
+      //echo '<pre>';print_r($companies);echo '</pre>';die();
+      return $companies;
+
+    }
+    
+    return $companies;
+  }
+
   public function get_all_admins()
   {
     $admin = array();
     
     $this->db->join('logs', 'accounts.ac_id = logs.log_id');
     $query = $this->db->get_where('accounts',array('lt_id' => 3, 'is_deleted' => 0));
+
+    $result = $query->result_array();
+
+    if ($result) {
+      foreach ($result as $key => $value) {
+        $admin[$value['ac_id']] = $value;
+      }
+      //echo '<pre>';print_r($admin);echo '</pre>';die();
+      
+      return $admin;
+    }
+    
+    return $admin;
+  }
+
+  public function get_all_dadmins()
+  {
+    $admin = array();
+    
+    $this->db->join('logs', 'accounts.ac_id = logs.log_id');
+    $query = $this->db->get_where('accounts',array('lt_id' => 3, 'is_deleted' => 1));
 
     $result = $query->result_array();
 
@@ -308,10 +388,46 @@ class M_manager extends MY_Model {
     return $types;
   }
 
+  public function get_all_dtypes()
+  {
+    $types = array();
+    $query = $this->db->get_where('type', array('status' => 0));
+    $result = $query->result_array();
+
+    if ($result) {
+      foreach ($result as $key => $value) {
+        $types[$value['type_id']] = $value;
+      }
+      //echo '<pre>';print_r($types);echo '</pre>';die();
+      return $types;
+
+    }
+    
+    return $types;
+  }
+
   public function get_all_categories()
   {
     $categories = array();
     $query = $this->db->get_where('category', array('status' => 1));
+    $result = $query->result_array();
+
+    if ($result) {
+      foreach ($result as $key => $value) {
+        $categories[$value['cat_id']] = $value;
+      }
+      //echo '<pre>';print_r($categories);echo '</pre>';die();
+      return $categories;
+
+    }
+    
+    return $categories;
+  }
+
+  public function get_all_dcategories()
+  {
+    $categories = array();
+    $query = $this->db->get_where('category', array('status' => 0));
     $result = $query->result_array();
 
     if ($result) {
