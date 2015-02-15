@@ -22,6 +22,82 @@ class Admin extends MY_Controller {
         $this->pic_path = realpath(APPPATH . '../uploads/');
           
     }
+         
+
+
+
+        // if ($result) {
+        //     foreach ($result as $key => $user_details) {
+        //         $user = 
+
+
+        //     }
+        // }else{
+
+        // } 
+
+        // return $message_style;
+
+
+
+
+    function viewprofile($ac_id)
+    {
+        $userdet = array();
+        $results = $this->admin_model->userprofile($ac_id);
+
+        foreach ($results as $key => $values) {
+            $user['user'][] = $values;  
+        }
+       // echo '<pre>';print_r($data['user']);echo '</pre>';die;
+
+        $data['error'] = '';
+        $data['product_categories']  = $this->getproductcategories();
+        $data['messagenumber']  = $this->getmessagenumber();
+        $data['usernumber']  = $this->getusernumber();
+        $data['product_types']  = $this->getproducttypes();
+        $data['productnumber']  = $this->getproductnumber();
+        $data['companynumber']  = $this->getcompanynumber();
+        $data['user'] = $user;
+        $data['product_companies']  = $this->getproductcompanies();
+
+        $this->load->view('view_user', $data);
+ 
+    }
+
+    function updatemember()
+    {
+        $this->load->library('form_validation');
+        
+        $this->form_validation->set_rules('fname', 'First Name', 'trim|min_length[2]|required|xss_clean');
+        $this->form_validation->set_rules('mname', 'Middle Name', 'trim|min_length[2]|xss_clean');
+        $this->form_validation->set_rules('lname', 'Last Name', 'trim|min_length[2]|required|xss_clean');
+        $this->form_validation->set_rules('pnumber', 'Phone Number', 'trim|min_length[9]');
+        $this->form_validation->set_rules('age', 'Age', 'trim|min_length[2]');
+        $this->form_validation->set_rules('residence', 'Residence', 'trim|min_length[3]|xss_clean');
+        $this->form_validation->set_rules('religion', 'Religion', 'trim|min_length[3]|xss_clean');
+        $this->form_validation->set_rules('nationality', 'Nationality', 'trim|min_length[3]|required|xss_clean');
+        $this->form_validation->set_rules('email', 'Email Address', 'trim|required|valid_email|xss_clean');
+        
+
+        if($this->form_validation->run() == FALSE){
+           echo 'Not working';die();
+            redirect(base_url() .'admin/forms');
+            
+        }else{
+
+                $result = $this->admin_model->update_member();
+
+              if($result){
+                 redirect(base_url() .'admin/forms');
+
+              }else{
+                 echo 'There was a problem with the website.<br/>Please contact the administrator';
+              }
+
+
+         }
+    }
 
 	
 
@@ -50,7 +126,7 @@ class Admin extends MY_Controller {
                     $user_style .= '<td>'.$user_details['residence'].'</td>';
                     $user_style .= '<td>'.$user_details['religion'].'</td>';
                     $user_style .= '<td>'.$user_details['gender'].'</td>';
-                    $user_style .= '<td><a data-toggle="tooltip" data-placement="bottom" title="View Profile" href = "'.base_url().'admin/userprofile/'.$user_details['ac_id'].'"><i class="ion-eye icon black"></i></a></td>';
+                    $user_style .= '<td><a data-toggle="tooltip" data-placement="bottom" title="View Profile" href = "'.base_url().'admin/viewprofile/'.$user_details['ac_id'].'"><i class="ion-eye icon black"></i></a></td>';
                     $user_style .= '<td><a data-toggle="tooltip" data-placement="bottom" title="Delete Profile" href = "'.base_url().'admin/updateuser/delete/'.$user_details['ac_id'].'"><i class="ion-trash-a icon black"></i></td>';
                     $user_style .= '</tr>';
                     $counter++;
@@ -565,6 +641,26 @@ class Admin extends MY_Controller {
 
 		$this->load->view('admin_form', $data);
 	}
+
+    public function viewuser($ac_id)
+    {
+        $ac_id = "";
+        $data['error'] = '';
+        $data['product_categories']  = $this->getproductcategories();
+        $data['messagenumber']  = $this->getmessagenumber();
+        $data['usernumber']  = $this->getusernumber();
+        $data['product_types']  = $this->getproducttypes();
+        $data['productnumber']  = $this->getproductnumber();
+        $data['companynumber']  = $this->getcompanynumber();
+        $data['product_table'] = $this->createproductsview('table','active');
+        $data['product_companies']  = $this->getproductcompanies();
+        
+        $data['user'] = $this->viewprofile($ac_id);
+
+        //echo "<pre>";print_r($userdetails);echo "</pre>";die();
+
+        $this->load->view('view_user', $data);
+    }
 
 	public function delprod()
 	{
