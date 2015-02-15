@@ -123,7 +123,7 @@ class User extends MY_Controller {
         $this->form_validation->set_rules('firstname', 'First Name', 'trim|min_length[2]|required|xss_clean');
         $this->form_validation->set_rules('middlename', 'Middle Name', 'trim|min_length[2]|xss_clean');
         $this->form_validation->set_rules('lastname', 'Last Name', 'trim|min_length[2]|required|xss_clean');
-        $this->form_validation->set_rules('phonenumber', 'Phone Number', 'trim|min_length[10]');
+        $this->form_validation->set_rules('phonenumber', 'Phone Number', 'trim|min_length[9]');
         $this->form_validation->set_rules('age', 'Age', 'trim|min_length[2]');
         $this->form_validation->set_rules('residence', 'Residence', 'trim|min_length[3]|xss_clean');
         $this->form_validation->set_rules('religion', 'Religion', 'trim|min_length[3]|xss_clean');

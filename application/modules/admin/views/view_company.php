@@ -158,13 +158,13 @@
                          <!-- block -->
                         <div class="block">
                             <div class="navbar navbar-inner block-header">
-                                <div class="muted pull-left">Update User</div>
-                                <div class="muted pull-right"><a href = <?php echo base_url(). 'admin/users'?>><button class="btn">Back</button></a></div>
+                                <div class="muted pull-left">View Company</div>
+                                <div class="muted pull-right"><a href = <?php echo base_url(). 'admin/company'?>><button class="btn">Back</button></a></div>
                             </div>
                             <div class="block-content collapse in">
                                 <div class="span12">
                     <!-- BEGIN FORM-->
-                    <?php foreach ($user as $key => $value) {
+                    <?php foreach ($company as $key => $value) {
                             foreach ($value as $q => $data) {
                             
                            //echo '<pre>';print_r($user);echo'</pre>';die();
@@ -173,10 +173,8 @@
                             ?>
 
 
-                    <form enctype="multipart/form-data" method="POST" action="<?php echo base_url() . 'admin/updatemember'?>" class="form-horizontal black" role="form">
-                        <?php 
-                                  echo form_open_multipart(base_url().'admin/updatemember');
-                              ?>
+                    <form enctype="multipart/form-data" method="POST" action="#" class="form-horizontal black" role="form">
+                        
                         <fieldset>
                                <?php echo $error?>
 
@@ -190,100 +188,48 @@
                             </div>
 
                             <div class="control-group">
-                                <label class="control-label">Account No. <?php echo $data['ac_id']; ?></label>
+                                <label class="control-label">Company No. <?php echo $data['comp_id']; ?></label>
                                 <div class="controls">
-                                    <input name="id" type="hidden"  value="<?php echo $data['ac_id']; ?>" class="span6 m-wrap form-control "/>
-                                </div>
-                            </div>
-
-                            <div class="control-group" >
-                                <label class="control-label"></label>
-                                <div class="controls" >
-                                    <img style="width:300px;height:300px;" src="<?php echo $data['picture']; ?>">
-                                </div>
-                            </div>
-
-                            
-
-                            <div class="control-group">
-                                <label class="control-label">User First Name<span class="required">*</span></label>
-                                <div class="controls">
-                                    <input type="text" name="fname" data-required="1" required value="<?php echo $data['f_name']; ?>" class="span6 m-wrap form-control"/>
+                                    <input name="id" type="hidden"  value="<?php echo $data['comp_id']; ?>" class="span6 m-wrap form-control "/>
                                 </div>
                             </div>
 
                             <div class="control-group">
-                                <label class="control-label">User Middle Name<span class="required">*</span></label>
-                                <div class="controls">
-                                    <input name="mname" type="text" required value="<?php echo $data['m_name']?>" class="span6 m-wrap form-control">
-                                </div>
-                            </div>
+                  <label class="control-label">Company Name<span class="required">*</span></label>
+                  <div class="controls">
+                    <input type="text" name="companyname" data-required="1" required value="<?php echo $data['company_name']; ?>" class="span6 m-wrap form-control"/>
+                  </div>
+                </div>
 
-                            <div class="control-group">
-                                <label class="control-label">User Last Name<span class="required">*</span></label>
-                                <div class="controls">
-                                    <input name="lname" type="text" required value="<?php echo $data['l_name']?>" class="span6 m-wrap form-control">
-                                </div>
-                             </div>
+                <div class="control-group">
+                  <label class="control-label">Location<span class="required">*</span></label>
+                  <div class="controls">
+                    <input type="text" name="companylocation" data-required="1" required value="<?php echo $data['company_location']; ?>" class="span6 m-wrap form-control"/>
+                  </div>
+                </div>
 
-                            <div class="control-group">
-                                <label class="control-label">Age<span class="required">*</span></label>
-                                <div class="controls">
-                                    <input name="age" type="text" required value="<?php echo $data['age']?>" class="span6 m-wrap form-control "/>
-                                </div>
-                            </div>
+                <div class="control-group">
+                  <label class="control-label">Address<span class="required">*</span></label>
+                  <div class="controls">
+                    <input type="text" name="companyaddress" data-required="1" required value="<?php echo $data['company_address']; ?>" class="span6 m-wrap form-control"/>
+                  </div>
+                </div>
 
-                            <div class="control-group">
-                               <label class="control-label">Nationality<span class="required">*</span></label>
-                               <div class="controls">
-                                   <input name="nationality" type="text" required value="<?php echo $data['nationality']?>" class="span6 m-wrap form-control "/>
-                                </div>
-                            </div>
+                <div class="control-group">
+                  <label class="control-label">Phone Number<span class="required">*</span></label>
+                  <div class="controls">
+                    <input type="text" name="companypnumber" data-required="1" required value="<?php echo $data['company_pnumber']; ?>" class="span6 m-wrap form-control"/>
+                  </div>
+                </div>
 
-                            <div class="control-group">
-                                <label class="control-label">Phone Number<span class="required">*</span></label>
-                                <div class="controls">
-                                    <input name="pnumber" type="text" required value="<?php echo $data['phone_no']?>" class="span6 m-wrap form-control ">
-                                </div>
-                            </div>
-
-                            <div class="control-group">
-                                <label class="control-label">Email<span class="required">*</span></label>
-                                <div class="controls">
-                                    <input name="email" type="email" required value="<?php echo $data['email']?>" class="span6 m-wrap form-control ">
-                                </div>
-                            </div>
-
-                            <div class="control-group">
-                                <label class="control-label">Residence<span class="required">*</span></label>
-                                <div class="controls">
-                                    <input name="residence" type="text" required value="<?php echo $data['residence']?>" class="span6 m-wrap form-control ">
-                                </div>
-                            </div>
-
-                            <div class="control-group">
-                                <label class="control-label">Religion<span class="required">*</span></label>
-                                <div class="controls">
-                                    <input name="religion" type="text" required value="<?php echo $data['religion']?>" class="span6 m-wrap form-control ">
-                                </div>
-                            </div>
-
-                            <div class="control-group">
-                                <label class="control-label">Gender<span class="required">*</span></label>
-                                <div class="controls">
-                                    <input name="gender" type="text" required value="<?php echo $data['gender']?>" class="span6 m-wrap form-control ">
-                                </div>
-                            </div>
-                            
-                        
-                            <div class="form-actions">
-                                <button type="submit" class="btn btn-primary">Update User Account</button>
-                                
-                            </div>
+                <div class="control-group">
+                  <label class="control-label">Email<span class="required">*</span></label>
+                  <div class="controls">
+                    <input type="text" name="companyemail" data-required="1" required value="<?php echo $data['company_email']; ?>" class="span6 m-wrap form-control"/>
+                  </div>
+                </div>
                         </fieldset>
-                        <?php 
-                                    echo form_close();
-                                 ?>
+                       
                                  
                     </form>
 
@@ -294,7 +240,7 @@
                        }
                         ?>
                     <!-- END FORM-->
-                    <a href = <?php echo base_url(). 'admin/users'?>><button class="btn">Back</button></a>
+                    <a href = <?php echo base_url(). 'admin/company'?>><button class="btn">Back</button></a>
                 </div>
                 </div>
             </div>

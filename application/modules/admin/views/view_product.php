@@ -133,7 +133,9 @@
                         <li>
                             <a href="<?php echo base_url(). 'admin/forms'?>"><span class="badge badge-alert pull-right"><?php echo $productnumber?></span> Product Form</a>
                         </li>
-                       
+                        <!-- <li>
+                            <a href="<?php echo base_url(). 'admin/statistics'?>"><i class="icon-chevron-right"></i> Statistics (Charts)</a>
+                        </li> -->
                         <li>
                             <a href="<?php echo base_url(). 'admin/messages'?>"><span class="badge badge-warning pull-right"><?php echo $messagenumber?></span> Messages</a>
                         </li>
@@ -154,45 +156,41 @@
 
                   
                     <div class="row-fluid">
-                        
                          <!-- block -->
                         <div class="block">
                             <div class="navbar navbar-inner block-header">
-                                <div class="muted pull-left">Update User</div>
-                                <div class="muted pull-right"><a href = <?php echo base_url(). 'admin/users'?>><button class="btn">Back</button></a></div>
+                                <div class="muted pull-left">New Product</div>
+                                <div class="muted pull-right"><a href="<?php echo base_url(). 'admin/forms'?>"><button type="reset" class="btn">Back</button></a></div>
                             </div>
                             <div class="block-content collapse in">
                                 <div class="span12">
-                    <!-- BEGIN FORM-->
-                    <?php foreach ($user as $key => $value) {
+					<!-- BEGIN FORM-->
+
+          <?php foreach ($product as $key => $value) {
                             foreach ($value as $q => $data) {
                             
                            //echo '<pre>';print_r($user);echo'</pre>';die();
                             for ($i=0; $i <= $key ; $i++) { 
                                 
                             ?>
-
-
-                    <form enctype="multipart/form-data" method="POST" action="<?php echo base_url() . 'admin/updatemember'?>" class="form-horizontal black" role="form">
-                        <?php 
-                                  echo form_open_multipart(base_url().'admin/updatemember');
+					<form enctype="multipart/form-data" method="POST" action="<?php echo base_url() . 'admin/productupdate'?>" class="form-horizontal black" role="form">
+						<?php 
+                                  echo form_open_multipart(base_url().'admin/productupdate');
                               ?>
                         <fieldset>
-                               <?php echo $error?>
+							<div class="alert alert-error hide">
+								<button class="close" data-dismiss="alert"></button>
+								Please complete filling the form to be updated
+							</div>
+							<div class="alert alert-success hide">
+								<button class="close" data-dismiss="alert"></button>
+								Product has been updated successfully
+							</div>
 
-                            <div class="alert alert-error hide">
-                                <button class="close" data-dismiss="alert"></button>
-                                Please change the fields that are to be updated
-                            </div>
-                            <div class="alert alert-success hide">
-                                <button class="close" data-dismiss="alert"></button>
-                                Account has been updated successfully
-                            </div>
-
-                            <div class="control-group">
-                                <label class="control-label">Account No. <?php echo $data['ac_id']; ?></label>
+              <div class="control-group">
+                                <label class="control-label">Product ID. <?php echo $data['prod_id']; ?></label>
                                 <div class="controls">
-                                    <input name="id" type="hidden"  value="<?php echo $data['ac_id']; ?>" class="span6 m-wrap form-control "/>
+                                    <input name="id" type="hidden"  value="<?php echo $data['prod_id']; ?>" class="span6 m-wrap form-control "/>
                                 </div>
                             </div>
 
@@ -203,103 +201,82 @@
                                 </div>
                             </div>
 
-                            
+  							<div class="control-group">
+  								<label class="control-label">Product Name<span class="required">*</span></label>
+  								<div class="controls">
+  									<input type="text" name="prodname" data-required="1" required value="<?php echo $data['prod_name']?>" class="span6 m-wrap form-control"/>
+  								</div>
+  							</div>
 
-                            <div class="control-group">
-                                <label class="control-label">User First Name<span class="required">*</span></label>
-                                <div class="controls">
-                                    <input type="text" name="fname" data-required="1" required value="<?php echo $data['f_name']; ?>" class="span6 m-wrap form-control"/>
-                                </div>
-                            </div>
+  							<div class="control-group">
+  								<label class="control-label">Product Category<span class="required">*</span></label>
+  								<div class="controls">
+                                    <input name="prodcategory" type="text" required value="<?php echo $data['prod_cat']?>" class="span6 m-wrap form-control">
+                                       
+  									
+  								</div>
+  							</div>
 
-                            <div class="control-group">
-                                <label class="control-label">User Middle Name<span class="required">*</span></label>
-                                <div class="controls">
-                                    <input name="mname" type="text" required value="<?php echo $data['m_name']?>" class="span6 m-wrap form-control">
-                                </div>
-                            </div>
+  							<div class="control-group">
+  								<label class="control-label">Product Type<span class="required">*</span></label>
+  								<div class="controls">
+                                    <input  name="prodtype" type="text" required value="<?php echo $data['prod_type']?>" class="span6 m-wrap form-control">
+                                    
+  									<!-- <span class="help-block">e.g: http://www.demo.com or http://demo.com</span> -->
+  								</div>
+  							</div>
 
-                            <div class="control-group">
-                                <label class="control-label">User Last Name<span class="required">*</span></label>
-                                <div class="controls">
-                                    <input name="lname" type="text" required value="<?php echo $data['l_name']?>" class="span6 m-wrap form-control">
-                                </div>
-                             </div>
+  							<div class="control-group">
+  								<label class="control-label">Quantity<span class="required">*</span></label>
+  								<div class="controls">
+  									<input name="prodquantity" type="text" required value="<?php echo $data['quantity']?>" class="span6 m-wrap form-control "/>
+  								</div>
+  							</div>
 
-                            <div class="control-group">
-                                <label class="control-label">Age<span class="required">*</span></label>
-                                <div class="controls">
-                                    <input name="age" type="text" required value="<?php echo $data['age']?>" class="span6 m-wrap form-control "/>
-                                </div>
-                            </div>
+                <div class="control-group">
+                  <label class="control-label">Price<span class="required">*</span></label>
+                  <div class="controls">
+                    <input name="prodprice" type="text" required value="<?php echo $data['price']?>" class="span6 m-wrap form-control "/>
+                  </div>
+                </div>
 
-                            <div class="control-group">
-                               <label class="control-label">Nationality<span class="required">*</span></label>
-                               <div class="controls">
-                                   <input name="nationality" type="text" required value="<?php echo $data['nationality']?>" class="span6 m-wrap form-control "/>
-                                </div>
-                            </div>
 
-                            <div class="control-group">
-                                <label class="control-label">Phone Number<span class="required">*</span></label>
-                                <div class="controls">
-                                    <input name="pnumber" type="text" required value="<?php echo $data['phone_no']?>" class="span6 m-wrap form-control ">
-                                </div>
-                            </div>
-
-                            <div class="control-group">
-                                <label class="control-label">Email<span class="required">*</span></label>
-                                <div class="controls">
-                                    <input name="email" type="email" required value="<?php echo $data['email']?>" class="span6 m-wrap form-control ">
-                                </div>
-                            </div>
-
-                            <div class="control-group">
-                                <label class="control-label">Residence<span class="required">*</span></label>
-                                <div class="controls">
-                                    <input name="residence" type="text" required value="<?php echo $data['residence']?>" class="span6 m-wrap form-control ">
-                                </div>
-                            </div>
-
-                            <div class="control-group">
-                                <label class="control-label">Religion<span class="required">*</span></label>
-                                <div class="controls">
-                                    <input name="religion" type="text" required value="<?php echo $data['religion']?>" class="span6 m-wrap form-control ">
-                                </div>
-                            </div>
-
-                            <div class="control-group">
-                                <label class="control-label">Gender<span class="required">*</span></label>
-                                <div class="controls">
-                                    <input name="gender" type="text" required value="<?php echo $data['gender']?>" class="span6 m-wrap form-control ">
-                                </div>
-                            </div>
-                            
-                        
-                            <div class="form-actions">
-                                <button type="submit" class="btn btn-primary">Update User Account</button>
-                                
-                            </div>
-                        </fieldset>
+  							<div class="control-group">
+  								<label class="control-label">Company Name<span class="required">*</span></label>
+  								<div class="controls">
+                                    <input name="prodcompany" type="text" required value="<?php echo $data['prod_company']?>" class="span6 m-wrap form-control ">
+                                      
+  									<!-- <span class="help-block">e.g: 5500 0000 0000 0004</span> -->
+  								</div>
+  							</div>
+  							
+  						
+  							<div class="form-actions">
+  								<button type="submit" class="btn btn-primary">Update Product </button>
+  								
+  							</div>
+						</fieldset>
                         <?php 
                                     echo form_close();
                                  ?>
-                                 
-                    </form>
+					</form>
 
-                        <?php 
+          <?php 
                              }
                          }
                         
                        }
                         ?>
-                    <!-- END FORM-->
-                    <a href = <?php echo base_url(). 'admin/users'?>><button class="btn">Back</button></a>
-                </div>
-                </div>
-            </div>
+
+                                 <a href="<?php echo base_url(). 'admin/forms'?>"><button type="reset" class="btn">Back</button></a>
+          
+					<!-- END FORM-->
+				</div>
+			    </div>
+			</div>
                      
-            </div>
+		    </div>
+
 
 
 
