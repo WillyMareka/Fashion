@@ -43,6 +43,93 @@ class Manager extends MY_Controller {
   }
 
 
+    function categoryupdate()
+    {
+       $this->load->library('form_validation');
+        
+        $this->form_validation->set_rules('catname', 'Category Name', 'trim|required|xss_clean|is_unique[category.cat_name]');
+        
+        
+
+    if($this->form_validation->run() == FALSE){
+      // echo 'Not working';die();
+      redirect(base_url() .'manager/category');
+        
+    }else{
+ 
+          $result = $this->m_manager->update_category();
+               //print_r($result);
+
+        if($result){
+                redirect(base_url() .'manager/category');
+
+          }else{
+                 echo 'There was a problem with the website.<br/>Please contact the administrator';
+        }
+        }
+         
+    }
+
+
+     function typeupdate()
+    {
+       $this->load->library('form_validation');
+        
+        $this->form_validation->set_rules('typename', 'Type Name', 'trim|required|xss_clean|is_unique[type.type_name]');
+        
+        
+
+    if($this->form_validation->run() == FALSE){
+      // echo 'Not working';die();
+      redirect(base_url() .'manager/type');
+        
+    }else{
+ 
+          $result = $this->m_manager->update_type();
+               //print_r($result);
+
+        if($result){
+                redirect(base_url() .'manager/type');
+
+          }else{
+                 echo 'There was a problem with the website.<br/>Please contact the administrator';
+        }
+        }
+         
+    }
+
+    function companyupdate()
+    {
+       $this->load->library('form_validation');
+        
+        $this->form_validation->set_rules('companyname', 'Company Name', 'trim|required|xss_clean');
+        $this->form_validation->set_rules('companylocation', 'Company Location', 'trim|required|xss_clean');
+        $this->form_validation->set_rules('companyaddress', 'Company Address', 'trim|required|xss_clean');
+        $this->form_validation->set_rules('companypnumber', 'Company Phone Number', 'trim|required|xss_clean');
+        $this->form_validation->set_rules('companyemail', 'Company Email', 'trim|required|xss_clean');
+        
+        
+
+    if($this->form_validation->run() == FALSE){
+      // echo 'Not working';die();
+      redirect(base_url() .'manager/company');
+        
+    }else{
+ 
+          $result = $this->m_manager->update_company();
+               //print_r($result);die();
+
+        if($result){
+                redirect(base_url() .'manager/company');
+
+          }else{
+                 echo 'There was a problem with the website.<br/>Please contact the administrator';
+        }
+        }
+         
+    }
+
+
     function createcompaniesview($type,$status)
     {
       switch($status){
@@ -64,7 +151,7 @@ class Manager extends MY_Controller {
                     $company_style .= '<td>'.$company_details['company_pnumber'].'</td>';
                     $company_style .= '<td>'.$company_details['company_email'].'</td>';
                     $company_style .= '<td>'.$company_details['date_registered'].'</td>';
-                    $company_style .= '<td><a data-toggle="tooltip" data-placement="bottom" title="View Profile" href = "'.base_url().'manager/categoryprofile/'.$company_details['comp_id'].'"><i class="ion-eye icon black"></i></a></td>';
+                    $company_style .= '<td><a data-toggle="tooltip" data-placement="bottom" title="View Profile" href = "'.base_url().'manager/companyprofile/'.$company_details['comp_id'].'"><i class="ion-eye icon black"></i></a></td>';
                     $company_style .= '<td><a data-toggle="tooltip" data-placement="bottom" title="Delete Profile" href = "'.base_url().'manager/updatecompany/delete/'.$company_details['comp_id'].'"><i class="ion-trash-a icon black"></i></td>';
                     
                     $company_style .= '</tr>';
@@ -136,8 +223,8 @@ class Manager extends MY_Controller {
                     $admin_style .= '<td>'.$admin_details['residence'].'</td>';
                     $admin_style .= '<td>'.$admin_details['religion'].'</td>';
                     $admin_style .= '<td>'.$admin_details['gender'].'</td>';
-                    $admin_style .= '<td><a data-toggle="tooltip" data-placement="bottom" title="View Profile" href = "'.base_url().'admin/adminprofile/'.$admin_details['ac_id'].'"><i class="ion-eye icon black"></i></a></td>';
-                    $admin_style .= '<td><a data-toggle="tooltip" data-placement="bottom" title="Delete Profile" href = "'.base_url().'admin/updateadmin/delete/'.$admin_details['ac_id'].'"><i class="ion-trash-a icon black"></i></td>';
+                    $admin_style .= '<td><a data-toggle="tooltip" data-placement="bottom" title="View Profile" href = "'.base_url().'manager/adminprofile/'.$admin_details['ac_id'].'"><i class="ion-eye icon black"></i></a></td>';
+                    $admin_style .= '<td><a data-toggle="tooltip" data-placement="bottom" title="Delete Profile" href = "'.base_url().'manager/updateadmin/delete/'.$admin_details['ac_id'].'"><i class="ion-trash-a icon black"></i></td>';
                     $admin_style .= '</tr>';
                     $counter++;
                 }
@@ -166,8 +253,8 @@ class Manager extends MY_Controller {
                     $admin_style .= '<td>'.$admin_details['residence'].'</td>';
                     $admin_style .= '<td>'.$admin_details['religion'].'</td>';
                     $admin_style .= '<td>'.$admin_details['gender'].'</td>';
-                    $admin_style .= '<td><a data-toggle="tooltip" data-placement="bottom" title="View Profile" href = "'.base_url().'admin/adminprofile/'.$admin_details['ac_id'].'"><i class="ion-eye icon black"></i></a></td>';
-                    $admin_style .= '<td><a data-toggle="tooltip" data-placement="bottom" title="Activate Profile" href = "'.base_url().'admin/updateadmin/activate/'.$admin_details['ac_id'].'"><i class="ion-ios-play icon black"></i></td>';
+                    $admin_style .= '<td><a data-toggle="tooltip" data-placement="bottom" title="View Profile" href = "'.base_url().'manager/adminprofile/'.$admin_details['ac_id'].'"><i class="ion-eye icon black"></i></a></td>';
+                    $admin_style .= '<td><a data-toggle="tooltip" data-placement="bottom" title="Activate Profile" href = "'.base_url().'manager/updateadmin/activate/'.$admin_details['ac_id'].'"><i class="ion-ios-play icon black"></i></td>';
                     $admin_style .= '</tr>';
                     $counter++;
                 }
@@ -314,7 +401,7 @@ class Manager extends MY_Controller {
                     // $admin_style .= '<td>'.$counter.'</td>';
                     $typ_style .= '<td>'.$typ_details['type_id'].'</td>';
                     $typ_style .= '<td>'.$typ_details['type_name'].'</td>';
-                    $typ_style .= '<td><a data-toggle="tooltip" data-placement="bottom" title="View Profile" href = "'.base_url().'manager/categoryprofile/'.$typ_details['type_id'].'"><i class="ion-eye icon black"></i></a></td>';
+                    $typ_style .= '<td><a data-toggle="tooltip" data-placement="bottom" title="View Profile" href = "'.base_url().'manager/typeprofile/'.$typ_details['type_id'].'"><i class="ion-eye icon black"></i></a></td>';
                     $typ_style .= '<td><a data-toggle="tooltip" data-placement="bottom" title="Delete Profile" href = "'.base_url().'manager/updatetype/delete/'.$typ_details['type_id'].'"><i class="ion-trash-a icon black"></i></td>';
                     $typ_style .= '</tr>';
                     $counter++;
@@ -338,7 +425,7 @@ class Manager extends MY_Controller {
                     // $admin_style .= '<td>'.$counter.'</td>';
                     $typ_style .= '<td>'.$typ_details['type_id'].'</td>';
                     $typ_style .= '<td>'.$typ_details['type_name'].'</td>';
-                    $typ_style .= '<td><a data-toggle="tooltip" data-placement="bottom" title="View Profile" href = "'.base_url().'manager/categoryprofile/'.$typ_details['type_id'].'"><i class="ion-eye icon black"></i></a></td>';
+                    $typ_style .= '<td><a data-toggle="tooltip" data-placement="bottom" title="View Profile" href = "'.base_url().'manager/typeprofile/'.$typ_details['type_id'].'"><i class="ion-eye icon black"></i></a></td>';
                     $typ_style .= '<td><a data-toggle="tooltip" data-placement="bottom" title="Activate Profile" href = "'.base_url().'manager/updatetype/activate/'.$typ_details['type_id'].'"><i class="ion-ios-play icon black"></i></td>';
                     $typ_style .= '</tr>';
                     $counter++;
@@ -457,7 +544,7 @@ class Manager extends MY_Controller {
   {
     $this->load->library('form_validation');
         
-        $this->form_validation->set_rules('catname', 'Category Name', 'trim|required|xss_clean|is_unique[type.type_name]');
+        $this->form_validation->set_rules('catname', 'Category Name', 'trim|required|xss_clean|is_unique[category.cat_name]');
         
         
 
@@ -896,6 +983,156 @@ class Manager extends MY_Controller {
     $this->load->view('dcompany_form',$data);
       
    }
+
+   function productprofile($id)
+    {
+        $userdet = array();
+        $results = $this->m_manager->productprofile($id);
+
+        foreach ($results as $key => $values) {
+            $details['product'][] = $values;  
+        }
+       // echo '<pre>';print_r($data['user']);echo '</pre>';die;
+
+        $data['error'] = '';
+        $data['messagenumber']  = $this->getmessagenumber();
+    $data['productnumber']  = $this->getproductnumber();
+    $data['categorynumber']  = $this->getcategorynumber();
+    $data['typenumber']  = $this->gettypenumber();
+    $data['companynumber']  = $this->getcompanynumber();  
+    $data['dcompanynumber']  = $this->getdcompanynumber();  
+        $data['product'] = $details;
+        
+
+        $this->load->view('view_product', $data);
+ 
+    }
+
+
+    function adminprofile($id)
+    {
+        $userdet = array();
+        $results = $this->m_manager->adminprofile($id);
+
+        foreach ($results as $key => $values) {
+            $details['admin'][] = $values;  
+        }
+       // echo '<pre>';print_r($data['user']);echo '</pre>';die;
+
+        $data['error'] = '';
+        $data['messagenumber']  = $this->getmessagenumber();
+    $data['productnumber']  = $this->getproductnumber();
+    $data['categorynumber']  = $this->getcategorynumber();
+    $data['typenumber']  = $this->gettypenumber();
+    $data['companynumber']  = $this->getcompanynumber();  
+    $data['dcompanynumber']  = $this->getdcompanynumber();  
+        $data['admin'] = $details;
+       
+
+        $this->load->view('view_admin', $data);
+ 
+    }
+
+
+    function companyprofile($id)
+    {
+        $userdet = array();
+        $results = $this->m_manager->companyprofile($id);
+
+        foreach ($results as $key => $values) {
+            $details['company'][] = $values;  
+        }
+       // echo '<pre>';print_r($data['user']);echo '</pre>';die;
+
+        $data['error'] = '';
+        $data['messagenumber']  = $this->getmessagenumber();
+    $data['productnumber']  = $this->getproductnumber();
+    $data['categorynumber']  = $this->getcategorynumber();
+    $data['typenumber']  = $this->gettypenumber();
+    $data['companynumber']  = $this->getcompanynumber();  
+    $data['dcompanynumber']  = $this->getdcompanynumber();  
+        $data['company'] = $details;
+   
+        $this->load->view('view_company', $data);
+ 
+    }
+
+
+    function categoryprofile($id)
+    {
+        $userdet = array();
+        $results = $this->m_manager->categoryprofile($id);
+
+        foreach ($results as $key => $values) {
+            $details['category'][] = $values;  
+        }
+       // echo '<pre>';print_r($data['user']);echo '</pre>';die;
+
+        $data['error'] = '';
+        $data['messagenumber']  = $this->getmessagenumber();
+    $data['productnumber']  = $this->getproductnumber();
+    $data['categorynumber']  = $this->getcategorynumber();
+    $data['typenumber']  = $this->gettypenumber();
+    $data['companynumber']  = $this->getcompanynumber();  
+    $data['dcompanynumber']  = $this->getdcompanynumber();  
+        $data['category'] = $details;
+      
+
+        $this->load->view('view_category', $data);
+ 
+    }
+
+
+    function typeprofile($id)
+    {
+        $userdet = array();
+        $results = $this->m_manager->typeprofile($id);
+
+        foreach ($results as $key => $values) {
+            $details['type'][] = $values;  
+        }
+       // echo '<pre>';print_r($data['user']);echo '</pre>';die;
+
+        $data['error'] = '';
+        $data['messagenumber']  = $this->getmessagenumber();
+    $data['productnumber']  = $this->getproductnumber();
+    $data['categorynumber']  = $this->getcategorynumber();
+    $data['typenumber']  = $this->gettypenumber();
+    $data['companynumber']  = $this->getcompanynumber();  
+    $data['dcompanynumber']  = $this->getdcompanynumber();  
+        $data['type'] = $details;
+       
+
+        $this->load->view('view_type', $data);
+ 
+    }
+
+
+    function messageprofile($id)
+    {
+        $userdet = array();
+        $results = $this->m_manager->messageprofile($id);
+
+        foreach ($results as $key => $values) {
+            $details['message'][] = $values;  
+        }
+       // echo '<pre>';print_r($data['user']);echo '</pre>';die;
+
+        $data['error'] = '';
+        $data['messagenumber']  = $this->getmessagenumber();
+    $data['productnumber']  = $this->getproductnumber();
+    $data['categorynumber']  = $this->getcategorynumber();
+    $data['typenumber']  = $this->gettypenumber();
+    $data['companynumber']  = $this->getcompanynumber();  
+    $data['dcompanynumber']  = $this->getdcompanynumber();  
+        $data['message'] = $details;
+       
+
+        $this->load->view('view_message', $data);
+ 
+    }
+
+    
 
 
 

@@ -833,6 +833,315 @@ class M_manager extends MY_Model {
     }
 
 
+     public function update_category(){
+      $id = $this->input->post('id');
+      $categoryname = $this->input->post('catname');
+      
+      
+
+      $category_details_data = array(
+          'cat_name' => $categoryname
+          
+      );
+
+     
+
+        $this->db->where('cat_id', $id);
+        $this->db->update('category', $category_details_data);
+
+       
+
+      if($this->db->affected_rows() === 1){
+
+        return $id;
+
+      }else{
+
+      $subject = 'Member Entry';
+      $message = 'Problem in registering User ID '.$id.' . Please rectify immediatelly';
+
+      $message_details_data = array();
+      $message_details = array(
+          'subject' => $subject,
+          'message' => $message
+      );
+
+        
+
+        array_push($message_details_data, $message_details);
+
+        //echo '<pre>'; print_r($member_details_data); echo '<pre>'; die;
+
+        $this->db->insert_batch('mail',$message_details_data);
+
+        //echo 'Applicant is not able to be registered';
+        $this->load->library('email');
+        $this->email->from('info@marewill.com','MareWill Fashion');
+        $this->email->to('marekawilly@marewill.com','marekawilly@gmail.com');
+        $this->email->subject('Failed registeration of a user');
+
+        if(isset($email)){
+            $this->email->message('Unable to register and insert user with the email of '.$email.' to the database.');
+        }else{
+            $this->email->message('Unable to register and insert user to the database.');
+
+        }
+
+        $this->email->send();
+        return FALSE;
+     }
+    }
+
+    public function update_type(){
+      $id = $this->input->post('id');
+      $typename = $this->input->post('typename');
+      
+      
+
+      $type_details_data = array(
+          'type_name' => $typename
+          
+      );
+
+     
+
+        $this->db->where('type_id', $id);
+        $this->db->update('type', $type_details_data);
+
+       
+
+      if($this->db->affected_rows() === 1){
+
+        return $id;
+
+      }else{
+
+      $subject = 'Member Entry';
+      $message = 'Problem in registering User ID '.$id.' . Please rectify immediatelly';
+
+      $message_details_data = array();
+      $message_details = array(
+          'subject' => $subject,
+          'message' => $message
+      );
+
+        
+
+        array_push($message_details_data, $message_details);
+
+        //echo '<pre>'; print_r($member_details_data); echo '<pre>'; die;
+
+        $this->db->insert_batch('mail',$message_details_data);
+
+        //echo 'Applicant is not able to be registered';
+        $this->load->library('email');
+        $this->email->from('info@marewill.com','MareWill Fashion');
+        $this->email->to('marekawilly@marewill.com','marekawilly@gmail.com');
+        $this->email->subject('Failed registeration of a user');
+
+        if(isset($email)){
+            $this->email->message('Unable to register and insert user with the email of '.$email.' to the database.');
+        }else{
+            $this->email->message('Unable to register and insert user to the database.');
+
+        }
+
+        $this->email->send();
+        return FALSE;
+     }
+    }
+
+
+    public function update_company(){
+      $id = $this->input->post('id');
+      $companyname = strtoupper($this->input->post('companyname'));
+      $companylocation = strtoupper($this->input->post('companylocation'));
+      $companyaddress = strtoupper($this->input->post('companyaddress'));
+      $companypnumber = strtoupper($this->input->post('companypnumber'));
+      $companyemail = strtoupper($this->input->post('companyemail'));
+      
+      
+
+      $company_details_data = array(
+          'company_name' => $companyname,
+          'company_location' => $companylocation,
+          'company_address' => $companyaddress,
+          'company_pnumber' => $companypnumber,
+          'company_email' => $companyemail
+          
+      );
+
+     
+
+        $this->db->where('comp_id', $id);
+        $this->db->update('company', $company_details_data);
+
+       
+
+      if($this->db->affected_rows() === 1){
+
+        return $id;
+
+      }else{
+
+      $subject = 'Member Entry';
+      $message = 'Problem in registering User ID '.$id.' . Please rectify immediatelly';
+
+      $message_details_data = array();
+      $message_details = array(
+          'subject' => $subject,
+          'message' => $message
+      );
+
+        
+
+        array_push($message_details_data, $message_details);
+
+        //echo '<pre>'; print_r($member_details_data); echo '<pre>'; die;
+
+        $this->db->insert_batch('mail',$message_details_data);
+
+        //echo 'Applicant is not able to be registered';
+        $this->load->library('email');
+        $this->email->from('info@marewill.com','MareWill Fashion');
+        $this->email->to('marekawilly@marewill.com','marekawilly@gmail.com');
+        $this->email->subject('Failed registeration of a user');
+
+        if(isset($email)){
+            $this->email->message('Unable to register and insert user with the email of '.$email.' to the database.');
+        }else{
+            $this->email->message('Unable to register and insert user to the database.');
+
+        }
+
+        $this->email->send();
+        return FALSE;
+     }
+    }
+
+
+
+    
+
+    public function productprofile($id)
+    {
+         $profile = array();
+         
+         $query = $this->db->get_where('products', array('prod_id' => $id));
+         $result = $query->result_array();
+
+            if ($result) {
+               foreach ($result as $key => $value) {
+        $profile[$value['prod_id']] = $value;
+      }
+      //echo '<pre>';print_r($messages);echo '</pre>';die();
+      return $profile;
+
+    }
+    
+    return $profile;
+    }
+
+
+    public function adminprofile($id)
+    {
+         $profile = array();
+         
+         $query = $this->db->get_where('accounts', array('ac_id' => $id));
+         $result = $query->result_array();
+
+            if ($result) {
+               foreach ($result as $key => $value) {
+        $profile[$value['ac_id']] = $value;
+      }
+      //echo '<pre>';print_r($messages);echo '</pre>';die();
+      return $profile;
+
+    }
+    
+    return $profile;
+    }
+
+
+    public function companyprofile($id)
+    {
+         $profile = array();
+         
+         $query = $this->db->get_where('company', array('comp_id' => $id));
+         $result = $query->result_array();
+
+            if ($result) {
+               foreach ($result as $key => $value) {
+        $profile[$value['comp_id']] = $value;
+      }
+      //echo '<pre>';print_r($messages);echo '</pre>';die();
+      return $profile;
+
+    }
+    
+    return $profile;
+    }
+
+    public function categoryprofile($id)
+    {
+         $profile = array();
+         
+         $query = $this->db->get_where('category', array('cat_id' => $id));
+         $result = $query->result_array();
+
+            if ($result) {
+               foreach ($result as $key => $value) {
+        $profile[$value['cat_id']] = $value;
+      }
+      //echo '<pre>';print_r($messages);echo '</pre>';die();
+      return $profile;
+
+    }
+    
+    return $profile;
+    }
+
+
+     public function typeprofile($id)
+    {
+         $profile = array();
+         
+         $query = $this->db->get_where('type', array('type_id' => $id));
+         $result = $query->result_array();
+
+            if ($result) {
+               foreach ($result as $key => $value) {
+        $profile[$value['type_id']] = $value;
+      }
+      //echo '<pre>';print_r($messages);echo '</pre>';die();
+      return $profile;
+
+    }
+    
+    return $profile;
+    }
+
+
+    public function messageprofile($id)
+    {
+         $profile = array();
+         
+         $query = $this->db->get_where('manager_mail', array('mm_id' => $id));
+         $result = $query->result_array();
+
+            if ($result) {
+               foreach ($result as $key => $value) {
+        $profile[$value['mm_id']] = $value;
+      }
+      //echo '<pre>';print_r($messages);echo '</pre>';die();
+      return $profile;
+
+    }
+    
+    return $profile;
+    }
+
+
 
 
 
