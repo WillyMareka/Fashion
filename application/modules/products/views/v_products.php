@@ -259,7 +259,7 @@
 											<h2>Price</h2><p>Kshs <?php echo $data['price']; ?></p>
 											<h2>Company</h2><p><?php echo $data['prod_company']; ?></p>
 
-											<a href="<?php echo base_url(). 'home/add_to_cart_check'?>" class="btn btn-default add-to-cart"><i class="shop icon"></i>Add to cart</a>
+											<a href="<?php echo base_url().'home/add_to_cart_check/'. $data['prod_id'];?>" class="btn btn-default add-to-cart"><i class="shop icon"></i>Add to cart</a>
 										</div>
 									</div>
 								</div>
