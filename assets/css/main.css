@@ -285,6 +285,7 @@ a#scrollUp {
 .home-footer{
   position: absolute;
   /*margin-top: 400px;*/
+  margin:0;
  margin-bottom: 0;
   height: auto;
   width: 100%;
@@ -841,7 +842,8 @@ h2.title:before{
 }
 
 .home-container{
-  margin-left: 140px;
+  margin-left: 5%;
+  margin-right: 5%;
 }
 
 .nav.navcompany {

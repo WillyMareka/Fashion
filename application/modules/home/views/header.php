@@ -12,6 +12,7 @@
     <link rel="stylesheet" type="text/css" href="<?php echo base_url() . 'assets/css/jquery.bxslider.css'?>" />
     <link type="text/css" href="<?php echo base_url() . 'assets/script/jquery/jquery-ui.css'?>" rel="stylesheet">
     <link type="text/css" href="<?php echo base_url() . 'assets/semantic/dist/semantic.css'?>" rel="stylesheet">
+    
     <link type="text/css" href="<?php echo base_url() . 'assets/dist/css/bootstrap.css'?>" rel="stylesheet">
     <link type="text/css" href="<?php echo base_url() . 'assets/css/font-awesome.min.css'?>" rel="stylesheet">
     <link type="text/css" href="<?php echo base_url() . 'assets/css/animate.css'?>" rel="stylesheet">

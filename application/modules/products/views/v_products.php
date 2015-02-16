@@ -265,7 +265,7 @@
 								</div>
 								<div class="choose">
 									<ul class="nav nav-pills nav-justified">
-										<li><a href=""><i class="star icon"></i>Add to wishlist</a></li>
+										<li><a href=""><i class="ion-image icon"></i>View Product</a></li>
 										<!-- <li><a href=""><i class="star icon"></i>Add to compare</a></li> -->
 									</ul>
 								</div>

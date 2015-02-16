@@ -39,6 +39,7 @@
 <script type="text/javascript"src="<?php echo base_url() .'assets/script/jquery-1.11.1.min.js'?>"></script>
 <script type="text/javascript"src="<?php echo base_url() .'assets/script/jquery/jquery-ui.js'?>"></script>
 <script type="text/javascript"src="<?php echo base_url() .'assets/semantic/dist/semantic.js'?>"></script>
+
 <script type="text/javascript"src="<?php echo base_url() .'assets/dist/js/bootstrap.js'?>"></script>
 <script type="text/javascript"src="<?php echo base_url() .'assets/js/jquery.scrollUp.min.js'?>"></script>
 <script type="text/javascript"src="<?php echo base_url() .'assets/js/script.js'?>"></script>

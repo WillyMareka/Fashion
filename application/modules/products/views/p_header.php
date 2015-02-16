@@ -8,7 +8,7 @@
     
     <link type="text/css" href="<?php echo base_url() . 'assets/css/style.css'?>" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="<?php echo base_url() . 'assets/fonts/fashion.ico'?>" />
-    
+    <link type="text/css" href="<?php echo base_url() .'assets/ionicons/css/ionicons.css' ?>" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url() . 'assets/css/jquery.cslider.css'?>" />
     <link rel="stylesheet" type="text/css" href="<?php echo base_url() . 'assets/css/jquery.bxslider.css'?>" />
     <link type="text/css" href="<?php echo base_url() . 'assets/script/jquery/jquery-ui.css'?>" rel="stylesheet">
