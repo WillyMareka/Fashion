@@ -75,7 +75,7 @@ class User extends MY_Controller {
              //echo '<pre>';print_r($result);echo'</pre>';die;
 			switch($result){
 
-				case 'logged_in':
+				case 'logged':
                     
                     switch($this->session->userdata('lt_id')){
                         case '1':

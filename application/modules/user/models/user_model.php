@@ -168,16 +168,16 @@ class User_model extends MY_Model {
                    'lt_id'       => $row2->lt_id
                 );
 
-                $this -> set_session($session_data);
-                return 'logged_in';
+                    $this -> set_session($session_data);
+                    return 'logged';
              } else {
-               return "session_fail";
+                 return "session_fail";
              }
            }else{
-             return "not_activated";
+              return "not_activated";
            }
          }else{
-          return "incorrect_password";
+            return "incorrect_password";
          }
 
 
